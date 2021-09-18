@@ -13,7 +13,7 @@ const navElem = (() => {
         className: `nav-link-element-${ele}`,
         id: null,
         img: null,
-        link: null,
+        link: `#${ele}`,
         content: [ele]}]
     }
   })
@@ -29,12 +29,12 @@ const navMenu = {
 }
 
 const logo = {
-  tag: 'div',
+  tag: 'img',
   className: 'nav-logo',
   id: null,
-  img: null,
+  img: './assets/logo.svg',
   link: null,
-  content: ['logo']
+  content: []
 }
 
 const logoText = {
@@ -43,7 +43,7 @@ const logoText = {
   id: null,
   img: null,
   link: null,
-  content: ['logo text']
+  content: ['louvre']
 }
 
 const logoWrapper = {
@@ -64,13 +64,4 @@ const navigation = {
   content: [logoWrapper, navMenu]
 }
 
-const welcomeContainer = {
-  tag: 'section',
-  className: 'section-container',
-  id: null,
-  img: null,
-  link: null,
-  content: [navigation]
-}
-
-export default welcomeContainer;
+export default navigation;

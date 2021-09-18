@@ -1,5 +1,16 @@
-$body-color: white;
+ul {
+  list-style: none;
+}
 
-body {
-  background-color: $body-color;
+a {
+  text-decoration: none;
+}
+
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

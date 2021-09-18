@@ -1,9 +1,13 @@
+import navigation from "./nav";
 
 
-
-const welcomeSectionData = {
+const welcomeContainer = {
   tag: 'section',
-  class: 'section-container',
-  id: '',
-  content: 'This is First node'
+  className: 'welcome-section-container',
+  id: null,
+  img: null,
+  link: null,
+  content: [navigation]
 }
+
+export default welcomeContainer;

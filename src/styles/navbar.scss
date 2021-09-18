@@ -1,0 +1,50 @@
+.nav-container {
+  max-width: 1440px;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  width: 49px;
+  height: 26px;
+}
+
+.nav-logo-text {
+  font-family: Forum, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 31px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.nav-logo-wrapper {
+  width: 199px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.nav-menu {
+  width: 775px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-menu a {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
