@@ -21,15 +21,16 @@
   "homepage": "https://github.com/rolling-scopes-school/alekseyvy-JSFE2021Q3#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
     "html-webpack-plugin": "^5.3.2",
     "sass": "^1.41.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.2.1",
-    "copy-webpack-plugin": "^9.0.1"
+    "webpack-dev-server": "^4.2.1"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
