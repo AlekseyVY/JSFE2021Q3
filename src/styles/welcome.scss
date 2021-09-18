@@ -6,3 +6,54 @@
   align-items: center;
   background-color: $bg-dark;
 }
+
+.hero-content {
+  max-width: 598px;
+  width: 100%;
+}
+
+.hero-content-logo {
+  font-family: Forum, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.hero-content-text {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+.hero-content-button {
+  width: 360px;
+  height: 75px;
+  border-radius:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #710707;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  transition: all 0.5s ease-in-out;
+}
+
+.hero-content-button:hover {
+  background-color: #9D8665;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}

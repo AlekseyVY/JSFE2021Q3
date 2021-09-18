@@ -1,9 +1,10 @@
 
-const CreateNode = ({tag, className, id, content, link, img}, parent) => {
+const CreateNode = ({tag, className, id, content, link, img, blank}, parent) => {
   const element = document.createElement(tag)
   if(className) element.setAttribute('class', className);
   if(id) element.setAttribute('id', id);
   if(link) element.href = link;
+  if(blank) element.target = "_blank";
   if(img) element.src = img;
   if(Array.isArray(content) && content.length > 1) {
     content.map((ele) => {
@@ -18,6 +19,5 @@ const CreateNode = ({tag, className, id, content, link, img}, parent) => {
   }
   parent.appendChild(element)
 }
-
 
 export default CreateNode;
