@@ -48,5 +48,8 @@ module.exports = {
     splitChunks: {
       chunks: "all",
     }
+  },
+  experiments: {
+    topLevelAwait: true,
   }
 }

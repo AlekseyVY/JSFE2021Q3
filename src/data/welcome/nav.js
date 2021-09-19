@@ -1,5 +1,5 @@
 
-const navElem = (() => {
+const navElem = await (async () => {
   const data = ['visiting', 'explore', 'video', 'gallery', 'tickets', 'contacts'];
   return data.map((ele) => {
     return {

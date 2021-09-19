@@ -1,8 +1,9 @@
 
-const CreateNode = ({tag, className, id, content, link, img, blank}, parent) => {
+const CreateNode = ({tag, className, id, content, link, img, blank, alt}, parent) => {
   const element = document.createElement(tag)
   if(className) element.setAttribute('class', className);
   if(id) element.setAttribute('id', id);
+  if(alt) element.setAttribute('alt', alt);
   if(link) element.href = link;
   if(blank) element.target = "_blank";
   if(img) element.src = img;

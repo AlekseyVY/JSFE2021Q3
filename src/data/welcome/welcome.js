@@ -63,6 +63,7 @@ const welcomeContainer = {
         content: [{
           tag: 'img',
           className: 'hero-slider_img',
+          alt: 'mona lisa',
           id: null,
           img: './assets/welcome/hero_slide_1.png',
           link: null,
@@ -111,7 +112,7 @@ const welcomeContainer = {
             id: null,
             img: null,
             link: null,
-            content: [...(() => {
+            content: [...await ( async () => {
               return ['1', '2', '3', '4', '5'].map((ele) => {
                 return {
                   tag: 'div',

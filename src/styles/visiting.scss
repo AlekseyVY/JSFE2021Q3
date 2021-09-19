@@ -1,4 +1,95 @@
 .visiting-section-container {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visiting-content-wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.visiting-content-logo {
+  font-family: Forum, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #9D8665;
+}
+
+.visiting-content-delimeter {
+  width: 100%;
+  height: 3px;
+  margin-top: 25px;
+  background-color: #710707;
+}
+
+.visiting-content-cards-wrapper {
+  width: 100%;
+  height: 923px;
+  margin-top: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visiting-card-wraper {
+  display: block;
+  width: 440px;
+  height: 424px;
+  margin-bottom: 75px;
+}
+
+.visiting-card-img {
+  width: 440px;
+  height: 285px;
+}
+
+.visiting-card-logo {
+  margin-top: 25px;
+  font-family: Forum, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.visiting-card-delimeter {
+  width: 300px;
+  height: 2px;
+  background-color: #710707;
+  margin-top: 10px;
+}
+
+.visiting-card-sec-text {
+  margin-top: 10px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 26px;
+  color: black;
+}
+
+.visiting-card-third-text {
+  margin-top: 10px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 21px;
+  color: black;
 }
