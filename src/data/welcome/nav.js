@@ -35,7 +35,7 @@ const navigation = {
       tag: 'img',
       className: 'nav-logo',
       id: null,
-      img: './assets/logo.svg',
+      img: './assets/welcome/logo.svg',
       link: null,
       content: []
     },
