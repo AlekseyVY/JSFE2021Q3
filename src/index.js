@@ -7,10 +7,18 @@ import exploreContainer from "./data/explore";
 import videoContainer from "./data/video";
 import galleryContainer from "./data/gallery";
 import ticketContainer from "./data/tickets";
+import parallaxContainer from "./data/parallax";
 
 
-const data = [welcomeContainer, visitingContainer, exploreContainer, videoContainer, galleryContainer, ticketContainer]
-;
+const data = [
+  welcomeContainer,
+  visitingContainer,
+  exploreContainer,
+  videoContainer,
+  galleryContainer,
+  ticketContainer,
+  parallaxContainer
+  ];
 
 (() => {
   const rootNode = document.getElementById('root');
