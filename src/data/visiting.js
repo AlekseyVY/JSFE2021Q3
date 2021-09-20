@@ -35,49 +35,33 @@ const cardsGenerator = async () => {
     return {
       tag: 'a',
       className: 'visiting-card-wraper',
-      id: null,
-      img: null,
       blank: true,
       link: ele.link,
       content: [{
         tag: 'img',
         className: 'visiting-card-img',
-        id: null,
         alt: ele.name,
         img: ele.img,
-        link: null,
         content: []
       },
         {
           tag: 'h3',
           className: 'visiting-card-logo',
-          id: null,
-          img: null,
-          link: null,
           content: [ele.name]
       },
         {
           tag: 'div',
           className: 'visiting-card-delimeter',
-          id: null,
-          img: null,
-          link: null,
           content: []
         },
         {
           tag: 'p',
           className: 'visiting-card-sec-text',
-          id: null,
-          img: null,
-          link: null,
           content: ['360° Virtual Tour']
         },
         {
           tag: 'p',
           className: 'visiting-card-third-text',
-          id: null,
-          img: null,
-          link: null,
           content: ['Google Street Panorama View']
         }]
     }
@@ -89,36 +73,22 @@ const visitingContainer = {
   tag: 'section',
   className: 'visiting-section-container',
   id: 'visiting',
-  img: null,
-  link: null,
   content: [{
     tag: 'div',
     className: 'visiting-content-wrapper',
-    id: null,
-    img: null,
-    link: null,
     content: [{
       tag: 'h2',
       className: 'visiting-content-logo',
-      id: null,
-      img: null,
-      link: null,
       content: ['virtual tour']
     },
     {
       tag: 'div',
       className: 'visiting-content-delimeter',
-      id: null,
-      img: null,
-      link: null,
       content: []
     },
     {
       tag: 'div',
       className: 'visiting-content-cards-wrapper',
-      id: null,
-      img: null,
-      link: null,
       content: [...await cardsGenerator()]
     }
     ]

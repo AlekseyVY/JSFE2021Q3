@@ -8,6 +8,7 @@ import videoContainer from "./data/video";
 import galleryContainer from "./data/gallery";
 import ticketContainer from "./data/tickets";
 import parallaxContainer from "./data/parallax";
+import contactsContainer from "./data/contacts";
 
 
 const data = [
@@ -17,7 +18,8 @@ const data = [
   videoContainer,
   galleryContainer,
   ticketContainer,
-  parallaxContainer
+  parallaxContainer,
+  contactsContainer
   ];
 
 (() => {
