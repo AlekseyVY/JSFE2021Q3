@@ -1,5 +1,5 @@
 
-const CreateNode = ({tag, className, id, content, link, img, blank, alt, type, lazy}, parent) => {
+const CreateNode = ({tag, className, id, content, link, img, blank, alt, type, lazy, name}, parent) => {
   const element = document.createElement(tag)
   if(className) element.setAttribute('class', className);
   if(id) element.setAttribute('id', id);
@@ -9,6 +9,7 @@ const CreateNode = ({tag, className, id, content, link, img, blank, alt, type, l
   if(blank) element.target = "_blank";
   if(img) element.src = img;
   if(type) element.type = type;
+  if(name) element.name = name;
   if(Array.isArray(content) && content.length > 1) {
     content.map((ele) => {
       CreateNode(ele, element)

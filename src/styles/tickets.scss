@@ -1,0 +1,188 @@
+.ticket-section-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-content-wrapper {
+  width: 1440px;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.ticket-content-logo {
+  font-family: Forum, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #9D8665;
+}
+
+.ticket-content-delimeter {
+  width: 100%;
+  height: 3px;
+  margin-top: 25px;
+  background-color: #710707;
+}
+
+.ticket-content-buy-wrapper {
+  width: 100%;
+  margin-top: 75px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket-content-buy-pic {
+  width: 720px;
+  height: 550px;
+}
+
+.ticket-buy-wrapper {
+  width: 660px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket-buy-type-wrapper {
+  width: 270px;
+}
+
+.ticket-buy-type-logo {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+}
+
+.ticket-buy-radio-container {
+  width: 270px;
+  height: 128px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-buy-radio-wrapper {
+  width: 100%;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.ticket-buy-radio-p {
+  margin-left: 23px;
+}
+
+.ticket-buy-select-wrapper {
+  width: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ticket-buy-select-content-logo {
+  font-family: Roboto, serif;
+  text-align: end;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.ticket-selector-wrapper {
+  width: 150px;
+  height: 91px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ticket-selector-logo {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.ticket-selector-content-wrapper {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 3px solid #000000;
+}
+
+.ticket-selector-content-minus {
+  margin-left: 14px;
+  width: 18px;
+}
+
+.ticket-selector-content-amount {
+  margin-left: 37px;
+  margin-right: 36px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+}
+
+.ticket-selector-content-plus {
+  margin-right: 14px;
+  width: 19px;
+}
+
+.ticket-buy-select-content-total-wrapper {
+  width: 150px;
+  display: flex;
+  margin-top: 50px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 1.65px;
+  color: #000000;
+}
+
+.ticket-buy-form-submit {
+  width: 175px;
+  height: 50px;
+  margin-top: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  background-color: #000;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+.ticket-buy-form-submit:hover {
+  cursor: pointer;
+}

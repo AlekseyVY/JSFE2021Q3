@@ -6,9 +6,10 @@ import visitingContainer from "./data/visiting";
 import exploreContainer from "./data/explore";
 import videoContainer from "./data/video";
 import galleryContainer from "./data/gallery";
+import ticketContainer from "./data/tickets";
 
 
-const data = [welcomeContainer, visitingContainer, exploreContainer, videoContainer, galleryContainer]
+const data = [welcomeContainer, visitingContainer, exploreContainer, videoContainer, galleryContainer, ticketContainer]
 ;
 
 (() => {
