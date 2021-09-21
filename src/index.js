@@ -9,6 +9,7 @@ import galleryContainer from "./data/gallery";
 import ticketContainer from "./data/tickets";
 import parallaxContainer from "./data/parallax";
 import contactsContainer from "./data/contacts";
+import footerContainer from "./data/footer";
 
 
 const data = [
@@ -19,7 +20,8 @@ const data = [
   galleryContainer,
   ticketContainer,
   parallaxContainer,
-  contactsContainer
+  contactsContainer,
+  footerContainer
   ];
 
 (() => {
