@@ -1,0 +1,87 @@
+.contacts-container {
+  width :100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-content-wrapper {
+  width : 1440px;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-content-logo {
+  font-family: Forum, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #9D8665;
+}
+
+.contacts-content-delimeter {
+  width :100%;
+  height: 3px;
+  margin-top: 25px;
+  background-color: #710707;
+}
+
+.contacts-content-inner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 75px;
+}
+
+.contacts-content-inner-list-wrapper {
+  width: 283px;
+  height: 244px;
+}
+
+.contacts-content-inner-list-logo {
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+}
+
+.contacts-content-inner-list-adress {
+  margin-top: 50px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.contacts-content-inner-list-phone {
+  margin-top: 25px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.contacts-content-inner-list-mail {
+  margin-top: 25px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.contacts-content-location {
+  width: 960px;
+  height: 620px;
+}
