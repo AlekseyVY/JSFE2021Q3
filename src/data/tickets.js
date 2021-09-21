@@ -62,8 +62,6 @@ const amountSelector = (() => {
   })
 })();
 
-console.log(radioGroup)
-
 const ticketContainer = {
   tag: 'section',
   className: 'ticket-section-container',

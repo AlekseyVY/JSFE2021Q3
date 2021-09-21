@@ -28,22 +28,33 @@
 }
 
 .gallery-content-gallery {
+  max-width: 1440px;
   width: 100%;
   height: 1960px;
+  margin-top: 75px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   row-gap: 24px;
   column-gap: 36px;
+  .gallery-card:nth-child(3n+1) {
+    margin-top: 50px;
+  }
+  .gallery-card:nth-child(3n+3){
+    margin-top: 50px;
+  }
 }
 
 .gallery-card {
   display: block;
+  flex: auto;
   max-width: 456px;
   max-height: 570px;
   width: auto;
   height: auto;
+  margin-bottom: -26px;
 }
 
 .gallery-content-overlay {

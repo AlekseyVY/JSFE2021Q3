@@ -26,7 +26,6 @@ const socialGenerator = (() => {
     })
   })
 })()
-console.log(socialGenerator)
 
 const footerContainer = {
   tag: 'section',
