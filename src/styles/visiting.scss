@@ -49,13 +49,25 @@
   margin-bottom: 75px;
 }
 
+.visiting-card-wraper:hover {
+  .visiting-card-delimeter {
+    width: 100%;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .visiting-card-img {
+    transform: scale(1.02);
+    box-shadow: rgb(0 0 0 / 50%) 0 0 20px 2px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+}
+
 .visiting-card-img {
   width: 440px;
   height: 285px;
 }
 
 .visiting-card-logo {
-  margin-top: 25px;
+  margin-top: 21px;
   font-family: Forum, serif;
   font-style: normal;
   font-weight: normal;
@@ -71,6 +83,7 @@
   height: 2px;
   background-color: #710707;
   margin-top: 10px;
+  transition: all 0.5s ease-in-out 0s;
 }
 
 .visiting-card-sec-text {

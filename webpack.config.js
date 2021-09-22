@@ -2,7 +2,14 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const htmlPage = ['tour_1', 'tour_2', 'tour_3', 'tour_4', 'tour_5', 'tour_6'];
+const multipleHtml = htmlPage.map(name => {
+  return new HtmlWebPackPlugin({
+    template: `./src/tours/${name}.html`,
+    filename: `/tours/${name}.html`,
+  })
+});
 
 module.exports = {
   entry: './src/index.js',
@@ -43,7 +50,7 @@ module.exports = {
         ],
       }),
       new CleanWebpackPlugin(),
-    ],
+    ].concat(multipleHtml),
   optimization: {
     splitChunks: {
       chunks: "all",
