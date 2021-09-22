@@ -49,3 +49,24 @@
   color: #FFFFFF;
   text-transform: capitalize;
 }
+
+.nav-menu li::after {
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  background-color: #9d8665;
+  transition: width 0.5s ease 0s, left 0.5s ease 0s;
+  width: 0;
+}
+
+.nav-menu li:hover::after {
+  width: 100%;
+  background-color: #9d8665;
+}
+
+.nav-menu a:hover {
+  color: #9d8665;
+  transition: width 0.5s ease 0s, left 0.5s ease 0s;
+}

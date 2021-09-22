@@ -23,6 +23,7 @@ const navigation = {
     content: [{
       tag: 'img',
       className: 'nav-logo',
+      alt: 'logo',
       img: './assets/welcome/logo.svg',
       content: []
     },

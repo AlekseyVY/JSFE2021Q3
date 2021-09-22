@@ -26,7 +26,7 @@ const contactsContainer = {
               className: 'contacts-content-inner-list-wrapper',
               content: [
                 {
-                  tag: 'h3',
+                  tag: 'p',
                   className: 'contacts-content-inner-list-logo',
                   content: ['Palais Royal\n Musee du Louvre']
                 },

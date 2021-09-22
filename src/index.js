@@ -30,3 +30,8 @@ const data = [
 })();
 
 
+// this is temporary  T_T
+await( async() => {
+  const welcomeSelected = document.getElementsByClassName('hero-slider-controls-wrapper-show-element');
+  welcomeSelected[0].classList.add('welcome-selector-active');
+})()

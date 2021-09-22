@@ -9,26 +9,32 @@ const socialGenerator = (() => {
     {name: 'pinterest', link: 'https://www.pinterest.fr/museedulouvre/'}]
     .map((ele) => {
     return (
-        {
-          tag: 'a',
-          className: 'social-icon-wrapper',
-          link: ele.link,
-          blank: true,
-          content: [
-            {
-              tag: 'img',
-              className: `social-icon`,
-              img: `./assets/footer/socials/${ele.name}.svg`,
-              alt: `${ele.name}`,
-              content: []
-            }
-      ]
-    })
+      {
+        tag :'li',
+        className: 'social-icon-list-wrapper',
+        content: [
+          {
+            tag: 'a',
+            className: 'social-icon-wrapper',
+            link: ele.link,
+            blank: true,
+            content: [
+              {
+                tag: 'img',
+                className: `social-icon`,
+                img: `./assets/footer/socials/${ele.name}.svg`,
+                alt: `${ele.name}`,
+                content: []
+              }
+            ]
+          }
+        ]
+      })
   })
 })()
 
 const footerContainer = {
-  tag: 'section',
+  tag: 'footer',
   className: 'footer-section-container',
   content: [
     {
@@ -46,7 +52,7 @@ const footerContainer = {
           content: [
             navigation,
             {
-              tag: 'div',
+              tag: 'ul',
               className: 'footer-content-social-wrapper',
               content: [...socialGenerator]
             }

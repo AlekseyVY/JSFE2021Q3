@@ -1,6 +1,5 @@
 .video-section-container {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -51,6 +50,11 @@
 }
 
 .video-content-main-player-big-play {
+  width: 220px;
+  height: 220px;
+}
+
+.video-content-main-player-big-play-button {
   width: 220px;
   height: 220px;
   position: absolute;

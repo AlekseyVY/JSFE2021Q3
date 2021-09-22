@@ -1,5 +1,5 @@
 const parallaxContainer = {
-  tag: 'section',
+  tag: 'div',
   className: 'parallax-container',
   content: []
 }

@@ -3,7 +3,12 @@ import navigation from "./nav";
 const welcomeContainer = {
   tag: 'section',
   className: 'welcome-section-container',
-  content: [navigation,
+  content: [
+    {
+      tag: 'header',
+      className: 'header-wrapper',
+      content: [navigation]
+    },
     {
     tag: 'div',
     className: 'hero-container',
@@ -17,7 +22,7 @@ const welcomeContainer = {
         content: ['Welcome\n to the Louvre']
       },
       {
-        tag: 'p',
+        tag: 'h2',
         className: 'hero-content-text',
         content: ['From the castle to the museum']
       },
@@ -82,18 +87,32 @@ const welcomeContainer = {
           {
             tag: 'div',
             className: `hero-slider-controls-wrapper-slide-arrows-wrapper`,
-            content: [{
-              tag: 'img',
-              className: `hero-slider-controls-wrapper-slide-arrows-left`,
-              img: './assets/welcome/left.svg',
-              content: []
-            },
-            {
-              tag: 'img',
-              className: `hero-slider-controls-wrapper-slide-arrows-right`,
-              img: './assets/welcome/right.svg',
-              content: []
-            }]
+            content: [
+              {
+                tag: 'button',
+                className :'slide-arrows-left-button',
+                content: [{
+                  tag: 'img',
+                  className: `hero-slider-controls-wrapper-slide-arrows-left`,
+                  img: './assets/welcome/left.svg',
+                  alt: 'slider left arrow',
+                  content: []
+                }]
+              },
+              {
+                tag: 'button',
+                className :'slide-arrows-right-button',
+                content: [
+                  {
+                    tag: 'img',
+                    className: `hero-slider-controls-wrapper-slide-arrows-right`,
+                    img: './assets/welcome/right.svg',
+                    alt: 'slider right arrow',
+                    content: []
+                  }
+                ]
+              }
+              ]
           }
           ]
         }]

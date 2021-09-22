@@ -37,23 +37,36 @@ const amountSelector = (() => {
           className: 'ticket-selector-content-wrapper',
           content: [
             {
-              tag: 'img',
-              className: 'ticket-selector-content-minus',
-              img: './assets/tickets/minus.svg',
-              alt: 'minus',
-              content: ['-']
+              tag: 'button',
+              className: 'ticket-selector-content-minus-wrapper',
+              content: [
+                {
+                  tag: 'img',
+                  className: 'ticket-selector-content-minus',
+                  img: './assets/tickets/minus.svg',
+                  alt: 'minus',
+                  content: ['-']
+                }
+              ]
             },
             {
-              tag: 'p',
+              tag: 'input',
               className: 'ticket-selector-content-amount',
-              content: ['1']
+              type: 'number',
+              content: []
             },
             {
-              tag: 'img',
-              className: 'ticket-selector-content-plus',
-              img: './assets/tickets/plus.svg',
-              alt: 'plus',
-              content: ['+']
+              tag: 'button',
+              className: 'ticket-selector-content-plus-wrapper',
+              content: [
+                {
+                  tag: 'img',
+                  className: 'ticket-selector-content-plus',
+                  img: './assets/tickets/plus.svg',
+                  alt: 'plus',
+                  content: ['+']
+                }
+              ]
             }
           ]
         }

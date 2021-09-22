@@ -29,14 +29,21 @@ const videoContainer = {
           className: 'video-content-main-player-wrapper',
           content: [
             {
-              tag: 'img',
-              className: 'video-content-main-player-big-play',
-              img: './assets/video/big_play.svg',
-              content: []
+              tag: 'button',
+              className: 'video-content-main-player-big-play-button',
+              content: [
+                {
+                tag: 'img',
+                className: 'video-content-main-player-big-play',
+                alt: 'main play button',
+                img: './assets/video/big_play.svg',
+                content: []
+              }]
             },
             {
               tag: 'img',
               className: 'video-content-main-player',
+              alt: 'image of a player',
               img: './assets/video/placeholder_video.png',
               content: []
             },
@@ -45,11 +52,16 @@ const videoContainer = {
               className: 'video-content-main-player-controls-wrapper',
               content: [
                 {
-                  tag: 'img',
-                  className: 'video-content-main-player-controls-play',
-                  img: './assets/video/play.svg',
-                  alt: 'Play',
-                  content: []
+                  tag: 'button',
+                  className: 'video-content-main-player-controls-play-button',
+                  content: [
+                    {
+                    tag: 'img',
+                    className: 'video-content-main-player-controls-play',
+                    img: './assets/video/play.svg',
+                    alt: 'Play',
+                    content: []
+                  }]
                 },
                 {
                   tag: 'input',
@@ -58,11 +70,17 @@ const videoContainer = {
                   content: []
                 },
                 {
-                  tag: 'img',
-                  className: 'video-content-main-player-controls-volume',
-                  img: './assets/video/volume.svg',
-                  alt: 'Volume',
-                  content: []
+                  tag: 'button',
+                  className: 'video-content-main-player-controls-volume-button',
+                  content: [
+                    {
+                      tag: 'img',
+                      className: 'video-content-main-player-controls-volume',
+                      img: './assets/video/volume.svg',
+                      alt: 'Volume',
+                      content: []
+                    }
+                  ]
                 },
                 {
                   tag: 'input',
@@ -71,11 +89,17 @@ const videoContainer = {
                   content: []
                 },
                 {
-                  tag: 'img',
-                  className: 'video-content-main-player-controls-fullscreen',
-                  img: './assets/video/fullscreen.svg',
-                  alt: 'Fullscreen',
-                  content: []
+                  tag: 'button',
+                  className: 'video-content-main-player-controls-fullscreen-button',
+                  content: [
+                    {
+                      tag: 'img',
+                      className: 'video-content-main-player-controls-fullscreen',
+                      img: './assets/video/fullscreen.svg',
+                      alt: 'Fullscreen',
+                      content: []
+                    }
+                  ]
                 }
               ]
             }
@@ -102,11 +126,17 @@ const videoContainer = {
           className: 'video-content-videogallery-controls-wrapper',
           content: [
             {
-              tag: 'img',
-              className: 'video-content-videogallery-controls-left',
-              img: './assets/video/left.svg',
-              alt: 'left arrow',
-              content: []
+              tag: 'button',
+              className: 'video-content-videogallery-controls-left-button',
+              content: [
+                {
+                  tag: 'img',
+                  className: 'video-content-videogallery-controls-left',
+                  img: './assets/video/left.svg',
+                  alt: 'left arrow',
+                  content: []
+                }
+              ]
             },
             ...['1', '2', '3', '4', '5'].map((ele) => {
               return {
@@ -116,11 +146,17 @@ const videoContainer = {
               }
             }),
             {
-              tag: 'img',
-              className: 'video-content-videogallery-controls-right',
-              img: './assets/video/right.svg',
-              alt: 'right arrow',
-              content: []
+              tag: 'button',
+              className: 'video-content-videogallery-controls-right-button',
+              content: [
+                {
+                  tag: 'img',
+                  className: 'video-content-videogallery-controls-right',
+                  img: './assets/video/right.svg',
+                  alt: 'right arrow',
+                  content: []
+                }
+              ]
             }
           ]
         }
