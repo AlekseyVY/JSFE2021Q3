@@ -11,6 +11,8 @@ import parallaxContainer from "./data/parallax";
 import contactsContainer from "./data/contacts";
 import footerContainer from "./data/footer";
 import videoControlsStyle from "./components/videoPlayer";
+import buyTicketContainer from "./data/buyTicket";
+import modal from "./components/modal";
 
 
 const data = [
@@ -22,13 +24,15 @@ const data = [
   ticketContainer,
   parallaxContainer,
   contactsContainer,
-  footerContainer
+  footerContainer,
+  buyTicketContainer
   ];
 
 await (async () => {
   const rootNode = document.getElementById('root');
   data.map((ele) => CreateNode(ele, rootNode))
   await videoControlsStyle()
+  modal();
 })();
 
 

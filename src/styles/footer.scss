@@ -60,6 +60,10 @@
   justify-content: center;
 }
 
+.social-icon-wrapper:hover {
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
 .footer-content-delimeter {
   width: 100%;
   height: 3px;
