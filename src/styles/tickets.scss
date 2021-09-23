@@ -122,23 +122,23 @@
 }
 
 .ticket-selector-content-wrapper {
-  width: 150px;
-  height: 50px;
+  width: 143px;
+  height: 43px;
   display: flex;
   align-items: center;
   border: 3px solid #000000;
 }
 
 .ticket-selector-content-minus {
-  margin-left: 14px;
+  margin-left: 11px;
   width: 18px;
 }
 
 .ticket-selector-content-amount {
   width: 30px;
   border: none;
-  margin-left: 37px;
-  margin-right: 36px;
+  margin-left: 33px;
+  margin-right: 17px;
   font-family: Roboto, serif;
   font-style: normal;
   font-weight: 300;
@@ -151,6 +151,7 @@
 .ticket-selector-content-plus {
   margin-right: 14px;
   width: 19px;
+  padding-top: 7px;
 }
 
 .ticket-buy-select-content-total-wrapper {
@@ -169,7 +170,7 @@
 .ticket-buy-form-submit {
   width: 175px;
   height: 50px;
-  margin-top: 52px;
+  margin-top: 62px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,8 +184,12 @@
   text-align: center;
   letter-spacing: 2px;
   color: #FFFFFF;
+  transition: all 0.5s ease-in-out;
 }
 
 .ticket-buy-form-submit:hover {
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
+  color: #000;
+  background-color: #9D8665;
 }

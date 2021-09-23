@@ -53,6 +53,7 @@ const amountSelector = (() => {
               tag: 'input',
               className: 'ticket-selector-content-amount',
               type: 'number',
+              value: 1,
               content: []
             },
             {
