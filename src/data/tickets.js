@@ -7,6 +7,7 @@ const radioGroup = (() => {
       content: [
         {
           tag: 'input',
+          className: 'ticket-buy-type-select',
           type: 'radio',
           name: 'buy',
           content: []

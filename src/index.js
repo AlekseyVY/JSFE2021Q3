@@ -41,8 +41,9 @@ await( async() => {
   // tmp video selector style
   const videoSelected = document.getElementsByClassName('video-content-videogallery-controls-show');
   videoSelected[0].classList.add('video-selector-active');
-
-
+  // tmp ticket selection style
+  const ticketTypeSelected = document.getElementsByClassName('ticket-buy-type-select');
+  ticketTypeSelected[0].checked = true;
 })()
 
 
