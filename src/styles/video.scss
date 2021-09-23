@@ -139,3 +139,37 @@
   border-radius: 50%;
   background-color: #999999;
 }
+
+.video-content-videogallery-controls-show:hover {
+  cursor: pointer;
+}
+
+.video-content-main-player-big-play-button:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+.video-content-videogallery-controls-left-button:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+.video-content-videogallery-controls-right-button:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+.video-content-main-player-controls-play-button:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+.video-content-main-player-controls-volume-button:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+.video-content-main-player-controls-fullscreen-button:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}

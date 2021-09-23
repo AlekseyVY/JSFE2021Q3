@@ -10,6 +10,7 @@ import ticketContainer from "./data/tickets";
 import parallaxContainer from "./data/parallax";
 import contactsContainer from "./data/contacts";
 import footerContainer from "./data/footer";
+import videoControlsStyle from "./components/videoPlayer";
 
 
 const data = [
@@ -24,14 +25,24 @@ const data = [
   footerContainer
   ];
 
-(() => {
+await (async () => {
   const rootNode = document.getElementById('root');
   data.map((ele) => CreateNode(ele, rootNode))
+  await videoControlsStyle()
 })();
+
 
 
 // this is temporary  T_T
 await( async() => {
+  // tmp welcome selector style
   const welcomeSelected = document.getElementsByClassName('hero-slider-controls-wrapper-show-element');
   welcomeSelected[0].classList.add('welcome-selector-active');
+  // tmp video selector style
+  const videoSelected = document.getElementsByClassName('video-content-videogallery-controls-show');
+  videoSelected[0].classList.add('video-selector-active');
+
+
 })()
+
+
