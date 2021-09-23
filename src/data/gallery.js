@@ -11,16 +11,23 @@ function shuffle(array) {
 }
 
 const galleryData = shuffle(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']);
-const galleryDTO = galleryData.map((ele) => {
+const masonryData = [galleryData.slice(0, 5), galleryData.slice(5, 10), galleryData.slice(10, 15)]
+const masonryDTO =  masonryData.map((col) => {
   return {
-    tag: 'img',
-    className: 'gallery-card',
-    img: `./assets/gallery/galery${ele}.jpg`,
-    alt: `galery${ele} picture`,
-    content: []
+    tag: 'div',
+    className: 'gallery-columnn',
+    content: [...col.map((ele) => {
+        return {
+          tag: 'img',
+          className: 'gallery-card',
+          img: `./assets/gallery/galery${ele}.jpg`,
+          alt: `galery${ele} picture`,
+          content: []
+        }
+      })
+    ]
   }
 })
-
 
 const galleryContainer = {
   tag: 'section',
@@ -37,7 +44,7 @@ const galleryContainer = {
       {
         tag: 'div',
         className: 'gallery-content-gallery',
-        content: [...galleryDTO,
+        content: [...masonryDTO,
           {
             tag: 'div',
             className: 'gallery-content-overlay',

@@ -30,21 +30,16 @@
   max-width: 1440px;
   width: 100%;
   height: 1960px;
+  display: flex;
+  column-gap: 36px;
   margin-top: 75px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  column-gap: 36px;
-  .gallery-card:nth-child(3n+1) {
-    margin-top: 25px;
+  .gallery-columnn:nth-child(1) {
+    margin-top: 50px;
   }
-  .gallery-card:nth-child(3n+2) {
-    margin-bottom: 25px;
-  }
-  .gallery-card:nth-child(3n+3){
-    margin-top: 25px;
+  .gallery-columnn:nth-child(3) {
+    margin-top: 50px;
   }
 }
 
@@ -55,7 +50,6 @@
   max-height: 570px;
   width: auto;
   height: auto;
-  margin-bottom: -26px;
 }
 
 .gallery-content-overlay {
@@ -65,4 +59,10 @@
   left: 0;
   bottom: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+.gallery-columnn {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
 }
