@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2896938b-ef1b-4c60-8ddf-9688728833ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/modal/check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/modal/mastercard.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/modal/visa.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/buyTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/buyTicket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/buyTicket.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/buyTicket.scss" afterDir="false" />
-    </list>
+    <list default="true" id="2896938b-ef1b-4c60-8ddf-9688728833ed" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/modal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -65,6 +59,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\assets\modal" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\tours" />
     </key>
@@ -113,7 +108,7 @@
       <workItem from="1632391245887" duration="18358000" />
       <workItem from="1632412998005" duration="1574000" />
       <workItem from="1632416902731" duration="4937000" />
-      <workItem from="1632471351175" duration="12591000" />
+      <workItem from="1632471351175" duration="12880000" />
     </task>
     <servers />
   </component>
