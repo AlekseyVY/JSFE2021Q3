@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalekseyvy_jsfe2021q3=self.webpackChunkalekseyvy_jsfe2021q3||[]).push([[634],{533:(e,a,s)=>{s.r(a),s.d(a,{default:()=>l});const l={tag:"div",className:"parallax-container",content:[]}}}]);
