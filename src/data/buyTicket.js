@@ -225,7 +225,7 @@ const buyTicketContainer = {
                     {
                       tag: 'img',
                       className: 'modal-right-info-luvre',
-                      img: './assets/modal/luvre.png',
+                      img: './assets/modal/luvre.avif',
                       alt: 'luvre',
                       content: []
                     },

@@ -44,7 +44,7 @@ const videoContainer = {
               tag: 'img',
               className: 'video-content-main-player',
               alt: 'image of a player',
-              img: './assets/video/placeholder_video.png',
+              img: './assets/video/placeholder_video.avif',
               content: []
             },
             {

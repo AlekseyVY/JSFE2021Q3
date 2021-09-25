@@ -2,32 +2,32 @@
 const cardsGenerator = async () => {
   const data = [{
     name: 'royal palace',
-    img: './assets/visiting/royal_palace.png',
+    img: './assets/visiting/royal_palace.avif',
     link: 'tours/tour_1.html'
   },
   {
     name: 'denon wing',
-    img: './assets/visiting/denon_wing.png',
+    img: './assets/visiting/denon_wing.avif',
     link: 'tours/tour_2.html'
   },
     {
       name: 'colonnade perrault',
-      img: './assets/visiting/collonade.png',
+      img: './assets/visiting/collonade.avif',
       link: 'tours/tour_3.html'
     },
     {
       name: 'greek hall',
-      img: './assets/visiting/greek_hall.png',
+      img: './assets/visiting/greek_hall.avif',
       link: 'tours/tour_4.html'
     },
     {
       name: 'mona lisa',
-      img: './assets/visiting/mona_lisa.png',
+      img: './assets/visiting/mona_lisa.avif',
       link: 'tours/tour_5.html'
     },
     {
       name: 'night palace',
-      img: './assets/visiting/night_palace.png',
+      img: './assets/visiting/night_palace.avif',
       link: 'tours/tour_6.html'
     }]
 

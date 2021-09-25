@@ -46,7 +46,7 @@ const welcomeContainer = {
           tag: 'img',
           className: 'hero-slider_img',
           alt: 'mona lisa',
-          img: './assets/welcome/hero_slide_1.png',
+          img: './assets/welcome/hero_slide_1.avif',
           content: []
         },
         {

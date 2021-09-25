@@ -1,38 +1,45 @@
 import 'normalize.css';
 import "./main.scss";
-import CreateNode from './components/createNode';
-import welcomeContainer from './data/welcome/welcome'
-import visitingContainer from "./data/visiting";
-import exploreContainer from "./data/explore";
-import videoContainer from "./data/video";
-import galleryContainer from "./data/gallery";
-import ticketContainer from "./data/tickets";
-import parallaxContainer from "./data/parallax";
-import contactsContainer from "./data/contacts";
-import footerContainer from "./data/footer";
-import videoControlsStyle from "./components/videoPlayer";
-import buyTicketContainer from "./data/buyTicket";
-import modal from "./components/modal";
+const CreateNode = await import( /* webpackChunkName: "createNode" */ './components/createNode');
+const welcomeContainer = await import( /* webpackChunkName: "welcomeContainer" */ './data/welcome/welcome');
+const visitingContainer = await import(/* webpackChunkName: "visitingContainer" */ "./data/visiting");
+const exploreContainer = await import(/* webpackChunkName: "exploreContainer" */ "./data/explore");
+const videoContainer = await import(/* webpackChunkName: "videoContainer" */ "./data/video");
+const galleryContainer = await import(/* webpackChunkName: "galleryContainer" */ "./data/gallery");
+const ticketContainer = await import(/* webpackChunkName: "ticketContainer" */ "./data/tickets");
+const parallaxContainer = await import(/* webpackChunkName: "parallaxContainer" */ "./data/parallax");
+const contactsContainer = await import(/* webpackChunkName: "contactsContainer" */ "./data/contacts");
+const footerContainer = await import(/* webpackChunkName: "footerContainer" */ "./data/footer");
+const buyTicketContainer = await import(/* webpackChunkName: "buyTicketContainer" */ "./data/buyTicket");
+
+const videoControlsStyle = await import(/* webpackChunkName: "videoControlsStyle" */ "./components/videoPlayer");
+const modal = await import(/* webpackChunkName: "modal" */ "./components/modal");
 
 
 const data = [
-  welcomeContainer,
-  visitingContainer,
-  exploreContainer,
-  videoContainer,
-  galleryContainer,
-  ticketContainer,
-  parallaxContainer,
-  contactsContainer,
-  footerContainer,
-  buyTicketContainer
+  welcomeContainer.default,
+  visitingContainer.default,
+  exploreContainer.default,
+  videoContainer.default,
+  galleryContainer.default,
+  ticketContainer.default,
+  parallaxContainer.default,
+  contactsContainer.default,
+  footerContainer.default,
+  buyTicketContainer.default
   ];
+
+
 
 await (async () => {
   const rootNode = document.getElementById('root');
-  data.map((ele) => CreateNode(ele, rootNode))
-  await videoControlsStyle()
-  modal();
+  data.map((ele) => CreateNode.default(ele, rootNode))
+  await videoControlsStyle.default()
+  await modal.default();
+
+  // window.addEventListener('resize', () => {
+  //   console.log(window.matchMedia('(max-width: 1440px)'))
+  // });
 })();
 
 

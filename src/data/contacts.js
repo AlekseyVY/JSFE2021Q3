@@ -50,7 +50,7 @@ const contactsContainer = {
             {
               tag: 'img',
               className: 'contacts-content-location',
-              img: './assets/contacts/tmp.png',
+              img: './assets/contacts/tmp.avif',
               alt: 'location',
               content: []
             }

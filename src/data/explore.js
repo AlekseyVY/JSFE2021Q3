@@ -39,7 +39,7 @@ const exploreContainer = {
       {
         tag: 'img',
         className: 'explore-content-img',
-        img: './assets/explore/explore.png',
+        img: './assets/explore/explore.avif',
         alt: 'explore',
         content: []
       }]

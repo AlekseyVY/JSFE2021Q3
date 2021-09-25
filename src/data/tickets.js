@@ -103,7 +103,7 @@ const ticketContainer = {
             {
               tag: 'img',
               className: 'ticket-content-buy-pic',
-              img: './assets/tickets/tickets.png',
+              img: './assets/tickets/tickets.avif',
               alt: 'tickets pic',
               content: []
             },

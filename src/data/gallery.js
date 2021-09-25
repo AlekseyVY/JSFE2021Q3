@@ -21,7 +21,7 @@ const masonryDTO =  masonryData.map((col) => {
         return {
           tag: 'img',
           className: 'gallery-card',
-          img: `./assets/gallery/galery${ele}.jpg`,
+          img: `./assets/gallery/galery${ele}.avif`,
           alt: `galery${ele} picture`,
           content: []
         }
