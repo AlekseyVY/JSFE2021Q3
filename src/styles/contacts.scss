@@ -85,3 +85,18 @@
   width: 960px;
   height: 620px;
 }
+
+.phoneto:hover {
+  cursor: pointer;
+  .contacts-content-inner-list-phone {
+    color: #9d8665;
+  }
+
+}
+
+.mailto:hover {
+  cursor: pointer;
+  .contacts-content-inner-list-mail {
+    color: #9d8665;
+  }
+}

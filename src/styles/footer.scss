@@ -9,6 +9,7 @@
 .footer-content-wrapper {
   width: 1440px;
   height: 392px;
+  position: relative;
 }
 
 .footer-content-top-wrapper {
@@ -19,7 +20,8 @@
   .nav-container {
     max-width: 703px;
     display: flex;
-    margin-top: 75px;
+    margin-right: auto;
+    margin-top: 34px;
     align-items: normal;
     justify-content: normal;
   }
@@ -41,9 +43,12 @@
 }
 
 .footer-content-social-wrapper {
-  width: 355px;
+  width: 343px;
   margin-left: 355px;
   margin-top: 105px;
+  position: absolute;
+  top: 55px;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,6 +99,11 @@
   line-height: 22px;
   letter-spacing: 2px;
   color: #FFFFFF;
+}
+
+.footer-content-last-text:hover {
+  cursor: pointer;
+  color: #9d8665;
 }
 
 .footer-content-top-wrapper {

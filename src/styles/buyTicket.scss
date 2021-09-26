@@ -7,7 +7,7 @@
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
-  //left: -100vw;
+  left: -100vw;
   background-color: rgba(15, 15, 14, 0.3);
   z-index: 90;
   transition: left 1s ease-in-out;
@@ -23,7 +23,7 @@
   min-height: 845px;
   top: 50%;
   transform: translate(-50%, -50%);
-  //left: -100vw;
+  left: -100vw;
   position: fixed;
   display: flex;
   align-items: center;
@@ -213,7 +213,7 @@ select {
 .modal-form-select-option {
   width: 400px;
   height: 47px;
-  padding-left: 41px;
+  padding: 5px 5px 5px 41px;
 }
 
 .form-ticket-amount-wrapper {
@@ -293,7 +293,7 @@ select {
   padding: 0;
 }
 
-.form-ticket-amount-minus-button {
+.form-ticket-amount-plus-button {
   width: 35px;
   height: 25px;
   background-color: #000;
@@ -568,6 +568,7 @@ select {
 .modal-submit-btn:hover {
   cursor: pointer;
   background-color: #9d8665;
+  transition: all 0.5s ease-in-out;
 }
 .card-img-wrapper {
   width: 55px;
@@ -733,11 +734,12 @@ select {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
+  transition: all 0.5s ease-in-out;
 }
 
 button .circle {
   position: absolute;
-  background-color: #710707;
+  background-color: #fff;
   width: 100px;
   height: 100px;
   border-radius: 50%;

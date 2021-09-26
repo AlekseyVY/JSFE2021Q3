@@ -292,7 +292,7 @@ const buyTicketContainer = {
                                     },
                                     {
                                       tag: 'button',
-                                      className: 'form-ticket-amount-minus-button',
+                                      className: 'form-ticket-amount-plus-button',
                                       content: ['+']
                                     },
                                   ]
@@ -326,7 +326,7 @@ const buyTicketContainer = {
                                     },
                                     {
                                       tag: 'button',
-                                      className: 'form-ticket-amount-minus-button',
+                                      className: 'form-ticket-amount-plus-button',
                                       content: ['+']
                                     },
                                   ]

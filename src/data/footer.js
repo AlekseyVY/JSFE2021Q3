@@ -68,17 +68,23 @@ const footerContainer = {
               className: 'footer-content-bot-last-wrapper',
               content: [
                 {
-                  tag: 'p',
+                  tag: 'a',
                   className: 'footer-content-last-text',
+                  link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                  blank: true,
                   content: ['© 2021']
                 },
                 {
-                  tag: 'p',
+                  tag: 'a',
+                  link: 'https://rollingscopes.com/',
+                  blank: true,
                   className: 'footer-content-last-text',
                   content: ['The Rolling Scopes School']
                 },
                 {
-                  tag: 'p',
+                  tag: 'a',
+                  link: 'https://github.com/AlekseyVY',
+                  blank: true,
                   className: 'footer-content-last-text',
                   content: ['AlekseyVY']
                 }

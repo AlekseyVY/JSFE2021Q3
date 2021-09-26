@@ -81,6 +81,10 @@
   color: #000000;
 }
 
+.ticket-buy-radio-wrapper:hover {
+  cursor: pointer;
+}
+
 .ticket-buy-radio-p {
   margin-left: 23px;
 }
@@ -135,9 +139,9 @@
 }
 
 .ticket-selector-content-amount {
-  width: 30px;
+  width: 40px;
   border: none;
-  margin-left: 33px;
+  margin-left: 25px;
   margin-right: 17px;
   font-family: Roboto, serif;
   font-style: normal;
@@ -146,6 +150,7 @@
   line-height: 26px;
   text-align: center;
   color: #000000;
+  pointer-events: none;
 }
 
 .ticket-selector-content-plus {
@@ -190,6 +195,5 @@
 .ticket-buy-form-submit:hover {
   transition: all 0.5s ease-in-out;
   cursor: pointer;
-  color: #000;
   background-color: #9D8665;
 }
