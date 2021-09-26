@@ -41,6 +41,7 @@ const cardsGenerator = async () => {
         tag: 'img',
         className: 'visiting-card-img',
         alt: ele.name,
+        lazy: true,
         img: ele.img,
         content: []
       },

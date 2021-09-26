@@ -46,6 +46,7 @@ const welcomeContainer = {
           tag: 'img',
           className: 'hero-slider_img',
           alt: 'mona lisa',
+          lazy: true,
           img: './assets/welcome/hero_slide_1.avif',
           content: []
         },
@@ -96,6 +97,7 @@ const welcomeContainer = {
                   className: `hero-slider-controls-wrapper-slide-arrows-left`,
                   img: './assets/welcome/left.svg',
                   alt: 'slider left arrow',
+                  lazy: true,
                   content: []
                 }]
               },
@@ -108,6 +110,7 @@ const welcomeContainer = {
                     className: `hero-slider-controls-wrapper-slide-arrows-right`,
                     img: './assets/welcome/right.svg',
                     alt: 'slider right arrow',
+                    lazy: true,
                     content: []
                   }
                 ]

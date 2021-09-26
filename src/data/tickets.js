@@ -46,6 +46,7 @@ const amountSelector = (() => {
                   className: 'ticket-selector-content-minus',
                   img: './assets/tickets/minus.svg',
                   alt: 'minus',
+                  lazy: true,
                   content: ['-']
                 }
               ]
@@ -66,6 +67,7 @@ const amountSelector = (() => {
                   className: 'ticket-selector-content-plus',
                   img: './assets/tickets/plus.svg',
                   alt: 'plus',
+                  lazy: true,
                   content: ['+']
                 }
               ]
@@ -105,6 +107,7 @@ const ticketContainer = {
               className: 'ticket-content-buy-pic',
               img: './assets/tickets/tickets.avif',
               alt: 'tickets pic',
+              lazy: true,
               content: []
             },
             {

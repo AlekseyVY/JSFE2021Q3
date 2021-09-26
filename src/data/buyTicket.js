@@ -19,6 +19,7 @@ const buyTicketContainer = {
           className: 'modal-close',
           img: './assets/modal/close.svg',
           alt: 'Close modal',
+          lazy: true,
           content: []
         },
         {
@@ -38,6 +39,7 @@ const buyTicketContainer = {
                       className: 'modal-inner-left-logo-img',
                       img: './assets/modal/logo.svg',
                       alt: 'Logo',
+                      lazy: true,
                       content: []
                     },
                     {
@@ -64,45 +66,170 @@ const buyTicketContainer = {
                           className: 'modal-left-form-date-time-wrapper',
                           content: [
                             {
-                              tag: 'input',
-                              type: 'date',
-                              className: 'modal-form-date',
+                              tag: 'div',
+                              className: 'modal-form-date-wrapper',
+                              content: [
+                                {
+                                  tag: 'img',
+                                  className: 'modal-form-date-img',
+                                  img: './assets/modal/inputs/calendar.svg',
+                                  alt: 'Calendar',
+                                  lazy: true,
+                                  content: []
+                                },
+                                {
+                                  tag: 'p',
+                                  className: 'modal-form-date-img-placeholder',
+                                  content: ['Date']
+                                },
+                                {
+                                  tag: 'img',
+                                  className: 'modal-form-date-arrow',
+                                  img: './assets/modal/inputs/arrow.svg',
+                                  alt: 'arrow',
+                                  lazy: true,
+                                  content: []
+                                },
+                                {
+                                  tag: 'input',
+                                  type: 'date',
+                                  placeholder: 'Date',
+                                  className: 'modal-form-date',
+                                  content: []
+                                }
+                              ]
+                            },
+                            {
+                              tag: 'div',
+                              className: 'modal-form-time-wrapper',
+                              content: [
+                                {
+                                  tag: 'img',
+                                  className: 'modal-form-time-img',
+                                  img: './assets/modal/inputs/time.svg',
+                                  alt: 'time',
+                                  lazy: true,
+                                  content: []
+                                },
+                                {
+                                  tag: 'img',
+                                  className: 'modal-form-time-arrow',
+                                  img: './assets/modal/inputs/arrow.svg',
+                                  alt: 'arrow',
+                                  lazy: true,
+                                  content: []
+                                },
+                                {
+                                  tag: 'p',
+                                  className: 'modal-form-time-text',
+                                  content: ['Time']
+                                },
+                                {
+                                  tag: 'input',
+                                  type: 'time',
+                                  className: 'modal-form-time',
+                                  content: []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          tag: 'div',
+                          className: 'modal-form-name-wrapper',
+                          content: [
+                            {
+                              tag: 'img',
+                              className: 'modal-form-name-img',
+                              img: './assets/modal/inputs/name.svg',
+                              alt: 'name',
+                              lazy: true,
                               content: []
                             },
                             {
                               tag: 'input',
-                              type: 'time',
-                              className: 'modal-form-time',
+                              type: 'text',
+                              placeholder: 'Name',
+                              className: 'modal-form-name',
                               content: []
                             }
                           ]
                         },
                         {
-                          tag: 'input',
-                          type: 'text',
-                          className: 'modal-form-name',
-                          content: []
+                          tag: 'div',
+                          className: 'modal-form-email-wrapper',
+                          content: [
+                            {
+                              tag: 'img',
+                              className: 'modal-form-email-img',
+                              img: './assets/modal/inputs/mail.svg',
+                              alt: 'mail',
+                              lazy: true,
+                              content: []
+                            },
+                            {
+                              tag: 'input',
+                              type: 'email',
+                              placeholder: 'E-mail',
+                              className: 'modal-form-email',
+                              content: []
+                            }
+                          ]
                         },
                         {
-                          tag: 'input',
-                          type: 'email',
-                          className: 'modal-form-email',
-                          content: []
-                        },
-                        {
-                          tag: 'input',
-                          type: 'tel',
-                          className: 'modal-form-tel',
-                          content: []
+                          tag: 'div',
+                          className: 'modal-form-tel-wrapper',
+                          content: [
+                            {
+                              tag: 'img',
+                              className: 'modal-form-tel-img',
+                              img: './assets/modal/inputs/phone.svg',
+                              alt: 'phone',
+                              lazy: true,
+                              content: []
+                            },
+                            {
+                              tag: 'input',
+                              type: 'tel',
+                              placeholder: 'Phone',
+                              className: 'modal-form-tel',
+                              content: []
+                            }
+                          ]
                         },
                         {
                           tag: 'div',
                           className: 'modal-form-custom-select',
                           content: [
                             {
+                              tag: 'img',
+                              className: 'modal-form-select-img',
+                              img: './assets/modal/inputs/check.svg',
+                              alt: 'select',
+                              lazy: true,
+                              content: []
+                            },
+                            {
+                              tag: 'img',
+                              className: 'modal-form-select-img-arrow',
+                              img: './assets/modal/inputs/arrow.svg',
+                              alt: 'arrow',
+                              lazy: true,
+                              content: []
+                            },
+                            {
                               tag: 'select',
                               className: 'modal-form-select',
                               content: [
+                                {
+                                  tag: 'option',
+                                  className: 'modal-form-select-option',
+                                  value: '',
+                                  selected: true,
+                                  disabled: true,
+                                  hidden :true,
+                                  content: ['Ticket Type']
+                                },
                                 {
                                   tag: 'option',
                                   className: 'modal-form-select-option',
@@ -227,6 +354,7 @@ const buyTicketContainer = {
                       className: 'modal-right-info-luvre',
                       img: './assets/modal/luvre.avif',
                       alt: 'luvre',
+                      lazy: true,
                       content: []
                     },
                     {
@@ -248,6 +376,7 @@ const buyTicketContainer = {
                           className: 'modal-right-info-date-img',
                           img: './assets/modal/date.svg',
                           alt: 'date',
+                          lazy: true,
                           content: []
                         },
                         {
@@ -266,6 +395,7 @@ const buyTicketContainer = {
                           className: 'modal-right-info-time-img',
                           img: './assets/modal/time.svg',
                           alt: 'time',
+                          lazy: true,
                           content: []
                         },
                         {
@@ -284,6 +414,7 @@ const buyTicketContainer = {
                           className: 'modal-right-info-check-img',
                           img: './assets/modal/check.svg',
                           alt: 'check',
+                          lazy: true,
                           content: []
                         },
                         {
@@ -377,6 +508,7 @@ const buyTicketContainer = {
                           className: 'card-visa-img',
                           img: './assets/modal/visa.svg',
                           alt: 'visa logo',
+                          lazy: true,
                           content: []
                         },
                         {
@@ -384,6 +516,7 @@ const buyTicketContainer = {
                           className: 'card-master-img',
                           img: './assets/modal/mastercard.svg',
                           alt: 'master logo',
+                          lazy: true,
                           content: []
                         }
                       ]
@@ -397,12 +530,13 @@ const buyTicketContainer = {
                           className: 'card-number-text',
                           content: ['Card number']
                         },
-                        {
-                          tag: 'input',
-                          type: 'text',
-                          className: 'card-number-input',
-                          content: []
-                        }
+                         {
+                           tag: 'input',
+                           type: 'text',
+                           className: 'card-number-input',
+                           content: []
+                         }
+
                       ]
                     },
                     {
@@ -419,19 +553,47 @@ const buyTicketContainer = {
                           className: 'card-date-input-wrapper',
                           content: [
                             {
-                              tag: 'input',
-                              type: 'number',
-                              value: 3,
-                              className: 'card-date-input',
-                              content: []
+                              tag: 'div',
+                              className: 'card-number-left-wrapper',
+                              content: [
+                                {
+                                  tag: 'img',
+                                  className: 'card-number-left-img',
+                                  img: './assets/modal/inputs/card_arrow.svg',
+                                  lazy: true,
+                                  alt: 'card arrows',
+                                  content: []
+                                },
+                                {
+                                  tag: 'input',
+                                  type: 'number',
+                                  value: '03',
+                                  className: 'card-date-input',
+                                  content: []
+                                }
+                              ]
                             },
                             {
-                              tag: 'input',
-                              type: 'number',
-                              value: 2024,
-                              className: 'card-date-input',
-                              content: []
-                            }
+                              tag: 'div',
+                              className: 'card-number-left-wrapper',
+                              content: [
+                                {
+                                  tag: 'img',
+                                  className: 'card-number-left-img',
+                                  img: './assets/modal/inputs/card_arrow.svg',
+                                  lazy: true,
+                                  alt: 'card arrows',
+                                  content: []
+                                },
+                                {
+                                  tag: 'input',
+                                  type: 'number',
+                                  value: 2024,
+                                  className: 'card-date-input',
+                                  content: []
+                                }
+                              ]
+                            },
                           ]
                         }
                       ]

@@ -7,7 +7,7 @@
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
-  left: -100vw;
+  //left: -100vw;
   background-color: rgba(15, 15, 14, 0.3);
   z-index: 90;
   transition: left 1s ease-in-out;
@@ -23,7 +23,7 @@
   min-height: 845px;
   top: 50%;
   transform: translate(-50%, -50%);
-  left: -100vw;
+  //left: -100vw;
   position: fixed;
   display: flex;
   align-items: center;
@@ -118,60 +118,107 @@
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  align-items: center;
+  color: #030303;
 }
 
 .modal-form-date {
-  width: 190px;
+  width: 188px;
   height: 45px;
   border: 1px solid #000;
 }
 
 .modal-form-time {
-  width: 190px;
+  width: 188px;
   height: 45px;
   border: 1px solid #000;
 }
 
 .modal-form-name {
-  width: 394px;
-  height: 45px;
-  margin-top: 20px;
+  width: 352px;
+  height: 40px;
+  padding-left: 41px;
   border: 1px solid #000;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
 }
 
 .modal-form-email {
-  width: 394px;
-  height: 45px;
-  margin-top: 20px;
+  width: 352px;
+  height: 41px;
+  padding-left: 41px;
   border: 1px solid #000;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
 }
 
 .modal-form-tel {
-  width: 394px;
-  height: 45px;
-  margin-top: 20px;
+  width: 352px;
+  height: 41px;
+  padding-left: 41px;
   border: 1px solid #000;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
 }
 
 .modal-form-custom-select {
-
+  position: relative;
+  margin-top: 20px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
 }
 
 .modal-form-select {
   width: 400px;
   height: 47px;
-  margin-top: 20px;
+  padding-left: 41px;
   border: 1px solid #000;
+}
+
+select {
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
 }
 
 .modal-form-select-option {
   width: 400px;
   height: 47px;
+  padding-left: 41px;
 }
 
 .form-ticket-amount-wrapper {
   width: 373px;
-  height: 113px;
+  height: 107px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -180,6 +227,7 @@
 }
 
 .form-ticket-amount-logo {
+  margin-left: 5px;
   font-family: Forum, serif;
   font-style: normal;
   font-weight: normal;
@@ -192,7 +240,6 @@
 .form-ticket-amount-delimeter {
   width: 100%;
   height: 3px;
-  margin-top: 5px;
   background: #740C11;
   opacity: 0.9;
 }
@@ -205,6 +252,8 @@
 }
 
 .form-ticket-amount-basic-text {
+  margin-left: 2px;
+  margin-top: 2px;
   font-family: Roboto, serif;
   font-style: normal;
   font-weight: normal;
@@ -259,6 +308,8 @@
 }
 
 .form-ticket-amount-senior-text {
+  margin-left: 2px;
+  margin-top: 2px;
   font-family: Roboto, serif;
   font-style: normal;
   font-weight: normal;
@@ -270,13 +321,15 @@
 .modal-inner-right-wrapper {
   max-width: 530px;
   width: 100%;
+  margin-top: 5px;
+  border: 1px solid #000;
   position: relative;
 }
 
 .modal-inner-right-info-wrapper {
   width: 470px;
   margin-left: 30px;
-  margin-top: 25px;
+  margin-top: 28px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -530,6 +583,7 @@
 .card-number-wrapper {
   width: 215px;
   height: 54px;
+  padding-top: 15px;
   margin-left: 20px;
   margin-top: 15px;
   display: flex;
@@ -579,9 +633,9 @@
 }
 
 .card-date-input {
-  width: 100px;
+  padding: 0 0 0 10px;
+  width: 90px;
   height: 35px;
-  padding: 0;
   border: 1px solid #000;
 }
 
@@ -632,7 +686,7 @@
 }
 
 .cardback-cvv-text {
-  margin-right: 29px;
+  margin-right: 34px;
   margin-top: 15px;
   font-family: Roboto, serif;
   font-style: normal;
@@ -643,7 +697,7 @@
 }
 
 .cardback-input {
-  width: 75px;
+  width: 70px;
   height: 35px;
   margin-top: 5px;
   margin-right: 20px;
@@ -652,8 +706,8 @@
 }
 
 .cardback-sec-text {
-  margin-top: 6px;
-  margin-right: 30px;
+  margin-right: 35px;
+  margin-top: 2px;
   font-family: Roboto, serif;
   font-style: normal;
   font-weight: normal;
@@ -667,6 +721,8 @@
   height: 45px;
   display: flex;
   margin: 56px 30px 26px auto;
+  position: relative;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   outline: none;
@@ -677,4 +733,188 @@
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
+}
+
+button .circle {
+  position: absolute;
+  background-color: #710707;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+.modal-form-date-wrapper {
+  position: relative;
+}
+
+.modal-form-date-img {
+  position: absolute;
+  left: 14px;
+  top: 17px;
+}
+
+.modal-form-date-arrow {
+  position: absolute;
+  right: 17px;
+  bottom: 15px;
+  width: 17px;
+  height: 17px;
+  pointer-events: none;
+}
+
+.modal-form-name-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+.modal-form-name-img {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+}
+
+.modal-form-email-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+.modal-form-email-img {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+}
+
+.modal-form-tel-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+.modal-form-tel-img {
+  position: absolute;
+  left: 14px;
+  top: 12px;
+}
+
+.modal-form-select-img {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+}
+
+.card-number-left-wrapper {
+  position: relative;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+}
+
+.card-number-left-img {
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+}
+
+.modal-form-select-img-arrow {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  padding-right: 13px;
+  opacity: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  opacity: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+  opacity: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+  opacity: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+  opacity: 0;
+}
+.modal-form-date-img-placeholder {
+  position: absolute;
+  top: 13px;
+  left: 45px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+}
+
+.modal-form-time-wrapper {
+  position: relative;
+}
+
+.modal-form-time-img {
+  position: absolute;
+  top: 16px;
+  left: 15px;
+}
+
+.modal-form-time-arrow {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  pointer-events: none;
+}
+
+.modal-form-time-text {
+  position: absolute;
+  top: 14px;
+  left: 45px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+}
+
+input[type=time]::-webkit-datetime-edit-text {
+  display: none;
+}
+
+input[type=time]::-webkit-datetime-edit-hour-field {
+  display: none;
+}
+
+input[type=time]::-webkit-datetime-edit-minute-field {
+  display: none;
+}
+
+input[type=time]::-webkit-datetime-edit-ampm-field {
+  display: none;
+}
+
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  padding-right: 13px;
+  opacity: 0;
 }

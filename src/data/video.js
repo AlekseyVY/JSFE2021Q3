@@ -36,6 +36,7 @@ const videoContainer = {
                 tag: 'img',
                 className: 'video-content-main-player-big-play',
                 alt: 'main play button',
+                  lazy: true,
                 img: './assets/video/big_play.svg',
                 content: []
               }]
@@ -44,6 +45,7 @@ const videoContainer = {
               tag: 'img',
               className: 'video-content-main-player',
               alt: 'image of a player',
+              lazy: true,
               img: './assets/video/placeholder_video.avif',
               content: []
             },
@@ -60,6 +62,7 @@ const videoContainer = {
                     className: 'video-content-main-player-controls-play',
                     img: './assets/video/play.svg',
                     alt: 'Play',
+                      lazy: true,
                     content: []
                   }]
                 },
@@ -78,6 +81,7 @@ const videoContainer = {
                       className: 'video-content-main-player-controls-volume',
                       img: './assets/video/volume.svg',
                       alt: 'Volume',
+                      lazy: true,
                       content: []
                     }
                   ]
@@ -97,6 +101,7 @@ const videoContainer = {
                       className: 'video-content-main-player-controls-fullscreen',
                       img: './assets/video/fullscreen.svg',
                       alt: 'Fullscreen',
+                      lazy: true,
                       content: []
                     }
                   ]
@@ -134,6 +139,7 @@ const videoContainer = {
                   className: 'video-content-videogallery-controls-left',
                   img: './assets/video/left.svg',
                   alt: 'left arrow',
+                  lazy: true,
                   content: []
                 }
               ]
@@ -154,6 +160,7 @@ const videoContainer = {
                   className: 'video-content-videogallery-controls-right',
                   img: './assets/video/right.svg',
                   alt: 'right arrow',
+                  lazy: true,
                   content: []
                 }
               ]

@@ -52,6 +52,7 @@ const contactsContainer = {
               className: 'contacts-content-location',
               img: './assets/contacts/tmp.avif',
               alt: 'location',
+              lazy: true,
               content: []
             }
           ]

@@ -24,6 +24,7 @@ const socialGenerator = (() => {
                 className: `social-icon`,
                 img: `./assets/footer/socials/${ele.name}.svg`,
                 alt: `${ele.name}`,
+                lazy: true,
                 content: []
               }
             ]

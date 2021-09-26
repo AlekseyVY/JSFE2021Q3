@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 const htmlPage = ['tour_1', 'tour_2', 'tour_3', 'tour_4', 'tour_5', 'tour_6'];
 const multipleHtml = htmlPage.map(name => {
@@ -55,7 +56,17 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: "all",
-    }
+      cacheGroups: {
+        vendor: {
+          name: "node_vendors",
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "all",
+        }
+      }
+    },
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+    moduleIds: 'deterministic',
   },
   experiments: {
     topLevelAwait: true,

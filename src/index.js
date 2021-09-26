@@ -1,7 +1,7 @@
 import 'normalize.css';
 import "./main.scss";
-const CreateNode = await import( /* webpackChunkName: "createNode" */ './components/createNode');
-const welcomeContainer = await import( /* webpackChunkName: "welcomeContainer" */ './data/welcome/welcome');
+const CreateNode = await import(/* webpackChunkName: "createNode" */ './components/createNode');
+const welcomeContainer = await import(/* webpackChunkName: "welcomeContainer" */ './data/welcome/welcome');
 const visitingContainer = await import(/* webpackChunkName: "visitingContainer" */ "./data/visiting");
 const exploreContainer = await import(/* webpackChunkName: "exploreContainer" */ "./data/explore");
 const videoContainer = await import(/* webpackChunkName: "videoContainer" */ "./data/video");
@@ -11,9 +11,9 @@ const parallaxContainer = await import(/* webpackChunkName: "parallaxContainer" 
 const contactsContainer = await import(/* webpackChunkName: "contactsContainer" */ "./data/contacts");
 const footerContainer = await import(/* webpackChunkName: "footerContainer" */ "./data/footer");
 const buyTicketContainer = await import(/* webpackChunkName: "buyTicketContainer" */ "./data/buyTicket");
-
 const videoControlsStyle = await import(/* webpackChunkName: "videoControlsStyle" */ "./components/videoPlayer");
 const modal = await import(/* webpackChunkName: "modal" */ "./components/modal");
+const rippleEffect = await import(/* webpackChunkName: "ripple" */ "./components/ripple");
 
 
 const data = [
@@ -36,6 +36,7 @@ await (async () => {
   data.map((ele) => CreateNode.default(ele, rootNode))
   await videoControlsStyle.default()
   await modal.default();
+  await rippleEffect.default();
 
   // window.addEventListener('resize', () => {
   //   console.log(window.matchMedia('(max-width: 1440px)'))
@@ -56,5 +57,6 @@ await( async() => {
   const ticketTypeSelected = document.getElementsByClassName('ticket-buy-type-select');
   ticketTypeSelected[0].checked = true;
 })()
+
 
 

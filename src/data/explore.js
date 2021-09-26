@@ -41,6 +41,7 @@ const exploreContainer = {
         className: 'explore-content-img',
         img: './assets/explore/explore.avif',
         alt: 'explore',
+        lazy: true,
         content: []
       }]
   }]

@@ -24,6 +24,7 @@ const navigation = {
       tag: 'img',
       className: 'nav-logo',
       alt: 'logo',
+      lazy: true,
       img: './assets/welcome/logo.svg',
       content: []
     },
