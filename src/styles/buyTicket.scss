@@ -128,14 +128,18 @@
 }
 
 .modal-form-date {
-  width: 188px;
+  width: 143px;
   height: 45px;
+  padding-left: 45px;
   border: 1px solid #000;
+  font-size: 15px;
 }
 
 .modal-form-time {
-  width: 188px;
+  width: 143px;
+  padding-left: 45px;
   height: 45px;
+  font-size: 15px;
   border: 1px solid #000;
 }
 
@@ -839,21 +843,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 
-input[type="date"]::-webkit-datetime-edit-text {
+input[type="date"]:not(.has-value)::-webkit-datetime-edit-text {
   opacity: 0;
 }
 
-input[type="date"]::-webkit-datetime-edit-month-field {
+input[type="date"]:not(.has-value)::-webkit-datetime-edit-month-field {
   opacity: 0;
 }
 
-input[type="date"]::-webkit-datetime-edit-day-field {
+input[type="date"]:not(.has-value)::-webkit-datetime-edit-day-field {
   opacity: 0;
 }
 
-input[type="date"]::-webkit-datetime-edit-year-field {
+input[type="date"]:not(.has-value)::-webkit-datetime-edit-year-field {
   opacity: 0;
 }
+
 .modal-form-date-img-placeholder {
   position: absolute;
   top: 13px;
@@ -899,24 +904,24 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   color: #030303;
 }
 
-input[type=time]::-webkit-datetime-edit-text {
-  display: none;
+input[type=time]:not(.has-value)::-webkit-datetime-edit-text {
+  opacity: 0;
 }
 
-input[type=time]::-webkit-datetime-edit-hour-field {
-  display: none;
+input[type=time]:not(.has-value)::-webkit-datetime-edit-hour-field {
+  opacity: 0;
 }
 
-input[type=time]::-webkit-datetime-edit-minute-field {
-  display: none;
+input[type=time]:not(.has-value)::-webkit-datetime-edit-minute-field {
+  opacity: 0;
 }
 
-input[type=time]::-webkit-datetime-edit-ampm-field {
-  display: none;
+input[type=time]:not(.has-value)::-webkit-datetime-edit-ampm-field {
+  opacity: 0;
 }
 
 
 input[type="time"]::-webkit-calendar-picker-indicator {
-  padding-right: 13px;
+  margin-right: 11px;
   opacity: 0;
 }

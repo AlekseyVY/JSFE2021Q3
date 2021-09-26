@@ -1,5 +1,5 @@
 
-const CreateNode = ({tag, className, id, content, link, img, blank, alt, type, lazy, name, value, placeholder, selected, disabled ,hidden}, parent) => {
+const CreateNode = ({tag, className, id, content, link, img, blank, alt, type, lazy, name, value, placeholder, selected, disabled ,hidden, onchange}, parent) => {
   const element = document.createElement(tag)
   if(className) element.setAttribute('class', className);
   if(id) element.setAttribute('id', id);
@@ -11,6 +11,7 @@ const CreateNode = ({tag, className, id, content, link, img, blank, alt, type, l
   if(selected) element.selected = true;
   if(disabled) element.disabled = true;
   if(hidden) element.hidden = true;
+  if(onchange) element.onchange = onchange;
   if(placeholder) element.placeholder = placeholder;
   if(value) element.value = value;
   if(type) element.type = type;

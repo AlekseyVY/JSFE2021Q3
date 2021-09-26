@@ -1,5 +1,7 @@
 import 'normalize.css';
 import "./main.scss";
+const datePicker = await import(/* webpackChunkName: "datePicker" */ "./components/datePicker");
+const timePicker = await import(/* webpackChunkName: "timePicker" */ "./components/timePicker");
 const modCount = await import(/* webpackChunkName: "modalCounter" */ "./components/modCount");
 const ticketCounter = await import(/* webpackChunkName: "ticketCounter" */ "./components/ticketCounter");
 const exploreStyle = await import(/* webpackChunkName: "exploreStyle" */ "./components/exploreStyle");
@@ -50,6 +52,8 @@ const data = [
    exploreStyle.default()
    ticketCounter.default();
    modCount.default();
+   datePicker.default()
+   timePicker.default()
   // window.addEventListener('resize', () => {
   //   console.log(window.matchMedia('(max-width: 1440px)'))
   // });
@@ -68,6 +72,7 @@ await( async() => {
   const ticketTypeSelected = document.getElementsByClassName('ticket-buy-type-select');
   ticketTypeSelected[0].checked = true;
 })()
+
 
 
 
