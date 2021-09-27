@@ -7,7 +7,6 @@ const rippleEffect = async () => {
     const rect = e.target.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    console.log("Left? : " + x + " ; Top? : " + y + ".");
     const circle = document.createElement('span')
     circle.classList.add('circle')
     circle.style.top = y + 'px'
