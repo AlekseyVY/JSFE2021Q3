@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2896938b-ef1b-4c60-8ddf-9688728833ed" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="museum" />
+                    <option name="lastUsedInstant" value="1631960804" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1631960803" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="ProjectId" id="1yJDIdSV7g7AQJWe5yoZVsKgS4T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="MTHome" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3" />
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\assets\modal" />
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\tours" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\assets" />
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src" />
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\assets\parallax" />
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\assets\gallery" />
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\data\welcome" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/alekseyvy-JSFE2021Q3/dist/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="tour_1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/alekseyvy-JSFE2021Q3/src/tour_1.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.tour_1.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2896938b-ef1b-4c60-8ddf-9688728833ed" name="Changes" comment="" />
+      <created>1631960719595</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631960719595</updated>
+      <workItem from="1631960721306" duration="20225000" />
+      <workItem from="1632033385858" duration="13100000" />
+      <workItem from="1632054606867" duration="7077000" />
+      <workItem from="1632133346602" duration="577000" />
+      <workItem from="1632134003206" duration="1333000" />
+      <workItem from="1632142723516" duration="15027000" />
+      <workItem from="1632234333715" duration="7521000" />
+      <workItem from="1632243273540" duration="1430000" />
+      <workItem from="1632256124361" duration="2682000" />
+      <workItem from="1632294998544" duration="821000" />
+      <workItem from="1632318373322" duration="5927000" />
+      <workItem from="1632332806570" duration="7388000" />
+      <workItem from="1632391245887" duration="18358000" />
+      <workItem from="1632412998005" duration="1574000" />
+      <workItem from="1632416902731" duration="4937000" />
+      <workItem from="1632471351175" duration="12880000" />
+      <workItem from="1632573476306" duration="4749000" />
+      <workItem from="1632639648521" duration="31338000" />
+      <workItem from="1632678518322" duration="46000" />
+      <workItem from="1632742398601" duration="1111000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
