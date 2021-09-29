@@ -1,5 +1,6 @@
 import 'normalize.css';
 import "./main.scss";
+const mobileMenu = await import(/* webpackChunkName: "mobileMenu" */ "./components/mobileMenu");
 const cons = await import(/* webpackChunkName: "console" */ "./components/console");
 const datePicker = await import(/* webpackChunkName: "datePicker" */ "./components/datePicker");
 const timePicker = await import(/* webpackChunkName: "timePicker" */ "./components/timePicker");
@@ -55,7 +56,8 @@ const data = [
    modCount.default();
    datePicker.default()
    timePicker.default()
-   cons.default();
+   mobileMenu.default()
+   // cons.default();
   // window.addEventListener('resize', () => {
   //   console.log(window.matchMedia('(max-width: 1440px)'))
   // });
