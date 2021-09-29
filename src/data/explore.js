@@ -22,17 +22,17 @@ const exploreContainer = {
         {
           tag: 'p',
           className: 'explore-content-text-sec-text',
-          content: ['Las Meninas is a 1656 painting by Diego Velázquez, the leading\n artist of the Spanish Golden Age.']
+          content: ['Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.']
         },
         {
           tag: 'p',
           className: 'explore-content-text-sec-text',
-          content: ['It was cleaned in 1984 to remove a "yellow veil" of dust that had\n gathered since the previous restoration in the 19th century.']
+          content: ['It was cleaned in 1984 to remove a "yellow veil" of dust that had gathered since the previous restoration in the 19th century.']
         },
         {
           tag: 'p',
-          className: 'explore-content-text-sec-text',
-          content: ['The cleaning provoked furious protests, not because the picture had\n been damaged in any way, but because it looked different.']
+          className: 'explore-content-text-sec-text-mobile',
+          content: ['The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.']
         }
       ]
     },
