@@ -199,6 +199,7 @@
 
 
 
+
 @media screen and (max-width: 1440px) {
   .nav-container {
     max-width: 984px;
@@ -215,8 +216,10 @@
   .mobile-nav-wrapper {
     display: flex;
   }
-}  .mobile-menu-wrapper {
+
+  .mobile-menu-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+}
