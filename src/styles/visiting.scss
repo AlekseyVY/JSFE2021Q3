@@ -111,9 +111,6 @@
     width: 984px;
     margin-top: 60px;
     margin-bottom: 60px;
-
-
-    display: none;
   }
 
   .visiting-content-logo {
@@ -161,5 +158,60 @@
     font-weight: 200;
     font-size: 20px;
     line-height: 23px;
+  }
+}
+
+
+@media screen and (max-width: 984px) {
+  .visiting-content-wrapper {
+    width: 728px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .visiting-content-logo {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+
+
+
+  .visiting-content-cards-wrapper {
+    height: 983px;
+    margin-top: 40px;
+    justify-content: space-around;
+  }
+
+  .visiting-card-wraper {
+    width: 280px;
+    height: 301px;
+    margin-bottom: 40px;
+  }
+
+  .visiting-card-img {
+    width: 280px;
+    height: 180px;
+  }
+
+  .visiting-card-logo {
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 3px;
+  }
+
+  .visiting-card-delimeter {
+    width: 150px;
+  }
+
+  .visiting-card-sec-text {
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .visiting-card-third-text {
+    font-size: 18px;
+    line-height: 21px;
   }
 }
