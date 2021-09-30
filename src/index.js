@@ -1,5 +1,6 @@
 import 'normalize.css';
 import "./main.scss";
+const footerContainer = await import(/* webpackChunkName: "footerContainer" */ "./data/footer");
 const mobileMenu = await import(/* webpackChunkName: "mobileMenu" */ "./components/mobileMenu");
 const cons = await import(/* webpackChunkName: "console" */ "./components/console");
 const datePicker = await import(/* webpackChunkName: "datePicker" */ "./components/datePicker");
@@ -16,7 +17,6 @@ const galleryContainer = await import(/* webpackChunkName: "galleryContainer" */
 const ticketContainer = await import(/* webpackChunkName: "ticketContainer" */ "./data/tickets");
 const parallaxContainer = await import(/* webpackChunkName: "parallaxContainer" */ "./data/parallax");
 const contactsContainer = await import(/* webpackChunkName: "contactsContainer" */ "./data/contacts");
-const footerContainer = await import(/* webpackChunkName: "footerContainer" */ "./data/footer");
 const buyTicketContainer = await import(/* webpackChunkName: "buyTicketContainer" */ "./data/buyTicket");
 const videoControlsStyle = await import(/* webpackChunkName: "videoControlsStyle" */ "./components/videoPlayer");
 const modal = await import(/* webpackChunkName: "modal" */ "./components/modal");

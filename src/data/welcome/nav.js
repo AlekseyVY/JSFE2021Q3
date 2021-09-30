@@ -1,3 +1,4 @@
+import socialGenerator from "../../components/socialGenerator";
 
 const navElem = await (async () => {
   const data = ['visiting', 'explore', 'video', 'gallery', 'tickets', 'contacts'];
@@ -13,6 +14,7 @@ const navElem = await (async () => {
     }
   })
 })();
+
 
 
 const mobileNav = await (async () => {
@@ -110,6 +112,45 @@ const navigation = {
               className: 'mobile-nav-list',
               content: [
                 ...mobileNav
+              ]
+            },
+            {
+              tag: 'div',
+              className: 'mobile-nav-image-wrapper',
+              content: [
+                {
+                  tag: 'img',
+                  className: 'mobile-nav-img-top',
+                  img: './assets/mobile_nav_1.png',
+                  alt: 'mobile nav',
+                  content: []
+                },
+                {
+                  tag: 'img',
+                  className: 'mobile-nav-img-left',
+                  img: './assets/mobile_nav_2.png',
+                  alt: 'mobile nav',
+                  content: []
+                },
+                {
+                  tag: 'img',
+                  className: 'mobile-nav-img-right',
+                  img: './assets/mobile_nav_3.png',
+                  alt: 'mobile nav',
+                  content: []
+                }
+              ]
+            },
+            {
+              tag: 'div',
+              className: 'mobile-nav-delimeter',
+              content: []
+            },
+            {
+              tag: 'div',
+              className: 'mobile-nav-socila-wrapper',
+              content: [
+                ...socialGenerator
               ]
             }
           ]

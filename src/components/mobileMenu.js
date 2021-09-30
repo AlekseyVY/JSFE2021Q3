@@ -7,13 +7,13 @@ const mobileMenu = () => {
 
   menu.addEventListener('click', (e) => {
     hero.style.display = 'none';
-      nav.style.top = '130px';
+      nav.style.top = '100px';
       close.style.display = 'block';
       menu.style.display = 'none';
   })
   close.addEventListener('click', (e) => {
     hero.style.display = 'block';
-    nav.style.top = '-700px';
+    nav.style.top = '-1000px';
     close.style.display = 'none';
     menu.style.display = 'flex';
   })
