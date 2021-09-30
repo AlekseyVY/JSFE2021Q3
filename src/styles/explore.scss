@@ -5,9 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-  display: none;
 }
 
 .explore-content-wrapper {
@@ -106,6 +103,44 @@
     width: 720px;
     height: 700px;
     margin: 62px auto 60px auto;
+  }
+
+  .explore-content-text-sec-text-mobile {
+    display: none;
+  }
+}
+
+
+
+
+@media screen and (max-width: 984px) {
+  .explore-content-wrapper {
+    width: 728px;
+    height: 908px;
+  }
+
+  .explore-content-text-wrapper {
+    margin-top: 40px;
+  }
+
+  .explore-content-text-logo {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .explore-content-text-delimeter {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .explore-content-text-sec-text {
+    display: none;
+  }
+
+  .explore-content-img {
+    width: 728px;
+    height: 705px;
+    margin: 0 0 40px 0;
   }
 
   .explore-content-text-sec-text-mobile {
