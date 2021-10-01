@@ -5,8 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  display: none;
 }
 
 .explore-content-wrapper {
@@ -147,5 +145,47 @@
 
   .explore-content-text-sec-text-mobile {
     display: none;
+  }
+}
+
+
+
+@media screen and (max-width: 728px) {
+  .explore-content-wrapper {
+    width: 380px;
+    height: 471px;
+  }
+
+  .explore-content-text-wrapper {
+    margin-top: 40px;
+  }
+
+  .explore-content-text-logo {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .explore-content-text-delimeter {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .explore-content-text-sec-text {
+    display: none;
+  }
+
+  .explore-content-img {
+    width: 380px;
+    height: 368px;
+    margin: 0 0 40px 0;
+  }
+
+  .explore-content-text-sec-text-mobile {
+    display: none;
+  }
+
+  .explore-section-container {
+    min-height: 551px;
+    align-items: flex-start;
   }
 }
