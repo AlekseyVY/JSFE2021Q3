@@ -11,8 +11,6 @@
   background-color: rgba(15, 15, 14, 0.3);
   z-index: 90;
   transition: left 1s ease-in-out;
-
-  display: none;
 }
 
 .modal-container:hover {
@@ -926,4 +924,14 @@ input[type=time]:not(.has-value)::-webkit-datetime-edit-ampm-field {
 input[type="time"]::-webkit-calendar-picker-indicator {
   margin-right: 11px;
   opacity: 0;
+}
+
+
+
+
+@media screen and (max-width: 984px) {
+  .modal-content-inner-wrapper {
+    max-width: 728px;
+    flex-direction: column;
+  }
 }
