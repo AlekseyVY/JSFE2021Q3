@@ -111,6 +111,14 @@ const ticketContainer = {
               content: []
             },
             {
+              tag: 'img',
+              className: 'ticket-content-buy-pic-mobile',
+              img: './assets/tickets/tickets_1024.png',
+              alt: 'tickets pic',
+              lazy: true,
+              content: []
+            },
+            {
               tag: 'form',
               className: 'ticket-buy-wrapper',
               content: [
