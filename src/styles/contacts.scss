@@ -183,6 +183,8 @@
   .contacts-content-inner-wrapper {
    flex-direction: column;
     margin-top: 40px;
+    height: 696px;
+    margin-bottom: 25px;
   }
 
   .contacts-content-inner-list-wrapper {
@@ -213,8 +215,13 @@
   }
 
   .contacts-content-location {
+    display: block;
     width: 728px;
     height: 476px;
+  }
+
+  .contacts-content-location-1024 {
+    display: none;
   }
 }
 

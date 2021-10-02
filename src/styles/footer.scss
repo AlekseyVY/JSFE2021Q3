@@ -206,9 +206,6 @@ div .footer-content-social-wrapper {
     .mobile-nav-wrapper {
       display: none;
     }
-    .mobile-menu-wrapper {
-      display: none;
-    }
   }
 
   .footer-content-delimeter {
@@ -224,29 +221,32 @@ div .footer-content-social-wrapper {
     .nav-container {
       max-width: 672px;
       margin-top: 40px;
+      ul li a {
+        font-size: 18px;
+      }
     }
     .nav-menu {
       width: 313px;
-      margin-top: 12px;
+      margin-top: 15px;
       margin-left: 45px;
       display: flex;
-      column-gap: 100px;
+      column-gap: 181px;
       flex-direction: column;
       flex-wrap: wrap;
       align-items: normal;
       justify-content: normal;
     }
     li:not(:first-child):not(:nth-child(4)) {
-      margin-top: 25px;
+      margin-top: 20px;
     }
   }
 
 
   .footer-content-social-wrapper {
     width: 340px;
-    margin-left: 245px;
+    top: 115px;
+    margin-left: 259px;
     margin-top: 105px;
-    top: 55px;
     left: 0;
   }
 
