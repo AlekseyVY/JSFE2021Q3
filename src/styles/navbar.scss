@@ -258,10 +258,14 @@
     z-index: 180;
   }
 
+  .mobile-nav-list {
+    margin-top: 45px;
+  }
+
   .mobile-nav-image-wrapper {
     width: 658px;
-    height: 375px;
-    margin: 35px auto 0 auto ;
+    height: 390px;
+    margin: 27px auto 0 auto ;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -288,7 +292,7 @@
     height: 1px;
     display: block;
     background-color: #fff;
-    margin: 35px auto 35px auto;
+    margin: 27px auto 15px auto;
   }
 
   .mobile-nav-socila-wrapper {
