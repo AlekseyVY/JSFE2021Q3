@@ -172,7 +172,7 @@
 
 
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1439px) {
   .header-wrapper {
     max-width: 984px;
   }
@@ -212,6 +212,7 @@
   .hero-content-button {
     width: 300px;
     height: 60px;
+    margin-top: 51px;
     font-family: Roboto, serif;
     font-style: normal;
     font-weight: 300;
@@ -227,13 +228,35 @@
   .hero-slider_img {
     width: 700px;
     height: 525px;
+    margin-bottom: 56px;
   }
 
   .hero-slider-controls-wrapper {
     width: 700px;
     height: 120px;
+    justify-content: flex-end;
   }
-}
+
+  .hero-slider-controls-wrapper-slide-arrows-wrapper {
+    margin-right: 77px;
+    margin-left: 43px;
+  }
+
+  .hero-slider-controls-wrapper-show-wrapper {
+    margin-right: 0px;
+    height: 12px;
+    width: 160px;
+  }
+
+  .hero-slider-controls-wrapper-show-element {
+    width: 12px;
+    height: 12px;
+  }
+  .hero-slider-controls-wrapper-counter-wrapper {
+    margin-right: 44px;
+    margin-top: 3px;
+  }
+  }
 
 
 
