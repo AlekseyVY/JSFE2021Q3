@@ -193,10 +193,14 @@
     display: none;
   }
 
+  .video-content-main-player-wrapper {
+    margin-top: 39px;
+  }
+
   .video-content-main-player-big-play-button {
     width: 152px;
     height: 152px;
-    top: 165px;
+    top: 145px;
   }
   .video-content-main-player-big-play {
     width: 152px;
@@ -230,6 +234,10 @@
     width: 26px;
     height: 26px;
     margin-right: 40px;
+  }
+
+  .video-content-videogallery-wrapper {
+    width: 981px;
   }
   .video-content-videogallery-player {
     width: 300px;
