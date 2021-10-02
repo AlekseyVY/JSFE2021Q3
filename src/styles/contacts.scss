@@ -101,11 +101,19 @@
   }
 }
 
+.contacts-content-location-1024 {
+  display: none;
+}
+
 @media screen and (max-width: 1439px) {
   .contacts-content-wrapper {
     width : 984px;
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 62px;
+  }
+
+  .contacts-content-inner-wrapper {
+    margin-top: 58px;
   }
 
   .contacts-content-logo {
@@ -130,19 +138,26 @@
   .contacts-content-inner-list-adress {
     font-size: 20px;
     line-height: 23px;
+    margin-top: 34px;
   }
 
   .contacts-content-inner-list-phone {
     font-size: 20px;
     line-height: 23px;
+    margin-top: 16px;
   }
 
   .contacts-content-inner-list-mail {
     font-size: 20px;
     line-height: 23px;
+    margin-top: 15px;
   }
 
   .contacts-content-location {
+    display: none;
+  }
+  .contacts-content-location-1024 {
+    display: block;
     width: 694px;
     height: 454px;
   }

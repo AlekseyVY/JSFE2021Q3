@@ -69,6 +69,14 @@ const contactsContainer = {
               alt: 'location',
               lazy: true,
               content: []
+            },
+            {
+              tag: 'img',
+              className: 'contacts-content-location-1024',
+              img: './assets/contacts/contacts_1024.png',
+              alt: 'location',
+              lazy: true,
+              content: []
             }
           ]
         }
