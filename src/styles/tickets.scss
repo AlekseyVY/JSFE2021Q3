@@ -444,6 +444,7 @@
   }
 
   .ticket-content-buy-pic {
+    margin-top: 0px;
     width: 380px;
     height: 160px;
   }
@@ -457,13 +458,14 @@
     width: 175px;
     display: flex;
     flex-direction: column;
-    margin: 40px auto 0 auto;
+    margin: 23px auto 0 auto;
   }
 
   .ticket-buy-select-content-logo {
     text-align: center;
     font-size: 16px;
     line-height: 19px;
+    margin-bottom: 14px;
   }
 
   .ticket-selector-wrapper {
@@ -479,6 +481,7 @@
   .ticket-selector-content-wrapper {
     width: 175px;
     height: 50px;
+    margin-bottom: 2px;
   }
 
   .ticket-selector-content-minus {
@@ -510,11 +513,15 @@
   }
 
   .ticket-buy-select-content-total-wrapper {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 19px;
-    margin-top: 40px;
+    margin-top: 24px;
     display: flex;
     justify-content: center;
+  }
+
+  .ticket-buy-select-content-total {
+    margin-left: 0;
   }
 }
 
