@@ -261,12 +261,17 @@
 @media screen and (max-width: 984px){
   .video-content-wrapper {
     width: 728px;
-    margin: 40px 0 40px 0;
+    margin: 40px 0 80px 0;
   }
 
   .video-content-text-logo {
     font-size: 40px;
     line-height: 60px;
+    margin-top: 2px;
+  }
+
+  .video-content-main-player-wrapper {
+    margin-top: 19px;
   }
 
   .video-content-main-player-big-play-button {
@@ -282,6 +287,7 @@
   .video-content-main-player-controls-wrapper {
     height: 53px;
     display: flex;
+    padding-top: 4px;
   }
 
   .video-content-main-player-controls-play {
@@ -292,8 +298,10 @@
   }
 
   .video-content-main-player-controls-length {
-    width: 486px;
-    order: 3;
+    position: absolute;
+    left: 0;
+    top: 326px;
+    width: 100%;
   }
 
   .video-content-main-player-controls-volume {
@@ -303,7 +311,7 @@
   }
 
   .video-content-main-player-controls-volrange {
-    display: none;
+    width: 486px;
   }
 
   .video-content-main-player-controls-fullscreen {
