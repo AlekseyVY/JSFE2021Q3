@@ -173,7 +173,7 @@
   .visiting-content-wrapper {
     width: 728px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 78px;
   }
 
   .visiting-content-logo {
@@ -182,10 +182,10 @@
   }
 
   .visiting-content-cards-wrapper {
-    width: 728px;
     height: 983px;
     margin-top: 40px;
-    margin-left: 0px;
+    margin-left: 28px;
+    width: 670px;
     justify-content: space-around;
   }
 
@@ -208,17 +208,19 @@
 
   .visiting-card-delimeter {
     width: 150px;
+    margin-top: 10px;
   }
 
   .visiting-card-sec-text {
     font-weight: 200;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 18px;
+
   }
 
   .visiting-card-third-text {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 21px;
+    margin-top: 7px;
   }
 }
 
