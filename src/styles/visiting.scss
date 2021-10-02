@@ -121,9 +121,15 @@
     letter-spacing: 5px;
   }
 
+  .visiting-content-delimeter {
+    margin-top: 22px;
+  }
+
   .visiting-content-cards-wrapper {
     height: 1155px;
+    width: 880px;
     margin-top: 60px;
+    margin-left: 51px;
     justify-content: space-around;
   }
 
@@ -139,13 +145,15 @@
   }
 
   .visiting-card-logo {
-    margin-top: 25px;
+    margin-top: 21px;
     font-size: 28px;
     line-height: 31px;
+    letter-spacing: 3px;
   }
 
   .visiting-card-delimeter {
     width: 150px;
+    margin-top: 9px;
   }
 
   .visiting-card-sec-text {
@@ -155,8 +163,7 @@
   }
 
   .visiting-card-third-text {
-    font-weight: 200;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 23px;
   }
 }
