@@ -125,17 +125,19 @@
   width: 122px;
   height: 263px;
   display: flex;
-  margin-left: 55px;
-  margin-top: 25px;
+  margin-top: 65px;
+  margin-left: 0px;
   flex-direction: column;
   justify-content: space-between;
   font-family: Roboto, serif;
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
+  padding-left: 35px;
   line-height: 23px;
   letter-spacing: 2px;
   color: #FFFFFF;
+  text-transform: capitalize;
 }
 
 .mobile-nav-element-contacts {

@@ -175,6 +175,9 @@
   filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(170deg) brightness(93%) contrast(88%);
 }
 
+.video-content-main-player-1024 {
+  display: none;
+}
 
 
 
@@ -183,6 +186,14 @@
     width: 984px;
     margin: 60px 0 60px 0;
   }
+
+  .video-content-main-player {
+    display: none;
+  }
+  .video-content-main-player-1024 {
+    display: block;
+    width: 100%
+   }
 
   .video-content-text-logo {
     font-size: 50px;

@@ -50,6 +50,14 @@ const videoContainer = {
               content: []
             },
             {
+              tag: 'img',
+              className: 'video-content-main-player-1024',
+              alt: 'image of a player',
+              lazy: true,
+              img: './assets/video/video_1024.png',
+              content: []
+            },
+            {
               tag: 'div',
               className: 'video-content-main-player-controls-wrapper',
               content: [

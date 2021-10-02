@@ -150,19 +150,25 @@ div .footer-content-social-wrapper {
     }
   }
 
+  .footer-content-delimeter {
+    top: 243px;
+  }
+
   .footer-content-top-wrapper {
     height: 243px;
 
     .nav-container {
       max-width: 313px;
-      margin-top: 65px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      margin-right: 675px;
     }
     .nav-menu {
       width: 313px;
-      margin-top: 12px;
-      margin-left: 45px;
+      margin-left: 0px;
+      margin-top: 13px;
       display: flex;
-      column-gap: 100px;
+      column-gap: 118px;
       flex-direction: column;
       flex-wrap: wrap;
       align-items: normal;
@@ -176,9 +182,10 @@ div .footer-content-social-wrapper {
 
   .footer-content-social-wrapper {
     width: 340px;
-    margin-left: 355px;
-    margin-top: 105px;
-    top: 55px;
+    margin-top: 90px;
+    margin-left: 340px;
+    left: 262px;
+    top: 54px;
     right: 0;
   }
 
