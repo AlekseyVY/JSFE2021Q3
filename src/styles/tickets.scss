@@ -318,6 +318,12 @@
     margin-bottom: 40px;
   }
 
+
+  .ticket-content-buy-pic-mobile {
+    display: none;
+  }
+
+
   .ticket-content-logo {
     font-size: 40px;
     line-height: 60px;
@@ -332,6 +338,7 @@
   }
 
   .ticket-content-buy-pic {
+    display: block;
     width: 444px;
     height: 340px;
   }

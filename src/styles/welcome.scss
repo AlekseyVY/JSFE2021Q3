@@ -266,6 +266,11 @@
     max-width: 728px;
   }
 
+  .nav-logo-text {
+    margin-top: 8px;
+  }
+
+
   .hero-container {
     max-width: 728px;
     height: 861px;
@@ -273,10 +278,14 @@
     justify-content: center;
   }
 
+  .hero-slider_img {
+    margin-bottom: 96px;
+  }
+
   .hero-content {
     width: 332px;
     height: 168px;
-    margin-top: 50px;
+    margin-top: 0;
   }
 
   .hero-content-logo {
@@ -303,6 +312,16 @@
   .hero-slider-controls-wrapper {
     width: 728px;
     height: 100px;
+    justify-content: unset;
+  }
+
+  .hero-slider-controls-wrapper-counter-wrapper {
+    margin-right: 0px;
+    margin-left: 162px;
+  }
+
+  .hero-slider-controls-wrapper-show-wrapper {
+    margin-left: 43px;
   }
 }
 
