@@ -260,6 +260,7 @@
   .visiting-card-logo {
     font-size: 18px;
     line-height: 20px;
+    letter-spacing: 5px;
   }
 
   .visiting-card-delimeter {
@@ -276,6 +277,13 @@
     line-height: 19px;
   }
 }
+
+
+
+
+
+
+
 
 @media screen and (max-width: 379px) {
   .visiting-content-wrapper {
