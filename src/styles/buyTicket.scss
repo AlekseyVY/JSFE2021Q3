@@ -32,6 +32,8 @@
   opacity: 1;
   z-index: 100;
   transition: left 1s ease-in-out;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .modal-active {
@@ -926,7 +928,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 
-
+@media screen and (max-width: 1439px) {
+  .form-ticket-amount-value {
+    text-align: center;
+  }
+}
 
 
 @media screen and (max-width: 984px) {

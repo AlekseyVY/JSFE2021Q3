@@ -385,6 +385,7 @@ div .footer-content-social-wrapper {
     .nav-menu {
       width: 320px;
       margin-top: 12px;
+      column-gap: 0;
       margin-left: 0;
       padding-left: 0;
       display: flex;
@@ -396,6 +397,10 @@ div .footer-content-social-wrapper {
     li:not(:first-child):not(:nth-child(4)) {
       margin-top: 25px;
     }
+
+    .nav-element-visiting {
+      margin-top: 25px !important;
+    }
   }
 
 
@@ -403,7 +408,8 @@ div .footer-content-social-wrapper {
     width: 260px;
     margin-left: 0;
     margin-top: 105px;
-    top: 55px;
+    padding-left: 20px;
+    top: 100px;
     left: 0;
   }
 
