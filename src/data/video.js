@@ -54,7 +54,7 @@ const videoContainer = {
               className: 'video-content-main-player-1024',
               alt: 'image of a player',
               lazy: true,
-              img: './assets/video/video_1024.png',
+              img: './assets/video/video_1024.avif',
               content: []
             },
             {
@@ -132,6 +132,23 @@ const videoContainer = {
                 content: []
               }
             })
+            ,
+            {
+              tag: 'img',
+              className: 'iframe-placeholder',
+              img: './assets/video/pl_1.avif',
+              lazy: true,
+              alt: 'placeholder',
+              content: []
+            },
+            {
+              tag: 'img',
+              className: 'iframe-placeholder',
+              img: './assets/video/pl_1.avif',
+              lazy: true,
+              alt: 'placeholder',
+              content: []
+            }
           ]
         },
         {

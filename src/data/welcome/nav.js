@@ -121,21 +121,24 @@ const navigation = {
                 {
                   tag: 'img',
                   className: 'mobile-nav-img-top',
-                  img: './assets/mobile_nav_1.png',
+                  img: './assets/mobile_nav_1.avif',
+                  lazy: true,
                   alt: 'mobile nav',
                   content: []
                 },
                 {
                   tag: 'img',
                   className: 'mobile-nav-img-left',
-                  img: './assets/mobile_nav_2.png',
+                  img: './assets/mobile_nav_2.avif',
+                  lazy: true,
                   alt: 'mobile nav',
                   content: []
                 },
                 {
                   tag: 'img',
                   className: 'mobile-nav-img-right',
-                  img: './assets/mobile_nav_3.png',
+                  img: './assets/mobile_nav_3.avif',
+                  lazy: true,
                   alt: 'mobile nav',
                   content: []
                 }

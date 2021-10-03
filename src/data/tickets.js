@@ -113,7 +113,7 @@ const ticketContainer = {
             {
               tag: 'img',
               className: 'ticket-content-buy-pic-mobile',
-              img: './assets/tickets/tickets_1024.png',
+              img: './assets/tickets/tickets_1024.avif',
               alt: 'tickets pic',
               lazy: true,
               content: []

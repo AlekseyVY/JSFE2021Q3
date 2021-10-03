@@ -4,6 +4,10 @@
   justify-content: center;
 }
 
+.iframe-placeholder {
+  display: none;
+}
+
 .video-content-wrapper {
   width: 1440px;
   margin-top: 75px;
@@ -461,6 +465,13 @@
     margin-top: 37px;
   }
 
+  .iframe-placeholder{
+  display: block;
+  }
+
+  .video-content-videogallery-player {
+    display: none;
+  }
 }
 
 
