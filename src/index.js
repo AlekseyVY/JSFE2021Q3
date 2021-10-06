@@ -1,5 +1,6 @@
 import 'normalize.css';
 import "./main.scss";
+import Glide from "@glidejs/glide";
 const footerContainer = await import(/* webpackChunkName: "footerContainer" */ "./data/footer");
 const mobileMenu = await import(/* webpackChunkName: "mobileMenu" */ "./components/mobileMenu");
 const cons = await import(/* webpackChunkName: "console" */ "./components/console");
@@ -22,7 +23,7 @@ const videoControlsStyle = await import(/* webpackChunkName: "videoControlsStyle
 const modal = await import(/* webpackChunkName: "modal" */ "./components/modal");
 const rippleEffect = await import(/* webpackChunkName: "ripple" */ "./components/ripple");
 const navigation = await import(/* webpackChunkName: "navigation" */ "./data/welcome/nav");
-import Glide from '@glidejs/glide'
+const welcomeSlider = await import(/* webpackChunkName: "welcomeSlider" */ "./components/welcomeSlider");
 
 
 
@@ -61,29 +62,42 @@ const data = [
    datePicker.default()
    timePicker.default()
    mobileMenu.default()
+   welcomeSlider.default();
 
-   const glide = new Glide('.glide',
-     {
-       type: 'carousel',
-       // autoplay: 3000,
-     })
-   glide.on('run.after', (e) => {
-     const elem = document.getElementsByClassName('glide__slide--active')[0].children[0];
-     const number = document.getElementsByClassName('hero-slider-controls-wrapper-counter-count')[0];
-     console.log(elem)
-     number.textContent = `0${Number(elem.id)}`;
-   })
-   glide.mount();
+
 })();
 
 // this is temporary  T_T
-await( async() => {
-  // tmp welcome selector style
-  const welcomeSelected = document.getElementsByClassName('hero-slider-controls-wrapper-show-element');
-  welcomeSelected[0].classList.add('welcome-selector-active');
-  // tmp video selector style
-  const videoSelected = document.getElementsByClassName('video-content-videogallery-controls-show');
-  videoSelected[0].classList.add('video-selector-active');
+(() => {
+
+
+
+  const players = document.getElementsByClassName('video-content-videogallery-player');
+  const stop = () => {
+    console.log(players)
+    players.forEach((player) => player.stopVideo());
+  }
+
+  const buttons = document.getElementsByClassName('glide__arrow');
+  buttons[2].addEventListener('click', () => {
+    stop()
+  })
+  buttons[3].addEventListener('click', () => {
+    stop()
+  })
+  const videoSlider = new Glide('.glide2',
+    {
+      type: 'carousel',
+      // autoplay: 3000,
+      focusAt: 'center',
+      perView: 3
+    })
+  videoSlider.on('run.after', (e) => {
+  })
+  videoSlider.mount();
+
+
+
   // tmp ticket selection style
   const ticketTypeSelected = document.getElementsByClassName('ticket-buy-type-select');
   ticketTypeSelected[0].checked = true;

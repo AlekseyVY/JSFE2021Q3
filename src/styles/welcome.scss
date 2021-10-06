@@ -97,6 +97,16 @@
   z-index: 100;
 }
 
+.glide {
+  .glide__arrows {
+    width: 160px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
 .hero-slider_img {
   max-width: 1000px;
   width: 100%;
