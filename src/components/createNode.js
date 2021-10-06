@@ -3,6 +3,8 @@ const CreateNode = (props, parent) => {
   const element = document.createElement(props.tag)
   if(props.className) element.setAttribute('class', props.className);
   if(props.id) element.setAttribute('id', props.id);
+  if(props.data_glide_el) element.setAttribute('data-glide-el', props.data_glide_el);
+  if(props.data_glide_dir) element.setAttribute('data-glide-dir', props.data_glide_dir)
   if(props.alt) element.setAttribute('alt', props.alt);
   if(props.link) element.href = props.link;
   if(props.lazy) element.loading = 'lazy';

@@ -22,6 +22,9 @@ const videoControlsStyle = await import(/* webpackChunkName: "videoControlsStyle
 const modal = await import(/* webpackChunkName: "modal" */ "./components/modal");
 const rippleEffect = await import(/* webpackChunkName: "ripple" */ "./components/ripple");
 const navigation = await import(/* webpackChunkName: "navigation" */ "./data/welcome/nav");
+import Glide from '@glidejs/glide'
+
+
 
 
 const data = [
@@ -35,6 +38,7 @@ const data = [
   contactsContainer.default,
   buyTicketContainer.default
   ];
+
 
 
 
@@ -57,11 +61,19 @@ const data = [
    datePicker.default()
    timePicker.default()
    mobileMenu.default()
-   // cons.default();
-  // window.addEventListener('resize', () => {
-  //   console.log(window.matchMedia('(max-width: 1440px)'))
-  // });
 
+   const glide = new Glide('.glide',
+     {
+       type: 'carousel',
+       // autoplay: 3000,
+     })
+   glide.on('run.after', (e) => {
+     const elem = document.getElementsByClassName('glide__slide--active')[0].children[0];
+     const number = document.getElementsByClassName('hero-slider-controls-wrapper-counter-count')[0];
+     console.log(elem)
+     number.textContent = `0${Number(elem.id)}`;
+   })
+   glide.mount();
 })();
 
 // this is temporary  T_T
@@ -76,9 +88,5 @@ await( async() => {
   const ticketTypeSelected = document.getElementsByClassName('ticket-buy-type-select');
   ticketTypeSelected[0].checked = true;
 })()
-
-
-
-
 
 
