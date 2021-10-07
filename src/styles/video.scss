@@ -50,6 +50,10 @@
   flex-direction: column;
 }
 
+.video-main-player {
+  width: 100%;
+}
+
 .video-content-main-player-big-play {
   width: 220px;
   height: 220px;
@@ -572,6 +576,24 @@
 
   .glide2 {
     width: 320px;
+
   }
 
+}
+
+.iframe-wrapper {
+  position: relative;
+}
+
+.iframe-abs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 473.333px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 258px;
+  z-index: 200;
+  opacity: 0;
+  background-color: #fff;
 }

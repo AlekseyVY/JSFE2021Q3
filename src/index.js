@@ -1,6 +1,11 @@
 import 'normalize.css';
 import "./main.scss";
-import Glide from "@glidejs/glide";
+import videoSlider from "./components/videoSlider";
+import Player from "./components/videoMainPlayer";
+import injectPlayer from "./components/injectPlayer";
+import comparison from "./components/comparison";
+import ticketCount from "./components/ticketCount";
+import {stat} from "copy-webpack-plugin/dist/utils/promisify";
 const footerContainer = await import(/* webpackChunkName: "footerContainer" */ "./data/footer");
 const mobileMenu = await import(/* webpackChunkName: "mobileMenu" */ "./components/mobileMenu");
 const cons = await import(/* webpackChunkName: "console" */ "./components/console");
@@ -47,60 +52,66 @@ const data = [
   const rootNode = document.getElementById('root');
   const header = document.createElement('header');
   rootNode.appendChild(header);
-  CreateNode.default(navigation.default, header)
+  CreateNode.default(navigation.default, header);
   const main = document.createElement('main');
 
-  rootNode.appendChild(main)
-  CreateNode.default(footerContainer.default, rootNode)
-  data.map((ele) => CreateNode.default(ele, main))
-   videoControlsStyle.default()
+  rootNode.appendChild(main);
+  CreateNode.default(footerContainer.default, rootNode);
+  data.map((ele) => CreateNode.default(ele, main));
+   videoControlsStyle.default();
    modal.default();
    rippleEffect.default();
-   exploreStyle.default()
+   exploreStyle.default();
    ticketCounter.default();
    modCount.default();
-   datePicker.default()
-   timePicker.default()
-   mobileMenu.default()
+   datePicker.default();
+   timePicker.default();
+   mobileMenu.default();
    welcomeSlider.default();
+   injectPlayer();
+   comparison();
+   videoSlider();
+   new Player();
+   ticketCount();
 
 
+
+
+   const iData = Array.from(document.getElementsByClassName('video-content-videogallery-player'));
+   const controlVideo = Array.from(document.getElementsByClassName('glide__arrows'))[1]
+   const wrap = Array.from(document.getElementsByClassName('iframe-wrapper'))
+
+   controlVideo.addEventListener('click', () => {
+       stopVideo(null)
+     })
+
+   const stateObj = {}
+   wrap.forEach((ele) => {
+     stateObj[ele.getElementsByTagName('iframe')[0].src] = false;
+     ele.addEventListener('click', (e) => {
+       const PlaySrc = e.currentTarget.getElementsByTagName('iframe')[0].src
+       stopVideo(PlaySrc)
+       if(stateObj[PlaySrc]) {
+         e.currentTarget.getElementsByTagName('iframe')[0].contentWindow.postMessage(
+           '{"event":"command","func":"pauseVideo","args":""}',
+           '*');
+         stateObj[PlaySrc] = false;
+       } else {
+         e.currentTarget.getElementsByTagName('iframe')[0].contentWindow.postMessage(
+           '{"event":"command","func":"playVideo","args":""}',
+           '*');
+         stateObj[PlaySrc] = true;
+       }
+     })
+   })
+
+   const stopVideo = (PlaySrc) => {
+     iData.forEach((ele, id) => {
+       if(PlaySrc !== ele.src) {
+         ele.contentWindow.postMessage(
+           '{"event":"command","func":"pauseVideo","args":""}',
+           '*');
+       }
+     })
+   }
 })();
-
-// this is temporary  T_T
-(() => {
-
-
-
-  const players = document.getElementsByClassName('video-content-videogallery-player');
-  const stop = () => {
-    console.log(players)
-    players.forEach((player) => player.stopVideo());
-  }
-
-  const buttons = document.getElementsByClassName('glide__arrow');
-  buttons[2].addEventListener('click', () => {
-    stop()
-  })
-  buttons[3].addEventListener('click', () => {
-    stop()
-  })
-  const videoSlider = new Glide('.glide2',
-    {
-      type: 'carousel',
-      // autoplay: 3000,
-      focusAt: 'center',
-      perView: 3
-    })
-  videoSlider.on('run.after', (e) => {
-  })
-  videoSlider.mount();
-
-
-
-  // tmp ticket selection style
-  const ticketTypeSelected = document.getElementsByClassName('ticket-buy-type-select');
-  ticketTypeSelected[0].checked = true;
-})()
-
-

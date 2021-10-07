@@ -37,14 +37,39 @@ const exploreContainer = {
       ]
     },
       {
-        tag: 'img',
-        className: 'explore-content-img',
-        img: './assets/explore/explore.avif',
-        alt: 'explore',
-        lazy: true,
-        content: []
+        tag: 'div',
+        className: 'img-comp-container',
+        content: [
+          {
+            tag: 'div',
+            className: 'img-comp-img',
+            content: [
+              {
+                tag: 'img',
+                className: 'before-img',
+                img: './assets/explore/after.avif',
+                alt: 'before',
+                content: []
+              }
+            ]
+          },
+          {
+            tag: 'div',
+            className: 'img-comp-img img-comp-overlay',
+            content: [
+              {
+                tag: 'img',
+                className: 'after-img',
+                img: './assets/explore/before.avif',
+                alt: 'before',
+                content: []
+              }
+            ]
+          }
+        ]
       }]
   }]
 }
+
 
 export default exploreContainer;

@@ -25,98 +25,9 @@ const videoContainer = {
           ]
         },
         {
-          tag: 'div',
-          className: 'video-content-main-player-wrapper',
-          content: [
-            {
-              tag: 'button',
-              className: 'video-content-main-player-big-play-button',
-              content: [
-                {
-                tag: 'img',
-                className: 'video-content-main-player-big-play',
-                alt: 'main play button',
-                  lazy: true,
-                img: './assets/video/big_play.svg',
-                content: []
-              }]
-            },
-            {
-              tag: 'img',
-              className: 'video-content-main-player',
-              alt: 'image of a player',
-              lazy: true,
-              img: './assets/video/placeholder_video.avif',
-              content: []
-            },
-            {
-              tag: 'img',
-              className: 'video-content-main-player-1024',
-              alt: 'image of a player',
-              lazy: true,
-              img: './assets/video/video_1024.avif',
-              content: []
-            },
-            {
-              tag: 'div',
-              className: 'video-content-main-player-controls-wrapper',
-              content: [
-                {
-                  tag: 'button',
-                  className: 'video-content-main-player-controls-play-button',
-                  content: [
-                    {
-                    tag: 'img',
-                    className: 'video-content-main-player-controls-play',
-                    img: './assets/video/play.svg',
-                    alt: 'Play',
-                      lazy: true,
-                    content: []
-                  }]
-                },
-                {
-                  tag: 'input',
-                  className: 'video-content-main-player-controls-length',
-                  type: 'range',
-                  content: []
-                },
-                {
-                  tag: 'button',
-                  className: 'video-content-main-player-controls-volume-button',
-                  content: [
-                    {
-                      tag: 'img',
-                      className: 'video-content-main-player-controls-volume',
-                      img: './assets/video/volume.svg',
-                      alt: 'Volume',
-                      lazy: true,
-                      content: []
-                    }
-                  ]
-                },
-                {
-                  tag: 'input',
-                  className: 'video-content-main-player-controls-volrange',
-                  type: 'range',
-                  content: []
-                },
-                {
-                  tag: 'button',
-                  className: 'video-content-main-player-controls-fullscreen-button',
-                  content: [
-                    {
-                      tag: 'img',
-                      className: 'video-content-main-player-controls-fullscreen',
-                      img: './assets/video/fullscreen.svg',
-                      alt: 'Fullscreen',
-                      lazy: true,
-                      content: []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          tag: 'main',
+          className: 'container2',
+          content: []
         },
         {
           tag: 'div',
@@ -141,11 +52,23 @@ const videoContainer = {
                       className: 'glide__slide',
                       content: [
                         {
-                          tag: 'iframe',
-                          className: 'video-content-videogallery-player',
-                          img: ele,
-                          content: []
-                        }
+                          tag: 'div',
+                          className: 'iframe-wrapper',
+                          content: [
+                            {
+                              tag: 'div',
+                              className: 'iframe-abs',
+                              content: []
+                            },
+                            {
+                              tag: 'iframe',
+                              className: 'video-content-videogallery-player',
+                              //lazy: true,
+                              img: ele,
+                              content: []
+                            }
+                          ]
+                        },
                       ]
                     }
                   })
@@ -160,7 +83,7 @@ const videoContainer = {
               data_glide_el: "controls",
               content: [
                 {
-                  tag: 'button',
+                  tag: 'div',
                   // className: 'video-content-videogallery-controls-left-button',
                   className: 'glide__arrow glide__arrow--left',
                   data_glide_dir: "<",
@@ -191,7 +114,7 @@ const videoContainer = {
                   ]
                 },
                 {
-                  tag: 'button',
+                  tag: 'div',
                   // className: 'video-content-videogallery-controls-right-button',
                   className: 'glide__arrow glide__arrow--right',
                   data_glide_dir: ">",

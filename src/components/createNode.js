@@ -6,10 +6,12 @@ const CreateNode = (props, parent) => {
   if(props.data_glide_el) element.setAttribute('data-glide-el', props.data_glide_el);
   if(props.data_glide_dir) element.setAttribute('data-glide-dir', props.data_glide_dir)
   if(props.alt) element.setAttribute('alt', props.alt);
+  if(props.onclick) element.onclick = function() {console.log('AAAAAAAAAAA')}
   if(props.link) element.href = props.link;
   if(props.lazy) element.loading = 'lazy';
   if(props.blank) element.target = "_blank";
   if(props.img) element.src = props.img;
+  if(props.type) element.type = props.type;
   if(props.selected) element.selected = true;
   if(props.disabled) element.disabled = true;
   if(props.hidden) element.hidden = true;
