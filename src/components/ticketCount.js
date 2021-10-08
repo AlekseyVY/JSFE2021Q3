@@ -1,64 +1,88 @@
 
 
 const ticketCount = () => {
-  const ticketType = document.getElementsByClassName('ticket-buy-radio-container')[0];
-  const minus = Array.from(document.getElementsByClassName('ticket-selector-content-minus'));
-  const mWrap = Array.from(document.getElementsByClassName('ticket-selector-content-minus-wrapper'));
-  const plus = Array.from(document.getElementsByClassName('ticket-selector-content-plus'));
-  const pWrap = Array.from(document.getElementsByClassName('ticket-selector-content-plus-wrapper'));
-  const total = document.getElementsByClassName('ticket-buy-select-content-total')[0];
+  const totalTicket = document.getElementById('tickets-total');
 
-  let cost = 40;
+  const forty = document.getElementById('40');
+  const twentyFive = document.getElementById('25');
+  const twenty = document.getElementById('20');
 
-  const valueObj = {
-    'Permanent exhibition': 40,
-    'Temporary exhibition': 25,
-    'Combined Admission': 20
+  const bMinus = document.getElementById('basic-minus');
+  const bPlus = document.getElementById('basic-plus');
+  const bTotal = document.getElementById('basic-total');
+
+  const sMinus = document.getElementById('senior-minus');
+  const sPlus = document.getElementById('senior-plus');
+  const sTotal = document.getElementById('senior-total');
+
+  const totalT = document.getElementById('tickets-total');
+
+
+  let  valueObj;
+    valueObj = JSON.parse(localStorage.getItem('valueObj'));
+  if(valueObj) {
+    console.log(valueObj)
+    totalT.innerText = String(valueObj['total']);
+    sTotal.value = valueObj['sTotal'];
+    bTotal.value = valueObj['bTotal'];
+    document.getElementById(valueObj['tType']).children[0].checked = true;
+  } else {
+    valueObj = {
+      'cost': 40,
+      'sTotal': 0,
+      'bTotal': 0,
+      'tType': '40',
+      'total': 0
+    }
   }
+
+
+  forty.addEventListener('click',(e) => {
+    valueObj['cost'] = 40;
+    valueObj['tType'] = '40';
+    calculate()
+  })
+  twentyFive.addEventListener('click',(e) => {
+    valueObj['cost'] = 25;
+    valueObj['tType'] = '25';
+    calculate()
+  })
+  twenty.addEventListener('click',(e) => {
+    valueObj['cost'] = 20;
+    valueObj['tType'] = '20';
+    calculate()
+  })
 
   const calculate = () => {
-
-
-    const ticketsAmount = document.getElementsByClassName('ticket-selector-content-amount');
-    let basic = ticketsAmount[0].value;
-    let senior = ticketsAmount[1].value;
-    console.log(basic)
-    console.log(senior)
-    setTimeout(() => {
-      total.innerHTML = String((Number(basic) + Number(senior)) * cost);
-    }, 1)
-
+    const data = (Number(bTotal.value) * valueObj['cost']) + (Number(sTotal.value) * (valueObj['cost'] / 2));
+    valueObj['total'] = data;
+    localStorage.setItem('valueObj', JSON.stringify(valueObj));
+    totalTicket.innerText = String(data)
   }
 
-  plus.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      calculate()
-    })
+  sPlus.addEventListener('click',(e) => {
+    if(Number(sTotal.value) < 20) sTotal.value = Number(sTotal.value) + 1;
+    valueObj['sTotal'] = sTotal.value;
+    calculate()
   })
 
-  pWrap.forEach((item) => {
-    item.addEventListener('click', () => {
-      calculate()
-    })
+  sMinus.addEventListener('click',(e) => {
+    if(Number(sTotal.value) > 0) sTotal.value = Number(sTotal.value) - 1;
+    valueObj['sTotal'] = sTotal.value;
+    calculate()
   })
 
-  mWrap.forEach((item) => {
-    item.addEventListener('click', () => {
-      calculate()
-    })
+  bPlus.addEventListener('click',(e) => {
+    if(Number(bTotal.value) < 20) bTotal.value = Number(bTotal.value) + 1;
+    valueObj['bTotal'] = bTotal.value;
+    calculate()
   })
 
-  minus.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      calculate()
-    })
+  bMinus.addEventListener('click',(e) => {
+    if(Number(bTotal.value) > 0) bTotal.value = Number(bTotal.value) - 1;
+    valueObj['bTotal'] = bTotal.value;
+    calculate()
   })
-
-
-  ticketType.addEventListener('click', (e) => {
-    cost = valueObj[e.target.textContent]
-  })
-
 }
 
 export default ticketCount;

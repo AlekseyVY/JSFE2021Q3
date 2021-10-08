@@ -1,7 +1,7 @@
 const injectPlayer = () => {
   const tmp = document.getElementsByClassName('container2')[0];
   tmp.innerHTML = '<video class="video_player">\n' +
-    '    <source src="./assets/video/default_video.mp4" type="video/mp4">\n' +
+    '    <source src="https://www.youtube.com/watch/zp1BXPX8jcU?enablejsapi=1" type="video/mp4">\n' +
     '  </video>\n' +
     '  <div class="main_play_btn opacity">\n' +
     '    <svg class="play_btn_svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">\n' +

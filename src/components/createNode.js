@@ -6,7 +6,6 @@ const CreateNode = (props, parent) => {
   if(props.data_glide_el) element.setAttribute('data-glide-el', props.data_glide_el);
   if(props.data_glide_dir) element.setAttribute('data-glide-dir', props.data_glide_dir)
   if(props.alt) element.setAttribute('alt', props.alt);
-  if(props.onclick) element.onclick = function() {console.log('AAAAAAAAAAA')}
   if(props.link) element.href = props.link;
   if(props.lazy) element.loading = 'lazy';
   if(props.blank) element.target = "_blank";
