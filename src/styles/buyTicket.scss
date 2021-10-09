@@ -360,11 +360,10 @@ select {
 }
 
 .modal-right-info-date {
-  width: 166px;
+  width: 260px;
   display: flex;
   margin-top: 10px;
   align-items: center;
-  justify-content: space-between;
 }
 
 .modal-right-info-date-img {
@@ -373,6 +372,7 @@ select {
 }
 
 .modal-right-info-date-txt {
+  margin-left: 15px;
   font-family: Roboto, serif;
   font-style: normal;
   font-weight: 300;

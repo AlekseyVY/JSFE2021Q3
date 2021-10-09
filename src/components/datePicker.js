@@ -8,7 +8,6 @@ const datePicker = () => {
     dateField.classList.add('has-value');
     clearField.classList.remove('modal-form-date-img-placeholder');
     clearField.classList.add('none');
-    console.log(event)
   })
 }
 

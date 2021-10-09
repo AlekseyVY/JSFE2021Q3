@@ -2,9 +2,6 @@
 
 
 const ticketModal = (vObj) => {
-  console.log(vObj)
-
-
   const bFPlus = document.getElementById('form-basic-plus');
   const bFMinus = document.getElementById('form-basic-minus');
   const bFTotal = document.getElementById('form-basic-total');
@@ -29,6 +26,11 @@ const ticketModal = (vObj) => {
 
   var today = new Date().toISOString().split('T')[0];
   document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
+  const ticketDate = document.getElementsByClassName('modal-form-date')[0];
+  const totalTicketDate = document.getElementsByClassName('modal-right-info-date-txt ')[0];
+  const tTypeSelect = document.getElementsByClassName('modal-form-select')[0];
+  const timeSelect = document.getElementsByClassName('modal-form-time')[0];
+  const timeTicket = document.getElementsByClassName('modal-right-info-time-txt')[0];
 
   const update = () => {
     vObj['total'] = (Number(vObj['bTotal']) * vObj['cost']) + (Number(vObj['sTotal']) * (vObj['cost'] / 2));
@@ -47,11 +49,48 @@ const ticketModal = (vObj) => {
     totalSPrice.innerText = `${Number(vObj['sTotal']) * (vObj['cost'] / 2)} €`;
   }
 
-
   let int = setInterval(() => {
       update()
     },0)
 
+  timeSelect.addEventListener('change', (e) => {
+    console.log(e.target.value)
+    const time = String(e.target.value);
+    timeTicket.textContent = `${time[0]}${time[1]} : ${time[3]}${time[4]}`;
+  })
+
+  tTypeSelect.addEventListener('change', (e) => {
+    vObj['tType'] = e.target.value;
+    vObj['cost'] = e.target.value;
+    update();
+  })
+
+  ticketDate.addEventListener('change', (event) => {
+    const [week, month, day] =  String(new Date(event.target.value)).split(' ');
+    const dateObj = {
+      'Sun': 'Sunday',
+      'Mon': 'Monday',
+      'Tue': 'Tuesday',
+      'Wed': 'Wednesday',
+      'Thu': 'Thursday',
+      'Fri': 'Friday',
+      'Sat': 'Saturday',
+
+      'Jan': 'January',
+      'Feb': 'February',
+      'Mar': 'March',
+      'Apr': 'April',
+      'May': 'May',
+      'Jun': 'June',
+      'Jul': 'July',
+      'Aug': 'August',
+      'Sep': 'September',
+      'Oct': 'October',
+      'Nov': 'November',
+      'Dec': 'December'
+    }
+    totalTicketDate.innerText = `${dateObj[week]}, ${dateObj[month]} ${day < 10 ? String(day)[1] : day}`;
+  })
 
   closeBtn.addEventListener('click', () => {
     clearInterval(int)
