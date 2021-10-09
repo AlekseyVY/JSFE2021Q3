@@ -87,6 +87,7 @@ header {
 
 
 .name-error {
+  display: none;
   color: red;
   position: absolute;
   bottom: -20px;
@@ -99,6 +100,7 @@ header {
 }
 
 .email-error {
+  display: none;
   color: red;
   position: absolute;
   bottom: -20px;
@@ -111,6 +113,7 @@ header {
 }
 
 .phone-error {
+  display: none;
   color: red;
   position: absolute;
   bottom: -20px;
