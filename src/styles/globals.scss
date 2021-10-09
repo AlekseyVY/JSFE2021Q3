@@ -84,3 +84,40 @@ header {
 .none {
   display: none;
 }
+
+
+.name-error {
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.email-error {
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.phone-error {
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+}
