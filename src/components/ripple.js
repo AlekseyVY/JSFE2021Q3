@@ -1,7 +1,7 @@
 
 
 
-const rippleEffect = async () => {
+const rippleEffect = () => {
   const button = document.getElementsByClassName('modal-submit-btn')[0]
   button.addEventListener('click', (e) => {
     const rect = e.target.getBoundingClientRect();

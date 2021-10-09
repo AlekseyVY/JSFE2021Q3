@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto&display=swap" rel="stylesheet" crossorigin>
-  <script src="http://www.youtube.com/player_api"></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
   <title>museum</title>
 </head>
 <body data-new-gr-c-s-check-loaded="14.1032.0" data-gr-ext-installed="">
@@ -202,8 +202,7 @@
             picture had been damaged in any way, but because it looked different.</p></div>
         <div class="img-comp-container">
           <div class="img-comp-img"><img class="before-img" alt="before" src="./assets/explore/after.avif"></div>
-          <div class="img-comp-slider" style="top: 333px; left: 343px;"></div>
-          <div class="img-comp-img img-comp-overlay" style="width: 360px;"><img class="after-img" alt="before"
+          <div class="img-comp-img img-comp-overlay" ><img class="after-img" alt="before"
                                                                                 src="./assets/explore/before.avif">
           </div>
         </div>
@@ -431,9 +430,7 @@
                                                                                                  href="mailto:someone@yoursite.com"
                                                                                                  target="_blank"><p
                 class="contacts-content-inner-list-mail">mail: info@louvre.fr</p></a></div>
-          <img class="contacts-content-location" alt="location" loading="lazy" src="./assets/contacts/tmp.avif"><img
-            class="contacts-content-location-1024" alt="location" loading="lazy"
-            src="./assets/contacts/contacts_1024.avif"></div>
+          <div id='map' style='width: 960px; height: 620px;'></div>
       </div>
     </section>
     <div class="modal-container-wrapper">
@@ -453,12 +450,36 @@
                                                             src="./assets/modal/inputs/calendar.svg">
                     <p class="modal-form-date-img-placeholder">Date</p><img class="modal-form-date-arrow" alt="arrow"
                                                                             loading="lazy"
-                                                                            src="./assets/modal/inputs/arrow.svg"><input
-                        class="modal-form-date" type="date" placeholder="Date"></div>
+                                                                            src="./assets/modal/inputs/arrow.svg">
+                    <input class="modal-form-date" type="date" name="setTodaysDate" placeholder="Date">
+                  </div>
                   <div class="modal-form-time-wrapper"><img class="modal-form-time-img" alt="time" loading="lazy"
                                                             src="./assets/modal/inputs/time.svg"><img
                       class="modal-form-time-arrow" alt="arrow" loading="lazy" src="./assets/modal/inputs/arrow.svg">
-                    <p class="modal-form-time-text">Time</p><input class="modal-form-time" type="time"></div>
+                    <p class="modal-form-time-text">Time</p>
+                    <input class="modal-form-time" list="time" min="09:00" max="18:00" type="time">
+                    <datalist id="time">
+                      <option value=09:00">
+                      <option value="09:30">
+                      <option value="10:00">
+                      <option value="10:30">
+                      <option value="11:00">
+                      <option value="11:30">
+                      <option value="10:00">
+                      <option value="12:30">
+                      <option value="13:00">
+                      <option value="13:30">
+                      <option value="14:00">
+                      <option value="14:30">
+                      <option value="15:00">
+                      <option value="15:30">
+                      <option value="16:00">
+                      <option value="16:30">
+                      <option value="17:00">
+                      <option value="17:30">
+                      <option value="18:00">
+                    </datalist>
+                  </div>
                 </div>
                 <div class="modal-form-name-wrapper"><img class="modal-form-name-img" alt="name" loading="lazy"
                                                           src="./assets/modal/inputs/name.svg"><input
@@ -474,26 +495,26 @@
                     class="modal-form-select-img-arrow" alt="arrow" loading="lazy"
                     src="./assets/modal/inputs/arrow.svg"><select class="modal-form-select">
                   <option class="modal-form-select-option" disabled="" hidden="">Ticket Type</option>
-                  <option class="modal-form-select-option" value="1">Permanent exhibition</option>
-                  <option class="modal-form-select-option" value="2">Temporary exhibition</option>
-                  <option class="modal-form-select-option" value="3">Combined Admission</option>
+                  <option class="modal-form-select-option" value="40">Permanent exhibition</option>
+                  <option class="modal-form-select-option" value="25">Temporary exhibition</option>
+                  <option class="modal-form-select-option" value="20">Combined Admission</option>
                 </select></div>
                 <div class="form-ticket-amount-wrapper"><p class="form-ticket-amount-logo">Entry ticket</p>
                   <div class="form-ticket-amount-delimeter"></div>
-                  <div class="form-ticket-amount-basic-wrapper"><p class="form-ticket-amount-basic-text">Basic 18+ (20
+                  <div class="form-ticket-amount-basic-wrapper"><p class="form-ticket-amount-basic-text" id="form-basic-text">Basic 18+ (20
                     €)</p>
                     <div class="form-ticket-amount-wrapper-inner">
-                      <button class="form-ticket-amount-minus-button">-</button>
-                      <input class="form-ticket-amount-value" type="number">
-                      <button class="form-ticket-amount-plus-button">+</button>
+                      <button class="form-ticket-amount-minus-button" id="form-basic-minus">-</button>
+                      <input class="form-ticket-amount-value" id="form-basic-total" type="number">
+                      <button class="form-ticket-amount-plus-button" id="form-basic-plus">+</button>
                     </div>
                   </div>
-                  <div class="form-ticket-amount-senior-wrapper"><p class="form-ticket-amount-senior-text">Senior 65+
+                  <div class="form-ticket-amount-senior-wrapper"><p class="form-ticket-amount-senior-text" id="form-senior-text">Senior 65+
                     (10 €)</p>
                     <div class="form-ticket-amount-wrapper-inner">
-                      <button class="form-ticket-amount-minus-button">-</button>
-                      <input class="form-ticket-amount-value" type="number">
-                      <button class="form-ticket-amount-plus-button">+</button>
+                      <button class="form-ticket-amount-minus-button" id="form-senior-minus">-</button>
+                      <input class="form-ticket-amount-value" id="form-senior-total" type="number">
+                      <button class="form-ticket-amount-plus-button" id="form-senior-plus">+</button>
                     </div>
                   </div>
                 </div>
@@ -671,5 +692,41 @@
     </div>
   </footer>
 </div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYWxla3NleXZ5IiwiYSI6ImNrdWlpb21zNDBvMjkyd242ZTh6YmV0eDIifQ.Jltka2AdApbciCUlWGZ6ZA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    center: [2.3364, 48.86091],
+    zoom: 15.75
+  });
+  new mapboxgl.Marker({
+    color: "#171717",
+  })
+    .setLngLat([2.3364, 48.86091])
+    .addTo(map);
+  new mapboxgl.Marker({
+    color: "#757575",
+  })
+    .setLngLat([2.3333, 48.8602])
+    .addTo(map);
+  new mapboxgl.Marker({
+    color: "#757575",
+  })
+    .setLngLat([2.3397, 48.8607])
+    .addTo(map);
+  new mapboxgl.Marker({
+    color: "#757575",
+  })
+    .setLngLat([2.3330, 48.8619])
+    .addTo(map);
+  new mapboxgl.Marker({
+    color: "#757575",
+  })
+    .setLngLat([2.3365, 48.8625])
+    .addTo(map);
+</script>
 </body>
 </html>

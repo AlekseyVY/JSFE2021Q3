@@ -1,3 +1,4 @@
+import ticketModal from "./ticketModal";
 
 
 const ticketCount = () => {
@@ -17,71 +18,79 @@ const ticketCount = () => {
 
   const totalT = document.getElementById('tickets-total');
 
+  const pushUpdate = document.getElementsByClassName('ticket-buy-form-submit')[0];
 
-  let  valueObj;
-    valueObj = JSON.parse(localStorage.getItem('valueObj'));
-  if(valueObj) {
-    console.log(valueObj)
-    totalT.innerText = String(valueObj['total']);
-    sTotal.value = valueObj['sTotal'];
-    bTotal.value = valueObj['bTotal'];
-    document.getElementById(valueObj['tType']).children[0].checked = true;
+  let  vObj;
+    vObj = JSON.parse(localStorage.getItem('vObj'));
+  if(vObj) {
+    totalT.innerText = String(vObj['total']);
+    sTotal.value = vObj['sTotal'];
+    bTotal.value = vObj['bTotal'];
+    document.getElementById(vObj['tType']).children[0].checked = true;
   } else {
-    valueObj = {
+    vObj = {
       'cost': 40,
       'sTotal': 0,
       'bTotal': 0,
       'tType': '40',
       'total': 0
     }
+    localStorage.setItem('vObj', JSON.stringify(vObj));
   }
 
-
   forty.addEventListener('click',(e) => {
-    valueObj['cost'] = 40;
-    valueObj['tType'] = '40';
+    vObj['cost'] = 40;
+    vObj['tType'] = '40';
     calculate()
   })
+
   twentyFive.addEventListener('click',(e) => {
-    valueObj['cost'] = 25;
-    valueObj['tType'] = '25';
+    vObj['cost'] = 25;
+    vObj['tType'] = '25';
     calculate()
   })
+
   twenty.addEventListener('click',(e) => {
-    valueObj['cost'] = 20;
-    valueObj['tType'] = '20';
+    vObj['cost'] = 20;
+    vObj['tType'] = '20';
     calculate()
   })
 
   const calculate = () => {
-    const data = (Number(bTotal.value) * valueObj['cost']) + (Number(sTotal.value) * (valueObj['cost'] / 2));
-    valueObj['total'] = data;
-    localStorage.setItem('valueObj', JSON.stringify(valueObj));
+    const data = (Number(bTotal.value) * vObj['cost']) + (Number(sTotal.value) * (vObj['cost'] / 2));
+    vObj['total'] = data;
+    localStorage.setItem('vObj', JSON.stringify(vObj));
     totalTicket.innerText = String(data)
+    console.log(vObj)
   }
 
   sPlus.addEventListener('click',(e) => {
     if(Number(sTotal.value) < 20) sTotal.value = Number(sTotal.value) + 1;
-    valueObj['sTotal'] = sTotal.value;
+    vObj['sTotal'] = sTotal.value;
     calculate()
   })
 
   sMinus.addEventListener('click',(e) => {
     if(Number(sTotal.value) > 0) sTotal.value = Number(sTotal.value) - 1;
-    valueObj['sTotal'] = sTotal.value;
+    vObj['sTotal'] = sTotal.value;
     calculate()
   })
 
   bPlus.addEventListener('click',(e) => {
     if(Number(bTotal.value) < 20) bTotal.value = Number(bTotal.value) + 1;
-    valueObj['bTotal'] = bTotal.value;
+    vObj['bTotal'] = bTotal.value;
     calculate()
   })
 
   bMinus.addEventListener('click',(e) => {
     if(Number(bTotal.value) > 0) bTotal.value = Number(bTotal.value) - 1;
-    valueObj['bTotal'] = bTotal.value;
+    vObj['bTotal'] = bTotal.value;
     calculate()
+  })
+
+
+  pushUpdate.addEventListener('click', (e) => {
+    ticketModal(vObj)
   })
 }
 
