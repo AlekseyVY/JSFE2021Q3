@@ -20,7 +20,6 @@ const validation = () => {
   const mail = document.getElementsByClassName('modal-form-email')[0];
   const mailError = document.getElementsByClassName('email-error')[0];
   mail.addEventListener('input', (e) => {
-
     const test = new RegExp(/^([A-z-0-9_]{3,15}@[A-z]{4,15}.[A-z]{2,})$/, 'gim');
     const value = e.target.value
     if(value.match(test)) {
@@ -31,6 +30,24 @@ const validation = () => {
       mailError.style.display = 'block';
       mail.style.borderColor = 'red'
       mail.style.outlineColor = 'red';
+    }
+  })
+
+
+  const phone = document.getElementsByClassName('modal-form-tel')[0];
+  const phoneError = document.getElementsByClassName('phone-error')[0];
+  phone.addEventListener('input', (e) => {
+    const test = new RegExp(/^([0-9]{2,3})$|^([0-9]{2,3}([-]|[ ])[0-9]{2,3})$|^([0-9]{2,3}([-]|[ ])[0-9]{2,3}([-]|[ ])[0-9]{2,3})$|^([0-9]{2,3}([-]|[ ])[0-9]{2,3}([-]|[ ])[0-9]{2,3}([-]|[ ])[0-9]{2,3})$|^([0-9]{2,3}([-]|[ ])[0-9]{2,3}([-]|[ ])[0-9]{2,3}([-]|[ ])[0-9]{2,3}([-]|[ ])[0-9]{2,3})$/, 'gim');
+    const value = e.target.value
+    const secTest = new RegExp(/^([0-9]{2,10})$/, 'igm');
+    if((value.match(test) && (value.replaceAll('-','').length <= 10 || value.replaceAll(' ','').length <= 10 )) || value.match(secTest)) {
+      phoneError.style.display = 'none';
+      phone.style.borderColor = 'black'
+      phone.style.outlineColor = 'black';
+    } else {
+      phoneError.style.display = 'block';
+      phone.style.borderColor = 'red'
+      phone.style.outlineColor = 'red';
     }
   })
 

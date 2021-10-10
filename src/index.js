@@ -33,8 +33,58 @@ validation();
 
 (() => {
  const iData = Array.from(document.getElementsByClassName('video-content-videogallery-player'));
- const controlVideo = Array.from(document.getElementsByClassName('glide__arrows'))[1]
- const wrap = Array.from(document.getElementsByClassName('iframe-wrapper'))
+ const controlVideo = Array.from(document.getElementsByClassName('glide__arrows'))[1];
+ const mainVideoSrc = document.getElementById('main-player-source');
+ const mainPlayer = document.getElementsByClassName('video_player')[0];
+ const leftVideo = controlVideo.children[0];
+ const rightVideo = controlVideo.children[2];
+ const bulletControl = controlVideo.children[1];
+
+
+ let idx = 0;
+ const lolObject = {
+   '0': 'video2.mp4',
+   '1': 'video0.mp4',
+   '2': 'video4.mp4',
+   '3': 'video3.mp4',
+   '4': 'video1.mp4'
+ }
+
+  Array.from(bulletControl.children).forEach((ele) => {
+    ele.addEventListener('click', (e) => {
+      idx = Number(Array.from(e.target.id)[1]);
+      mainVideoSrc.src = `./assets/video/${videoArray[idx]}`;
+      mainPlayer.poster = `./assets/video/${posterArray[idx]}`
+      mainPlayer.load()
+    })
+  })
+
+
+
+ const videoArray = ['video2.mp4', 'video0.mp4', 'video4.mp4', 'video3.mp4', 'video1.mp4'];
+ const posterArray = ['poster2.jpg', 'poster0.jpg', 'poster4.jpg', 'poster3.jpg', 'poster1.jpg'];
+
+ rightVideo.addEventListener('click', () => {
+   if(idx >= videoArray.length - 1) {
+     idx = 0;
+   } else {
+     idx++;
+   }
+   mainVideoSrc.src = `./assets/video/${videoArray[idx]}`;
+   mainPlayer.poster = `./assets/video/${posterArray[idx]}`
+   mainPlayer.load()
+ })
+
+  leftVideo.addEventListener('click', () => {
+    if(idx <= 0) {
+      idx = videoArray.length - 1;
+    } else {
+      idx--;
+    }
+    mainVideoSrc.src = `./assets/video/${videoArray[idx]}`;
+    mainPlayer.poster = `./assets/video/${posterArray[idx]}`
+    mainPlayer.load()
+  })
 
  controlVideo.addEventListener('click', () => {
    stopVideo(null)
