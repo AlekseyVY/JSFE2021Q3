@@ -1,75 +1,70 @@
 export default class Player {
   constructor() {
-    // DOM elements
+    // // DOM elements
     this.container = document.querySelector('.container2');
     this.player = this.container.querySelector('.video_player');
-    this.video_progress = document.querySelector('.progress');
-    this.progress_percent = document.querySelector('.progress_percentage');
-    this.volume = document.querySelector('.volume');
-    this.volume_percentage = document.querySelector('.volume_percentage');
+    this.video_progress = document.querySelector('.video-progress');
+    this.volume = document.querySelector('.sound-value');
     this.fullscreen_btn = document.querySelector('.fullscreen_btn');
-    this.playbackRate_text = document.querySelector('.playbackRate');
-    this.sound_btn = document.querySelector('.sound_btn');
+    this.sound_btn = document.querySelector('.sound');
     this.main_play_btn = document.querySelector('.main_play_btn');
-    this.video_controls = document.querySelector('.video_controls');
-    this.main_play_btn_back = document.querySelector('.main_play_btn-back');
-
-    // event listeners
     this.play_btn = document.querySelector('.play_btn');
     this.play_btn.addEventListener('click', this.play);
     this.main_play_btn.addEventListener('click', this.play);
-    this.video_progress.addEventListener('click', this.change_video_progress);
-    this.volume.addEventListener('click', this.change_volume);
+    this.player.addEventListener('click', this.play);
+    this.video_progress.addEventListener('input', this.change_video_progress);
+
+    this.controlVideo = Array.from(document.getElementsByClassName('glide__arrows'))[1];
+    this.leftVideo = this.controlVideo.children[0];
+    this.rightVideo = this.controlVideo.children[2];
+    this.bulletControl = this.controlVideo.children[1];
+
+    this.leftVideo.addEventListener('click', () => {
+      this.refresh()
+    })
+    this.rightVideo.addEventListener('click', () => {
+      this.refresh()
+    })
+    this.bulletControl.addEventListener('click', () => {
+      this.refresh()
+    })
+
+
+    this.volume.addEventListener('input', (event) => {
+      this.change_volume(event);
+      if(this.player.volume === 0) {
+        this.sound_btn.innerHTML = '<svg class="sound" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
+          '\t viewBox="0 0 319.748 319.748" style="enable-background:new 0 0 319.748 319.748;" xml:space="preserve">\n' +
+          '<g id="XMLID_783_">\n' +
+          '\t<path id="XMLID_784_" d="M192.078,26.649c-4.878-2.61-10.795-2.324-15.398,0.744L90.458,84.874H15c-8.284,0-15,6.716-15,15v120\n' +
+          '\t\tc0,8.284,6.716,15,15,15h75.458l86.221,57.481c2.51,1.673,5.411,2.519,8.321,2.519c2.426,0,4.859-0.588,7.077-1.775\n' +
+          '\t\tc4.878-2.61,7.922-7.693,7.922-13.225v-240C200,34.342,196.955,29.259,192.078,26.649z M170,251.846l-66.68-44.453\n' +
+          '\t\tc-2.464-1.643-5.359-2.519-8.32-2.519H30v-90h65c2.961,0,5.856-0.877,8.32-2.519L170,67.902V251.846z"/>\n' +
+          '\t<path id="XMLID_787_" d="M301.212,159.873l14.142-14.142c5.858-5.858,5.858-15.355,0-21.213c-5.857-5.858-15.355-5.858-21.213,0\n' +
+          '\t\tl-14.142,14.142l-14.142-14.142c-5.857-5.858-15.356-5.858-21.213,0c-5.858,5.858-5.858,15.355,0,21.213l14.142,14.142\n' +
+          '\t\tl-14.142,14.142c-5.858,5.858-5.858,15.355,0,21.213c2.929,2.929,6.768,4.393,10.607,4.393c3.839,0,7.678-1.464,10.606-4.393\n' +
+          '\t\tl14.142-14.142l14.142,14.142c2.929,2.929,6.768,4.393,10.606,4.393c3.839,0,7.678-1.464,10.606-4.393\n' +
+          '\t\tc5.858-5.858,5.858-15.355,0-21.213L301.212,159.873z"/>\n' +
+          '</g>\n' +
+          '</svg>'
+      } else {
+        this.sound_btn.innerHTML = '                <svg width="38" height="31" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+          '                  <path d="M19.3511 0C18.875 0 18.4622 0.161587 18.1138 0.484761L8.9609 8.97374H1.76C1.28282 8.97374 0.871122 9.13533 0.522673 9.4585C0.174224 9.78167 0 10.1645 0 10.6061V20.3939C0 20.8355 0.174224 21.2183 0.522673 21.5415C0.871122 21.8647 1.28393 22.0263 1.76 22.0263H8.9609L18.1138 30.5152C18.4622 30.8384 18.8739 31 19.3511 31C19.8283 31 20.24 30.8384 20.5884 30.5152C20.9369 30.1921 21.1111 29.8102 21.1111 29.3677V1.63234C21.1111 1.1908 20.9369 0.807935 20.5895 0.484761C20.2422 0.161587 19.8294 0 19.3522 0H19.3511Z" fill="#B3B3B3"/>\n' +
+          '                  <path d="M29.5979 19.1322C30.3389 18.0151 30.7094 16.8082 30.7094 15.5103C30.7094 14.2125 30.3389 13.0014 29.5979 11.8751C28.8569 10.7487 27.8774 9.95512 26.6561 9.49425C26.4819 9.40952 26.2634 9.36612 26.0027 9.36612C25.5499 9.36612 25.1572 9.52422 24.8258 9.83939C24.4943 10.1566 24.3286 10.5431 24.3286 11.004C24.3286 11.3625 24.4331 11.6653 24.6432 11.9123C24.8532 12.1592 25.1044 12.3731 25.4011 12.5519C25.6966 12.7307 25.9932 12.927 26.2898 13.1409C26.5864 13.3548 26.8387 13.6565 27.0477 14.0492C27.2567 14.4419 27.3612 14.9286 27.3612 15.5083C27.3612 16.088 27.2567 16.5747 27.0477 16.9673C26.8387 17.36 26.5864 17.6628 26.2898 17.8756C25.9932 18.0885 25.6966 18.2859 25.4011 18.4646C25.1044 18.6434 24.8522 18.8573 24.6432 19.1043C24.4342 19.3512 24.3286 19.655 24.3286 20.0126C24.3286 20.4734 24.4954 20.8609 24.8258 21.1771C25.1572 21.4913 25.5488 21.6514 26.0027 21.6514C26.2634 21.6514 26.4819 21.6091 26.6561 21.5233C27.8763 21.0449 28.8569 20.2471 29.5979 19.1291V19.1322Z" fill="#B3B3B3"/>\n' +
+          '                  <path d="M35.7563 22.8582C37.252 20.6112 37.9999 18.1571 37.9999 15.499C37.9999 12.8419 37.252 10.3899 35.7563 8.13971C34.2605 5.89271 32.2811 4.25452 29.819 3.23039C29.591 3.14417 29.362 3.10001 29.1329 3.10001C28.6759 3.10001 28.2796 3.26509 27.9451 3.59525C27.6105 3.92541 27.4443 4.31551 27.4443 4.76764C27.4443 5.44479 27.7874 5.95685 28.4735 6.30489C29.4579 6.80855 30.1269 7.19023 30.4785 7.45099C31.7803 8.38891 32.7967 9.56445 33.5265 10.9797C34.2562 12.395 34.6216 13.9007 34.6216 15.5C34.6216 17.0972 34.2562 18.6039 33.5265 20.0203C32.7967 21.4356 31.7803 22.6111 30.4785 23.549C30.1269 23.8098 29.4579 24.1915 28.4735 24.6951C27.7874 25.0432 27.4443 25.5542 27.4443 26.2324C27.4443 26.6835 27.6116 27.0746 27.9451 27.4048C28.2785 27.7349 28.6833 27.9 29.1585 27.9C29.3694 27.9 29.59 27.8558 29.818 27.7696C32.28 26.7444 34.2605 25.1084 35.7552 22.8593L35.7563 22.8582Z" fill="#B3B3B3"/>\n' +
+          '                </svg>'
+      }
+    });
     this.fullscreen_btn.addEventListener('click', this.fullscreen);
     this.sound_btn.addEventListener('click', this.mute);
-    this.container.addEventListener('mouseenter', this.controls_show);
-    this.container.addEventListener('mouseleave', this.controls_hide);
-    this.container.addEventListener('mousemove', this.controls_show);
-
-    // global event listeners
     document.addEventListener('keydown', this.hotkeys);
     document.addEventListener('fullscreenchange', this.exitHandler);
-
-    // set variables
-    this.playbackRate_text.textContent = `${this.player.playbackRate}x`;
     this.volume.value = this.player.volume * 100;
-    this.volume_percentage.textContent = `${this.volume.value}%`;
     this.mute_state = false;
     this.temp = null;
     this.fire_event = false;
-
-    // function calls;
     this.progress();
-    this.idle(this.controls_hide)
   }
-
-  controls_show = () => {
-    if(!this.fire_event) {
-      this.video_controls.classList.remove('opacity');
-      this.main_play_btn.classList.remove('opacity');
-      this.main_play_btn_back.classList.remove('opacity');
-      this.fire_event = true;
-    }
-  }
-
-  controls_hide = () => {
-    this.video_controls.classList.add('opacity');
-    this.main_play_btn.classList.add('opacity');
-    this.main_play_btn_back.classList.add('opacity');
-    this.fire_event = false;
-  }
-
-  idle = (func) => {
-    let time;
-    document.onmousemove = resetTimer;
-    document.onkeydown = resetTimer;
-
-    function resetTimer() {
-      clearTimeout(time);
-      time = setTimeout(func, 3000)
-    }
-  }
-
   exitHandler = () => {
     if(!document.fullscreenElement) {
       this.player.style.maxWidth = '1280px';
@@ -83,6 +78,7 @@ export default class Player {
         this.fullscreen();
         break;
       case 'Space':
+        event.preventDefault()
         this.play();
         break;
       case 'KeyM':
@@ -106,7 +102,6 @@ export default class Player {
     if(data === 'up' && this.player.playbackRate < 10) {
       this.player.playbackRate += 0.25;
     }
-    this.playbackRate_text.textContent = `${this.player.playbackRate}x`;
   }
 
   mute = () => {
@@ -114,62 +109,96 @@ export default class Player {
       this.temp = this.player.volume;
       this.player.volume = 0;
       this.volume.value = 0;
-      this.volume_percentage.textContent = `${this.volume.value}%`;
       this.mute_state = true;
-      this.sound_btn.innerHTML = '<svg class="sound_btn_svg" width="48px" height="48px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">\n' +
-        '<path d="M26.93,47.39a2.46,2.46,0,0,1-1.82-.81L11.22,31.5H10a7.5,7.5,0,0,1-7.5-7.73,7.71,7.71,0,0,1,7.79-7.27h1L25.11,1.43a2.5,2.5,0,0,1,4.34,1.69V44.88a2.45,2.45,0,0,1-1.59,2.33A2.56,2.56,0,0,1,26.93,47.39ZM10.25,17.5a6.7,6.7,0,0,0-6.79,6.3A6.5,6.5,0,0,0,10,30.5h1.49a0.5,0.5,0,0,1,.37.16l14,15.23a1.5,1.5,0,0,0,2.6-1V3.12a1.5,1.5,0,0,0-2.6-1l-14,15.23a0.5,0.5,0,0,1-.37.16H10.25Z"/>\n' +
-        '<path d="M35.86,29.1a0.5,0.5,0,0,1-.35-0.85l9.19-9.19a0.5,0.5,0,0,1,.71.71l-9.19,9.19A0.5,0.5,0,0,1,35.86,29.1Z"/>\n' +
-        '<path d="M45,29.1a0.5,0.5,0,0,1-.35-0.15L35.5,19.76a0.5,0.5,0,0,1,.71-0.71l9.19,9.19A0.5,0.5,0,0,1,45,29.1Z"/>\n' +
-        '<rect width="48" height="48" fill="none"/>\n' +
-        '</svg>';
+      this.sound_btn.innerHTML = '<svg class="sound" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
+        '\t viewBox="0 0 319.748 319.748" style="enable-background:new 0 0 319.748 319.748;" xml:space="preserve">\n' +
+        '<g id="XMLID_783_">\n' +
+        '\t<path id="XMLID_784_" d="M192.078,26.649c-4.878-2.61-10.795-2.324-15.398,0.744L90.458,84.874H15c-8.284,0-15,6.716-15,15v120\n' +
+        '\t\tc0,8.284,6.716,15,15,15h75.458l86.221,57.481c2.51,1.673,5.411,2.519,8.321,2.519c2.426,0,4.859-0.588,7.077-1.775\n' +
+        '\t\tc4.878-2.61,7.922-7.693,7.922-13.225v-240C200,34.342,196.955,29.259,192.078,26.649z M170,251.846l-66.68-44.453\n' +
+        '\t\tc-2.464-1.643-5.359-2.519-8.32-2.519H30v-90h65c2.961,0,5.856-0.877,8.32-2.519L170,67.902V251.846z"/>\n' +
+        '\t<path id="XMLID_787_" d="M301.212,159.873l14.142-14.142c5.858-5.858,5.858-15.355,0-21.213c-5.857-5.858-15.355-5.858-21.213,0\n' +
+        '\t\tl-14.142,14.142l-14.142-14.142c-5.857-5.858-15.356-5.858-21.213,0c-5.858,5.858-5.858,15.355,0,21.213l14.142,14.142\n' +
+        '\t\tl-14.142,14.142c-5.858,5.858-5.858,15.355,0,21.213c2.929,2.929,6.768,4.393,10.607,4.393c3.839,0,7.678-1.464,10.606-4.393\n' +
+        '\t\tl14.142-14.142l14.142,14.142c2.929,2.929,6.768,4.393,10.606,4.393c3.839,0,7.678-1.464,10.606-4.393\n' +
+        '\t\tc5.858-5.858,5.858-15.355,0-21.213L301.212,159.873z"/>\n' +
+        '</g>\n' +
+        '</svg>'
     } else {
       this.player.volume = this.temp;
       this.volume.value = this.player.volume * 100;
-      this.volume_percentage.textContent = `${this.volume.value}%`;
       this.temp = null;
       this.mute_state = false;
-      this.sound_btn.innerHTML = '      <svg class="sound_btn_svg" width="48px" height="48px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">\n' +
-        '        <path d="M24.48,47.39a2.46,2.46,0,0,1-1.82-.81L8.77,31.5H7.5A7.5,7.5,0,0,1,0,23.77,7.71,7.71,0,0,1,7.79,16.5h1L22.66,1.43A2.5,2.5,0,0,1,27,3.12V44.88a2.45,2.45,0,0,1-1.59,2.33A2.55,2.55,0,0,1,24.48,47.39ZM7.79,17.5A6.7,6.7,0,0,0,1,23.8a6.5,6.5,0,0,0,6.5,6.7H9a0.5,0.5,0,0,1,.37.16l14,15.23a1.5,1.5,0,0,0,2.6-1V3.12a1.5,1.5,0,0,0-2.6-1l-14,15.23A0.5,0.5,0,0,1,9,17.5H7.79Z"/>\n' +
-        '        <path d="M31.75,40a0.5,0.5,0,0,1,0-1,15,15,0,0,0,0-30,0.5,0.5,0,0,1,0-1A16,16,0,0,1,31.75,40Z"/>\n' +
-        '        <path d="M32,34a0.5,0.5,0,0,1,0-1,9,9,0,0,0,0-18,0.5,0.5,0,0,1,0-1A10,10,0,0,1,32,34Z"/>\n' +
-        '        <path d="M32,28.5a0.5,0.5,0,0,1,0-1,3.5,3.5,0,0,0,0-7,0.5,0.5,0,0,1,0-1A4.5,4.5,0,0,1,32,28.5Z"/>\n' +
-        '        <rect width="48" height="48" fill="none"/></svg>';
+      this.sound_btn.innerHTML = '                <svg width="38" height="31" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '                  <path d="M19.3511 0C18.875 0 18.4622 0.161587 18.1138 0.484761L8.9609 8.97374H1.76C1.28282 8.97374 0.871122 9.13533 0.522673 9.4585C0.174224 9.78167 0 10.1645 0 10.6061V20.3939C0 20.8355 0.174224 21.2183 0.522673 21.5415C0.871122 21.8647 1.28393 22.0263 1.76 22.0263H8.9609L18.1138 30.5152C18.4622 30.8384 18.8739 31 19.3511 31C19.8283 31 20.24 30.8384 20.5884 30.5152C20.9369 30.1921 21.1111 29.8102 21.1111 29.3677V1.63234C21.1111 1.1908 20.9369 0.807935 20.5895 0.484761C20.2422 0.161587 19.8294 0 19.3522 0H19.3511Z" fill="#B3B3B3"/>\n' +
+        '                  <path d="M29.5979 19.1322C30.3389 18.0151 30.7094 16.8082 30.7094 15.5103C30.7094 14.2125 30.3389 13.0014 29.5979 11.8751C28.8569 10.7487 27.8774 9.95512 26.6561 9.49425C26.4819 9.40952 26.2634 9.36612 26.0027 9.36612C25.5499 9.36612 25.1572 9.52422 24.8258 9.83939C24.4943 10.1566 24.3286 10.5431 24.3286 11.004C24.3286 11.3625 24.4331 11.6653 24.6432 11.9123C24.8532 12.1592 25.1044 12.3731 25.4011 12.5519C25.6966 12.7307 25.9932 12.927 26.2898 13.1409C26.5864 13.3548 26.8387 13.6565 27.0477 14.0492C27.2567 14.4419 27.3612 14.9286 27.3612 15.5083C27.3612 16.088 27.2567 16.5747 27.0477 16.9673C26.8387 17.36 26.5864 17.6628 26.2898 17.8756C25.9932 18.0885 25.6966 18.2859 25.4011 18.4646C25.1044 18.6434 24.8522 18.8573 24.6432 19.1043C24.4342 19.3512 24.3286 19.655 24.3286 20.0126C24.3286 20.4734 24.4954 20.8609 24.8258 21.1771C25.1572 21.4913 25.5488 21.6514 26.0027 21.6514C26.2634 21.6514 26.4819 21.6091 26.6561 21.5233C27.8763 21.0449 28.8569 20.2471 29.5979 19.1291V19.1322Z" fill="#B3B3B3"/>\n' +
+        '                  <path d="M35.7563 22.8582C37.252 20.6112 37.9999 18.1571 37.9999 15.499C37.9999 12.8419 37.252 10.3899 35.7563 8.13971C34.2605 5.89271 32.2811 4.25452 29.819 3.23039C29.591 3.14417 29.362 3.10001 29.1329 3.10001C28.6759 3.10001 28.2796 3.26509 27.9451 3.59525C27.6105 3.92541 27.4443 4.31551 27.4443 4.76764C27.4443 5.44479 27.7874 5.95685 28.4735 6.30489C29.4579 6.80855 30.1269 7.19023 30.4785 7.45099C31.7803 8.38891 32.7967 9.56445 33.5265 10.9797C34.2562 12.395 34.6216 13.9007 34.6216 15.5C34.6216 17.0972 34.2562 18.6039 33.5265 20.0203C32.7967 21.4356 31.7803 22.6111 30.4785 23.549C30.1269 23.8098 29.4579 24.1915 28.4735 24.6951C27.7874 25.0432 27.4443 25.5542 27.4443 26.2324C27.4443 26.6835 27.6116 27.0746 27.9451 27.4048C28.2785 27.7349 28.6833 27.9 29.1585 27.9C29.3694 27.9 29.59 27.8558 29.818 27.7696C32.28 26.7444 34.2605 25.1084 35.7552 22.8593L35.7563 22.8582Z" fill="#B3B3B3"/>\n' +
+        '                </svg>'
     }
   }
 
   fullscreen = () => {
     if(document.fullscreenElement) {
       document.exitFullscreen().then();
-      this.fullscreen_btn.innerHTML = '      <svg class="fullscreen_svg" width="48px" height="48px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-        '        <path d="M33 6H42V15"  stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>\n' +
-        '        <path d="M42 33V42H33"  stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>\n' +
-        '        <path d="M15 42H6V33"  stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>\n' +
-        '        <path d="M6 15V6H15"  stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>\n' +
-        '      </svg>';
+      this.fullscreen_btn.innerHTML =
+        '                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '                  <path d="M30.6055 30.7513H22.4097V34.8638H34.7083V22.5069H30.6055V30.7513Z" fill="#B3B3B3"/>\n' +
+        '                  <path d="M4.10278 22.5069H0V34.8638H12.2986V30.7513H4.10278V22.5069Z" fill="#B3B3B3"/>\n' +
+        '                  <path d="M0 12.3569H4.10278V4.12222H12.2986V0H0V12.3569Z" fill="#B3B3B3"/>\n' +
+        '                  <path d="M22.4097 0V4.12222H30.6055V12.3569H34.7083V0H22.4097Z" fill="#B3B3B3"/>\n' +
+        '                </svg>'
     } else {
       this.container.requestFullscreen().then(() => {
         this.player.style.maxWidth = '100%';
         this.player.style.maxHeight = '100%';
-        this.fullscreen_btn.innerHTML = '<svg class="fullscreen_svg width="48px" height="48px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n' +
-          '    <g id="🔍-Product-Icons"  stroke-width="1" fill="none" fill-rule="evenodd">\n' +
-          '        <g id="ic_fluent_full_screen_zoom_24_regular"  fill-rule="nonzero">\n' +
-          '            <path d="M16.25,15.5 L20.25,15.5 C20.6642136,15.5 21,15.8357864 21,16.25 C21,16.6296958 20.7178461,16.943491 20.3517706,16.9931534 L20.25,17 L17,17 L17,20.25 C17,20.6642136 16.6642136,21 16.25,21 C15.8703042,21 15.556509,20.7178461 15.5068466,20.3517706 L15.5,20.25 L15.5,16.25 C15.5,15.8703042 15.7821539,15.556509 16.1482294,15.5068466 L16.25,15.5 L20.25,15.5 L16.25,15.5 Z M3.75,15.5 L7.75,15.5 C8.12969577,15.5 8.44349096,15.7821539 8.49315338,16.1482294 L8.5,16.25 L8.5,20.25 C8.5,20.6642136 8.16421356,21 7.75,21 C7.37030423,21 7.05650904,20.7178461 7.00684662,20.3517706 L7,20.25 L7,17 L3.75,17 C3.33578644,17 3,16.6642136 3,16.25 C3,15.8703042 3.28215388,15.556509 3.64822944,15.5068466 L3.75,15.5 L7.75,15.5 L3.75,15.5 Z M7.75,3 C8.12969577,3 8.44349096,3.28215388 8.49315338,3.64822944 L8.5,3.75 L8.5,7.75 C8.5,8.12969577 8.21784612,8.44349096 7.85177056,8.49315338 L7.75,8.5 L3.75,8.5 C3.33578644,8.5 3,8.16421356 3,7.75 C3,7.37030423 3.28215388,7.05650904 3.64822944,7.00684662 L3.75,7 L7,7 L7,3.75 C7,3.33578644 7.33578644,3 7.75,3 Z M16.25,3 C16.6296958,3 16.943491,3.28215388 16.9931534,3.64822944 L17,3.75 L17,7 L20.25,7 C20.6642136,7 21,7.33578644 21,7.75 C21,8.12969577 20.7178461,8.44349096 20.3517706,8.49315338 L20.25,8.5 L16.25,8.5 C15.8703042,8.5 15.556509,8.21784612 15.5068466,7.85177056 L15.5,7.75 L15.5,3.75 C15.5,3.33578644 15.8357864,3 16.25,3 Z" id="🎨-Color"></path>\n' +
-          '        </g>\n' +
-          '    </g>\n' +
-          '</svg>';
+        this.fullscreen_btn.innerHTML = '<svg class="fullscreen_btn_inner" width="35" height="35" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
+          '\t viewBox="0 0 385.331 385.331" style="enable-background:new 0 0 385.331 385.331;" xml:space="preserve">\n' +
+          '<g>\n' +
+          '\t<g id="Fullscreen_Exit">\n' +
+          '\t\t<path d="M264.943,156.665h108.273c6.833,0,11.934-5.39,11.934-12.211c0-6.833-5.101-11.85-11.934-11.838h-96.242V36.181\n' +
+          '\t\t\tc0-6.833-5.197-12.03-12.03-12.03s-12.03,5.197-12.03,12.03v108.273c0,0.036,0.012,0.06,0.012,0.084\n' +
+          '\t\t\tc0,0.036-0.012,0.06-0.012,0.096C252.913,151.347,258.23,156.677,264.943,156.665z"/>\n' +
+          '\t\t<path d="M120.291,24.247c-6.821,0-11.838,5.113-11.838,11.934v96.242H12.03c-6.833,0-12.03,5.197-12.03,12.03\n' +
+          '\t\t\tc0,6.833,5.197,12.03,12.03,12.03h108.273c0.036,0,0.06-0.012,0.084-0.012c0.036,0,0.06,0.012,0.096,0.012\n' +
+          '\t\t\tc6.713,0,12.03-5.317,12.03-12.03V36.181C132.514,29.36,127.124,24.259,120.291,24.247z"/>\n' +
+          '\t\t<path d="M120.387,228.666H12.115c-6.833,0.012-11.934,5.39-11.934,12.223c0,6.833,5.101,11.85,11.934,11.838h96.242v96.423\n' +
+          '\t\t\tc0,6.833,5.197,12.03,12.03,12.03c6.833,0,12.03-5.197,12.03-12.03V240.877c0-0.036-0.012-0.06-0.012-0.084\n' +
+          '\t\t\tc0-0.036,0.012-0.06,0.012-0.096C132.418,233.983,127.1,228.666,120.387,228.666z"/>\n' +
+          '\t\t<path d="M373.3,228.666H265.028c-0.036,0-0.06,0.012-0.084,0.012c-0.036,0-0.06-0.012-0.096-0.012\n' +
+          '\t\t\tc-6.713,0-12.03,5.317-12.03,12.03v108.273c0,6.833,5.39,11.922,12.223,11.934c6.821,0.012,11.838-5.101,11.838-11.922v-96.242\n' +
+          '\t\t\tH373.3c6.833,0,12.03-5.197,12.03-12.03S380.134,228.678,373.3,228.666z"/>\n' +
+          '\t</g>\n' +
+          '</svg>'
       })
     }
   }
 
   change_video_progress = (event) => {
-    const data = event.offsetX * this.video_progress.max / this.video_progress.offsetWidth;
-    this.player.currentTime = Math.round(data * this.player.duration / 100);
+    this.player.currentTime = Math.round(event.target.value * this.player.duration / 100);
   }
 
   change_volume = (event) => {
-    this.volume.value = Math.round(event.offsetX * this.volume.max / this.volume.offsetWidth);
-    this.volume_percentage.textContent = `${this.volume.value}%`;
+    this.volume.value = Math.round(event.target.value);
     this.player.volume = this.volume.value / 100;
+  }
+
+
+  refresh = () => {
+    this.play_btn.innerHTML =   '                <svg width="23" height="31" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      '                  <path d="M23 15.5053L0 0C0 23.3683 0 11.8996 0 31L23 15.5053Z" fill="#B3B3B3"/>\n' +
+      '                </svg>'
+    this.main_play_btn.innerHTML =
+      '            <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      '              <g clip-path="url(#clip0)">\n' +
+      '                <path d="M110 8.89168C130.003 8.88778 149.558 14.816 166.191 25.9266C182.825 37.0372 195.79 52.831 203.446 71.3106C211.103 89.7901 213.107 110.125 209.206 129.744C205.304 149.363 195.672 167.384 181.528 181.528C167.384 195.672 149.363 205.304 129.744 209.206C110.125 213.107 89.7901 211.103 71.3106 203.446C52.8311 195.79 37.0372 182.825 25.9266 166.191C14.816 149.558 8.88783 130.003 8.89174 110C8.92833 83.1956 19.5925 57.4996 38.546 38.546C57.4996 19.5925 83.1956 8.92828 110 8.89168ZM110 0C88.2441 0 66.9767 6.45139 48.8873 18.5383C30.7979 30.6253 16.6989 47.805 8.37331 67.9048C0.0476618 88.0047 -2.1307 110.122 2.11367 131.46C6.35805 152.798 16.8345 172.398 32.2183 187.782C47.602 203.166 67.2022 213.642 88.5401 217.886C109.878 222.131 131.995 219.952 152.095 211.627C172.195 203.301 189.375 189.202 201.462 171.113C213.549 153.023 220 131.756 220 110C220 80.8262 208.411 52.8473 187.782 32.2183C167.153 11.5893 139.174 0 110 0Z" fill="white"/>\n' +
+      '                <path d="M167.954 110L76.5278 49.9119C76.6463 140.498 76.5278 96.0498 76.5278 170.088L167.954 110Z" fill="white"/>\n' +
+      '              </g>\n' +
+      '              <defs>\n' +
+      '                <clipPath id="clip0">\n' +
+      '                  <rect width="220" height="220" fill="white"/>\n' +
+      '                </clipPath>\n' +
+      '              </defs>\n' +
+      '            </svg>'
   }
 
   play = () => {
@@ -180,20 +209,22 @@ export default class Player {
       '\t\t<path d="M23.483,202.205H85.83V0H23.483V202.205z M31.417,7.934h46.479v186.336H31.417V7.934z"/>\n' +
       '\t\t<path d="M116.372,0v202.205h62.351V0H116.372z M170.788,194.271h-46.486V7.934h46.482v186.336H170.788z"/>\n' +
       '</svg>'
-      : '      <svg class="play_btn_svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">\n' +
-      '        <path d="M9.3,47.4a2.5,2.5,0,0,1-1.21-.32A2.47,2.47,0,0,1,6.8,44.89V3.11A2.5,2.5,0,0,1,10.63,1L44,21.88h0a2.5,2.5,0,0,1,0,4.24L10.63,47A2.49,2.49,0,0,1,9.3,47.4Zm0-45.79a1.5,1.5,0,0,0-.73.19A1.48,1.48,0,0,0,7.8,3.11V44.89a1.5,1.5,0,0,0,2.3,1.27l33.4-20.89a1.5,1.5,0,0,0,0-2.54L10.1,1.84A1.5,1.5,0,0,0,9.3,1.61Z"/>\n' +
-      '        <rect width="48" height="48" fill="none"/>\n' +
-      '      </svg>';
+      : '                <svg width="23" height="31" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      '                  <path d="M23 15.5053L0 0C0 23.3683 0 11.8996 0 31L23 15.5053Z" fill="#B3B3B3"/>\n' +
+      '                </svg>'
     this.main_play_btn.innerHTML = state === 'play'
-      ? '<svg class="play_btn_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
-      '\t viewBox="0 0 202.205 202.205" xml:space="preserve">\n' +
-      '\t\t<path  d="M23.483,202.205H85.83V0H23.483V202.205z M31.417,7.934h46.479v186.336H31.417V7.934z"/>\n' +
-      '\t\t<path  d="M116.372,0v202.205h62.351V0H116.372z M170.788,194.271h-46.486V7.934h46.482v186.336H170.788z"/>\n' +
-      '</svg>'
-      : '      <svg class="play_btn_svg" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">\n' +
-      '        <path d="M9.3,47.4a2.5,2.5,0,0,1-1.21-.32A2.47,2.47,0,0,1,6.8,44.89V3.11A2.5,2.5,0,0,1,10.63,1L44,21.88h0a2.5,2.5,0,0,1,0,4.24L10.63,47A2.49,2.49,0,0,1,9.3,47.4Zm0-45.79a1.5,1.5,0,0,0-.73.19A1.48,1.48,0,0,0,7.8,3.11V44.89a1.5,1.5,0,0,0,2.3,1.27l33.4-20.89a1.5,1.5,0,0,0,0-2.54L10.1,1.84A1.5,1.5,0,0,0,9.3,1.61Z"/>\n' +
-      '        <rect width="48" height="48" fill="none"/>\n' +
-      '      </svg>'
+      ? ''
+      : '            <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      '              <g clip-path="url(#clip0)">\n' +
+      '                <path d="M110 8.89168C130.003 8.88778 149.558 14.816 166.191 25.9266C182.825 37.0372 195.79 52.831 203.446 71.3106C211.103 89.7901 213.107 110.125 209.206 129.744C205.304 149.363 195.672 167.384 181.528 181.528C167.384 195.672 149.363 205.304 129.744 209.206C110.125 213.107 89.7901 211.103 71.3106 203.446C52.8311 195.79 37.0372 182.825 25.9266 166.191C14.816 149.558 8.88783 130.003 8.89174 110C8.92833 83.1956 19.5925 57.4996 38.546 38.546C57.4996 19.5925 83.1956 8.92828 110 8.89168ZM110 0C88.2441 0 66.9767 6.45139 48.8873 18.5383C30.7979 30.6253 16.6989 47.805 8.37331 67.9048C0.0476618 88.0047 -2.1307 110.122 2.11367 131.46C6.35805 152.798 16.8345 172.398 32.2183 187.782C47.602 203.166 67.2022 213.642 88.5401 217.886C109.878 222.131 131.995 219.952 152.095 211.627C172.195 203.301 189.375 189.202 201.462 171.113C213.549 153.023 220 131.756 220 110C220 80.8262 208.411 52.8473 187.782 32.2183C167.153 11.5893 139.174 0 110 0Z" fill="white"/>\n' +
+      '                <path d="M167.954 110L76.5278 49.9119C76.6463 140.498 76.5278 96.0498 76.5278 170.088L167.954 110Z" fill="white"/>\n' +
+      '              </g>\n' +
+      '              <defs>\n' +
+      '                <clipPath id="clip0">\n' +
+      '                  <rect width="220" height="220" fill="white"/>\n' +
+      '                </clipPath>\n' +
+      '              </defs>\n' +
+      '            </svg>'
     this.player[state]();
   }
 
@@ -203,12 +234,41 @@ export default class Player {
         this.video_progress.value = 0;
       } else {
         this.video_progress.value = Math.round((this.player.currentTime / this.player.duration) * 100);
-        this.progress_percent.textContent = `${this.video_progress.value}%`;
-        // if (this.player.currentTime === this.player.duration) this.play_btn.innerHTML = '      <svg width="48px" height="48px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">\n' +
-        //   '        <path d="M9.3,47.4a2.5,2.5,0,0,1-1.21-.32A2.47,2.47,0,0,1,6.8,44.89V3.11A2.5,2.5,0,0,1,10.63,1L44,21.88h0a2.5,2.5,0,0,1,0,4.24L10.63,47A2.49,2.49,0,0,1,9.3,47.4Zm0-45.79a1.5,1.5,0,0,0-.73.19A1.48,1.48,0,0,0,7.8,3.11V44.89a1.5,1.5,0,0,0,2.3,1.27l33.4-20.89a1.5,1.5,0,0,0,0-2.54L10.1,1.84A1.5,1.5,0,0,0,9.3,1.61Z"/>\n' +
-        //   '        <rect width="48" height="48" fill="none"/>\n' +
-        //   '      </svg>';
       }
+      if(this.player.currentTime === this.player.duration) {
+          this.play_btn.innerHTML = '<svg class="repeat_svg" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
+            '\t viewBox="0 0 489.9 489.9" style="enable-background:new 0 0 489.9 489.9;" xml:space="preserve">\n' +
+            '<g>\n' +
+            '\t<g>\n' +
+            '\t\t<path d="M436.2,444.1H53.8C24.1,444.1,0,419.9,0,390.3V161.6c0-29.7,24.1-53.8,53.8-53.8h111c6.8,0,12.3,5.5,12.3,12.3\n' +
+            '\t\t\ts-5.5,12.3-12.3,12.3h-111c-16.2,0-29.3,13.1-29.3,29.3v228.7c0,16.2,13.1,29.3,29.3,29.3h382.4c16.2,0,29.3-13.1,29.3-29.3V161.6\n' +
+            '\t\t\tc0-16.2-13.1-29.3-29.3-29.3H274.6l41.1,41.1c4.8,4.8,4.8,12.5,0,17.3c-2.4,2.4-5.5,3.6-8.7,3.6s-6.3-1.2-8.7-3.6l-62-62\n' +
+            '\t\t\tc-4.8-4.8-4.8-12.5,0-17.3l62-62c4.8-4.8,12.5-4.8,17.3,0s4.8,12.5,0,17.3l-41.1,41.1h161.6c29.7,0,53.8,24.1,53.8,53.8v228.7\n' +
+            '\t\t\tC490,419.9,465.9,444.1,436.2,444.1z"/>\n' +
+            '\t</g>\n' +
+            '</g>\n' +
+            '</svg>\n'
+          this.main_play_btn.innerHTML = '<svg class="repeat_main" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
+            '\t viewBox="0 0 489.9 489.9" style="enable-background:new 0 0 489.9 489.9;" xml:space="preserve">\n' +
+            '<g>\n' +
+            '\t<g>\n' +
+            '\t\t<path d="M436.2,444.1H53.8C24.1,444.1,0,419.9,0,390.3V161.6c0-29.7,24.1-53.8,53.8-53.8h111c6.8,0,12.3,5.5,12.3,12.3\n' +
+            '\t\t\ts-5.5,12.3-12.3,12.3h-111c-16.2,0-29.3,13.1-29.3,29.3v228.7c0,16.2,13.1,29.3,29.3,29.3h382.4c16.2,0,29.3-13.1,29.3-29.3V161.6\n' +
+            '\t\t\tc0-16.2-13.1-29.3-29.3-29.3H274.6l41.1,41.1c4.8,4.8,4.8,12.5,0,17.3c-2.4,2.4-5.5,3.6-8.7,3.6s-6.3-1.2-8.7-3.6l-62-62\n' +
+            '\t\t\tc-4.8-4.8-4.8-12.5,0-17.3l62-62c4.8-4.8,12.5-4.8,17.3,0s4.8,12.5,0,17.3l-41.1,41.1h161.6c29.7,0,53.8,24.1,53.8,53.8v228.7\n' +
+            '\t\t\tC490,419.9,465.9,444.1,436.2,444.1z"/>\n' +
+            '\t</g>\n' +
+            '</g>\n' +
+            '</svg>'
+      }
+
+      const a = Array.from(document.querySelectorAll('input[type="range"]')).map((ele) => {
+        ele.style.background = `linear-gradient(to right, #710707 0%, #710707 ${ele.value}%, #C4C4C4 ${ele.value}%, #C4C4C4 100%)`
+        ele.addEventListener('input', function() {
+          const value = this.value;
+          this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #C4C4C4 ${value}%, #C4C4C4 100%)`
+        })
+      })
     });
   }
 }

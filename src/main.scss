@@ -17,10 +17,15 @@
 
 
 
+.loaded {
+  display: none;
+}
+
 .container2 {
   width: 1440px;
   height: 814px;
   position: relative;
+  margin-top: 75px;
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
@@ -31,192 +36,133 @@
   height: 100%;
 }
 
-.play_btn {
-  width: 50px;
-  height: 50px;
-}
-
-.play_btn:hover {
-  cursor: pointer;
-}
-progress {
-  width: 500px;
-  height: 20px;
-
-}
-progress[value] {
-  appearance: none;
-  border: none;
-  opacity: 50%;
-}
-
-progress[value]::-webkit-progress-value {
-  background-color: #3c0b8a;
-}
-
-progress[value]::-moz-progress-bar {
-  background-color: #3c0b8a;
-}
-
-.fullscreen_btn {
-  width: 50px;
-  height: 50px;
-}
-
-.fullscreen_btn:hover {
-  cursor: pointer;
+.video_controls-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
 }
 
 .video_controls {
-  min-width: 100%;
-  height: 100px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  width: 100%;
+  height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-
-  backdrop-filter: blur(5px) saturate(118%);
-  -webkit-backdrop-filter: blur(5px) saturate(118%);
-  background-color: rgba(60, 11, 138, 0.3);
-  border-top: 1px solid rgba(209, 213, 219, 0.3);
-  transition: opacity 1s;
+  background-color: black;
 }
 
 .main_play_btn {
-  width: 150px;
-  height: 150px;
   position: absolute;
-  top: 50%;
-  margin-top: -75px;
   left: 50%;
-  margin-left: -75px;
-  z-index: 10;
-  transition: opacity 1s;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .main_play_btn:hover {
   cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
 }
 
-.sound_btn {
-  width: 50px;
+.play_btn {
+  width: 23px;
+  height: 31px;
 }
 
-.sound_btn {
+.play_btn:hover {
   cursor: pointer;
-}
-
-.progress_container {
-  position: relative;
-  color: #F4F5FF;
-}
-
-.progress_container:hover {
-  cursor: pointer;
-}
-
-.volume_percentage {
-  position: absolute;
-  left: 50%;
-  top: 0;
-}
-
-.progress_percentage {
-  position: absolute;
-  left: 50%;
-  top: 0;
-}
-
-.playbackRate {
-  color: #f74705;
-  font-size: 30px;
-  font-weight: bold;
-  width: 50px;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
 }
 
 .play_btn_svg {
-  fill: #F4F5FF;
+  fill: white;
+  width: 23px;
+  height: 31px;
 }
 
-.play_btn_svg:hover {
-  fill: #f74705;
+
+.video-progress {
+  width: 929px;
+  height: 15px;
+}
+.repeat_svg {
+  fill: white;
+  width: 23px;
+  height: 31px;
 }
 
-.fullscreen_svg {
-  stroke: #F4F5FF;
+.repeat_svg:hover {
+  cursor: pointer;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
 }
 
-.fullscreen_svg:hover {
-  stroke: #f74705;
-}
-
-.sound_btn_svg {
-  fill: #F4F5FF;
-}
-
-.sound_btn_svg:hover {
-  fill: #f74705;
-}
-
-.main_play_btn-back {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  top: 50%;
-  margin-top: -150px;
-  left: 50%;
-  margin-left: -150px;
-  backdrop-filter: blur(5px) saturate(118%);
-  -webkit-backdrop-filter: blur(5px) saturate(118%);
-  background-color: rgba(60, 11, 138, 0.3);
-  border-radius: 12px;
-  border: 1px solid rgba(209, 213, 219, 0.3);
-  z-index: 1;
-  transition: opacity 1s;
-}
-
-.opacity {
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.videoBackground {
-  position: fixed;
-  left: 0;
-  top: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
+.repeat_main {
+  width: 220px;
+  height: 220px;
   pointer-events: none;
+  fill: #fff;
 }
 
-.hideCursor {
-  cursor: none;
+.sound {
+  width: 38px;
+  height: 31px;
+  fill: #B3B3B3;
 }
 
-.preload {
-  position: fixed;
-  min-width: 100%;
-  min-height: 100%;
-  top: 0;
-  left: 0;
+.sound:hover {
+  cursor: pointer;
+  fill: #9d8665;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+.sound-value {
+  width: 155px;
+  height: 15px;
+}
+
+.fullscreen_btn {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
-  background-color: #fff;
+}
+
+.fullscreen_btn:first-child {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen_btn:first-child:hover {
+  cursor: pointer;
+  fill: #9d8665;
+}
+
+.fullscreen_btn:hover {
+  cursor: pointer;
+  fill: #9d8665;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+.fullscreen_btn_inner {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+}
+.fullscreen_btn_inner:hover {
+  cursor: pointer;
+  fill: #9d8665;
+  filter: invert(60%) sepia(12%) saturate(963%) hue-rotate(356deg) brightness(88%) contrast(85%);
+}
+
+
+.ticket-content-buy-pic {
   pointer-events: none;
-  cursor: default;
-  overflow: hidden;
-}
-
-.preload_gif {
-  width: 300px;
-  height: 300px;
-}
-
-.loaded {
-  display: none;
 }
