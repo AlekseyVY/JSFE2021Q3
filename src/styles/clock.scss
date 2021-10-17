@@ -11,6 +11,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: 20px;
+
+  backdrop-filter: blur(5px) saturate(181%);
+  -webkit-backdrop-filter: blur(5px) saturate(181%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
 .main-clock {
@@ -24,6 +31,25 @@
 
 .main-greeting {
   font-size: 24px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-name {
+  width: 200px;
+  padding-left: 10px;
+  outline: none;
+  background: none;
+  border: none;
+}
+
+.main-name::placeholder {
+  color: white;
+}
+
+
+input {
+  color: #fff;
 }
 
 .left-slide--control {
@@ -35,14 +61,14 @@
   transform: rotate(180deg);
 }
 
-.arrow {
+.slide-arrow {
   width: 50px;
   height: 50px;
   fill: rgba(255, 255, 255, 0.3);
   transition: 1s ease;
 }
 
-.arrow:hover {
+.slide-arrow:hover {
   cursor: pointer;
   transform: scale(1.2);
   fill: rgba(255, 255, 255, 0.6);
