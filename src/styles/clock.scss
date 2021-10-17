@@ -1,0 +1,50 @@
+.clock-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-clock {
+  font-size: 78px;
+  margin: 0;
+}
+
+.main-date {
+  margin: 10px 0 20px 0;
+}
+
+.main-greeting {
+  font-size: 24px;
+}
+
+.left-slide--control {
+  margin-left: 30px;
+}
+
+.right-slide--control {
+  margin-right: 30px;
+  transform: rotate(180deg);
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  fill: rgba(255, 255, 255, 0.3);
+  transition: 1s ease;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  fill: rgba(255, 255, 255, 0.6);
+  transition: 1s ease;
+}
