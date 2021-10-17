@@ -30,13 +30,10 @@
 }
 
 .main-greeting {
-  font-size: 24px;
-  display: flex;
-  justify-content: space-around;
 }
 
 .main-name {
-  width: 200px;
+  width: 180px;
   padding-left: 10px;
   outline: none;
   background: none;
@@ -47,30 +44,13 @@
   color: white;
 }
 
-
 input {
   color: #fff;
 }
 
-.left-slide--control {
-  margin-left: 30px;
-}
-
-.right-slide--control {
-  margin-right: 30px;
-  transform: rotate(180deg);
-}
-
-.slide-arrow {
-  width: 50px;
-  height: 50px;
-  fill: rgba(255, 255, 255, 0.3);
-  transition: 1s ease;
-}
-
-.slide-arrow:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-  fill: rgba(255, 255, 255, 0.6);
-  transition: 1s ease;
+.greeting-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
 }

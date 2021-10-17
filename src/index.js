@@ -1,6 +1,6 @@
 import {Clock} from "./components/clock/clock";
-import('normalize.css')
-import('./main.scss')
+import('normalize.css');
+import('./main.scss');
 
 
 
@@ -10,6 +10,4 @@ new Clock({
   dateNode: '.main-date',
   greetNode: '.main-greeting'
 });
-
-// TODO: create asynchronous global state to store data across application.
 
