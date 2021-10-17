@@ -17,5 +17,3 @@ const clock = () => {
 };
 
 clock();
-
-

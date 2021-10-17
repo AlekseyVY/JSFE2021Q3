@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f40efa-c055-4fb9-a8ae-6e4e2b3b2da9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/helpers/timeOfDay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/clock/clock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/clock/clock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/clock/clockWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/clock/clockWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/timeOfDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/timeOfDay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/clock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/clock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/slides.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/slides.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,7 @@
       <workItem from="1634416265563" duration="1280000" />
       <workItem from="1634451183856" duration="1267000" />
       <workItem from="1634455444502" duration="487000" />
-      <workItem from="1634473280993" duration="8214000" />
+      <workItem from="1634473280993" duration="12986000" />
     </task>
     <servers />
   </component>

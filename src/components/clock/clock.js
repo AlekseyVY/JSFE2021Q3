@@ -23,5 +23,3 @@ export class Clock {
     this.greetNode.textContent = data;
   }
 }
-
-
