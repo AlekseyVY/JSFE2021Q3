@@ -1,0 +1,80 @@
+.settings-icon--wrapper {
+  margin-left: 50px;
+  position: relative;
+}
+
+.settings-icon {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+.settings-icon:hover {
+  cursor: pointer;
+  transform: rotate(720deg);
+  transition: 10s ease;
+}
+
+.settings-container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -405px;
+  left: 30px;
+  display: flex;
+  backdrop-filter: blur(5px) saturate(181%);
+  -webkit-backdrop-filter: blur(5px) saturate(181%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  transition: 1s ease;
+  z-index: 100;
+}
+
+.settings-main {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #fff;
+}
+
+.sub-settings {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  color: #fff;
+}
+
+.english-sub {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 1s ease;
+}
+
+.delimeter {
+  width: 1px;
+  background-color: #fff;
+  margin: 20px 0 20px 0;
+}
+
+.language-selector {
+  cursor: pointer;
+}
+
+.set-eng {
+  margin: 0 0 10px 0;
+}
+
+.set-rus {
+  margin: 0 0 10px 0;
+}

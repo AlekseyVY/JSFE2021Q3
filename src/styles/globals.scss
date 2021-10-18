@@ -17,3 +17,29 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+
+.idle {
+  opacity: 0;
+  transition: 1s ease;
+  pointer-events: none;
+}
+
+.hover:hover {
+  cursor: pointer;
+}
+
+.set-btn {
+  padding: 10px;
+  border: solid 1px #fff;
+  border-radius: 5px;
+}
+
+.set-btn:hover {
+  color: #f74705;
+  border-color: #f74705;
+}
+
+.selected {
+  color: #f74705;
+  border-color: #f74705;
+}

@@ -2,3 +2,78 @@
 
 
 // TODO: settings class that control application appearance and behaviour
+
+import {Clock} from "./clock/clock";
+
+export class Settings {
+  constructor(dto) {
+    // class runners
+    this.clock = new Clock({
+      lang: 'eng', // default state, change to grab from local storage
+      timeNode: '.main-clock',
+      dateNode: '.main-date',
+      greetNode: '.main-greeting'
+    });
+
+    // main nodes
+    this.settingsNode = document.querySelector(dto.settingsNode);
+    this.containerNode = document.querySelector(dto.containerNode);
+    // language nodes and selectors
+    this.langMainNode = document.querySelector(dto.lang.mainSelector);
+    this.langSubNode = document.querySelector(dto.lang.subContainer);
+    this.firstLang = document.querySelector(dto.lang.firstLang.langSelector);
+    this.firstLangType = dto.lang.firstLang.type;
+    this.secLang = document.querySelector(dto.lang.secLang.langSelector);
+    this.secLangType = dto.lang.secLang.type;
+    // class states
+    this.mode = false;
+    this.langMode = false;
+    this.firstLangSelected = false;
+    this.secLangSelected = false;
+    // function calls
+    this.listen('click', this.settingsNode, this.container);
+    this.langFactory();
+  }
+
+  listen = (event, node, func) =>{
+    node.addEventListener(event, (e) => {
+      func();
+    })
+  }
+
+  container = () => {
+    this.mode = !this.mode;
+    console.log(this.mode);
+    this.mode ? this.containerNode.classList.remove('idle') : this.containerNode.classList.add('idle');
+  }
+
+  langFactory = () => {
+    this.listen('click', this.langMainNode, () => {
+      this.langMode = !this.langMode;
+      this.langMode ? this.langSubNode.classList.remove('idle') :  this.langSubNode.classList.add('idle');
+      this.langMode ? this.langMainNode.classList.add('selected') :  this.langMainNode.classList.remove('selected');
+    });
+
+    this.listen('click', this.firstLang, () => {
+      this.firstLangSelected = !this.firstLangSelected ;
+      this.clock.terminate();
+      this.clock = new Clock({
+        lang: this.firstLangType,
+        timeNode: '.main-clock',
+        dateNode: '.main-date',
+        greetNode: '.main-greeting'
+      });
+    });
+
+    this.listen('click', this.secLang, () => {
+      this.secLangSelected = !this.secLangSelected;
+      this.clock.terminate();
+      this.clock = new Clock({
+        lang: this.secLangType,
+        timeNode: '.main-clock',
+        dateNode: '.main-date',
+        greetNode: '.main-greeting'
+      });
+    });
+  }
+}
