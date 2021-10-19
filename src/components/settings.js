@@ -7,10 +7,7 @@ import {Greeting} from "./geeting";
 
 export class Settings {
   constructor(dto) {
-    this.settings = {
-      lang: 'eng',
-      name: null
-    };
+    this.settings = dto.defaultSettings;
     // main nodes
     this.settingsNode = document.querySelector(dto.settingsNode);
     this.containerNode = document.querySelector(dto.containerNode);
@@ -34,10 +31,11 @@ export class Settings {
     window.onload = async () => {
       const res = this.getSettings();
       if(res) this.settings = JSON.parse(res);
-      console.log(res)
-      console.log(this.settings)
+      // setting language
+      this.settingsLang()
+
       this.clock = new Clock({
-        lang: this.settings.lang, // default state, change to grab from local storage
+        lang: this.settings.lang,
         timeNode: '.main-clock',
         dateNode: '.main-date',
         greetNode: '.main-greeting'
@@ -58,6 +56,18 @@ export class Settings {
     window.onbeforeunload = () => {
       this.settings.name = this.greet.getName();
       this.storeSettings(JSON.stringify(this.settings));
+    }
+  }
+
+  settingsLang = () => {
+    if(this.settings.lang === 'eng') {
+      this.langMainNode.innerText = 'language'
+      this.firstLang.innerText = 'english'
+      this.secLang.innerText = 'russian'
+    } else {
+      this.langMainNode.innerText = 'язык'
+      this.firstLang.innerText = 'английский'
+      this.secLang.innerText = 'русский'
     }
   }
 
@@ -92,6 +102,7 @@ export class Settings {
     this.listen('click', this.firstLang, () => {
       this.firstLangSelected = !this.firstLangSelected ;
       this.settings.lang = this.firstLangType;
+      this.settingsLang();
       this.clock.terminate();
       this.clock = new Clock({
         lang: this.settings.lang,
@@ -118,6 +129,7 @@ export class Settings {
     this.listen('click', this.secLang, () => {
       this.secLangSelected = !this.secLangSelected;
       this.settings.lang = this.secLangType;
+      this.settingsLang();
       this.clock.terminate();
       this.clock = new Clock({
         lang: this.settings.lang,

@@ -7,11 +7,10 @@
     <list default="true" id="95f40efa-c055-4fb9-a8ae-6e4e2b3b2da9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/clock/clock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/clock/clock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/geeting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/geeting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quotes/citation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quotes/citation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/slider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/clock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/clock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +64,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\components\slider" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\components\quotes" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\assets" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\components\clock" />
@@ -86,7 +86,7 @@
       <workItem from="1634455444502" duration="487000" />
       <workItem from="1634473280993" duration="19586000" />
       <workItem from="1634562037729" duration="14615000" />
-      <workItem from="1634640818688" duration="13679000" />
+      <workItem from="1634640818688" duration="15658000" />
     </task>
     <servers />
   </component>

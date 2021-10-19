@@ -4,8 +4,11 @@ import('./main.scss');
 
 
 
-
 new Settings({
+  defaultSettings: {
+    lang: 'eng',
+    name: null
+  },
   settingsNode: '.settings-icon',
   containerNode: '.settings-container',
   lang: {
@@ -21,4 +24,3 @@ new Settings({
     }
   },
 })
-

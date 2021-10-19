@@ -15,7 +15,6 @@ export class Clock {
 
   async emitTime(data) {
     this.timeNode.textContent = data;
-    console.log(this.lang)
   };
 
   async emitDate(data) {
