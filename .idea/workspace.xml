@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f40efa-c055-4fb9-a8ae-6e4e2b3b2da9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/quotes/quote.worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/clock/clockWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/clock/clockWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/month.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/data/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/quotes/quote.worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quotes/quote.worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +81,7 @@
       <workItem from="1634455444502" duration="487000" />
       <workItem from="1634473280993" duration="19586000" />
       <workItem from="1634562037729" duration="14615000" />
-      <workItem from="1634640818688" duration="8811000" />
+      <workItem from="1634640818688" duration="9741000" />
     </task>
     <servers />
   </component>
