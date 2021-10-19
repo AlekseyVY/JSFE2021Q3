@@ -1,13 +1,9 @@
-import {Greeting} from "./components/geeting";
 import {Settings} from "./components/settings";
 import('normalize.css');
 import('./main.scss');
 
 
-new Greeting({
-  nameNode: '.main-name',
-  lang: 'eng',
-});
+
 
 new Settings({
   settingsNode: '.settings-icon',

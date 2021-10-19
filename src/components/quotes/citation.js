@@ -1,5 +1,3 @@
-
-
 export class Citation {
   constructor(dto) {
     this.lang = dto.lang;

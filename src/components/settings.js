@@ -2,23 +2,15 @@
 
 import {Clock} from "./clock/clock";
 import {Citation} from "./quotes/citation";
+import {api} from "../helpers/api";
+import {Greeting} from "./geeting";
 
 export class Settings {
   constructor(dto) {
-    // class runners
-    this.clock = new Clock({
-      lang: 'eng', // default state, change to grab from local storage
-      timeNode: '.main-clock',
-      dateNode: '.main-date',
-      greetNode: '.main-greeting'
-    });
-    this.quote = new Citation({
+    this.settings = {
       lang: 'eng',
-      quoteNode: '.citation',
-      authorNode: '.author',
-      updateNode: '.citation-update'
-    })
-
+      name: null
+    };
     // main nodes
     this.settingsNode = document.querySelector(dto.settingsNode);
     this.containerNode = document.querySelector(dto.containerNode);
@@ -37,6 +29,44 @@ export class Settings {
     // function calls
     this.listen('click', this.settingsNode, this.container);
     this.langFactory();
+
+    // api calls to local storage
+    window.onload = async () => {
+      const res = this.getSettings();
+      if(res) this.settings = JSON.parse(res);
+      console.log(res)
+      console.log(this.settings)
+      this.clock = new Clock({
+        lang: this.settings.lang, // default state, change to grab from local storage
+        timeNode: '.main-clock',
+        dateNode: '.main-date',
+        greetNode: '.main-greeting'
+      });
+      this.quote = new Citation({
+        lang: this.settings.lang,
+        quoteNode: '.citation',
+        authorNode: '.author',
+        updateNode: '.citation-update'
+      })
+      this.greet = new Greeting({
+        nameNode: '.main-name',
+        lang: this.settings.lang,
+        name: this.settings.name
+      });
+    }
+
+    window.onbeforeunload = () => {
+      this.settings.name = this.greet.getName();
+      this.storeSettings(JSON.stringify(this.settings));
+    }
+  }
+
+  storeSettings(data) {
+    api('settings', data, 'set');
+  }
+
+  getSettings() {
+    return api('settings', null, 'get')
   }
 
   listen = (event, node, func) =>{
@@ -61,9 +91,10 @@ export class Settings {
 
     this.listen('click', this.firstLang, () => {
       this.firstLangSelected = !this.firstLangSelected ;
+      this.settings.lang = this.firstLangType;
       this.clock.terminate();
       this.clock = new Clock({
-        lang: this.firstLangType,
+        lang: this.settings.lang,
         timeNode: '.main-clock',
         dateNode: '.main-date',
         greetNode: '.main-greeting'
@@ -71,18 +102,25 @@ export class Settings {
 
       this.quote.terminate();
       this.quote = new Citation({
-        lang: 'eng',
+        lang: this.settings.lang,
         quoteNode: '.citation',
         authorNode: '.author',
         updateNode: '.citation-update'
       })
+
+      this.greet = new Greeting({
+        nameNode: '.main-name',
+        lang: this.settings.lang,
+        name: this.settings.name
+      });
     });
 
     this.listen('click', this.secLang, () => {
       this.secLangSelected = !this.secLangSelected;
+      this.settings.lang = this.secLangType;
       this.clock.terminate();
       this.clock = new Clock({
-        lang: this.secLangType,
+        lang: this.settings.lang,
         timeNode: '.main-clock',
         dateNode: '.main-date',
         greetNode: '.main-greeting'
@@ -90,14 +128,18 @@ export class Settings {
 
       this.quote.terminate();
       this.quote = new Citation({
-        lang: 'rus',
+        lang: this.settings.lang,
         quoteNode: '.citation',
         authorNode: '.author',
         updateNode: '.citation-update'
       })
+
+      this.greet = new Greeting({
+        nameNode: '.main-name',
+        lang: this.settings.lang,
+        name: this.settings.name
+      });
     });
   }
   // END of language selection logic
-
-
 }
