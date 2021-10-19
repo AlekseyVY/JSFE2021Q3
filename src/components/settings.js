@@ -1,9 +1,7 @@
-
-
-
 // TODO: settings class that control application appearance and behaviour
 
 import {Clock} from "./clock/clock";
+import {Citation} from "./quotes/citation";
 
 export class Settings {
   constructor(dto) {
@@ -14,6 +12,12 @@ export class Settings {
       dateNode: '.main-date',
       greetNode: '.main-greeting'
     });
+    this.quote = new Citation({
+      lang: 'eng',
+      quoteNode: '.citation',
+      authorNode: '.author',
+      updateNode: '.citation-update'
+    })
 
     // main nodes
     this.settingsNode = document.querySelector(dto.settingsNode);
@@ -37,10 +41,11 @@ export class Settings {
 
   listen = (event, node, func) =>{
     node.addEventListener(event, (e) => {
-      func();
+      func(e);
     })
   }
 
+  // START of language selection logic
   container = () => {
     this.mode = !this.mode;
     console.log(this.mode);
@@ -63,6 +68,14 @@ export class Settings {
         dateNode: '.main-date',
         greetNode: '.main-greeting'
       });
+
+      this.quote.terminate();
+      this.quote = new Citation({
+        lang: 'eng',
+        quoteNode: '.citation',
+        authorNode: '.author',
+        updateNode: '.citation-update'
+      })
     });
 
     this.listen('click', this.secLang, () => {
@@ -74,6 +87,17 @@ export class Settings {
         dateNode: '.main-date',
         greetNode: '.main-greeting'
       });
+
+      this.quote.terminate();
+      this.quote = new Citation({
+        lang: 'rus',
+        quoteNode: '.citation',
+        authorNode: '.author',
+        updateNode: '.citation-update'
+      })
     });
   }
+  // END of language selection logic
+
+
 }

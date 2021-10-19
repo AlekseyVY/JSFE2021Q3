@@ -1,5 +1,4 @@
 import { WEEK } from '../../constants/week';
-import { MONTH } from "../../constants/month";
 import { timeOfDay } from "../../helpers/timeOfDay";
 
 let lang = 'eng';
@@ -11,10 +10,12 @@ self.onmessage = (e) => {
 
 const clock = () => {
   const date = new Date();
-  const time = date.toLocaleTimeString('ru-RU', {hour12: false});
+  const options = lang === 'eng' ? 'en-US' : 'ru-RU';
+  const time = date.toLocaleTimeString(options, {hour12: false});
+  const localDate = date.toLocaleDateString(options, {month: 'long', day: 'numeric'})
   const dto = {
     time: time,
-    date: `${WEEK[lang][date.getDay()]}, ${MONTH[lang][date.getMonth()]} ${date.getDate()}`,
+    date: `${WEEK[lang][date.getDay()]}, ${localDate}`,
     greet: timeOfDay(time, lang),
   };
   postMessage(dto);

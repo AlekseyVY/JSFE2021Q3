@@ -1,4 +1,3 @@
-import {Clock} from "./components/clock/clock";
 import {Greeting} from "./components/geeting";
 import {Settings} from "./components/settings";
 import('normalize.css');
@@ -26,3 +25,4 @@ new Settings({
     }
   },
 })
+
