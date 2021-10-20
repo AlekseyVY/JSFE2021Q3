@@ -2,6 +2,7 @@ import {Clock} from "./clock/clock";
 import {Citation} from "./quotes/citation";
 import {api} from "../helpers/api";
 import {Greeting} from "./geeting";
+import {Slides} from "./slider/slider";
 
 export class Settings {
   constructor(dto) {
@@ -24,6 +25,8 @@ export class Settings {
     this.unsplashNode = document.querySelector(dto.slides.unisplash);
     this.flickrNode = document.querySelector(dto.slides.flickr);
     this.tagsNode = document.querySelector(dto.slides.tag);
+    this.leftNode = document.querySelector(dto.slides.controlLeft);
+    this.rightNode = document.querySelector(dto.slides.controlRight);
     this.slidesMode = false;
     // class states
     this.mode = false;
@@ -58,6 +61,14 @@ export class Settings {
         lang: this.settings.lang,
         name: this.settings.name
       });
+      this.slides = new Slides({
+        githubNode: this.githubNode,
+        unsplashNode: this.unsplashNode,
+        flickrNode: this.flickrNode,
+        tagsNode:  this.tagsNode,
+        leftNode: this.leftNode,
+        rightNode: this.rightNode,
+      })
     }
 
     window.onbeforeunload = () => {

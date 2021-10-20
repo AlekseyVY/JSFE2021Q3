@@ -25,6 +25,8 @@ new Settings({
     }
   },
   slides: {
+    controlLeft: '.left-slide--control',
+    controlRight: '.right-slide--control',
     slidesNode: '.slides-selection',
     slideApiContainer: '.slides-api',
     github: '.set-github',
