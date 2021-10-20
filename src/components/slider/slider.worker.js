@@ -5,11 +5,14 @@ self.onmessage = (e) => {
   api = e.data;
   console.log(api)
   const url = urlFactory(e.data);
-  loadImage(url)
+  if(api.source === 'github') {
+    loadGit(url);
+  } else {
+    loadApi(url)
+  }
 }
 
-
-const loadImage = (url) => {
+const loadGit = (url) => {
   fetch(url)
     .then(res => res.blob())
     .then(blob => {
@@ -17,7 +20,21 @@ const loadImage = (url) => {
     })
 }
 
-
+const loadApi = (url) => {
+  fetch(url)
+    .then(res => res.json())
+    .then(json => {
+      console.log(json.links)
+      fetch(json.links.html, )
+        .then(res => {
+          console.log(res)
+          return res.blob()
+        })
+        .then(blob => {
+          postMessage(blob);
+        })
+    })
+}
 
 const urlFactory = (api) => {
   let dayTime = null;
@@ -33,15 +50,8 @@ const urlFactory = (api) => {
   if(api.source === 'github') {
     return `https://raw.githubusercontent.com/AlekseyVY/stage1-tasks/assets/images/${dayTime}/${num}.jpg`
   }
+  if(api.source === 'unsplash') {
+    console.log('uniplash')
+    return `https://api.unsplash.com/photos/random?query=${dayTime}&client_id=x3eswxPzWXmGDQU4DxczZ4dGoyhUSiyaHKKMJeaP-Fg`;
+  }
 }
-
-
-
-
-
-/*
-* folders: [afternoon, evening, morning, night]
-* pictures: from 01 to 20
-* extension: .jpg
-* */
-// template url https://github.com/AlekseyVY/stage1-tasks/assets/images/night/01.jpg

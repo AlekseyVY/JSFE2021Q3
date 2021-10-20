@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f40efa-c055-4fb9-a8ae-6e4e2b3b2da9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/slider/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/slider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/slider/slider.worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/slider.worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/slides.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/slides.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +85,8 @@
       <workItem from="1634473280993" duration="19586000" />
       <workItem from="1634562037729" duration="14615000" />
       <workItem from="1634640818688" duration="19563000" />
-      <workItem from="1634733705594" duration="14582000" />
+      <workItem from="1634733705594" duration="15087000" />
+      <workItem from="1634760669686" duration="4804000" />
     </task>
     <servers />
   </component>

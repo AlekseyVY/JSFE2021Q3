@@ -21,7 +21,6 @@ export class Slides {
       this.loading = false;
       setTimeout(() => {
         URL.revokeObjectURL(objectURL);
-
       },1000)
     };
 
@@ -62,5 +61,4 @@ export class Slides {
       func(e);
     })
   }
-
 }
