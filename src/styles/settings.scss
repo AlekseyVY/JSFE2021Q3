@@ -44,6 +44,7 @@
 .sub-settings {
   width: 50%;
   height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +56,7 @@
 .english-sub {
   height: 100%;
   display: flex;
+  position: absolute;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -77,4 +79,37 @@
 
 .set-rus {
   margin: 0 0 10px 0;
+}
+
+.slides-api {
+  height: 80%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 1s ease;
+}
+
+.tags-container {
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.horizontal-delimeter {
+  width: 70%;
+  height: 1px;
+  background-color: #fff;
+}
+
+.tag-input {
+  font-size: 24px;
+  width: 200px;
+  padding-left: 35px;
+  outline: none;
+  background: none;
+  border: none;
+}
+.tag-input::placeholder {
+  color: white;
 }

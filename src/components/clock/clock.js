@@ -4,7 +4,7 @@ export class Clock {
     this.timeNode = document.querySelector(dto.timeNode);
     this.dateNode = document.querySelector(dto.dateNode);
     this.greetNode = document.querySelector(dto.greetNode);
-    this.worker = new Worker(new URL('clockWorker.js', import.meta.url));
+    this.worker = new Worker(new URL('clock.worker.js', import.meta.url));
     this.worker.postMessage(this.lang);
     this.worker.onmessage = (e) => {
       this.emitTime(e.data.time).then(null);

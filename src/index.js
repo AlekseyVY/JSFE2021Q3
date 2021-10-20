@@ -9,6 +9,7 @@ new Settings({
     lang: 'eng',
     name: null
   },
+  settingsArray: '.sub-settings',
   settingsNode: '.settings-icon',
   containerNode: '.settings-container',
   lang: {
@@ -23,4 +24,12 @@ new Settings({
       langSelector: '.set-rus'
     }
   },
+  slides: {
+    slidesNode: '.slides-selection',
+    slideApiContainer: '.slides-api',
+    github: '.set-github',
+    unisplash: '.set-unisplash',
+    flickr: '.set-flickr',
+    tag: '.tag-input'
+  }
 })
