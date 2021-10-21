@@ -14,7 +14,8 @@ const loader = () => {
       new Settings({
         defaultSettings: {
           lang: 'eng',
-          name: null
+          name: null,
+          city: 'Minsk'
         },
         settingsArray: '.sub-settings',
         settingsNode: '.settings-icon',
@@ -40,6 +41,13 @@ const loader = () => {
           unisplash: '.set-unisplash',
           flickr: '.set-flickr',
           tag: '.tag-input'
+        },
+        weather: {
+          cityNode: '.weather-city',
+          iconNode: '.weather-icon',
+          celsiusNode: '.weather-celsius',
+          windNode: '.weather-wind',
+          humidityNode: '.weather-humidity'
         }
       })
     }

@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f40efa-c055-4fb9-a8ae-6e4e2b3b2da9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/weather/weather.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/weather/weather.worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/weather.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/slider/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/slider/slider.worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/slider.worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/citation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/citation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/slides.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/slides.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +67,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\css" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\components\slider" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\components\quotes" />
       <recent name="C:\Users\aleks\WebstormProjects\alekseyvy-JSFE2021Q3\src\assets" />
@@ -94,7 +95,8 @@
       <workItem from="1634760669686" duration="4804000" />
       <workItem from="1634794479656" duration="6234000" />
       <workItem from="1634809824937" duration="3960000" />
-      <workItem from="1634816321312" duration="2335000" />
+      <workItem from="1634816321312" duration="7672000" />
+      <workItem from="1634829603890" duration="7242000" />
     </task>
     <servers />
   </component>

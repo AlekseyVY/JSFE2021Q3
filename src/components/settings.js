@@ -3,10 +3,12 @@ import {Citation} from "./quotes/citation";
 import {api} from "../helpers/api";
 import {Greeting} from "./geeting";
 import {Slides} from "./slider/slider";
+import {Weather} from "./weather/weather";
 
 export class Settings {
   constructor(dto) {
     this.settings = dto.defaultSettings;
+    console.log(this.settings)
     // main nodes
     this.settingsNode = document.querySelector(dto.settingsNode);
     this.containerNode = document.querySelector(dto.containerNode);
@@ -28,6 +30,12 @@ export class Settings {
     this.leftNode = document.querySelector(dto.slides.controlLeft);
     this.rightNode = document.querySelector(dto.slides.controlRight);
     this.slidesMode = false;
+    // weather nodes and selectors
+    this.cityNode = document.querySelector(dto.weather.cityNode);
+    this.iconNode = document.querySelector(dto.weather.iconNode);
+    this.celsiusNode = document.querySelector(dto.weather.celsiusNode);
+    this.windNode = document.querySelector(dto.weather.windNode);
+    this.humidityNode = document.querySelector(dto.weather.humidityNode);
     // class states
     this.mode = false;
     this.langMode = false;
@@ -69,10 +77,20 @@ export class Settings {
         leftNode: this.leftNode,
         rightNode: this.rightNode,
       })
+      this.weather = new Weather({
+        lang: this.settings.lang,
+        default: this.settings.city,
+        city: this.cityNode,
+        icon: this.iconNode,
+        celsius: this.celsiusNode,
+        wind: this.windNode,
+        humidity: this.humidityNode
+      })
     }
 
     window.onbeforeunload = () => {
       this.settings.name = this.greet.getName();
+      this.settings.city = this.cityNode.value;
       this.storeSettings(JSON.stringify(this.settings));
     }
   }
@@ -162,6 +180,17 @@ export class Settings {
         lang: this.settings.lang,
         name: this.settings.name
       });
+
+      this.weather.terminate();
+      this.weather = new Weather({
+        lang: this.settings.lang,
+        default: this.cityNode.value,
+        city: this.cityNode,
+        icon: this.iconNode,
+        celsius: this.celsiusNode,
+        wind: this.windNode,
+        humidity: this.humidityNode
+      })
     });
   }
   // END of language selection logic
@@ -176,4 +205,9 @@ export class Settings {
   }
   // END of slides logic
 
+  // START of weather logic
+  weatherFactory = () => {
+
+  }
+  // END of weather logic
 }
