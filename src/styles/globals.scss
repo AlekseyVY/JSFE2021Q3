@@ -20,7 +20,6 @@ main {
 
 .idle {
   opacity: 0;
-  transition: 1s ease;
   pointer-events: none;
 }
 
@@ -46,4 +45,14 @@ main {
 
 .hide {
   display: none;
+}
+
+.preload {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 9999;
 }

@@ -83,10 +83,20 @@ export class Settings {
       this.langMainNode.innerText = 'language'
       this.firstLang.innerText = 'english'
       this.secLang.innerText = 'russian'
+      this.slidesNode.innerText = 'slides'
+      this.githubNode.innerText = 'Github API'
+      this.unsplashNode.innerText = 'Unisplash API'
+      this.flickrNode.innerText = 'Flickr API'
+      this.tagsNode.placeholder = '[Enter your tag]'
     } else {
       this.langMainNode.innerText = 'язык'
       this.firstLang.innerText = 'английский'
       this.secLang.innerText = 'русский'
+      this.slidesNode.innerText = 'слайды'
+      this.githubNode.innerText = 'Гитхаб АПИ'
+      this.unsplashNode.innerText = 'Унисплэшь АПИ'
+      this.flickrNode.innerText = 'Фликр АПИ'
+      this.tagsNode.placeholder = '[Введите тэг]'
     }
   }
 

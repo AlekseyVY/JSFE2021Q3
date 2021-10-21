@@ -11,17 +11,18 @@ export class Slides {
     this.api = {
       source: 'github',
       tag: 'nature',
-      num: 1
+      num: Math.floor(Math.random() *20) + 1
     };
     this.worker = new Worker(new URL('slider.worker.js', import.meta.url));
     this.worker.postMessage(this.api);
     this.worker.onmessage = (e) => {
-      const objectURL = URL.createObjectURL(e.data)
-      this.background.style.background = `url("${objectURL}")`;
+      const objectURL = URL.createObjectURL(e.data.blob);
+      this.background.style.backgroundImage = `url("${objectURL}")`;
       this.loading = false;
+      this.api.num = e.data.num;
       setTimeout(() => {
         URL.revokeObjectURL(objectURL);
-      },1000)
+      },60000)
     };
 
     this.listen('click', this.githubNode, (e) => {
@@ -51,8 +52,16 @@ export class Slides {
       }
     })
     this.listen('input', this.tagsNode, (e) => {
-      // this.tag = 'nature';
-      // this.worker.postMessage(this.tag);
+      this.api.tag = e.target.value;
+      let timeout;
+      let typing = true;
+      this.tagsNode.addEventListener('keypress', (e) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          typing = false;
+          this.worker.postMessage(this.api)
+        }, 5000);
+      })
     })
   }
 
@@ -62,3 +71,14 @@ export class Slides {
     })
   }
 }
+
+
+/*
+ message.addEventListener('keypress', function(){
+  clearTimeout(timeout); /// clear timeout if user is typing
+  istyping.innerHTML = 'User is typing';
+  timeout = setTimeout(function()
+    { istyping.innerHTML = '' }, 1000 /// Time in milliseconds
+)}
+)
+* */

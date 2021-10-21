@@ -1,22 +1,38 @@
 
 let api;
-
+let intervalID = null;
 self.onmessage = (e) => {
   api = e.data;
-  console.log(api)
-  const url = urlFactory(e.data);
-  if(api.source === 'github') {
-    loadGit(url);
+  const url = urlFactory(api);
+  if(api.source === 'github') loadGit(url)
+  if(api.source === 'unsplash') loadApi(url)
+  if(api.source === 'flickr') loadFlickr(url)
+  if(intervalID) {
+    clearInterval(intervalID);
+    apiCalls(api);
   } else {
-    loadApi(url)
+    apiCalls(api);
   }
+}
+
+const apiCalls = (api) => {
+  const url = urlFactory(api);
+  if(api.source === 'github') {
+    intervalID = setInterval(() => {
+      api.num = Math.floor(Math.random() * 20) + 1
+      const url = urlFactory(api);
+      loadGit(url)
+    }, 10000);
+  }
+  if(api.source === 'unsplash') intervalID = setInterval(() => loadApi(url), 10000);
+  if(api.source === 'flickr') intervalID = setInterval(() => loadFlickr(url), 10000);
 }
 
 const loadGit = (url) => {
   fetch(url)
     .then(res => res.blob())
     .then(blob => {
-      postMessage(blob);
+      postMessage({blob: blob, num: api.num});
     })
 }
 
@@ -24,14 +40,26 @@ const loadApi = (url) => {
   fetch(url)
     .then(res => res.json())
     .then(json => {
-      console.log(json.links)
-      fetch(json.links.html, )
+      fetch(json.urls.regular)
         .then(res => {
-          console.log(res)
           return res.blob()
         })
         .then(blob => {
-          postMessage(blob);
+          postMessage({blob: blob, num: api.num});
+        })
+    })
+}
+
+const loadFlickr = (url) => {
+  fetch(url)
+    .then(res => res.json())
+    .then(json => {
+      fetch(json.photos.photo[Math.floor(Math.random() * json.photos.photo.length)].url_l)
+        .then(res => {
+          return res.blob()
+        })
+        .then(blob => {
+          postMessage({blob: blob, num: api.num});
         })
     })
 }
@@ -51,7 +79,9 @@ const urlFactory = (api) => {
     return `https://raw.githubusercontent.com/AlekseyVY/stage1-tasks/assets/images/${dayTime}/${num}.jpg`
   }
   if(api.source === 'unsplash') {
-    console.log('uniplash')
-    return `https://api.unsplash.com/photos/random?query=${dayTime}&client_id=x3eswxPzWXmGDQU4DxczZ4dGoyhUSiyaHKKMJeaP-Fg`;
+    return `https://api.unsplash.com/photos/random?orientation=landscape&query=${dayTime}&query=${api.tag}&client_id=x3eswxPzWXmGDQU4DxczZ4dGoyhUSiyaHKKMJeaP-Fg`;
+  }
+  if(api.source === 'flickr') {
+    return `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b5246e42907fad07311adb9365d8934b&tag_mode=all&tags=${dayTime},${api.tag}&extras=url_l&format=json&nojsoncallback=1`
   }
 }
