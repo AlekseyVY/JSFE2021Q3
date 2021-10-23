@@ -12,7 +12,7 @@ self.onmessage = (e) => {
 };
 
 const getQuote = () => {
-  fetch('./../assets/data/data.json')
+  fetch('./assets/data/data.json')
     .then(res => res.json())
     .then(data => {
       const randQuote = Math.floor(Math.random() * data[0][lang].length);

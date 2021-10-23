@@ -12,7 +12,40 @@
 </div>
 <main>
   <section class="widgets-container">
-    <div></div>
+    <div class="player-container">
+      <output id="volume-output">100%</output>
+      <input class="volume" type="range" max="100" value="100"/>
+      <div class="player-wrapper">
+        <audio class="player" src="./assets/sounds/Aqua%20Caelestis.mp3"></audio>
+        <div class="rewind">
+          <svg class="rewind-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 64 64">
+            <path d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32
+             58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM20 22l14 10-14 10zM36 22l14
+              10-14 10z">
+            </path>
+          </svg>
+        </div>
+        <div class="play">
+          <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64">
+            <path d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32
+             58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM24 18l24 14-24 14z">
+            </path>
+          </svg>
+        </div>
+        <div class="forward">
+          <svg class="forward-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 64 64">
+            <path d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32
+             58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM20 22l14 10-14 10zM36 22l14
+              10-14 10z">
+            </path>
+          </svg>
+        </div>
+      </div>
+      <span class="song-dur">0:39</span>
+      <input class="song-duration" type="range" max="39" value="0"/>
+      <span class="song-curr-time">0:00</span>
+      <ul class="playlist"></ul>
+    </div>
     <div class="weather-container">
       <input class="weather-city" placeholder="">
       <div class="weather-delimeter"></div>

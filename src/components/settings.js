@@ -8,7 +8,6 @@ import {Weather} from "./weather/weather";
 export class Settings {
   constructor(dto) {
     this.settings = dto.defaultSettings;
-    console.log(this.settings)
     // main nodes
     this.settingsNode = document.querySelector(dto.settingsNode);
     this.containerNode = document.querySelector(dto.containerNode);
@@ -205,9 +204,9 @@ export class Settings {
   }
   // END of slides logic
 
-  // START of weather logic
-  weatherFactory = () => {
+  // START of audio logic
+  audioFactory = () => {
 
   }
-  // END of weather logic
+  // END of audio logic
 }

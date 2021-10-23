@@ -8,6 +8,7 @@ export class Slides {
     this.leftNode = dto.leftNode;
     this.rightNode = dto.rightNode;
     this.loading = false;
+    this.clicked = false;
     this.api = {
       source: 'github',
       tag: 'nature',
@@ -22,7 +23,7 @@ export class Slides {
       this.api.num = e.data.num;
       setTimeout(() => {
         URL.revokeObjectURL(objectURL);
-      },60000)
+      },6000000)
     };
 
     this.listen('click', this.githubNode, (e) => {
@@ -38,17 +39,30 @@ export class Slides {
       this.worker.postMessage(this.api);
     })
     this.listen('click', this.leftNode, (e) => {
-      if(!this.loading) {
-        this.api.num = this.api.num - 1 <= 0 ? 20 : this.api.num - 1;
-        this.worker.postMessage(this.api);
-        this.loading = true;
+      console.log(this.clicked)
+      if(!this.clicked) {
+        if(!this.loading) {
+          this.api.num = this.api.num - 1 <= 0 ? 20 : this.api.num - 1;
+          this.worker.postMessage(this.api);
+          this.loading = true;
+          this.clicked = true;
+          setTimeout(() => {
+            this.clicked = false;
+          }, 1000)
+        }
       }
     })
     this.listen('click', this.rightNode, (e) => {
-      if(!this.loading) {
-        this.api.num = this.api.num + 1 > 20 ? 1 : this.api.num + 1;
-        this.worker.postMessage(this.api);
-        this.loading = true;
+      if(!this.clicked) {
+        if(!this.loading) {
+          this.api.num = this.api.num + 1 > 20 ? 1 : this.api.num + 1;
+          this.worker.postMessage(this.api);
+          this.loading = true;
+          this.clicked = true;
+          setTimeout(() => {
+            this.clicked = false;
+          }, 1000)
+        }
       }
     })
     this.listen('input', this.tagsNode, (e) => {
@@ -71,14 +85,3 @@ export class Slides {
     })
   }
 }
-
-
-/*
- message.addEventListener('keypress', function(){
-  clearTimeout(timeout); /// clear timeout if user is typing
-  istyping.innerHTML = 'User is typing';
-  timeout = setTimeout(function()
-    { istyping.innerHTML = '' }, 1000 /// Time in milliseconds
-)}
-)
-* */

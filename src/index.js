@@ -1,4 +1,5 @@
 import {Settings} from "./components/settings";
+import {Player} from "./components/player/player";
 import('normalize.css');
 import('./main.scss');
 
@@ -50,6 +51,9 @@ const loader = () => {
           humidityNode: '.weather-humidity'
         }
       })
+
+
+      new Player()
     }
   }
 }

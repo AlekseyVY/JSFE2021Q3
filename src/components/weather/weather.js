@@ -30,13 +30,11 @@ export class Weather {
     this.worker = new Worker(new URL('weather.worker.js', import.meta.url));
     this.worker.postMessage(this.data);
     this.worker.onmessage = (e) => {
-      console.log(e.data)
-      this.icon.src = `https://openweathermap.org/img/w/${e.data.icon}.png`
+      this.icon.src = `https://openweathermap.org/img/w/${e.data.icon}.png`;
       this.celsius.innerHTML = `${Math.floor(e.data.temp)}&#176;C  ${e.data.desc}`;
       this.speed.innerText = `${this.langPref[this.lang].wind} ${Math.floor(e.data.wind)} ${this.langPref[this.lang].s}`;
       this.hum.innerText = `${this.langPref[this.lang].hum} ${Math.floor(e.data.hym)}%`;
       this.user.value = e.data.name;
-      console.log(dto)
     }
 
     this.listen('input', this.user, (e) => {
@@ -47,7 +45,7 @@ export class Weather {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
           typing = false;
-          this.worker.postMessage(this.data)
+          this.worker.postMessage(this.data);
         }, 5000);
       })
     })
