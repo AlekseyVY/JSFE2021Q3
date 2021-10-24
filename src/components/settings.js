@@ -19,6 +19,7 @@ export class Settings {
     this.firstLangType = dto.lang.firstLang.type;
     this.secLang = document.querySelector(dto.lang.secLang.langSelector);
     this.secLangType = dto.lang.secLang.type;
+    this.error = document.querySelector('.weather-error');
     // slide nodes and selectors
     this.slidesNode = document.querySelector(dto.slides.slidesNode);
     this.slidesAPINode = document.querySelector(dto.slides.slideApiContainer);
@@ -35,6 +36,18 @@ export class Settings {
     this.celsiusNode = document.querySelector(dto.weather.celsiusNode);
     this.windNode = document.querySelector(dto.weather.windNode);
     this.humidityNode = document.querySelector(dto.weather.humidityNode);
+
+    this.vis = document.querySelector('.vis-selection');
+    this.visCont = document.querySelector('.visibility');
+    this.playerContainer = document.querySelector('.player-container');
+    this.weatherContainer = document.querySelector('.weather-container');
+    this.clockContainer = document.querySelector('.clock-wrapper');
+    this.citationContainer = document.querySelector('.citation-wrapper');
+    this.playerVis = document.querySelector('.player-vis');
+    this.weatherVis = document.querySelector('.weather-vis');
+    this.mainVis = document.querySelector('.clock-vis');
+    this.citationVis = document.querySelector('.citation-vis');
+
     // class states
     this.mode = false;
     this.langMode = false;
@@ -44,6 +57,27 @@ export class Settings {
     this.listen('click', this.settingsNode, this.container);
     this.langFactory();
     this.slidesFactory();
+
+    this.vis.addEventListener('click', (e) => {
+      this.clearActive();
+      this.visCont.classList.remove('idle')
+    })
+
+    this.visCont.addEventListener('click', (e) => {
+      if(e.target.id === 'player-vis') {
+        this.switcher(e, this.playerContainer)
+      }
+      if(e.target.id === 'weather-vis') {
+        this.switcher(e, this.weatherContainer)
+      }
+      if(e.target.id === 'clock-vis') {
+        this.switcher(e, this.clockContainer)
+      }
+      if(e.target.id === 'citation-vis') {
+        this.switcher(e, this.citationContainer)
+      }
+    })
+
     // api calls to local storage
     window.onload = async () => {
       const res = this.getSettings();
@@ -105,6 +139,12 @@ export class Settings {
       this.unsplashNode.innerText = 'Unisplash API'
       this.flickrNode.innerText = 'Flickr API'
       this.tagsNode.placeholder = '[Enter your tag]'
+      this.error.innerText = 'You entered wrong city'
+      this.vis.innerText = 'visibility'
+      this.playerVis.innerText = 'player'
+      this.weatherVis.innerText = 'weather'
+      this.mainVis.innerText = 'main'
+      this.citationVis.innerText = 'citation'
     } else {
       this.langMainNode.innerText = 'язык'
       this.firstLang.innerText = 'английский'
@@ -114,8 +154,27 @@ export class Settings {
       this.unsplashNode.innerText = 'Унисплэшь АПИ'
       this.flickrNode.innerText = 'Фликр АПИ'
       this.tagsNode.placeholder = '[Введите тэг]'
+      this.error.innerText = 'Введите правильный город'
+      this.vis.innerText = 'видимость'
+      this.playerVis.innerText = 'проигрыватель'
+      this.weatherVis.innerText = 'погода'
+      this.mainVis.innerText = 'основа'
+      this.citationVis.innerText = 'цитаты'
     }
   }
+
+  switcher = (e, elem) => {
+    if(e.target.classList.contains('on')) {
+      e.target.classList.remove('on')
+      e.target.classList.add('off')
+      elem.classList.add('idle')
+    } else {
+      e.target.classList.remove('off')
+      e.target.classList.add('on')
+      elem.classList.remove('idle')
+    }
+  }
+
 
   clearActive = () => {
     this.settingsArray.forEach((ele) => {
@@ -205,8 +264,5 @@ export class Settings {
   // END of slides logic
 
   // START of audio logic
-  audioFactory = () => {
-
-  }
   // END of audio logic
 }

@@ -14,6 +14,7 @@
   border: 1px solid rgba(209, 213, 219, 0.3);
   color: #fff;
   font-size: 20px;
+  transition: 1s ease-in-out;
 }
 
 .weather-city {
@@ -31,4 +32,9 @@
   width: 100%;
   height: 1px;
   background-color: #fff;
+}
+
+.weather-error {
+  color: red;
+  display: none;
 }

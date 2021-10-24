@@ -7,6 +7,7 @@ export class Weather {
     this.user = dto.city;
     this.city = dto.default ? dto.default  : 'Minsk';
     this.icon = dto.icon;
+    this.error = document.querySelector('.weather-error');
     this.celsius = dto.celsius;
     this.speed = dto.wind;
     this.hum = dto.humidity;
@@ -30,11 +31,16 @@ export class Weather {
     this.worker = new Worker(new URL('weather.worker.js', import.meta.url));
     this.worker.postMessage(this.data);
     this.worker.onmessage = (e) => {
-      this.icon.src = `https://openweathermap.org/img/w/${e.data.icon}.png`;
-      this.celsius.innerHTML = `${Math.floor(e.data.temp)}&#176;C  ${e.data.desc}`;
-      this.speed.innerText = `${this.langPref[this.lang].wind} ${Math.floor(e.data.wind)} ${this.langPref[this.lang].s}`;
-      this.hum.innerText = `${this.langPref[this.lang].hum} ${Math.floor(e.data.hym)}%`;
-      this.user.value = e.data.name;
+      if(e.data) {
+        this.icon.src = `https://openweathermap.org/img/w/${e.data.icon}.png`;
+        this.celsius.innerHTML = `${Math.floor(e.data.temp)}&#176;C  ${e.data.desc}`;
+        this.speed.innerText = `${this.langPref[this.lang].wind} ${Math.floor(e.data.wind)} ${this.langPref[this.lang].s}`;
+        this.hum.innerText = `${this.langPref[this.lang].hum} ${Math.floor(e.data.hym)}%`;
+        this.user.value = e.data.name;
+        this.error.style.display = 'none';
+      } else {
+        this.error.style.display = 'block';
+      }
     }
 
     this.listen('input', this.user, (e) => {
@@ -46,7 +52,7 @@ export class Weather {
         timeout = setTimeout(() => {
           typing = false;
           this.worker.postMessage(this.data);
-        }, 5000);
+        }, 4000);
       })
     })
   }

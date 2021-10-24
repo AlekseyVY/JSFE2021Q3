@@ -113,3 +113,22 @@
 .tag-input::placeholder {
   color: white;
 }
+
+.visibility {
+  height: 90%;
+  transition: 1s ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.on {
+  color: lime;
+  border-color: lime;
+}
+
+.off {
+  color: black;
+  border-color: black;
+}

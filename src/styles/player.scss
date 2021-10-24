@@ -13,6 +13,7 @@
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   color: #fff;
+  transition: 1s ease-in-out;
 }
 
 .player-wrapper {
@@ -115,4 +116,43 @@ input[type="range"]:active::-webkit-slider-thumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.track-name {
+  color: #f74705;
+  text-align: center;
+  margin: 5px 0 5px 0;
+}
+
+.volume-btn {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volume-svg {
+  fill: #fff;
+}
+
+#volume-output {
+  margin-right: 5px;
+}
+
+.volume-svg:hover {
+  cursor: pointer;
+  fill: #f74705;
+}
+
+.volume-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sec-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }
