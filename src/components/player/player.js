@@ -55,7 +55,7 @@ export class Player {
     this.songsArray.forEach((song, idx) => {
       const elem = document.createElement('li');
       if(idx === 0) elem.classList.add('song-active')
-      elem.innerText = song.title;
+      elem.innerText = `${idx + 1} - ${song.title} (${song.duration})`;
       elem.classList.add('song');
       elem.classList.add(`${idx}`)
       this.playlist.append(elem);

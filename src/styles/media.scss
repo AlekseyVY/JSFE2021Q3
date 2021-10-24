@@ -1,0 +1,67 @@
+@media (max-width: 500px) {
+
+  .widgets-container {
+    height: 420px;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0;
+  }
+  .player-container {
+    margin: 0;
+    padding: 0;
+  }
+  .citation-container {
+    height: 180px;
+    flex-direction: column-reverse;
+    padding: 0;
+    margin: 0;
+  }
+  .weather-container {
+    width: 195px;
+    padding: 0;
+    margin: 0;
+  }
+  .clock-container {
+    padding: 0;
+  }
+  .citation-wrapper {
+    padding: 0;
+  }
+  .slide-arrow {
+    width: 20px;
+  }
+  .main-clock {
+    font-size: 36px;
+  }
+  .greeting-wrapper {
+    flex-direction: column;
+  }
+  .settings-container {
+    width: 300px;
+    left: -137px;
+    top: -431px;
+  }
+  .left-slide--control{
+    margin: 0;
+  }
+  .right-slide--control{
+    margin: 0;
+  }
+  .tag-input {
+    padding: 0;
+    width: 100px;
+    font-size: 16px;
+  }
+  .settings-icon--wrapper {
+    margin: 0;
+  }
+  .citation-dummy {
+    display: none;
+  }
+  .citation {
+    text-align: center;
+  }
+  .clock-wrapper {
+    justify-content: space-evenly;
+  }
+}
