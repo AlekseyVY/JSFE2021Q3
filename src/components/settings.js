@@ -48,6 +48,12 @@ export class Settings {
     this.mainVis = document.querySelector('.clock-vis');
     this.citationVis = document.querySelector('.citation-vis');
 
+    this.langSelector = document.querySelector('.language-selector');
+    this.todoInput = document.querySelector('.task-input');
+    this.todoAdd = document.querySelector('.add-task');
+    this.switchTodo = document.querySelector('.todo-vis');
+    this.todoContainer = document.querySelector('.todo-wrapper');
+
     // class states
     this.mode = false;
     this.langMode = false;
@@ -56,7 +62,6 @@ export class Settings {
     // function calls
     this.listen('click', this.settingsNode, this.container);
     this.langFactory();
-    this.slidesFactory();
 
     this.vis.addEventListener('click', (e) => {
       this.clearActive();
@@ -76,6 +81,14 @@ export class Settings {
       if(e.target.id === 'citation-vis') {
         this.switcher(e, this.citationContainer)
       }
+      if(e.target.id === 'todo-vis') {
+        this.switcher(e, this.todoContainer)
+      }
+    })
+
+    this.listen('click', this.slidesNode, () => {
+      this.clearActive();
+      this.slidesAPINode.classList.remove('idle')
     })
 
     // api calls to local storage
@@ -145,6 +158,9 @@ export class Settings {
       this.weatherVis.innerText = 'weather'
       this.mainVis.innerText = 'main'
       this.citationVis.innerText = 'citation'
+      this.todoInput.placeholder = 'Add Task (5 max.)'
+      this.todoAdd.innerText = 'add'
+      this.switchTodo.innerText = 'todo'
     } else {
       this.langMainNode.innerText = 'язык'
       this.firstLang.innerText = 'английский'
@@ -160,6 +176,9 @@ export class Settings {
       this.weatherVis.innerText = 'погода'
       this.mainVis.innerText = 'основа'
       this.citationVis.innerText = 'цитаты'
+      this.todoInput.placeholder = 'Добавьте таск (5 макс.)'
+      this.todoAdd.innerText = 'доб.'
+      this.switchTodo.innerText = 'туду'
     }
   }
 
@@ -203,12 +222,11 @@ export class Settings {
     this.mode ? this.containerNode.classList.remove('idle') : this.containerNode.classList.add('idle');
   }
 
+
   langFactory = () => {
     this.listen('click', this.langMainNode, () => {
       this.clearActive();
-      this.langMode = !this.langMode;
-      this.langMode ? this.langSubNode.classList.remove('idle') :  this.langSubNode.classList.add('idle');
-      // this.langMode ? this.langMainNode.classList.add('selected') :  this.langMainNode.classList.remove('selected');
+      this.langSubNode.classList.remove('idle');
     });
     this.langSwitch('click', this.firstLang, this.firstLangType, this.firstLangSelected);
     this.langSwitch('click', this.secLang, this.secLangType, this.secLangSelected);
@@ -252,17 +270,4 @@ export class Settings {
     });
   }
   // END of language selection logic
-
-  // START of slides logic
-  slidesFactory = () => {
-    this.listen('click', this.slidesNode, () => {
-      this.clearActive();
-      this.slidesMode = !this.slidesMode;
-      this.slidesMode ? this.slidesAPINode.classList.remove('idle') :  this.slidesAPINode.classList.add('idle');
-    })
-  }
-  // END of slides logic
-
-  // START of audio logic
-  // END of audio logic
 }

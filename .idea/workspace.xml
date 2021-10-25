@@ -5,17 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f40efa-c055-4fb9-a8ae-6e4e2b3b2da9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/td.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/td.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/player/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/player/player.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/weather/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weather/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/weather/weather.worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weather/weather.worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/citation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/citation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/clock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/clock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/media.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/player.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/player.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/slides.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/slides.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/weather.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/weather.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +39,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="momentum" />
-                    <option name="lastUsedInstant" value="1634794277" />
+                    <option name="lastUsedInstant" value="1635092196" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="gh-pages" />
@@ -103,6 +106,8 @@
       <workItem from="1634898979689" duration="1384000" />
       <workItem from="1634978584377" duration="21119000" />
       <workItem from="1635058359037" duration="17029000" />
+      <workItem from="1635141675787" duration="8812000" />
+      <workItem from="1635168122478" duration="5032000" />
     </task>
     <servers />
   </component>

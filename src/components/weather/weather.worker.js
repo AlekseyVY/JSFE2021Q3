@@ -10,7 +10,6 @@ const getWeather = (api) => {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${api.city}&lang=${lang}&appid=b8a8c166256629b7bfc205ded2ba4a0c&units=metric`)
     .then(res => res.json()
       .then(data => {
-        console.log(data)
         if(data.cod === '404') {
           postMessage(null)
         } else {

@@ -76,25 +76,32 @@ export class Player {
 
     this.playlist.addEventListener('click', (e) => {
       const [song, num] = e.target.classList;
-      console.log(e.target)
       this.curr = Number(num)
       this.audio.src = this.songsArray[this.curr].src
-      this.state = !this.state;
-      console.log(this.state)
       this.active(this.curr);
       e.target.classList.add('song-active');
         this.playBtn.innerHTML = `<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64">
 <path d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 
 26-26 26 11.641 26 26-11.641 26-26 26zM20 20h8v24h-8zM36 20h8v24h-8z"></path>
 </svg>`
-      e.target.children[0].innerHTML =
-        `<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64">
+      if(this.state) {
+        e.target.children[0].innerHTML =
+          `<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64">
+            <path d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32
+             58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM24 18l24 14-24 14z">
+            </path>
+          </svg>`
+      } else {
+        e.target.children[0].innerHTML =
+          `<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 64 64">
           <path d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 
 26-26 26 11.641 26 26-11.641 26-26 26zM20 20h8v24h-8zM36 20h8v24h-8z"></path>
         </svg>`
+      }
+
       console.log(e.target.children[0])
       this.showDuration()
-      this.audio.play()
+      this.play()
     })
 
     this.songsArray.forEach((song, idx) => {

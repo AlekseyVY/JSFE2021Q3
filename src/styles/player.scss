@@ -155,4 +155,5 @@ input[type="range"]:active::-webkit-slider-thumb {
   align-items: center;
   justify-content: center;
   margin-right: 10px;
+  pointer-events: none;
 }
