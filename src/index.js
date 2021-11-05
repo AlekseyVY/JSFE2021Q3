@@ -1,4 +1,4 @@
 import('./main.scss');
 import('normalize.css');
 
-console.log('check');
+console.log('test');
