@@ -9,18 +9,8 @@
     "watch": "webpack --watch",
     "start": "webpack serve --open --mode development",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "lint:fix": "eslint src --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -51,5 +41,8 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
