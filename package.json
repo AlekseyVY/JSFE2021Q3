@@ -11,6 +11,17 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rolling-scopes-school/alekseyvy-JSFE2021Q3.git"
@@ -30,6 +41,7 @@
     "eslint-plugin-import": "^2.25.2",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
