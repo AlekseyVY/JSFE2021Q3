@@ -1,6 +1,15 @@
+/**
+ * Class represents single global state;
+ * @param {object} state - state object;
+ * @param {array} subArray - array that contains all subscribers;
+ * @method init - initialize app;
+ * @method subscribe - subscribe component to watch for state changes;
+ * @method notify - notifyes all subscribers;
+ * @method dispatch - dispatches action that changes state object,
+ * and notifies subscribers;
+ */
 class Store {
   constructor() {
-    // here will be object with initial state of app;
     this.state = null;
     this.subsArray = [];
 
@@ -24,7 +33,6 @@ class Store {
   }
 
   dispatch(action) {
-    // action name is key of state object, action value is value of that property
     this.state[action.name] = action.value;
     this.notify();
   }
