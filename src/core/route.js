@@ -1,3 +1,8 @@
+import state from './store';
+import welcome from '../components/welcomeScreen';
+import settings from '../components/settings';
+import category from '../components/category';
+import profile from '../components/profile';
 /**
  * Router Class provides basic route functionality;
  * @param {object} dto - data transfer object;
@@ -15,9 +20,20 @@ class Router {
     this.routes[route].render();
   }
 
-  listen(state) {
-    this.render(state.route);
+  listen(dto) {
+    this.render(dto.route);
   }
 }
 
-export default Router;
+const router = new Router({
+  routes: {
+    welcome,
+    settings,
+    category,
+    profile,
+  },
+});
+
+state.subscribe((data) => router.listen(data));
+
+export default router;
