@@ -9,10 +9,9 @@
  * and notifies subscribers;
  */
 class Store {
-  constructor() {
-    this.state = null;
+  constructor(dto) {
+    this.state = dto;
     this.subsArray = [];
-
     this.init();
   }
 
