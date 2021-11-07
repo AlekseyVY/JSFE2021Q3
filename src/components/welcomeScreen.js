@@ -1,10 +1,10 @@
 import View from '../core/view';
 
-class Button extends View {
+class WelcomeScreen extends View {
   constructor(dto) {
     super(dto);
     this.dto = dto;
   }
 }
 
-export default Button;
+export default WelcomeScreen;
