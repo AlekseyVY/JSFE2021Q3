@@ -57,4 +57,4 @@ const router = new Router({
 });
 
 state.subscribe((data) => router.listen(data));
-router.render('settings');
+router.render('welcome');

@@ -1,3 +1,11 @@
+/**
+ * Base View Class;
+ * @param {object} dto - data transfer object;
+ * @method render - renders element into DOM;
+ * @method listen - subscription method for state observer;
+ * @method destroy - destroys previously rendered view;
+ * @method listeners - adds event listeners;
+ */
 class View {
   constructor(dto) {
     this.html = dto.html;
@@ -33,14 +41,6 @@ class View {
       node.addEventListener(element.type, () => {
         element.state.dispatch(element.dispatch);
       });
-    });
-  }
-
-  // TODO: finish destroy listeners function;
-  destroyListeners() {
-    this.listenersArray.forEach((element) => {
-      const node = document.querySelector(`#${element.id}`);
-      node.removeEventListener(element.type, () => {});
     });
   }
 }
