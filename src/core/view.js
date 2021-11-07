@@ -10,7 +10,7 @@ class View {
   constructor(dto) {
     this.html = dto.html;
     this.state = null;
-    this.class = dto.class || null;
+    this.class = dto.class;
     this.selector = document.querySelector(dto.selector);
     this.tag = dto.tag;
     this.elem = document.createElement(this.tag);
