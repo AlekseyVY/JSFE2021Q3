@@ -1,5 +1,5 @@
 import View from '../core/view';
-import state from '../core/store';
+import state from '../state/state';
 /**
  * View Class for Category page;
  * @param {object} dto - data transfer object;

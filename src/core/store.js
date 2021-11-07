@@ -37,8 +37,4 @@ class Store {
   }
 }
 
-const state = new Store({
-  route: 'welcome',
-});
-
-export default state;
+export default Store;

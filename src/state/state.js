@@ -10,4 +10,8 @@ class State extends Store {
   }
 }
 
-export default State;
+const state = new State({
+  route: 'welcome',
+});
+
+export default state;
