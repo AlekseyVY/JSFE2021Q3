@@ -3,7 +3,10 @@ import settings from '../components/settings';
 import category from '../components/category';
 import profile from '../components/profile';
 import Router from '../core/route';
-
+/**
+ * Router initialization;
+ * @param {object} - contains route objects;
+ */
 const router = new Router({
   routes: {
     welcome,

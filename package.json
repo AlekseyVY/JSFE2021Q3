@@ -10,7 +10,8 @@
     "start": "webpack serve --open --mode development",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docs": "documentation build src/** -f html -o docs"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.5.1",
+    "documentation": "^13.2.5",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
@@ -40,7 +42,6 @@
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
-    "materialize-css": "^1.0.0-rc.2",
     "normalize.css": "^8.0.1"
   },
   "lint-staged": {

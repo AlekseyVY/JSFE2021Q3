@@ -18,9 +18,9 @@ const welcome = new WelcomeScreen({
   html: `
   <img class='logo' src='./assets/splash.webp' alt='logo'>
   <div class='button-wrapper'>
-  <button id='category-route-btn' class='waves-effect waves-light btn-large'>New Game</button>
-  <button id='profile-route-btn' class='waves-effect waves-light btn-large'>Profile</button>
-  <button id='settings-route-btn' class='waves-effect waves-light btn-large'>Settings</button>
+  <button id='category-route-btn' class='mdc-button mdc-button--raised'>New Game</button>
+  <button id='profile-route-btn' class='mdc-button mdc-button--raised'>Profile</button>
+  <button id='settings-route-btn' class='mdc-button mdc-button--raised'>Settings</button>
   </div>
   `,
   listeners: [

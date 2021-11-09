@@ -12,6 +12,7 @@ class Router {
 
   render(route) {
     this.routes[route].destroy('#root');
+    window.location.hash = route;
     this.routes[route].render();
   }
 

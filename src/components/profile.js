@@ -18,7 +18,7 @@ const profile = new ProfileScreen({
   html: `
   <img class='logo' src='./assets/splash.webp' alt='logo'>
   <div class='button-wrapper'>
-  <button id='home-route-btn' class='waves-effect waves-light btn-large'>Home</button>
+  <button id='home-route-btn' class='mdc-button mdc-button--raised'>Home</button>
   Profile Page
   </div>
   `,
