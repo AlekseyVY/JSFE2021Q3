@@ -11,7 +11,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "prepare": "husky install",
-    "docs": "documentation build src/** -f html -o docs"
+    "docs": "jsdoc -c jsdoc.json ./README.md"
   },
   "repository": {
     "type": "git",
@@ -27,12 +27,13 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.5.1",
-    "documentation": "^13.2.5",
+    "docdash": "^1.2.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
+    "jsdoc": "^3.6.7",
     "lint-staged": "^11.2.6",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
