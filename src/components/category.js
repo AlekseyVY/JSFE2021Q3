@@ -1,4 +1,5 @@
 import View from '../core/view';
+import ApiCall from '../helpers/apiCall';
 import state from '../state/state';
 /**
  * View Class for Category page;
@@ -10,6 +11,11 @@ class CategoryScreen extends View {
     this.dto = dto;
   }
 }
+
+// Temporary solution
+const api = new ApiCall('./assets/data/images.json');
+api.getData().then(() => {});
+// End of Temporary solution
 
 const category = new CategoryScreen({
   selector: '#root',

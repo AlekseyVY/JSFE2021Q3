@@ -1,12 +1,11 @@
 /**
  * Base View Class;
- * @param {object} dto - data transfer object;
- * @method render - renders element into DOM;
- * @method listen - subscription method for state observer;
- * @method destroy - destroys previously rendered view;
- * @method listeners - adds event listeners;
+ * @module View
  */
 class View {
+  /**
+   * @param {object} dto - data transfer object
+   */
   constructor(dto) {
     this.html = dto.html;
     this.state = null;
@@ -18,6 +17,10 @@ class View {
     this.listenersArray = dto.listeners;
   }
 
+  /**
+   * Renders html into DOM and adds event listeners.
+   * @method render
+   */
   render() {
     this.elem.innerHTML = this.html;
     if (this.class) this.elem.classList.add(this.class);
@@ -25,16 +28,30 @@ class View {
     if (this.listenersArray) this.listeners();
   }
 
+  /**
+   * Method for subscription, listens for state changes and rerenders;
+   * @param {object} state - state object from store;
+   * @method listen
+   */
   listen(state) {
     this.state = state;
     this.render();
   }
 
+  /**
+   * Method takes element and destroys it in DOM
+   * @param {string} element - DOM element
+   * @method destroy
+   */
   destroy(element) {
     this.root = document.querySelector(element);
     this.root.innerHTML = '';
   }
 
+  /**
+   * Adds event listeners to rendered html;
+   * @method listeners
+   */
   listeners() {
     this.listenersArray.forEach((element) => {
       const node = document.querySelector(`#${element.id}`);
