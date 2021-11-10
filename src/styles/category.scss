@@ -1,0 +1,16 @@
+.question_category {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  background-color: chocolate;
+}
+
+.question_category:hover {
+  cursor: pointer;
+  background-color: aqua;
+  scale: 1.1;
+}

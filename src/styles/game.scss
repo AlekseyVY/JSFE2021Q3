@@ -1,0 +1,18 @@
+.main-image {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+}
+
+.answers-wrapper {
+  width: 350px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.answer-btn {
+  width: 150px;
+}

@@ -19,3 +19,25 @@
 .mdc-button {
   margin-bottom: 10px;
 }
+
+.category-wrapper {
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.category:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+}
