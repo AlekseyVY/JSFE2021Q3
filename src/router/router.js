@@ -4,6 +4,7 @@ import category from '../components/category';
 import profile from '../components/profile';
 import game from '../components/game';
 import Router from '../core/route';
+import results from '../components/results';
 /**
  * Router initialization
  * @module routerInit
@@ -15,6 +16,7 @@ const router = new Router({
     category,
     profile,
     game,
+    results,
   },
 });
 

@@ -1,6 +1,9 @@
 import state from '../state/state';
 import generateQuestions from '../helpers/questionsGenerate';
-
+/**
+ * Web worker for Json fetching and setting up questions
+ * @module Worker
+ */
 class JsonWorker {
   constructor() {
     this.worker = new Worker(new URL('json.worker.js', import.meta.url));
@@ -25,6 +28,10 @@ class JsonWorker {
     };
   }
 
+  /**
+   * Terminates web worker
+  * @method terminate
+  */
   terminate() {
     this.worker.terminate();
   }
