@@ -16,14 +16,17 @@ const welcome = new WelcomeScreen({
   tag: 'main',
   class: 'container',
   html: `
-  <img class='logo' src='./assets/splash.webp' alt='logo'>
-  <div class='category-wrapper'>
-  <div id='category-pictures' class='category'>Pictures</div>
-  <div id='category-artists' class='category'>Artists</div>
+  <img id='settings-route-btn' class='settings_icon' src='./assets/settings.png' alt='settings'>
+  <img class='logo' src='./assets/logo.svg' alt='Game logo'>
+  <div class='category_welcome-wrapper'>
+  <div id='category-pictures' class='category_welcome'>Pictures</div>
+  <div id='category-artists' class='category_welcome'>Artists</div>
   </div>
-  <div class='button-wrapper'>
-  <button id='profile-route-btn' class='mdc-button mdc-button--raised'>Profile</button>
-  <button id='settings-route-btn' class='mdc-button mdc-button--raised'>Settings</button>
+  <div class='footer'>
+  <a href='https://rs.school/' target="_blank">
+  <img class='rs_logo' src='./assets/rs_logo.png' alt='RSS logo'>
+  </a>
+  <a class='my_logo' href='https://github.com/AlekseyVY' target="_blank">AlekseyVY</a>
   </div>
   `,
   listeners: [
@@ -41,9 +44,6 @@ const welcome = new WelcomeScreen({
     },
     {
       id: 'category-artists', type: 'click', dispatch: { name: 'category', value: 'artists' }, state,
-    },
-    {
-      id: 'profile-route-btn', type: 'click', dispatch: { name: 'route', value: 'profile' }, state,
     },
   ],
 });
