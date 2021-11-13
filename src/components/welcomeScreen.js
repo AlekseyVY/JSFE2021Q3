@@ -14,7 +14,7 @@ class WelcomeScreen extends View {
 const welcome = new WelcomeScreen({
   selector: '#root',
   tag: 'main',
-  class: 'container',
+  class: 'welcome',
   html: `
   <img id='settings-route-btn' class='settings_icon' src='./assets/settings.png' alt='settings'>
   <img class='logo' src='./assets/logo.svg' alt='Game logo'>

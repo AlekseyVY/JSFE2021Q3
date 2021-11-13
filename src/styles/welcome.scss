@@ -3,9 +3,19 @@
   width: 100%;
   height: 1024px;
   margin: 0 auto;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome {
   background-image: url('../assets/main.png');
   background-repeat: no-repeat;
   background-size: contain;
+  max-width: 1440px;
+  width: 100%;
+  height: 1024px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
