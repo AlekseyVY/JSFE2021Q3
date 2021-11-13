@@ -90,14 +90,6 @@
   margin: 0;
 }
 
-.btn_wrapper {
-  width: 592px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 120px 70px 0 auto;
-}
-
 .hover:hover {
   cursor: pointer;
 }
@@ -112,4 +104,8 @@ label:hover {
 
 input:hover {
   cursor: pointer;
+}
+
+.settings-btn {
+  margin: 120px 100px 0 auto;
 }
