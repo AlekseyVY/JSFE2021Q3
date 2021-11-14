@@ -15,6 +15,7 @@ class CategoryScreen extends View {
     this.categoriesArr = null;
     this.images = null;
     this.catState = null;
+    this.scoreArr = null;
   }
 
   render() {
@@ -24,6 +25,7 @@ class CategoryScreen extends View {
     console.log(picState);
     this.images = this.categoryName === 'artists' ? state.state.artistsObj : state.state.picturesObj;
     this.catState = this.categoryName === 'artists' ? artState.state : picState.state;
+    this.scoreArr = Array.from(document.getElementsByClassName('score_count'));
     this.setImages();
   }
 
@@ -31,6 +33,7 @@ class CategoryScreen extends View {
     this.categoriesArr = Array.from(document.getElementsByClassName('question_category'));
     this.categoriesArr.forEach((ele, idx) => {
       const data = this.images[idx].data[0].imageNum;
+      this.scoreArr[idx].innerHTML = `${this.catState[idx].total}/10`;
       if (this.catState[idx].played) {
         ele.style.backgroundImage = `url('./assets/game/img/${data}.webp')`;
       } else {
@@ -59,18 +62,18 @@ const category = new CategoryScreen({
     <p id='category_name'>null</p> 
   </div>
   <div class='questions-wrapper'>
-    <div id="question_0" class="question_category">round 1</div>
-    <div id="question_1" class="question_category">round 2</div>
-    <div id="question_2" class="question_category">round 3</div>
-    <div id="question_3" class="question_category">round 4</div>
-    <div id="question_4" class="question_category">round 5</div>
-    <div id="question_5" class="question_category">round 6</div>
-    <div id="question_6" class="question_category">round 7</div>
-    <div id="question_7" class="question_category">round 8</div>
-    <div id="question_8" class="question_category">round 9</div>
-    <div id="question_9" class="question_category">round 10</div>
-    <div id="question_10" class="question_category">round 11</div>
-    <div id="question_11" class="question_category">round 12</div>
+    <div id="question_0" class="question_category"><span class='score_count'>null</span>round 1</div>
+    <div id="question_1" class="question_category"><span class='score_count'>null</span>round 2</div>
+    <div id="question_2" class="question_category"><span class='score_count'>null</span>round 3</div>
+    <div id="question_3" class="question_category"><span class='score_count'>null</span>round 4</div>
+    <div id="question_4" class="question_category"><span class='score_count'>null</span>round 5</div>
+    <div id="question_5" class="question_category"><span class='score_count'>null</span>round 6</div>
+    <div id="question_6" class="question_category"><span class='score_count'>null</span>round 7</div>
+    <div id="question_7" class="question_category"><span class='score_count'>null</span>round 8</div>
+    <div id="question_8" class="question_category"><span class='score_count'>null</span>round 9</div>
+    <div id="question_9" class="question_category"><span class='score_count'>null</span>round 10</div>
+    <div id="question_10" class="question_category"><span class='score_count'>null</span>round 11</div>
+    <div id="question_11" class="question_category"><span class='score_count'>null</span>round 12</div>
   </div>
   <div class='footer'>
     <a href='https://rs.school/' target="_blank">

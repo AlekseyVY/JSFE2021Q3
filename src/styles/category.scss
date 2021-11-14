@@ -40,6 +40,7 @@
   width: 195px;
   height: 206px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
@@ -57,5 +58,9 @@
   font-size: 36px;
   transform: scale(1.2);
   transition: 0.5s ease-in-out;
+}
 
+.score_count {
+  display: block;
+  margin: 10px 10px auto auto;
 }
