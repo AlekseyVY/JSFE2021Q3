@@ -18,21 +18,7 @@ class SettingScreen extends View {
       { name: '#music', type: 'change', func: (e) => { this.state.music = e.target.checked; } },
       { name: '#sound', type: 'change', func: (e) => { this.state.sound = e.target.checked; } },
       { name: '#time', type: 'change', func: (e) => { this.state.timeGame = e.target.checked; } },
-      {
-        name: '#save_settings',
-        type: 'click',
-        func: () => {
-          settingsState.dispatch({ name: 'state', value: this.state });
-          this.state = settingsState.state;
-        },
-      },
-      {
-        name: '.volume_slider',
-        type: 'input',
-        func: (e) => {
-          this.state.volume = e.target.value;
-        },
-      },
+      { name: '.volume_slider', type: 'input', func: (e) => { this.state.volume = e.target.value; } },
       {
         name: '.time_slider',
         type: 'input',
@@ -49,6 +35,7 @@ class SettingScreen extends View {
     this.setTime();
     this.setSound();
     this.setListeners();
+    console.log(settingsState.state);
   }
 
   setSound() {
@@ -89,7 +76,6 @@ const settings = new SettingScreen({
   settings
   </p>
   </div>
-  <img id='home-route-btn' class='close' src='./assets/close.png'>
   </div>
   <div class='sound_block'>
   <div class='hover'>
@@ -118,7 +104,7 @@ const settings = new SettingScreen({
   <input class='time_slider' type='range' min='5' max='30' step='5'>
   </div>
   </div>
-  <div id='save_settings' class='category_welcome settings-btn'>Save</div>
+  <div id='save_settings' class='category_welcome settings-btn'>Save & Close</div>
   <div class='footer'>
   <a href='https://rs.school/' target="_blank">
   <img class='rs_logo' src='./assets/rs_logo.png' alt='RSS logo'>
@@ -128,10 +114,7 @@ const settings = new SettingScreen({
   `,
   listeners: [
     {
-      id: 'home-route-btn', type: 'click', dispatch: { name: 'route', value: 'welcome' }, state,
-    },
-    {
-      id: 'inner_header', type: 'click', dispatch: { name: 'route', value: 'welcome' }, state,
+      id: 'save_settings', type: 'click', dispatch: { name: 'route', value: 'welcome' }, state,
     },
   ],
 });
