@@ -14,7 +14,6 @@ class CategoryScreen extends View {
   render() {
     super.render();
     this.setCategory();
-    console.log(state.state);
   }
 
   setCategory() {

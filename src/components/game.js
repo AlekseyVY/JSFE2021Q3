@@ -33,7 +33,7 @@ class GameScreen extends View {
     if (!this.questArr) this.questArr = artState.state[this.category.id];
     if (this.questArr) this.questArr.played = true;
     const node = document.querySelector('.main-image');
-    node.src = `./assets/game/full/${this.pageData.imageNum}full.webp`;
+    node.src = `./assets/game/img/${this.pageData.imageNum}.webp`;
     this.setAnswer();
     this.answers = [];
   }
@@ -119,15 +119,16 @@ const game = new GameScreen({
   data: state.data,
   class: 'container',
   html: `
-  <div class='button-wrapper'>
-  <button id='home-route-btn' class='mdc-button mdc-button--raised'>Back</button>
+  <div class='game-header'>
+  <img id='home-route-btn' class='close-game' src='./assets/close.png' alt='close button'>
   </div>
+  <div class='question-game'>Who is the author of this picture?</div>
   <img class='main-image' src=''>
   <div class='answers-wrapper'>
-  <button class='mdc-button mdc-button--raised answer-btn'>1</button>
-  <button class='mdc-button mdc-button--raised answer-btn'>2</button>
-  <button class='mdc-button mdc-button--raised answer-btn'>3</button>
-  <button class='mdc-button mdc-button--raised answer-btn'>4</button>
+    <button class='answer-btn'>1</button>
+    <button class='answer-btn'>2</button>
+    <button class='answer-btn'>3</button>
+    <button class='answer-btn'>4</button>
   </div>
   `,
   listeners: [

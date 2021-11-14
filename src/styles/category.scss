@@ -16,10 +16,13 @@
 
 #home-route-btn {
   margin: 0 89px 0 120px;
+  transition: 0.3s ease-in-out;
 }
 
 #home-route-btn:hover {
   cursor: pointer;
+  color: #FFBCA2;
+  transition: 0.3s ease-in-out;
 }
 
 #category_name {
@@ -43,10 +46,12 @@
   color: #fff;
   font-size: 24px;
   font-style: normal;
+  transition: 0.3s ease-in-out;
 }
 
 .question_category:hover {
   cursor: pointer;
   background-color: #fff;
   color: #000;
+  transition: 0.3s ease-in-out;
 }
