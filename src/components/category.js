@@ -1,5 +1,7 @@
 import View from '../core/view';
 import state from '../state/state';
+import artState from '../state/artState';
+import picState from '../state/picState';
 /**
  * View Class for Category page;
  * @param {object} dto - data transfer object;
@@ -14,6 +16,8 @@ class CategoryScreen extends View {
   render() {
     super.render();
     this.setCategory();
+    console.log(artState);
+    console.log(picState);
   }
 
   setCategory() {

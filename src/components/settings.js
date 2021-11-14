@@ -35,7 +35,6 @@ class SettingScreen extends View {
     this.setTime();
     this.setSound();
     this.setListeners();
-    console.log(settingsState.state);
   }
 
   setSound() {

@@ -2,6 +2,7 @@ import View from '../core/view';
 import state from '../state/state';
 import JsonWorker from '../data/worker';
 import artState from '../state/artState';
+import picState from '../state/picState';
 /**
  * Game class;
  * @module Game
@@ -30,12 +31,23 @@ class GameScreen extends View {
     super.render();
     this.category = this.getCategory();
     this.pageData = this.category.data[state.state.questNum];
-    if (!this.questArr) this.questArr = artState.state[this.category.id];
+    if (!this.questArr && state.state.category === 'artists') {
+      this.questArr = artState.state[this.category.id];
+      console.log('ARTS');
+    } else {
+      this.questArr = picState.state[this.category.id];
+      console.log('PICS');
+    }
     if (this.questArr) this.questArr.played = true;
     const node = document.querySelector('.main-image');
     node.src = `./assets/game/img/${this.pageData.imageNum}.webp`;
     this.setAnswer();
     this.answers = [];
+
+    const tmp = document.querySelector('#home-route-btn');
+    tmp.addEventListener('click', () => {
+      this.questArr = null;
+    });
   }
 
   /**
@@ -68,7 +80,13 @@ class GameScreen extends View {
           this.calcAnswers(true, state.state.questNum);
           if (state.state.questNum === 9) {
             state.dispatch({ name: 'questNum', value: 0 });
-            artState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+
+            if (state.state.category === 'artists') {
+              artState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+            } else {
+              picState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+            }
+
             this.questArr = null;
             state.dispatch({ name: 'route', value: 'results' });
           } else {
@@ -80,7 +98,13 @@ class GameScreen extends View {
           this.calcAnswers(false, state.state.questNum);
           if (state.state.questNum === 9) {
             state.dispatch({ name: 'questNum', value: 0 });
-            artState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+
+            if (state.state.category === 'artists') {
+              artState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+            } else {
+              picState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+            }
+
             this.questArr = null;
             state.dispatch({ name: 'route', value: 'results' });
           } else {
