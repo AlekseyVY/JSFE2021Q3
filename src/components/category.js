@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import View from '../core/view';
 import state from '../state/state';
 import artState from '../state/artState';
@@ -13,6 +14,7 @@ class CategoryScreen extends View {
     this.categoryName = null;
     this.categoriesArr = null;
     this.images = null;
+    this.catState = null;
   }
 
   render() {
@@ -21,6 +23,7 @@ class CategoryScreen extends View {
     console.log(artState);
     console.log(picState);
     this.images = this.categoryName === 'artists' ? state.state.artistsObj : state.state.picturesObj;
+    this.catState = this.categoryName === 'artists' ? artState.state : picState.state;
     this.setImages();
   }
 
@@ -28,8 +31,11 @@ class CategoryScreen extends View {
     this.categoriesArr = Array.from(document.getElementsByClassName('question_category'));
     this.categoriesArr.forEach((ele, idx) => {
       const data = this.images[idx].data[0].imageNum;
-      // eslint-disable-next-line no-param-reassign
-      ele.style.backgroundImage = `url('./assets/game/img/${data}.webp')`;
+      if (this.catState[idx].played) {
+        ele.style.backgroundImage = `url('./assets/game/img/${data}.webp')`;
+      } else {
+        ele.style.backgroundImage = `linear-gradient(black, black), url('./assets/game/img/${data}.webp')`;
+      }
     });
   }
 
