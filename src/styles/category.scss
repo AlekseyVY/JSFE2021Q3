@@ -42,11 +42,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFBCA2;
-  color: #fff;
+  color: #000;
   font-size: 24px;
   font-style: normal;
   transition: 0.3s ease-in-out;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .question_category:hover {

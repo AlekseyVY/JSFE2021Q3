@@ -11,6 +11,8 @@ class CategoryScreen extends View {
     super(dto);
     this.dto = dto;
     this.categoryName = null;
+    this.categoriesArr = null;
+    this.images = null;
   }
 
   render() {
@@ -18,6 +20,17 @@ class CategoryScreen extends View {
     this.setCategory();
     console.log(artState);
     console.log(picState);
+    this.images = this.categoryName === 'artists' ? state.state.artistsObj : state.state.picturesObj;
+    this.setImages();
+  }
+
+  setImages() {
+    this.categoriesArr = Array.from(document.getElementsByClassName('question_category'));
+    this.categoriesArr.forEach((ele, idx) => {
+      const data = this.images[idx].data[0].imageNum;
+      // eslint-disable-next-line no-param-reassign
+      ele.style.backgroundImage = `url('./assets/game/img/${data}.webp')`;
+    });
   }
 
   setCategory() {

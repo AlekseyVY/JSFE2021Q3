@@ -33,10 +33,10 @@ class GameScreen extends View {
     this.pageData = this.category.data[state.state.questNum];
     if (!this.questArr && state.state.category === 'artists') {
       this.questArr = artState.state[this.category.id];
-      console.log('ARTS');
-    } else {
+      this.questArr.total = 0;
+    } else if (!this.questArr && state.state.category === 'pictures') {
       this.questArr = picState.state[this.category.id];
-      console.log('PICS');
+      this.questArr.total = 0;
     }
     if (this.questArr) this.questArr.played = true;
     const node = document.querySelector('.main-image');
@@ -86,7 +86,6 @@ class GameScreen extends View {
             } else {
               picState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
             }
-
             this.questArr = null;
             state.dispatch({ name: 'route', value: 'results' });
           } else {
@@ -104,7 +103,6 @@ class GameScreen extends View {
             } else {
               picState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
             }
-
             this.questArr = null;
             state.dispatch({ name: 'route', value: 'results' });
           } else {
