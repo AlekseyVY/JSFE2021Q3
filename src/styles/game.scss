@@ -3,6 +3,8 @@
   width: 100%;
   margin: 50px auto 0 auto;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .close-game {
@@ -110,4 +112,13 @@
   left: 30px;
   width: 60px;
   height: 60px;
+}
+
+.time-game-indicator {
+  width: 80%;
+}
+
+.timer-game {
+  color: #fff;
+  font-size: 24px;
 }

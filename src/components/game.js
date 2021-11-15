@@ -3,6 +3,7 @@ import state from '../state/state';
 import JsonWorker from '../data/worker';
 import artState from '../state/artState';
 import picState from '../state/picState';
+import settingsState from '../state/settingsState';
 /**
  * Game class;
  * @module Game
@@ -22,6 +23,7 @@ class GameScreen extends View {
     this.answers = [];
     this.questArr = null;
     this.rootNode = document.querySelector('#root');
+    this.settings = null;
   }
 
   /**
@@ -32,7 +34,40 @@ class GameScreen extends View {
     super.render();
     this.setGameData();
     this.setAnswer();
+    this.setTimeGame();
     this.answers = [];
+  }
+
+  setTimeGame() {
+    this.settings = settingsState.state;
+    if (this.settings.timeGame) {
+      const node = document.querySelector('.game-header');
+      const range = document.createElement('progress');
+      // range.type = 'range';
+      range.max = this.settings.time;
+      range.classList.add('time-game-indicator');
+      range.value = 0;
+      range.id = 'progressBar';
+      const time = document.createElement('p');
+      time.innerHTML = this.settings.time;
+      time.classList.add('timer-game');
+      node.appendChild(range);
+      node.appendChild(time);
+
+      let timeleft = this.settings.time;
+      const downloadTimer = setInterval(() => {
+        if (timeleft <= 0) {
+          clearInterval(downloadTimer);
+        }
+        document.getElementById('progressBar').value = this.settings.time - timeleft;
+        time.innerHTML = timeleft;
+        timeleft -= 1;
+      }, 1000);
+      setTimeout(() => {
+        this.calcAnswers(false, state.state.questNum);
+        this.getModal(false);
+      }, 1000 * this.settings.time + 1000);
+    }
   }
 
   setGameData() {
