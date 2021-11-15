@@ -21,14 +21,21 @@ class GameScreen extends View {
     this.buttons = null;
     this.answers = [];
     this.questArr = null;
+    this.rootNode = document.querySelector('#root');
   }
 
   /**
-  * overriden parent method fot handling additional rendering game logic
+  * overriden parent method for handling additional rendering game logic
   * @method render
   */
   render() {
     super.render();
+    this.setGameData();
+    this.setAnswer();
+    this.answers = [];
+  }
+
+  setGameData() {
     this.category = this.getCategory();
     this.pageData = this.category.data[state.state.questNum];
     if (!this.questArr && state.state.category === 'artists') {
@@ -39,15 +46,6 @@ class GameScreen extends View {
       this.questArr.total = 0;
     }
     if (this.questArr) this.questArr.played = true;
-    const node = document.querySelector('.main-image');
-    node.src = `./assets/game/img/${this.pageData.imageNum}.webp`;
-    this.setAnswer();
-    this.answers = [];
-
-    const tmp = document.querySelector('#home-route-btn');
-    tmp.addEventListener('click', () => {
-      this.questArr = null;
-    });
   }
 
   /**
@@ -60,6 +58,62 @@ class GameScreen extends View {
   }
 
   setAnswer() {
+    if (state.state.category === 'artists') {
+      this.setAuthorAnswer();
+    } else {
+      this.setPicAnswer();
+    }
+    this.answers = this.shuffleAnswers();
+    this.buttons.forEach((btn, idx) => {
+      // eslint-disable-next-line no-param-reassign
+      btn.textContent = this.answers[idx].answer;
+      if (this.answers[idx].right) {
+        this.answerResolve(btn, true);
+      } else {
+        this.answerResolve(btn, false);
+      }
+    });
+    this.setExit();
+  }
+
+  setPicAnswer() {
+    console.log(this.node);
+  }
+
+  getModal(answer) {
+    const node = document.createElement('div');
+    this.rootNode.appendChild(node);
+    node.classList.add('modal');
+    const html = `
+    <div class='check-img-wrapper'>
+    <img class='modal-answer--img' src='./assets/game/img/${this.pageData.imageNum}.webp'>
+      <img class='check-img' src='./assets/${answer ? 'true' : 'false'}.png' alt='check'>
+    </div>
+    <p class='answer-modal-name'>${this.pageData.name}</p>
+    <p class='answer-mpodal-author'>${this.pageData.author},<span>${this.pageData.year}</span></p>
+    <div id='modal-btn'>Next</div>
+    `;
+    node.innerHTML = html;
+    const nodeBtn = document.querySelector('#modal-btn');
+    nodeBtn.addEventListener('click', () => {
+      if (state.state.questNum === 9) {
+        state.dispatch({ name: 'questNum', value: 0 });
+        if (state.state.category === 'artists') {
+          artState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+        } else {
+          picState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
+        }
+        this.questArr = null;
+        state.dispatch({ name: 'route', value: 'results' });
+      } else {
+        state.dispatch({ name: 'questNum', value: state.state.questNum < 9 ? state.state.questNum += 1 : state.state.questNum });
+      }
+    });
+  }
+
+  setAuthorAnswer() {
+    const node = document.querySelector('.main-image');
+    node.src = `./assets/game/img/${this.pageData.imageNum}.webp`;
     this.buttons = Array.from(document.getElementsByClassName('answer-btn'));
     let count = 3;
     const rightAnswer = this.pageData.author;
@@ -71,49 +125,20 @@ class GameScreen extends View {
         this.answers.push({ right: false, answer: tmp });
       }
     }
-    this.answers = this.shuffleAnswers();
-    this.buttons.forEach((btn, idx) => {
-      // eslint-disable-next-line no-param-reassign
-      btn.textContent = this.answers[idx].answer;
-      if (this.answers[idx].right) {
-        btn.addEventListener('click', () => {
-          this.calcAnswers(true, state.state.questNum);
-          if (state.state.questNum === 9) {
-            state.dispatch({ name: 'questNum', value: 0 });
+  }
 
-            if (state.state.category === 'artists') {
-              artState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
-            } else {
-              picState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
-            }
-            this.questArr = null;
-            state.dispatch({ name: 'route', value: 'results' });
-          } else {
-            state.dispatch({ name: 'questNum', value: state.state.questNum < 9 ? state.state.questNum += 1 : state.state.questNum });
-          }
-        });
-      } else {
-        btn.addEventListener('click', () => {
-          this.calcAnswers(false, state.state.questNum);
-          if (state.state.questNum === 9) {
-            state.dispatch({ name: 'questNum', value: 0 });
-
-            if (state.state.category === 'artists') {
-              artState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
-            } else {
-              picState.dispatch({ name: Number(state.state.questions) - 1, value: this.questArr });
-            }
-            this.questArr = null;
-            state.dispatch({ name: 'route', value: 'results' });
-          } else {
-            state.dispatch({ name: 'questNum', value: state.state.questNum < 9 ? state.state.questNum += 1 : state.state.questNum });
-          }
-        });
-      }
-    });
+  setExit() {
     const node = document.querySelector('#home-route-btn');
     node.addEventListener('click', () => {
       state.dispatch({ name: 'questNum', value: 0 });
+      this.questArr = null;
+    });
+  }
+
+  answerResolve(ele, data) {
+    ele.addEventListener('click', () => {
+      this.calcAnswers(data, state.state.questNum);
+      this.getModal(data);
     });
   }
 
@@ -147,10 +172,10 @@ const game = new GameScreen({
   <div class='question-game'>Who is the author of this picture?</div>
   <img class='main-image' src=''>
   <div class='answers-wrapper'>
-    <button class='answer-btn'>1</button>
-    <button class='answer-btn'>2</button>
-    <button class='answer-btn'>3</button>
-    <button class='answer-btn'>4</button>
+    <div class='answer-btn'>1</div>
+    <div class='answer-btn'>2</div>
+    <div class='answer-btn'>3</div>
+    <div class='answer-btn'>4</div>
   </div>
   `,
   listeners: [
