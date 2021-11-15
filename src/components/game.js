@@ -77,7 +77,21 @@ class GameScreen extends View {
   }
 
   setPicAnswer() {
-    console.log(this.node);
+    const textNode = document.querySelector('.question-game');
+    textNode.innerHTML = 'Как называется данная картина';
+    const node = document.querySelector('.main-image');
+    node.src = `./assets/game/img/${this.pageData.imageNum}.webp`;
+    this.buttons = Array.from(document.getElementsByClassName('answer-btn'));
+    let count = 3;
+    const rightAnswer = this.pageData.name;
+    this.answers.push({ right: true, answer: rightAnswer });
+    while (count !== 0) {
+      const tmp = this.state.data[Math.floor(Math.random() * this.state.data.length)].name;
+      if (tmp !== rightAnswer) {
+        count -= 1;
+        this.answers.push({ right: false, answer: tmp });
+      }
+    }
   }
 
   getModal(answer) {
@@ -91,7 +105,7 @@ class GameScreen extends View {
     </div>
     <p class='answer-modal-name'>${this.pageData.name}</p>
     <p class='answer-mpodal-author'>${this.pageData.author},<span>${this.pageData.year}</span></p>
-    <div id='modal-btn'>Next</div>
+    <div id='modal-btn'>Далее</div>
     `;
     node.innerHTML = html;
     const nodeBtn = document.querySelector('#modal-btn');
@@ -169,7 +183,7 @@ const game = new GameScreen({
   <div class='game-header'>
   <img id='home-route-btn' class='close-game' src='./assets/close.png' alt='close button'>
   </div>
-  <div class='question-game'>Who is the author of this picture?</div>
+  <div class='question-game'>Кто автор этой картины?</div>
   <img class='main-image' src=''>
   <div class='answers-wrapper'>
     <div class='answer-btn'>1</div>

@@ -36,9 +36,7 @@ class Store {
    * @method notify
    */
   notify() {
-    this.subsArray.forEach((component) => {
-      component(this.state);
-    });
+    this.init();
   }
 
   /**
