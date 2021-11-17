@@ -1,7 +1,7 @@
 import welcome from '../components/welcomeScreen';
 import settings from '../components/settings';
 import category from '../components/category';
-import profile from '../components/profile';
+import score from '../components/score';
 import game from '../components/game';
 import Router from '../core/route';
 import results from '../components/results';
@@ -14,7 +14,7 @@ const router = new Router({
     welcome,
     settings,
     category,
-    profile,
+    score,
     game,
     results,
   },

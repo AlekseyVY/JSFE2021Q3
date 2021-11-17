@@ -24,6 +24,7 @@ class GameScreen extends View {
     this.questArr = null;
     this.rootNode = document.querySelector('#root');
     this.settings = null;
+    this.gameTimer = null;
   }
 
   /**
@@ -43,7 +44,6 @@ class GameScreen extends View {
     if (this.settings.timeGame) {
       const node = document.querySelector('.game-header');
       const range = document.createElement('progress');
-      // range.type = 'range';
       range.max = this.settings.time;
       range.classList.add('time-game-indicator');
       range.value = 0;
@@ -55,18 +55,18 @@ class GameScreen extends View {
       node.appendChild(time);
 
       let timeleft = this.settings.time;
-      const downloadTimer = setInterval(() => {
+      this.gameTimer = setInterval(() => {
         if (timeleft <= 0) {
-          clearInterval(downloadTimer);
+          clearInterval(this.gameTimer);
+          setTimeout(() => {
+            this.calcAnswers(false, state.state.questNum);
+            this.getModal(false);
+          }, 0);
         }
         document.getElementById('progressBar').value = this.settings.time - timeleft;
         time.innerHTML = timeleft;
         timeleft -= 1;
       }, 1000);
-      setTimeout(() => {
-        this.calcAnswers(false, state.state.questNum);
-        this.getModal(false);
-      }, 1000 * this.settings.time + 1000);
     }
   }
 
@@ -130,6 +130,7 @@ class GameScreen extends View {
   }
 
   getModal(answer) {
+    clearInterval(this.gameTimer);
     const node = document.createElement('div');
     this.rootNode.appendChild(node);
     node.classList.add('modal');

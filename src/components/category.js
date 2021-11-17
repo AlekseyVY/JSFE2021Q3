@@ -16,17 +16,17 @@ class CategoryScreen extends View {
     this.images = null;
     this.catState = null;
     this.scoreArr = null;
+    this.scoreLinkNode = null;
   }
 
   render() {
     super.render();
     this.setCategory();
-    console.log(artState);
-    console.log(picState);
     this.images = this.categoryName === 'artists' ? state.state.artistsObj : state.state.picturesObj;
     this.catState = this.categoryName === 'artists' ? artState.state : picState.state;
     this.scoreArr = Array.from(document.getElementsByClassName('score_count'));
     this.setImages();
+    console.log(this.catState);
   }
 
   setImages() {
@@ -35,10 +35,24 @@ class CategoryScreen extends View {
       const data = this.images[idx].data[0].imageNum;
       this.scoreArr[idx].innerHTML = `${this.catState[idx].total}/10`;
       if (this.catState[idx].played) {
+        this.setScoreLink(ele);
         ele.style.backgroundImage = `url('./assets/game/img/${data}.webp')`;
       } else {
         ele.style.backgroundImage = `linear-gradient(black, black), url('./assets/game/img/${data}.webp')`;
       }
+    });
+  }
+
+  setScoreLink(ele) {
+    this.scoreLinkNode = document.createElement('img');
+    this.scoreLinkNode.src = './assets/win.png';
+    this.scoreLinkNode.classList.add('score-icon');
+    this.scoreLinkNode.alt = 'score';
+    ele.append(this.scoreLinkNode);
+    this.scoreLinkNode.addEventListener('click', (e) => {
+      e.stopPropagation();
+      state.dispatch({ name: 'questions', value: `${ele.id.split('_')[1]}` });
+      state.dispatch({ name: 'route', value: 'score' });
     });
   }
 
