@@ -1,0 +1,1 @@
+self.onmessage=()=>{fetch("./assets/data/images.json").then((s=>s.json())).then((s=>{postMessage(s)}))};

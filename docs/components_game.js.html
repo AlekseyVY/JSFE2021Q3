@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>components/game.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CategoryScreen.html">CategoryScreen</a></li><li><a href="module-ApiCall-ApiCall.html">ApiCall</a></li><li><a href="module-Game-GameScreen.html">GameScreen</a></li><li><a href="module-Router-Router.html">Router</a></li><li><a href="module-Store-Store.html">Store</a></li><li><a href="module-View-View.html">View</a></li><li><a href="ProfileScreen.html">ProfileScreen</a></li><li><a href="ResultScreen.html">ResultScreen</a></li><li><a href="SettingScreen.html">SettingScreen</a></li><li><a href="State.html">State</a></li><li><a href="WelcomeScreen.html">WelcomeScreen</a></li></ul><h3>Modules</h3><ul><li><a href="module-ApiCall.html">ApiCall</a><ul class='methods'><li data-type='method'><a href="module-ApiCall.html#~getData">getData</a></li></ul></li><li><a href="module-Game.html">Game</a><ul class='methods'><li data-type='method'><a href="module-Game.html#~getCategory">getCategory</a></li><li data-type='method'><a href="module-Game.html#~render">render</a></li></ul></li><li><a href="module-QuestionsGen.html">QuestionsGen</a></li><li><a href="module-Router.html">Router</a><ul class='methods'><li data-type='method'><a href="module-Router.html#~listen">listen</a></li><li data-type='method'><a href="module-Router.html#~render">render</a></li></ul></li><li><a href="module-routerInit.html">routerInit</a></li><li><a href="module-Store.html">Store</a><ul class='methods'><li data-type='method'><a href="module-Store.html#~dispatch">dispatch</a></li><li data-type='method'><a href="module-Store.html#~init">init</a></li><li data-type='method'><a href="module-Store.html#~notify">notify</a></li><li data-type='method'><a href="module-Store.html#~subscribe">subscribe</a></li></ul></li><li><a href="module-Subscriptions.html">Subscriptions</a></li><li><a href="module-View.html">View</a><ul class='methods'><li data-type='method'><a href="module-View.html#~destroy">destroy</a></li><li data-type='method'><a href="module-View.html#~listen">listen</a></li><li data-type='method'><a href="module-View.html#~listeners">listeners</a></li><li data-type='method'><a href="module-View.html#~render">render</a></li></ul></li><li><a href="module-webWorker.html">webWorker</a></li><li><a href="module-Worker.html">Worker</a><ul class='methods'><li data-type='method'><a href="module-Worker.html#~terminate">terminate</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">components/game.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import View from '../core/view';
+import state from '../state/state';
+import JsonWorker from '../data/worker';
+/**
+ * Game class;
+ * @module Game
+ */
+class GameScreen extends View {
+  /**
+ * @param {object} dto - data transfer object;
+ */
+  constructor(dto) {
+    super(dto);
+    this.dto = dto;
+    this.data = dto.data;
+    this.category = null;
+    this.pageData = null;
+    this.state = null;
+    this.buttons = null;
+    this.answers = [];
+  }
+
+  /**
+  * overriden parent method fot handling additional rendering game logic
+  * @method render
+  */
+  render() {
+    super.render();
+    this.category = this.getCategory();
+    this.pageData = this.category.data[state.state.questNum];
+    const node = document.querySelector('.main-image');
+    node.src = `./assets/game/full/${this.pageData.imageNum}full.webp`;
+    this.setAnswer();
+    this.answers = [];
+  }
+
+  /**
+   * @method getCategory
+   * @returns {Object} category array that contains all questions sets for given category
+   */
+  getCategory() {
+    this.state = state.state;
+    return this.state.category === 'pictures' ? this.state.picturesObj[this.state.questions - 1] : this.state.artistsObj[this.state.questions - 1];
+  }
+
+  setAnswer() {
+    this.buttons = Array.from(document.getElementsByClassName('answer-btn'));
+    let count = 3;
+    const rightAnswer = this.pageData.author;
+    this.answers.push({ right: true, answer: rightAnswer });
+    while (count !== 0) {
+      const tmp = this.state.data[Math.floor(Math.random() * this.state.data.length)].author;
+      if (tmp !== rightAnswer) {
+        count -= 1;
+        this.answers.push({ right: false, answer: tmp });
+      }
+    }
+    this.answers = this.shuffleAnswers();
+    console.log(this.answers);
+    this.buttons.forEach((btn, idx) => {
+      // eslint-disable-next-line no-param-reassign
+      btn.textContent = this.answers[idx].answer;
+      if (this.answers[idx].right) {
+        btn.addEventListener('click', () => {
+          alert('CORRECT');
+          if (state.state.questNum === 9) {
+            state.dispatch({ name: 'questNum', value: 0 });
+            state.dispatch({ name: 'route', value: 'results' });
+          } else {
+            state.dispatch({name: 'questNum', value: state.state.questNum &lt; 9 ? state.state.questNum += 1 : state.state.questNum });
+          }
+        });
+      } else {
+        btn.addEventListener('click', () => {
+          alert('WRONG');
+          if (state.state.questNum === 9) {
+            state.dispatch({ name: 'questNum', value: 0 });
+            state.dispatch({ name: 'route', value: 'results' });
+          } else {
+            state.dispatch({name: 'questNum', value: state.state.questNum &lt; 9 ? state.state.questNum += 1 : state.state.questNum });
+          }
+        });
+      }
+      console.log(btn);
+    });
+    const node = document.querySelector('#home-route-btn');
+      node.addEventListener('click', () => {
+        state.dispatch({ name: 'questNum', value: 0 });
+      });
+  }
+
+  shuffleAnswers() {
+    const newArr = this.answers.slice();
+    for (let i = newArr.length - 1; i > 0; i -= 1) {
+      const rand = Math.floor(Math.random() * (i + 1));
+      [newArr[i], newArr[rand]] = [newArr[rand], newArr[i]];
+    }
+    return newArr;
+  }
+}
+
+const work = new JsonWorker();
+
+const game = new GameScreen({
+  worker: work,
+  selector: '#root',
+  tag: 'main',
+  data: state.data,
+  class: 'container',
+  html: `
+  &lt;div class='button-wrapper'>
+  &lt;button id='home-route-btn' class='mdc-button mdc-button--raised'>Back&lt;/button>
+  &lt;/div>
+  &lt;img class='main-image' src=''>
+  &lt;div class='answers-wrapper'>
+  &lt;button class='mdc-button mdc-button--raised answer-btn'>1&lt;/button>
+  &lt;button class='mdc-button mdc-button--raised answer-btn'>2&lt;/button>
+  &lt;button class='mdc-button mdc-button--raised answer-btn'>3&lt;/button>
+  &lt;button class='mdc-button mdc-button--raised answer-btn'>4&lt;/button>
+  &lt;/div>
+  `,
+  listeners: [
+    {
+      id: 'home-route-btn', type: 'click', dispatch: { name: 'route', value: 'category' }, state,
+    },
+  ],
+});
+
+export default game;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Nov 11 2021 20:38:39 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
