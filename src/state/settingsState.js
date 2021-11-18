@@ -11,12 +11,19 @@ class SettingsState extends Store {
   }
 }
 
-const settingsState = new SettingsState({
-  music: false,
+const dto = localStorage.getItem('artQuizSettings');
+let data = {
   sound: false,
   volume: 100,
   timeGame: false,
   time: 5,
-});
+};
+if (dto) data = JSON.parse(dto);
+
+const settingsState = new SettingsState(data);
+
+window.onbeforeunload = () => {
+  localStorage.setItem('artQuizSettings', (JSON.stringify(settingsState.getState())));
+};
 
 export default settingsState;

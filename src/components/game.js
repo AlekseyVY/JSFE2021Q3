@@ -35,7 +35,6 @@ class GameScreen extends View {
   */
   render() {
     super.render();
-    if (settingsState.state.sound && state.state.questNum === 0) sound.gameSound();
     this.setGameData();
     this.setAnswer();
     this.setTimeGame();
@@ -138,6 +137,8 @@ class GameScreen extends View {
     clearInterval(this.gameTimer);
     const node = document.createElement('div');
     this.rootNode.appendChild(node);
+    const remove = document.querySelector('.container');
+    remove.remove();
     node.classList.add('modal');
     const html = `
     <div class='check-img-wrapper'>

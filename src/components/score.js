@@ -19,7 +19,6 @@ class ProfileScreen extends View {
 
   render() {
     super.render();
-    console.log(state.state);
     this.images = state.state.category === 'artists' ? state.state.artistsObj[state.state.questions].data : state.state.picturesObj[state.state.questions].data;
     this.scoreState = state.state.category === 'artists' ? artState.state[state.state.questions] : picState.state[state.state.questions];
     this.setScores();

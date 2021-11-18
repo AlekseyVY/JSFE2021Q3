@@ -12,6 +12,10 @@ class Store {
     this.init();
   }
 
+  getState() {
+    return this.state;
+  }
+
   /**
    * Method for initializing store and notify all subscribed classes
    * @method init

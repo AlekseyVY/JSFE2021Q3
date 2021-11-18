@@ -15,7 +15,6 @@ class SettingScreen extends View {
     this.state = settingsState.state;
     this.volume = null;
     this.listenersArr = [
-      { name: '#music', type: 'change', func: (e) => { this.state.music = e.target.checked; } },
       { name: '#sound', type: 'change', func: (e) => { this.state.sound = e.target.checked; } },
       { name: '#time', type: 'change', func: (e) => { this.state.timeGame = e.target.checked; } },
       { name: '.volume_slider', type: 'input', func: (e) => { this.state.volume = e.target.value; } },
@@ -38,8 +37,6 @@ class SettingScreen extends View {
   }
 
   setSound() {
-    this.music = document.querySelector('#music');
-    this.music.checked = this.state.music;
     this.sound = document.querySelector('#sound');
     this.sound.checked = this.state.sound;
     this.volume = document.querySelector('.volume_slider');
@@ -77,10 +74,6 @@ const settings = new SettingScreen({
   </div>
   </div>
   <div class='sound_block'>
-  <div class='hover'>
-    <input class='check' type="checkbox" id="music" name="music">
-    <label for="music">Music</label>
-  </div>
   <div class='hover'>
     <input class='check' type="checkbox" id="sound" name="sound">
     <label for="sound">Sounds</label>

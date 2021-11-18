@@ -1,3 +1,5 @@
+import settingsState from '../state/settingsState';
+
 class Sound {
   constructor(dto) {
     this.dto = dto;
@@ -22,6 +24,7 @@ class Sound {
   playSound(data) {
     this.data = data;
     const audio = new Audio(this.data);
+    audio.volume = Number(settingsState.state.volume) / 100;
     audio.play();
   }
 }
