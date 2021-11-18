@@ -2,6 +2,8 @@ import View from '../core/view';
 import state from '../state/state';
 import artState from '../state/artState';
 import picState from '../state/picState';
+import sound from './sound';
+import settingsState from '../state/settingsState';
 /**
  * View Class for Profile page;
  * @param {object} dto - data transfer object;
@@ -15,6 +17,7 @@ class ResultScreen extends View {
 
   render() {
     super.render();
+    if (settingsState.state.sound) sound.gameSound();
     if (state.state.category === 'artists') {
       this.data = artState.state[Number(state.state.questions) - 1];
     } else {
@@ -22,7 +25,6 @@ class ResultScreen extends View {
     }
     const scoreNode = document.querySelector('#score');
     scoreNode.innerHTML = this.data.total;
-    console.log(this.data);
   }
 }
 

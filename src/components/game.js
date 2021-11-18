@@ -4,6 +4,7 @@ import JsonWorker from '../data/worker';
 import artState from '../state/artState';
 import picState from '../state/picState';
 import settingsState from '../state/settingsState';
+import sound from './sound';
 /**
  * Game class;
  * @module Game
@@ -25,6 +26,7 @@ class GameScreen extends View {
     this.rootNode = document.querySelector('#root');
     this.settings = null;
     this.gameTimer = null;
+    this.log = null;
   }
 
   /**
@@ -33,6 +35,7 @@ class GameScreen extends View {
   */
   render() {
     super.render();
+    if (settingsState.state.sound && state.state.questNum === 0) sound.gameSound();
     this.setGameData();
     this.setAnswer();
     this.setTimeGame();
@@ -59,11 +62,13 @@ class GameScreen extends View {
         if (timeleft <= 0) {
           clearInterval(this.gameTimer);
           setTimeout(() => {
-            this.calcAnswers(false, state.state.questNum);
-            this.getModal(false);
+            try {
+              this.calcAnswers(false, state.state.questNum);
+              this.getModal(false);
+            } catch (e) { this.log = e; }
           }, 0);
         }
-        document.getElementById('progressBar').value = this.settings.time - timeleft;
+        if (document.getElementById('progressBar')) document.getElementById('progressBar').value = this.settings.time - timeleft;
         time.innerHTML = timeleft;
         timeleft -= 1;
       }, 1000);
@@ -178,6 +183,7 @@ class GameScreen extends View {
   }
 
   setExit() {
+    clearInterval(this.gameTimer);
     const node = document.querySelector('#home-route-btn');
     node.addEventListener('click', () => {
       state.dispatch({ name: 'questNum', value: 0 });
@@ -193,6 +199,8 @@ class GameScreen extends View {
   }
 
   calcAnswers(data, num) {
+    if (settingsState.state.sound && data) sound.winSound();
+    if (settingsState.state.sound && !data) sound.loseSound();
     this.questArr[num] = data;
     if (data) this.questArr.total += 1;
   }

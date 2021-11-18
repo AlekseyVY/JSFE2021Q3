@@ -3,7 +3,7 @@ import state from '../state/state';
 import artState from '../state/artState';
 import picState from '../state/picState';
 /**
- * View Class for Profile page;
+ * View Class for Score page;
  * @param {object} dto - data transfer object;
  */
 class ProfileScreen extends View {
@@ -14,17 +14,21 @@ class ProfileScreen extends View {
     this.scoreState = null;
     this.node = null;
     this.rootNode = document.querySelector('#root');
+    this.scoreTextNode = null;
   }
 
   render() {
     super.render();
-    this.images = this.categoryName === 'artists' ? state.state.artistsObj[state.state.questions].data : state.state.picturesObj[state.state.questions].data;
-    this.scoreState = this.categoryName === 'artists' ? artState.state[state.state.questions] : picState.state[state.state.questions];
+    console.log(state.state);
+    this.images = state.state.category === 'artists' ? state.state.artistsObj[state.state.questions].data : state.state.picturesObj[state.state.questions].data;
+    this.scoreState = state.state.category === 'artists' ? artState.state[state.state.questions] : picState.state[state.state.questions];
     this.setScores();
   }
 
   setScores() {
     this.node = document.querySelector('.score-wrapper');
+    this.scoreTextNode = document.querySelector('#score-text');
+    this.scoreTextNode.innerHTML = this.scoreState.total;
     for (let i = 0; i <= 9; i += 1) {
       const tmp = document.createElement('div');
       tmp.classList.add('score-card');
@@ -66,6 +70,7 @@ const profile = new ProfileScreen({
   tag: 'main',
   class: 'container',
   html: `
+  <p class='score-outher-text'>Score is: <span id='score-text'>null</span>/10</p>
   <div class='score-wrapper'>
   </div>
   <div id='home-route-btn' class='score-button'>Назад</div>
