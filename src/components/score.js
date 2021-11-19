@@ -72,7 +72,7 @@ const profile = new ProfileScreen({
   <p class='score-outher-text'>Score is: <span id='score-text'>null</span>/10</p>
   <div class='score-wrapper'>
   </div>
-  <div id='home-route-btn' class='score-button'>Назад</div>
+  <div id='home-route-btn' class='score-button glow-on-hover'>Назад</div>
   <div class='footer'>
   <a href='https://rs.school/' target="_blank">
   <img class='rs_logo' src='./assets/rs_logo.png' alt='RSS logo'>

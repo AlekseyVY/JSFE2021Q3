@@ -96,7 +96,7 @@ const settings = new SettingScreen({
   <input class='time_slider' type='range' min='5' max='30' step='5'>
   </div>
   </div>
-  <div id='save_settings' class='category_welcome settings-btn'>Save & Close</div>
+  <div id='save_settings' class='category_welcome settings-btn glow-on-hover'>Save & Close</div>
   <div class='footer'>
   <a href='https://rs.school/' target="_blank">
   <img class='rs_logo' src='./assets/rs_logo.png' alt='RSS logo'>

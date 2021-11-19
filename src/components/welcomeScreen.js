@@ -19,8 +19,8 @@ const welcome = new WelcomeScreen({
   <img id='settings-route-btn' class='settings_icon' src='./assets/settings.png' alt='settings'>
   <img class='logo' src='./assets/logo.svg' alt='Game logo'>
   <div class='category_welcome-wrapper'>
-  <div id='category-pictures' class='category_welcome'>Pictures</div>
-  <div id='category-artists' class='category_welcome'>Artists</div>
+  <div id='category-pictures' class='category_welcome glow-on-hover'>Pictures</div>
+  <div id='category-artists' class='category_welcome glow-on-hover'>Artists</div>
   </div>
   <div class='footer'>
   <a href='https://rs.school/' target="_blank">

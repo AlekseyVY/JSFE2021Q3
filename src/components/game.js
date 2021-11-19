@@ -147,7 +147,7 @@ class GameScreen extends View {
     </div>
     <p class='answer-modal-name'>${this.pageData.name}</p>
     <p class='answer-mpodal-author'>${this.pageData.author},<span>${this.pageData.year}</span></p>
-    <div id='modal-btn'>Далее</div>
+    <div id='modal-btn' class='glow-on-hover'>Далее</div>
     `;
     node.innerHTML = html;
     const nodeBtn = document.querySelector('#modal-btn');
@@ -231,10 +231,10 @@ const game = new GameScreen({
   <div class='question-game'>Кто автор этой картины?</div>
   <img class='main-image' src=''>
   <div class='answers-wrapper'>
-    <div class='answer-btn'>1</div>
-    <div class='answer-btn'>2</div>
-    <div class='answer-btn'>3</div>
-    <div class='answer-btn'>4</div>
+    <div class='answer-btn glow-on-hover'>1</div>
+    <div class='answer-btn glow-on-hover'>2</div>
+    <div class='answer-btn glow-on-hover'>3</div>
+    <div class='answer-btn glow-on-hover'>4</div>
   </div>
   `,
   listeners: [
