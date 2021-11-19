@@ -38,8 +38,8 @@ const results = new ResultScreen({
   <p class='congrats-text'>Congratulations!</p>
   <p><span id='score'>0</span>/10</p>
   <div class='button-wrapper'>
-  <div id='home-route' class='score-btn'>Home</div>
-  <div id='cat-route' class='score-btn'>Next Quiz</div>
+  <div id='home-route' class='score-btn glow-on-hover'>Home</div>
+  <div id='cat-route' class='score-btn glow-on-hover'>Next Quiz</div>
   </div>
   </div>
   `,

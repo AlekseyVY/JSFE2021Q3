@@ -58,7 +58,7 @@ class ProfileScreen extends View {
       </div>
       <p class='answer-modal-name'>${data.name}</p>
       <p class='answer-mpodal-author'>${data.author},<span>${data.year}</span></p>
-      <div id='modal-btn' class='score-btn'>закрыть</div>
+      <div id='modal-btn' class='score-btn glow-on-hover'>закрыть</div>
     `;
     node.innerHTML = html;
   }

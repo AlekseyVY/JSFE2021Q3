@@ -1,3 +1,4 @@
+import { confetti } from 'dom-confetti';
 import View from '../core/view';
 import state from '../state/state';
 import JsonWorker from '../data/worker';
@@ -55,7 +56,6 @@ class GameScreen extends View {
       time.classList.add('timer-game');
       node.appendChild(range);
       node.appendChild(time);
-
       let timeleft = this.settings.time;
       this.gameTimer = setInterval(() => {
         if (timeleft <= 0) {
@@ -151,6 +151,21 @@ class GameScreen extends View {
     `;
     node.innerHTML = html;
     const nodeBtn = document.querySelector('#modal-btn');
+    if (answer) {
+      confetti(nodeBtn, {
+        angle: '90',
+        spread: 360,
+        startVelocity: '80',
+        elementCount: '130',
+        dragFriction: 0.12,
+        duration: '500',
+        stagger: 3,
+        width: '15px',
+        height: '15px',
+        perspective: '500px',
+        colors: ['#f00', '#0f0', '#00f'],
+      });
+    }
     nodeBtn.addEventListener('click', () => {
       if (state.state.questNum === 9) {
         state.dispatch({ name: 'questNum', value: 0 });
