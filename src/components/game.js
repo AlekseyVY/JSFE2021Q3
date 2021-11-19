@@ -158,7 +158,7 @@ class GameScreen extends View {
         startVelocity: '80',
         elementCount: '130',
         dragFriction: 0.12,
-        duration: '500',
+        duration: '1000',
         stagger: 3,
         width: '15px',
         height: '15px',

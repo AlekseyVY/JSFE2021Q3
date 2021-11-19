@@ -1,6 +1,7 @@
 html {
   font-family: 'Yuji Boku', serif;
   background-color: #000;
+  overflow: hidden;
 }
 
 #root  {
@@ -9,9 +10,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-a {
+a { 
   text-decoration: none;
 }
 
@@ -79,7 +81,7 @@ a {
 
 
 .container {
-  animation: fadein 2s;
+  animation: fadein 5s;
 }
 
 @keyframes fadein {
