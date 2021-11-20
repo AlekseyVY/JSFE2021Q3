@@ -3,9 +3,12 @@ import state from '../state/state';
 import settingsState from '../state/settingsState';
 /**
  * View Class for Settings page;
- * @param {object} dto - data transfer object;
+ * @module Settings
  */
 class SettingScreen extends View {
+  /**
+   * @param {object} dto data transfer object
+   */
   constructor(dto) {
     super(dto);
     this.dto = dto;
@@ -29,6 +32,10 @@ class SettingScreen extends View {
     ];
   }
 
+  /**
+   * renders page view.
+   * @method render
+   */
   render() {
     super.render();
     this.setTime();
@@ -36,6 +43,10 @@ class SettingScreen extends View {
     this.setListeners();
   }
 
+  /**
+   * Handles logic of sound settings.
+   * @method setSound
+   */
   setSound() {
     this.sound = document.querySelector('#sound');
     this.sound.checked = this.state.sound;
@@ -43,6 +54,10 @@ class SettingScreen extends View {
     this.volume.value = this.state.volume;
   }
 
+  /**
+   * Handles logic for time settings.
+   * @method setTime
+   */
   setTime() {
     this.timeTextNode = document.querySelector('.time_slider-value');
     this.timeTextNode.innerHTML = this.state.time;
@@ -52,6 +67,10 @@ class SettingScreen extends View {
     this.time.checked = this.state.timeGame;
   }
 
+  /**
+   * Adds additional listeners to handle complex logic.
+   * @method setListeners
+   */
   setListeners() {
     this.listenersArr.forEach((ele) => {
       const node = document.querySelector(ele.name);
@@ -95,6 +114,7 @@ const settings = new SettingScreen({
   <p class='time_slider-value'>0</p>
   <input class='time_slider' type='range' min='5' max='30' step='5'>
   </div>
+  <a href='./docs/index.html' class='docs glow-on-hover' target='_blank'>Documentation</a>
   </div>
   <div id='save_settings' class='category_welcome settings-btn glow-on-hover'>Save & Close</div>
   <div class='footer'>

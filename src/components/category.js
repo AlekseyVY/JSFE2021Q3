@@ -5,9 +5,12 @@ import artState from '../state/artState';
 import picState from '../state/picState';
 /**
  * View Class for Category page;
- * @param {object} dto - data transfer object;
+ * @module CategoryPage
  */
 class CategoryScreen extends View {
+  /**
+   * @param {object} dto data transfer object
+   */
   constructor(dto) {
     super(dto);
     this.dto = dto;
@@ -19,6 +22,10 @@ class CategoryScreen extends View {
     this.scoreLinkNode = null;
   }
 
+  /**
+   * renders category page
+   * @method render
+   */
   render() {
     super.render();
     this.setCategory();
@@ -26,9 +33,13 @@ class CategoryScreen extends View {
     this.catState = this.categoryName === 'artists' ? artState.state : picState.state;
     this.scoreArr = Array.from(document.getElementsByClassName('score_count'));
     this.setImages();
-    console.log(this.catState);
   }
 
+  /**
+   * Set's images for each round as first image of the round, set's state of picture round,
+   * if played: colored, else: monochrome.
+   * @method setImages
+   */
   setImages() {
     this.categoriesArr = Array.from(document.getElementsByClassName('question_category'));
     this.categoriesArr.forEach((ele, idx) => {
@@ -43,6 +54,11 @@ class CategoryScreen extends View {
     });
   }
 
+  /**
+   * Set's clicable link to score section, if round was played.
+   * @method setScoreLink
+   * @param {object} ele Html Node
+   */
   setScoreLink(ele) {
     this.scoreLinkNode = document.createElement('img');
     this.scoreLinkNode.src = './assets/win.png';
@@ -56,6 +72,10 @@ class CategoryScreen extends View {
     });
   }
 
+  /**
+   * Set's name for category of rounds
+   * @method setCategory
+   */
   setCategory() {
     this.categoryName = state.state.category;
     const node = document.querySelector('#category_name');

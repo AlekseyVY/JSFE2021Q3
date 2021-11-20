@@ -1,6 +1,13 @@
 import settingsState from '../state/settingsState';
 
+/**
+ * Sound module
+ * @module Sound
+ */
 class Sound {
+  /**
+   * @param {object} dto data transfer object
+   */
   constructor(dto) {
     this.dto = dto;
     this.game = './assets/sounds/game.mp3';
@@ -9,18 +16,35 @@ class Sound {
     this.data = null;
   }
 
+  /**
+   * Plays sound for winning round
+   * @method gameSound
+   */
   gameSound() {
     this.playSound(this.game);
   }
 
+  /**
+   * plays sound for correct answer.
+   * @method winSound
+   */
   winSound() {
     this.playSound(this.win);
   }
 
+  /**
+   * plays sound for wrong answer.
+   * @method loseSound
+   */
   loseSound() {
     this.playSound(this.lose);
   }
 
+  /**
+   * Handler for playing sound logic.
+   * @method playSound
+   * @param {strinf} data url .mp3 file
+   */
   playSound(data) {
     this.data = data;
     const audio = new Audio(this.data);

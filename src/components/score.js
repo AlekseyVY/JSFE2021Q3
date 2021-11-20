@@ -4,9 +4,12 @@ import artState from '../state/artState';
 import picState from '../state/picState';
 /**
  * View Class for Score page;
- * @param {object} dto - data transfer object;
+ * @module ProfileScreen
  */
 class ProfileScreen extends View {
+  /**
+   * @param {object} dto data transfer object
+   */
   constructor(dto) {
     super(dto);
     this.dto = dto;
@@ -17,6 +20,10 @@ class ProfileScreen extends View {
     this.scoreTextNode = null;
   }
 
+  /**
+   * Renders page view
+   * @method render
+   */
   render() {
     super.render();
     this.images = state.state.category === 'artists' ? state.state.artistsObj[state.state.questions].data : state.state.picturesObj[state.state.questions].data;
@@ -24,6 +31,10 @@ class ProfileScreen extends View {
     this.setScores();
   }
 
+  /**
+   * Handles logic for creating all pictures of round with played state.
+   * @method setScore
+   */
   setScores() {
     this.node = document.querySelector('.score-wrapper');
     this.scoreTextNode = document.querySelector('#score-text');
@@ -48,6 +59,11 @@ class ProfileScreen extends View {
     }
   }
 
+  /**
+   * Creates modal with data for clicked picture.
+   * @method setModal
+   * @param {object} data object with data on picture.
+   */
   setModal(data) {
     const node = document.createElement('div');
     this.rootNode.appendChild(node);

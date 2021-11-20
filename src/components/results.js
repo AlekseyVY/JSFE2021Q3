@@ -5,16 +5,23 @@ import picState from '../state/picState';
 import sound from './sound';
 import settingsState from '../state/settingsState';
 /**
- * View Class for Profile page;
- * @param {object} dto - data transfer object;
+ * View Class for Results page;
+ * @module ResultScreen
  */
 class ResultScreen extends View {
+  /**
+   * @param {object} dto data transfer object
+   */
   constructor(dto) {
     super(dto);
     this.dto = dto;
     this.data = null;
   }
 
+  /**
+   * Method for page renders
+   * @method render
+   */
   render() {
     super.render();
     if (settingsState.state.sound) sound.gameSound();

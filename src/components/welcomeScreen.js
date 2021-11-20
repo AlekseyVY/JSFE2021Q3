@@ -2,9 +2,12 @@ import View from '../core/view';
 import state from '../state/state';
 /**
  * View Class for Welcome page;
- * @param {object} dto - data transfer object;
+ * @module WelcomeScreen
  */
 class WelcomeScreen extends View {
+  /**
+   * @param {object} dto data transfer object
+   */
   constructor(dto) {
     super(dto);
     this.dto = dto;

@@ -42,6 +42,10 @@ class GameScreen extends View {
     this.answers = [];
   }
 
+  /**
+   * If time game enabled in settings, this method handles logic for time play.
+   * @method setTimeGame
+   */
   setTimeGame() {
     this.settings = settingsState.state;
     if (this.settings.timeGame) {
@@ -74,6 +78,10 @@ class GameScreen extends View {
     }
   }
 
+  /**
+   * Prepares game data for play the game.
+   * @method setGameData
+   */
   setGameData() {
     this.category = this.getCategory();
     this.pageData = this.category.data[state.state.questNum];
@@ -96,6 +104,10 @@ class GameScreen extends View {
     return this.state.category === 'pictures' ? this.state.picturesObj[this.state.questions - 1] : this.state.artistsObj[this.state.questions - 1];
   }
 
+  /**
+   * Method for handling answers in game.
+   * @method setAnswer
+   */
   setAnswer() {
     if (state.state.category === 'artists') {
       this.setAuthorAnswer();
@@ -115,6 +127,10 @@ class GameScreen extends View {
     this.setExit();
   }
 
+  /**
+   * Additional method for handling answers in Picture category.
+   * @method setPicAnswer
+   */
   setPicAnswer() {
     const textNode = document.querySelector('.question-game');
     textNode.innerHTML = 'Как называется данная картина';
@@ -133,6 +149,11 @@ class GameScreen extends View {
     }
   }
 
+  /**
+   * Method that handles logic for creating modal with correct answer and answer indicator.
+   * @method getModal
+   * @param {boolean} answer true or false
+   */
   getModal(answer) {
     clearInterval(this.gameTimer);
     const node = document.createElement('div');
@@ -182,6 +203,10 @@ class GameScreen extends View {
     });
   }
 
+  /**
+   * Additional method for setting answers in author category.
+   * @method setAuthorAnswer
+   */
   setAuthorAnswer() {
     const node = document.querySelector('.main-image');
     node.src = `./assets/game/img/${this.pageData.imageNum}.webp`;
@@ -198,6 +223,10 @@ class GameScreen extends View {
     }
   }
 
+  /**
+   * Method that handles exit from game logic.
+   * @method setExit
+   */
   setExit() {
     clearInterval(this.gameTimer);
     const node = document.querySelector('#home-route-btn');
@@ -207,6 +236,12 @@ class GameScreen extends View {
     });
   }
 
+  /**
+   * Method that resolves answers.
+   * @method answerResolve
+   * @param {object} ele Html node
+   * @param {string} data event type
+   */
   answerResolve(ele, data) {
     ele.addEventListener('click', () => {
       this.calcAnswers(data, state.state.questNum);
@@ -214,6 +249,12 @@ class GameScreen extends View {
     });
   }
 
+  /**
+   * Handles correct or incorrect answers and plays sound that depends on lose or win answer.
+   * @method calcAnswers
+   * @param {boolean} data true or false
+   * @param {number} num number
+   */
   calcAnswers(data, num) {
     if (settingsState.state.sound && data) sound.winSound();
     if (settingsState.state.sound && !data) sound.loseSound();
@@ -221,6 +262,11 @@ class GameScreen extends View {
     if (data) this.questArr.total += 1;
   }
 
+  /**
+   * Handles logic of shuffling random answers for each round of game.
+   * @method shuffleAnswers
+   * @returns {Array} Array of answers
+   */
   shuffleAnswers() {
     const newArr = this.answers.slice();
     for (let i = newArr.length - 1; i > 0; i -= 1) {

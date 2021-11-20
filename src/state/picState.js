@@ -2,9 +2,12 @@ import Store from '../core/store';
 
 /**
  * State class fo artists category;
- * @param {object} dto - data transfer object;
+ * @module PicState
  */
 class PicState extends Store {
+  /**
+   * @param {object} dto data transfer object
+   */
   constructor(dto) {
     super(dto);
     this.state = dto;
