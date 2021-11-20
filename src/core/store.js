@@ -51,7 +51,6 @@ class Store {
   dispatch(action) {
     this.state[action.name] = action.value;
     this.notify();
-    console.log(this.state);
   }
 }
 
