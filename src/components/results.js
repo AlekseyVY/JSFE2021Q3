@@ -42,11 +42,11 @@ const results = new ResultScreen({
   html: `
   <div class='results-wrapper'>
   <img class='win-img' src='./assets/win.png' alt='win'>
-  <p class='congrats-text'>Congratulations!</p>
+  <p class='congrats-text'>Поздравляю!</p>
   <p><span id='score'>0</span>/10</p>
   <div class='button-wrapper'>
-  <div id='home-route' class='score-btn glow-on-hover'>Home</div>
-  <div id='cat-route' class='score-btn glow-on-hover'>Next Quiz</div>
+  <div id='home-route' class='score-btn glow-on-hover'>Домой</div>
+  <div id='cat-route' class='score-btn glow-on-hover'>Следующая игра</div>
   </div>
   </div>
   `,

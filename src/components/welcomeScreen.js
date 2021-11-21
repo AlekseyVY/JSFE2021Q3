@@ -22,9 +22,10 @@ const welcome = new WelcomeScreen({
   <img id='settings-route-btn' class='settings_icon' src='./assets/settings.png' alt='settings'>
   <img class='logo' src='./assets/logo.svg' alt='Game logo'>
   <div class='category_welcome-wrapper'>
-  <div id='category-pictures' class='category_welcome glow-on-hover'>Pictures</div>
-  <div id='category-artists' class='category_welcome glow-on-hover'>Artists</div>
+  <div id='category-pictures' class='category_welcome glow-on-hover'>Картины</div>
+  <div id='category-artists' class='category_welcome glow-on-hover'>Артисты</div>
   </div>
+  <div id='tutorial' class='category_welcome glow-on-hover tutorial-btn'>Туториал</div>
   <div class='footer'>
   <a href='https://rs.school/' target="_blank">
   <img class='rs_logo' src='./assets/rs_logo.png' alt='RSS logo'>
@@ -38,6 +39,9 @@ const welcome = new WelcomeScreen({
     },
     {
       id: 'category-pictures', type: 'click', dispatch: { name: 'route', value: 'category' }, state,
+    },
+    {
+      id: 'tutorial', type: 'click', dispatch: { name: 'route', value: 'tutorial' }, state,
     },
     {
       id: 'category-artists', type: 'click', dispatch: { name: 'route', value: 'category' }, state,

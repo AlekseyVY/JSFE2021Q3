@@ -1,0 +1,33 @@
+.glide__slide img {
+  max-width: 1024px;
+  width: 100%;
+  max-height: 768px;
+  height: 100%;
+}
+
+.tutorial-text--wraper {
+  color: #fff;
+  font-size: 24px;
+}
+
+.tutorial-text--wraper p {
+  margin: 0 0 10px 0;
+}
+
+.glide__slide {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.glide__arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tutorial-btn {
+  margin: 10px auto 0 auto;
+}

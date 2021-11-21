@@ -43,6 +43,7 @@
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "dom-confetti": "^0.2.2",
     "normalize.css": "^8.0.1",
     "terser-webpack-plugin": "^5.2.5"

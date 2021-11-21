@@ -88,16 +88,16 @@ const settings = new SettingScreen({
   <div id='inner_header' class='inner_header'>
   <img class='arrow_left' src='./assets/arrow_left.png'>
   <p class='inner_header-text'>
-  settings
+  Настройки
   </p>
   </div>
   </div>
   <div class='sound_block'>
   <div class='hover'>
     <input class='check' type="checkbox" id="sound" name="sound">
-    <label for="sound">Sounds</label>
+    <label for="sound">Звуки</label>
   </div>
-  <p>Volume</p>
+  <p>Громкость</p>
   <div class='volume_slide-wrapper'>
   <img class='sound_icon' src='./assets/mute.png' alt='mute'>
   <input class='volume_slider' type='range' min='0' max='100' step='1'>
@@ -107,16 +107,16 @@ const settings = new SettingScreen({
   <div class='time_block'>
   <div class='hover'>
     <input class='check' type="checkbox" id="time" name="time">
-    <label for="time">Time game</label>
+    <label for="time">Игра на время</label>
   </div>
-  <p>Time to answer</p>
+  <p>Время на ответ</p>
   <div class='time_slider-wrapper'>
   <p class='time_slider-value'>0</p>
   <input class='time_slider' type='range' min='5' max='30' step='5'>
   </div>
-  <a href='./docs/index.html' class='docs glow-on-hover' target='_blank'>Documentation</a>
+  <a href='./docs/index.html' class='docs glow-on-hover' target='_blank'>Документация</a>
   </div>
-  <div id='save_settings' class='category_welcome settings-btn glow-on-hover'>Save & Close</div>
+  <div id='save_settings' class='category_welcome settings-btn glow-on-hover'>Сохранить и Закрыть</div>
   <div class='footer'>
   <a href='https://rs.school/' target="_blank">
   <img class='rs_logo' src='./assets/rs_logo.png' alt='RSS logo'>

@@ -5,6 +5,7 @@ import score from '../components/score';
 import game from '../components/game';
 import Router from '../core/route';
 import results from '../components/results';
+import tutorial from '../components/tutorial';
 /**
  * Router initialization
  * @module routerInit
@@ -17,6 +18,7 @@ const router = new Router({
     score,
     game,
     results,
+    tutorial,
   },
 });
 

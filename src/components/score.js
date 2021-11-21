@@ -85,7 +85,7 @@ const profile = new ProfileScreen({
   tag: 'main',
   class: 'container',
   html: `
-  <p class='score-outher-text'>Score is: <span id='score-text'>null</span>/10</p>
+  <p class='score-outher-text'>Очки за раунд: <span id='score-text'>null</span>/10</p>
   <div class='score-wrapper'>
   </div>
   <div id='home-route-btn' class='score-button glow-on-hover'>Назад</div>
