@@ -34,8 +34,8 @@
 }
 
 .logo {
-  width: 440px;
-  height: 165px;
+  max-width: 440px;
+  width: 100%;
   margin: 242px auto 0;
 }
 
@@ -90,4 +90,26 @@
   color: #fff;
   font-size: 24px;
   margin-right: 70px;
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    background-image: none;
+  }
+
+  .logo {
+    margin: 10px auto 10px auto;
+  }
+
+  .category_welcome-wrapper {
+    flex-direction: column;
+  }
+
+  .category_welcome {
+    margin-bottom: 15px;
+  }
+
+  .settings_icon {
+    margin: 50px auto 50px auto;
+  }
 }

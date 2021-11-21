@@ -1,5 +1,6 @@
 .results-wrapper {
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
   height: 800px;
   margin: auto;
 
@@ -11,8 +12,8 @@
 }
 
 .win-img {
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .congrats-text {
@@ -30,7 +31,8 @@
 }
 
 .score-btn {
-  width: 210px;
+  max-width: 210px;
+  width: 100%;
   height: 62px;
   display: flex;
   align-items: center;
@@ -44,4 +46,23 @@
   cursor: pointer;
   background-color: #fff;
   transition: 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .button-wrapper {
+    flex-direction: column;
+  }
+
+  .congrats-text {
+    font-size: 48px;
+  }
+
+  .score-btn {
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    display: none;
+  }
 }
