@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>components/settings.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-ApiCall-ApiCall.html">ApiCall</a></li><li><a href="module-ArtState-ArtState.html">ArtState</a></li><li><a href="module-CategoryPage-CategoryScreen.html">CategoryScreen</a></li><li><a href="module-Game-GameScreen.html">GameScreen</a></li><li><a href="module-PicState-PicState.html">PicState</a></li><li><a href="module-ProfileScreen-ProfileScreen.html">ProfileScreen</a></li><li><a href="module-ResultScreen-ResultScreen.html">ResultScreen</a></li><li><a href="module-Router-Router.html">Router</a></li><li><a href="module-SettingsState-SettingsState.html">SettingsState</a></li><li><a href="module-Settings-SettingScreen.html">SettingScreen</a></li><li><a href="module-Sound-Sound.html">Sound</a></li><li><a href="module-State-State.html">State</a></li><li><a href="module-Store-Store.html">Store</a></li><li><a href="module-Tutorial-Tutorial.html">Tutorial</a></li><li><a href="module-View-View.html">View</a></li><li><a href="module-WelcomeScreen-WelcomeScreen.html">WelcomeScreen</a></li></ul><h3>Modules</h3><ul><li><a href="module-ApiCall.html">ApiCall</a><ul class='methods'><li data-type='method'><a href="module-ApiCall.html#~getData">getData</a></li></ul></li><li><a href="module-ArtState.html">ArtState</a></li><li><a href="module-CategoryPage.html">CategoryPage</a><ul class='methods'><li data-type='method'><a href="module-CategoryPage.html#~render">render</a></li><li data-type='method'><a href="module-CategoryPage.html#~setCategory">setCategory</a></li><li data-type='method'><a href="module-CategoryPage.html#~setImages">setImages</a></li><li data-type='method'><a href="module-CategoryPage.html#~setScoreLink">setScoreLink</a></li></ul></li><li><a href="module-Game.html">Game</a><ul class='methods'><li data-type='method'><a href="module-Game.html#~answerResolve">answerResolve</a></li><li data-type='method'><a href="module-Game.html#~calcAnswers">calcAnswers</a></li><li data-type='method'><a href="module-Game.html#~getCategory">getCategory</a></li><li data-type='method'><a href="module-Game.html#~getModal">getModal</a></li><li data-type='method'><a href="module-Game.html#~render">render</a></li><li data-type='method'><a href="module-Game.html#~setAnswer">setAnswer</a></li><li data-type='method'><a href="module-Game.html#~setAuthorAnswer">setAuthorAnswer</a></li><li data-type='method'><a href="module-Game.html#~setExit">setExit</a></li><li data-type='method'><a href="module-Game.html#~setGameData">setGameData</a></li><li data-type='method'><a href="module-Game.html#~setPicAnswer">setPicAnswer</a></li><li data-type='method'><a href="module-Game.html#~setTimeGame">setTimeGame</a></li><li data-type='method'><a href="module-Game.html#~shuffleAnswers">shuffleAnswers</a></li></ul></li><li><a href="module-PicState.html">PicState</a></li><li><a href="module-ProfileScreen.html">ProfileScreen</a><ul class='methods'><li data-type='method'><a href="module-ProfileScreen.html#~render">render</a></li><li data-type='method'><a href="module-ProfileScreen.html#~setModal">setModal</a></li><li data-type='method'><a href="module-ProfileScreen.html#~setScore">setScore</a></li></ul></li><li><a href="module-QuestionsGen.html">QuestionsGen</a></li><li><a href="module-ResultScreen.html">ResultScreen</a><ul class='methods'><li data-type='method'><a href="module-ResultScreen.html#~render">render</a></li></ul></li><li><a href="module-Router.html">Router</a><ul class='methods'><li data-type='method'><a href="module-Router.html#~listen">listen</a></li><li data-type='method'><a href="module-Router.html#~render">render</a></li></ul></li><li><a href="module-routerInit.html">routerInit</a></li><li><a href="module-Settings.html">Settings</a><ul class='methods'><li data-type='method'><a href="module-Settings.html#~render">render</a></li><li data-type='method'><a href="module-Settings.html#~setListeners">setListeners</a></li><li data-type='method'><a href="module-Settings.html#~setSound">setSound</a></li><li data-type='method'><a href="module-Settings.html#~setTime">setTime</a></li></ul></li><li><a href="module-SettingsState.html">SettingsState</a></li><li><a href="module-Sound.html">Sound</a><ul class='methods'><li data-type='method'><a href="module-Sound.html#~gameSound">gameSound</a></li><li data-type='method'><a href="module-Sound.html#~loseSound">loseSound</a></li><li data-type='method'><a href="module-Sound.html#~playSound">playSound</a></li><li data-type='method'><a href="module-Sound.html#~winSound">winSound</a></li></ul></li><li><a href="module-State.html">State</a></li><li><a href="module-Store.html">Store</a><ul class='methods'><li data-type='method'><a href="module-Store.html#~dispatch">dispatch</a></li><li data-type='method'><a href="module-Store.html#~init">init</a></li><li data-type='method'><a href="module-Store.html#~notify">notify</a></li><li data-type='method'><a href="module-Store.html#~subscribe">subscribe</a></li></ul></li><li><a href="module-Subscriptions.html">Subscriptions</a></li><li><a href="module-Tutorial.html">Tutorial</a><ul class='methods'><li data-type='method'><a href="module-Tutorial.html#~render">render</a></li></ul></li><li><a href="module-View.html">View</a><ul class='methods'><li data-type='method'><a href="module-View.html#~destroy">destroy</a></li><li data-type='method'><a href="module-View.html#~listen">listen</a></li><li data-type='method'><a href="module-View.html#~listeners">listeners</a></li><li data-type='method'><a href="module-View.html#~render">render</a></li></ul></li><li><a href="module-webWorker.html">webWorker</a></li><li><a href="module-WelcomeScreen.html">WelcomeScreen</a></li><li><a href="module-Worker.html">Worker</a><ul class='methods'><li data-type='method'><a href="module-Worker.html#~terminate">terminate</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">components/settings.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import View from '../core/view';
+import state from '../state/state';
+import settingsState from '../state/settingsState';
+/**
+ * View Class for Settings page;
+ * @module Settings
+ */
+class SettingScreen extends View {
+  /**
+   * @param {object} dto data transfer object
+   */
+  constructor(dto) {
+    super(dto);
+    this.dto = dto;
+    this.timeTextNode = null;
+    this.timeSlider = null;
+    this.time = null;
+    this.state = settingsState.state;
+    this.volume = null;
+    this.listenersArr = [
+      { name: '#sound', type: 'change', func: (e) => { this.state.sound = e.target.checked; } },
+      { name: '#time', type: 'change', func: (e) => { this.state.timeGame = e.target.checked; } },
+      { name: '.volume_slider', type: 'input', func: (e) => { this.state.volume = e.target.value; } },
+      {
+        name: '.time_slider',
+        type: 'input',
+        func: (e) => {
+          this.state.time = e.target.value;
+          this.timeTextNode.innerHTML = this.state.time;
+        },
+      },
+    ];
+  }
+
+  /**
+   * renders page view.
+   * @method render
+   */
+  render() {
+    super.render();
+    this.setTime();
+    this.setSound();
+    this.setListeners();
+  }
+
+  /**
+   * Handles logic of sound settings.
+   * @method setSound
+   */
+  setSound() {
+    this.sound = document.querySelector('#sound');
+    this.sound.checked = this.state.sound;
+    this.volume = document.querySelector('.volume_slider');
+    this.volume.value = this.state.volume;
+  }
+
+  /**
+   * Handles logic for time settings.
+   * @method setTime
+   */
+  setTime() {
+    this.timeTextNode = document.querySelector('.time_slider-value');
+    this.timeTextNode.innerHTML = this.state.time;
+    this.timeSlider = document.querySelector('.time_slider');
+    this.timeSlider.value = this.state.time;
+    this.time = document.querySelector('#time');
+    this.time.checked = this.state.timeGame;
+  }
+
+  /**
+   * Adds additional listeners to handle complex logic.
+   * @method setListeners
+   */
+  setListeners() {
+    this.listenersArr.forEach((ele) => {
+      const node = document.querySelector(ele.name);
+      node.addEventListener(ele.type, ele.func);
+    });
+  }
+}
+
+const settings = new SettingScreen({
+  selector: '#root',
+  tag: 'main',
+  class: 'container',
+  html: `
+  &lt;div class='header'>
+  &lt;div id='inner_header' class='inner_header'>
+  &lt;img class='arrow_left' src='./assets/arrow_left.png'>
+  &lt;p class='inner_header-text'>
+  Настройки
+  &lt;/p>
+  &lt;/div>
+  &lt;/div>
+  &lt;div class='sound_block'>
+  &lt;div class='hover'>
+    &lt;input class='check' type="checkbox" id="sound" name="sound">
+    &lt;label for="sound">Звуки&lt;/label>
+  &lt;/div>
+  &lt;p>Громкость&lt;/p>
+  &lt;div class='volume_slide-wrapper'>
+  &lt;img class='sound_icon' src='./assets/mute.png' alt='mute'>
+  &lt;input class='volume_slider' type='range' min='0' max='100' step='1'>
+  &lt;img class='sound_icon' src='./assets/volume_up.png' alt='mute'>
+  &lt;/div>
+  &lt;/div>
+  &lt;div class='time_block'>
+  &lt;div class='hover'>
+    &lt;input class='check' type="checkbox" id="time" name="time">
+    &lt;label for="time">Игра на время&lt;/label>
+  &lt;/div>
+  &lt;p>Время на ответ&lt;/p>
+  &lt;div class='time_slider-wrapper'>
+  &lt;p class='time_slider-value'>0&lt;/p>
+  &lt;input class='time_slider' type='range' min='5' max='30' step='5'>
+  &lt;/div>
+  &lt;a href='./docs/index.html' class='docs glow-on-hover' target='_blank'>Документация&lt;/a>
+  &lt;/div>
+  &lt;div id='save_settings' class='category_welcome settings-btn glow-on-hover'>Сохранить и Закрыть&lt;/div>
+  &lt;div class='footer'>
+  &lt;a href='https://rs.school/' target="_blank">
+  &lt;img class='rs_logo' src='./assets/rs_logo.png' alt='RSS logo'>
+  &lt;/a>
+  &lt;a class='my_logo' href='https://github.com/AlekseyVY' target="_blank">AlekseyVY&lt;/a>
+  &lt;/div>
+  `,
+  listeners: [
+    {
+      id: 'save_settings', type: 'click', dispatch: { name: 'route', value: 'welcome' }, state,
+    },
+  ],
+});
+
+export default settings;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Nov 21 2021 16:44:10 GMT+0300 (Москва, стандартное время) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
