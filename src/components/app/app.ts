@@ -1,7 +1,12 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
-class App {
+interface IApp {
+    start(): void;
+}
+class App implements IApp {
+    controller: AppController;
+    view: AppView;
     constructor() {
         this.controller = new AppController();
         this.view = new AppView();
