@@ -2,16 +2,27 @@ type Options = {
     apiKey: string;
 };
 
-type Obj = {
-    endpoint: string;
-    options?: {
-        sources: string;
-    };
+type TEndpoint = string;
+type TOptions = {
+    sources?: string;
 };
+
+type Obj = {
+    endpoint: TEndpoint;
+    options?: TOptions;
+};
+
+type TurlOptions = {
+    [key: string]: string;
+};
+
+type TCallback = (data?: JSON) => JSON | void;
 
 interface ILoader {
     getResp(object: Obj): void;
     errorHandler(res: Response): Response;
+    makeUrl(options: TOptions, endpoint: string): string;
+    load(method: string, endpoint: string, callback: TCallback): void;
 }
 
 class Loader implements ILoader {
@@ -41,8 +52,8 @@ class Loader implements ILoader {
         return res;
     }
 
-    makeUrl(options, endpoint) {
-        const urlOptions = { ...this.options, ...options };
+    makeUrl(options: TOptions, endpoint: TEndpoint) {
+        const urlOptions: TurlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
@@ -52,12 +63,12 @@ class Loader implements ILoader {
         return url.slice(0, -1);
     }
 
-    load(method, endpoint, callback, options = {}) {
+    load(method: string, endpoint: string, callback: TCallback, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data) => callback(data))
-            .catch((err) => console.error(err));
+            .then((data: JSON) => callback(data))
+            .catch((err: Error) => console.error(err));
     }
 }
 
