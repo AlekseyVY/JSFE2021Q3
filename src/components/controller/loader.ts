@@ -1,11 +1,29 @@
-class Loader {
-    constructor(baseLink, options) {
+type Options = {
+    apiKey: string;
+};
+
+type Obj = {
+    endpoint: string;
+    options?: {
+        sources: string;
+    };
+};
+
+interface ILoader {
+    getResp(object: Obj): void;
+    errorHandler(res: Response): Response;
+}
+
+class Loader implements ILoader {
+    baseLink: string;
+    options: Options;
+    constructor(baseLink: string, options: Options) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     getResp(
-        { endpoint, options = {} },
+        { endpoint, options = {} }: Obj,
         callback = () => {
             console.error('No callback for GET response');
         }
@@ -13,7 +31,7 @@ class Loader {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res) {
+    errorHandler(res: Response) {
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
