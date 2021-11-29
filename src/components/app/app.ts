@@ -13,9 +13,8 @@ class App implements IApp {
     }
 
     start() {
-        document?
-            .querySelector('.sources')
-            .addEventListener('click', (e: Event) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
+        const node: HTMLElement = document.querySelector('.sources') as HTMLElement;
+        node.addEventListener('click', (e: Event) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
         this.controller.getSources((data) => this.view.drawSources(data));
     }
 }

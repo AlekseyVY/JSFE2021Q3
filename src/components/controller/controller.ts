@@ -1,6 +1,6 @@
 import AppLoader from './appLoader';
 
-type Callback = () => void;
+type Callback = (data?: HTMLElement) => void;
 class AppController extends AppLoader {
     getSources(callback: Callback) {
         super.getResp(
