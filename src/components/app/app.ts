@@ -1,9 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
-interface IApp {
-    start(): void;
-}
 class App implements IApp {
     controller: AppController;
     view: AppView;

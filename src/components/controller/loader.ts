@@ -1,30 +1,3 @@
-type Options = {
-    apiKey: string;
-};
-
-type TEndpoint = string;
-type TOptions = {
-    sources?: string;
-};
-
-type Obj = {
-    endpoint: TEndpoint;
-    options?: TOptions;
-};
-
-type TurlOptions = {
-    [key: string]: string;
-};
-
-type TCallback = (data?: JSON) => JSON | void;
-
-interface ILoader {
-    getResp(object: Obj): void;
-    errorHandler(res: Response): Response;
-    makeUrl(options: TOptions, endpoint: string): string;
-    load(method: string, endpoint: string, callback: TCallback): void;
-}
-
 class Loader implements ILoader {
     baseLink: string;
     options: Options;

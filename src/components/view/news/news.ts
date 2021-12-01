@@ -1,32 +1,15 @@
 import './news.css';
-
-interface ISource {
-    id: string;
-    name: string;
-}
-interface IArticle {
-    author: string;
-    content: string;
-    description: string;
-    publishedAt: string;
-    source: ISource;
-    title: string;
-    url: string;
-    urlToImage: string;
-}
 class News {
     draw(data: IArticle[]) {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
-        console.log(newsItemTemp);
 
         news.forEach((item, idx) => {
             const newsClone = newsItemTemp?.content.cloneNode(true) as HTMLTemplateElement;
 
             if (idx % 2) newsClone.querySelector('.news__item')?.classList.add('alt');
-            console.log(newsClone.querySelectorAll('.news__meta-photo'));
             const nodePhoto = newsClone.querySelector('.news__meta-photo') as HTMLElement;
             nodePhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
             const nodeAuthor = newsClone.querySelector('.news__meta-author') as HTMLElement;

@@ -3,11 +3,10 @@
     "plugins": ["prettier", "import", "@typescript-eslint"],
     "extends": [
         "plugin:prettier/recommended",
-        "prettier",
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
-
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
     ],
     "parserOptions": {
         "ecmaVersion": 2020,
@@ -22,6 +21,6 @@
         "no-debugger": "off",
         "no-console": 0,
         "class-methods-use-this": "off",
-        "no-explicit-any": 2
+        "@typescript-eslint/no-explicit-any": 2
     }
 }
