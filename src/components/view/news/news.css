@@ -174,3 +174,8 @@
         padding-left: 25px;
     }
 }
+
+.border {
+  border: 5px solid rgb(40, 3, 247);
+  border-radius: 10px;
+}
