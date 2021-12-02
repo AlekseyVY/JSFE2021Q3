@@ -13,7 +13,8 @@ const baseConfig = {
                 use: ['style-loader', 'css-loader'],
             },
             { 
-                test: /\.tsx?$/, loader: "ts-loader" 
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
             },
         ],
     },
@@ -22,7 +23,7 @@ const baseConfig = {
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, './dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({

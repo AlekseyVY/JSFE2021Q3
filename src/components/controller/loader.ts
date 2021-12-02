@@ -1,3 +1,5 @@
+import { ILoader, Obj, Options, TCallback, TEndpoint, TOptions, TurlOptions } from './loader.d';
+
 class Loader implements ILoader {
     baseLink: string;
     options: Options;

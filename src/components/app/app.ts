@@ -1,3 +1,4 @@
+import { IApp } from './app.d';
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
