@@ -32,7 +32,7 @@ class Loader implements ILoader {
         return res;
     }
 
-    makeUrl(options: TOptions, endpoint: TEndpoint) {
+    makeUrl(options: Partial<TOptions>, endpoint: TEndpoint) {
         const urlOptions: TurlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 

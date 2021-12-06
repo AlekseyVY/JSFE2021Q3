@@ -3,8 +3,8 @@ import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
 class App implements IApp {
-    controller: AppController;
-    view: AppView;
+    public controller: AppController;
+    public view: AppView;
     constructor() {
         this.controller = new AppController();
         this.view = new AppView();
