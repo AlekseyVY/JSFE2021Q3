@@ -1,8 +1,13 @@
 import { ILoader, Obj, Options, TCallback, TEndpoint, TOptions, TurlOptions } from './loader.d';
 
+enum ErrorResp {
+    unathorized = 401,
+    notFound = 404,
+}
+
 class Loader implements ILoader {
-    baseLink: string;
-    options: Options;
+    private baseLink: string;
+    private options: Options;
     constructor(baseLink: string, options: Options) {
         this.baseLink = baseLink;
         this.options = options;
@@ -19,7 +24,7 @@ class Loader implements ILoader {
 
     errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === ErrorResp.unathorized || res.status === ErrorResp.notFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
