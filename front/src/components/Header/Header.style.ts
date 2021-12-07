@@ -5,9 +5,8 @@ export const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(11px) saturate(180%);
-  background-color: rgba(21, 92, 221, 0.53);
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  backdrop-filter: blur(3px) saturate(180%);
+  background-color: rgba(239, 242, 247, 0.75);
 `;
 
 export const ContentWrapper = styled.div`
@@ -22,12 +21,14 @@ export const NavWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  color: #0c308a;
+
 `;
 
 export const LinkWrapper = styled.div`
 font-size: 22px;
   &:hover {
     cursor: pointer;
-    color: wheat;
+    color: #f74705;
   }
 `;
