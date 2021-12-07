@@ -6,7 +6,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Toys from './pages/Toys/Toys';
 
 const App = () => (
-  <div>
+  <>
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -14,7 +14,7 @@ const App = () => (
       <Route path="tree" element={<Tree />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
-  </div>
+  </>
 
 );
 

@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
+  justify-content: center;
   backdrop-filter: blur(11px) saturate(180%);
   background-color: rgba(21, 92, 221, 0.53);
   border: 1px solid rgba(255, 255, 255, 0.125);
+`;
+
+export const ContentWrapper = styled.div`
+  max-width: 1440px;
+  width: 100%;
 `;
 
 export const NavWrapper = styled.nav`
