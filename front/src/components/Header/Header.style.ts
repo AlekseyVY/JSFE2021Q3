@@ -22,7 +22,6 @@ export const NavWrapper = styled.nav`
   align-items: center;
   justify-content: space-around;
   color: #0c308a;
-
 `;
 
 export const LinkWrapper = styled.div`
