@@ -38,6 +38,12 @@ export const FilterElementWrapper = styled.div`
   height: 30px;
   display: flex;
   align-items: center;
+  fill: #fff;
+
+  &:hover {
+    cursor: pointer;
+    fill: #f74705;
+  }
 `;
 
 export const ColorSelect = styled.div<Props>`
@@ -46,6 +52,10 @@ export const ColorSelect = styled.div<Props>`
   border-radius: 5px;
   margin: 0 5px;
   background-color: ${(props) => props.color};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const SizesWrapper = styled.div`
@@ -54,8 +64,44 @@ export const SizesWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  fill: #fff;
+
+  &:hover {
+    cursor: pointer;
+    fill: #f74705;
+  }
 `;
 
 export const RangeWrapper = styled.div`
   margin: 10px 0 20px 0;
+`;
+
+export const ClearButton = styled.div`
+  width: 70px;
+  height: 30px;
+  margin: auto 10px 70px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0c308a;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #f74705;
+    color: #0c308a;
+    transition: 0.5s ease-in-out;
+  }
+
+  &:active {
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+  }
+`;
+
+export const LabelWrapper = styled.span`
+  margin: 0 10px 0 0;
 `;

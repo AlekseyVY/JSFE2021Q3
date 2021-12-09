@@ -12,27 +12,27 @@ const ToyCard = ({
       <Back>
         <h3>{name}</h3>
         <div>
-          Количество:
+          Amount:
           {count}
         </div>
         <div>
-          Год покупки:
+          Year:
           {year}
         </div>
         <div>
-          Форма:
+          Shape:
           {shape}
         </div>
         <div>
-          Цвет:
+          Color:
           {color}
         </div>
         <div>
-          Размер:
+          Size:
           {size}
         </div>
         <div>
-          Любимый:
+          Favorite:
           {favorite ? 'ДА' : 'НЕТ'}
         </div>
       </Back>

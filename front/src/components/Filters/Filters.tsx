@@ -1,8 +1,10 @@
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import {
+  ClearButton,
   ColorSelect,
-  Container, FilterElementWrapper, FilterWrapper, InnerFilterWrapper, RangeWrapper, SizesWrapper,
+  Container,
+  FilterElementWrapper, FilterWrapper, InnerFilterWrapper, LabelWrapper, RangeWrapper, SizesWrapper,
 } from './Filters.style';
 import { ReactComponent as Ball } from '../../assets/svg/ball.svg';
 import { ReactComponent as Cone } from '../../assets/svg/cone.svg';
@@ -12,9 +14,9 @@ import { ReactComponent as Toy } from '../../assets/svg/toy.svg';
 import { ReactComponent as BallSmall } from '../../assets/sizes/ball_small.svg';
 import { ReactComponent as BallMedium } from '../../assets/sizes/ball_medium.svg';
 import { ReactComponent as BallLarge } from '../../assets/sizes/ball_large.svg';
+import CustomSelect from '../CustomSelect/CustomSelect';
 
 const Filters = () => {
-  console.log('aaa');
   const { createSliderWithTooltip } = Slider;
   const Range = createSliderWithTooltip(Slider.Range);
   return (
@@ -22,7 +24,7 @@ const Filters = () => {
       <FilterWrapper>
         <h3>Filter by value:</h3>
         <InnerFilterWrapper>
-          Form:
+          <LabelWrapper>Form:</LabelWrapper>
           <FilterElementWrapper>
             <Ball />
           </FilterElementWrapper>
@@ -40,7 +42,7 @@ const Filters = () => {
           </FilterElementWrapper>
         </InnerFilterWrapper>
         <InnerFilterWrapper>
-          Color:
+          <LabelWrapper>Color:</LabelWrapper>
           <ColorSelect color="white" />
           <ColorSelect color="yellow" />
           <ColorSelect color="red" />
@@ -48,7 +50,7 @@ const Filters = () => {
           <ColorSelect color="green" />
         </InnerFilterWrapper>
         <InnerFilterWrapper>
-          Size:
+          <LabelWrapper>Size:</LabelWrapper>
           <SizesWrapper>
             <BallLarge />
           </SizesWrapper>
@@ -60,7 +62,7 @@ const Filters = () => {
           </SizesWrapper>
         </InnerFilterWrapper>
         <InnerFilterWrapper>
-          Favorite:
+          <LabelWrapper>Favorite:</LabelWrapper>
           <ColorSelect color="white" />
         </InnerFilterWrapper>
       </FilterWrapper>
@@ -84,14 +86,9 @@ const Filters = () => {
       <FilterWrapper>
         <h3>Sort:</h3>
         <div>
-          <select>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
+          <CustomSelect />
         </div>
-        <div>Clear</div>
+        <ClearButton>Clear</ClearButton>
       </FilterWrapper>
     </Container>
   );

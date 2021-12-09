@@ -9,7 +9,9 @@ const Toys = () => {
     <Container>
       <Filters />
       {value.map((ele) => (
-        <ToyCard {...ele} />
+        <div key={String(Math.random() * 1000)}>
+          <ToyCard {...ele} />
+        </div>
       ))}
     </Container>
   );
