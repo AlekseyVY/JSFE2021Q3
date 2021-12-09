@@ -1,6 +1,8 @@
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 import {
   ColorSelect,
-  Container, FilterElementWrapper, FilterWrapper, InnerFilterWrapper, SizesWrapper,
+  Container, FilterElementWrapper, FilterWrapper, InnerFilterWrapper, RangeWrapper, SizesWrapper,
 } from './Filters.style';
 import { ReactComponent as Ball } from '../../assets/svg/ball.svg';
 import { ReactComponent as Cone } from '../../assets/svg/cone.svg';
@@ -13,12 +15,14 @@ import { ReactComponent as BallLarge } from '../../assets/sizes/ball_large.svg';
 
 const Filters = () => {
   console.log('aaa');
+  const { createSliderWithTooltip } = Slider;
+  const Range = createSliderWithTooltip(Slider.Range);
   return (
     <Container>
       <FilterWrapper>
-        <h3>Фильтры по значению:</h3>
+        <h3>Filter by value:</h3>
         <InnerFilterWrapper>
-          Форма:
+          Form:
           <FilterElementWrapper>
             <Ball />
           </FilterElementWrapper>
@@ -36,7 +40,7 @@ const Filters = () => {
           </FilterElementWrapper>
         </InnerFilterWrapper>
         <InnerFilterWrapper>
-          Цвет:
+          Color:
           <ColorSelect color="white" />
           <ColorSelect color="yellow" />
           <ColorSelect color="red" />
@@ -44,7 +48,7 @@ const Filters = () => {
           <ColorSelect color="green" />
         </InnerFilterWrapper>
         <InnerFilterWrapper>
-          Размер:
+          Size:
           <SizesWrapper>
             <BallLarge />
           </SizesWrapper>
@@ -56,33 +60,29 @@ const Filters = () => {
           </SizesWrapper>
         </InnerFilterWrapper>
         <InnerFilterWrapper>
-          Только любимые:
+          Favorite:
           <ColorSelect color="white" />
         </InnerFilterWrapper>
       </FilterWrapper>
 
-      <div>
-        Фильтры по диапазону:
+      <FilterWrapper>
+        <h3>Filter by range:</h3>
         <div>
-          Количество экземпляров:
-          <div>
-            <div>1</div>
-            <input type="range" />
-            <div>2</div>
-          </div>
+          Amount:
+          <RangeWrapper>
+            <Range min={0} max={12} />
+          </RangeWrapper>
         </div>
         <div>
-          Год приобретения:
-          <div>
-            <div>1</div>
-            <input type="range" />
-            <div>2</div>
-          </div>
+          Year:
+          <RangeWrapper>
+            <Range min={1940} max={2020} />
+          </RangeWrapper>
         </div>
-      </div>
+      </FilterWrapper>
 
-      <div>
-        Сортировка:
+      <FilterWrapper>
+        <h3>Sort:</h3>
         <div>
           <select>
             <option>1</option>
@@ -91,8 +91,8 @@ const Filters = () => {
             <option>4</option>
           </select>
         </div>
-        <div>Сброс фильтров</div>
-      </div>
+        <div>Clear</div>
+      </FilterWrapper>
     </Container>
   );
 };

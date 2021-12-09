@@ -10,6 +10,7 @@ export const Container = styled.section`
   height: 300px;
   margin: 30px auto;
   display: flex;
+  justify-content: space-between;
   -webkit-backdrop-filter: blur(3px) saturate(180%);
   backdrop-filter: blur(3px) saturate(180%);
   background-color: rgba(239,242,247,0.75);
@@ -53,4 +54,8 @@ export const SizesWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const RangeWrapper = styled.div`
+  margin: 10px 0 20px 0;
 `;
