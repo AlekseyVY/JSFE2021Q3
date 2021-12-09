@@ -1,20 +1,15 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import ToyCard from 'src/components/ToyCard/ToyCard';
 import { useAppSelector } from '../../hooks/hook';
+import { Container } from './Toys.style';
 
 const Toys = () => {
   const value = useAppSelector((state) => state.toys);
-  console.log(value);
   return (
-    <div>
-      {value.map((ele, idx) => (
-        <div key={`a_${idx}`}>
-          <ToyCard {...ele} />
-        </div>
+    <Container>
+      {value.map((ele) => (
+        <ToyCard {...ele} />
       ))}
-    </div>
+    </Container>
   );
 };
 

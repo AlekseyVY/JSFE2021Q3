@@ -8,3 +8,7 @@ export interface IProps {
   size: string;
   favorite: boolean;
 }
+
+export interface Props {
+  url: string;
+}
