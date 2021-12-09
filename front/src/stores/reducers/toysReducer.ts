@@ -8,10 +8,10 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
-    value: (state) => state,
+    favorite: (state) => state,
   },
 });
 
-export const { value } = counterSlice.actions;
+export const { favorite } = counterSlice.actions;
 export const selectValue = (state: RootState) => state;
 export default counterSlice.reducer;

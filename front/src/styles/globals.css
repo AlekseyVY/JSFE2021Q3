@@ -2,6 +2,10 @@ body {
   font-family: 'Mountains of Christmas', cursive;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;

@@ -16,12 +16,14 @@ export const Inner = styled.div`
   transition: transform 0.8s;
   transform-style: preserve-3d;
   &:hover {
+    cursor: pointer;
     transform: rotateY(180deg);
   }
 `;
 
 export const Front = styled.div<Props>`
-  background-color: aqua;
+  pointer-events: none;
+  background-color: #0c308a;
   border-radius: 10px;
   background-image: url(${(props) => props.url});
   background-size: contain;
@@ -48,7 +50,8 @@ export const Back = styled.div`
   border-radius: 10px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background-color: black;
-  color: white;
+  background-color: #0c308a;
+  color: #fff;
   transform: rotateY(180deg);
+  pointer-events: none;
 `;
