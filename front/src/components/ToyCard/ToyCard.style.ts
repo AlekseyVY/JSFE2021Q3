@@ -22,6 +22,7 @@ export const Inner = styled.div`
 `;
 
 export const Front = styled.div<Props>`
+  position: relative;
   pointer-events: none;
   background-color: #0c308a;
   border-radius: 10px;
@@ -54,4 +55,12 @@ export const Back = styled.div`
   color: #fff;
   transform: rotateY(180deg);
   pointer-events: none;
+`;
+
+export const FavoriteWrapper = styled.div`
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 50px;
+  height: 50px;
 `;

@@ -1,43 +1,47 @@
+import { useAppDispatch } from 'src/hooks/hook';
+import { setFavorite } from 'src/stores/reducers/toysReducer';
 import { IProps } from './ToyCard.d';
 import {
-  Back, Container, Front, Inner,
+  Back, Container, FavoriteWrapper, Front, Inner,
 } from './ToyCard.style';
+import { ReactComponent as Favorite } from '../../assets/fav.svg';
 
 const ToyCard = ({
   num, name, count, year, shape, color, size, favorite,
-}: IProps) => (
-  <Container onClick={() => console.log(name)}>
-    <Inner>
-      <Front id={num} url={`./assets/toys/${num}.webp`} />
-      <Back>
-        <h3>{name}</h3>
-        <div>
-          Amount:
-          {count}
-        </div>
-        <div>
-          Year:
-          {year}
-        </div>
-        <div>
-          Shape:
-          {shape}
-        </div>
-        <div>
-          Color:
-          {color}
-        </div>
-        <div>
-          Size:
-          {size}
-        </div>
-        <div>
-          Favorite:
-          {favorite ? 'ДА' : 'НЕТ'}
-        </div>
-      </Back>
-    </Inner>
-  </Container>
-);
+}: IProps) => {
+  const dispatch = useAppDispatch();
+  return (
+    <Container onClick={() => dispatch(setFavorite({ num }))}>
+      <Inner>
+        <Front id={num} url={`./assets/toys/${num}.webp`}>
+          {favorite ? <FavoriteWrapper><Favorite /></FavoriteWrapper> : ''}
+        </Front>
+        <Back>
+          <h3>{name}</h3>
+          <div>
+            Amount:
+            {count}
+          </div>
+          <div>
+            Year:
+            {year}
+          </div>
+          <div>
+            Shape:
+            {shape}
+          </div>
+          <div>
+            Color:
+            {color}
+          </div>
+          <div>
+            Size:
+            {size}
+          </div>
+        </Back>
+      </Inner>
+    </Container>
+  );
+};
 
 export default ToyCard;

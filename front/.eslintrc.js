@@ -24,6 +24,7 @@ module.exports = {
     'import/no-unresolved': [0, {
       caseSensitive: false,
     }],
+    'no-param-reassign': [0, { props: false }],
     'linebreak-style': ['error', 'unix'],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',

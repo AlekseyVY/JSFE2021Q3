@@ -4,14 +4,18 @@ import { RootState } from '../store';
 
 const initialState = data;
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const toySlice = createSlice({
+  name: 'toys',
   initialState,
   reducers: {
-    favorite: (state) => state,
+    setFavorite: (state, action) => state.forEach((ele) => {
+      if (ele.num === action.payload.num) {
+        ele.favorite = !ele.favorite;
+      }
+    }),
   },
 });
 
-export const { favorite } = counterSlice.actions;
+export const { setFavorite } = toySlice.actions;
 export const selectValue = (state: RootState) => state;
-export default counterSlice.reducer;
+export default toySlice.reducer;
