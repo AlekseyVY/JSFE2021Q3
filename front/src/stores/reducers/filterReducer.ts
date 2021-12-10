@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { filters } from '../../providers/filters';
 import { RootState } from '../store';
 
-const initialState = {};
+const initialState = filters;
 
 export const filterSlice = createSlice({
   name: 'filters',

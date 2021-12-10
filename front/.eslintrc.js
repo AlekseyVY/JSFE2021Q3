@@ -33,4 +33,8 @@ module.exports = {
       unnamedComponents: 'arrow-function',
     }],
   },
+  globals: {
+    React: true,
+    JSX: true,
+},
 };

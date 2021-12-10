@@ -4,7 +4,7 @@ import {
   ClearButton,
   ColorSelect,
   Container,
-  FilterElementWrapper, FilterWrapper, InnerFilterWrapper, LabelWrapper, RangeWrapper, SizesWrapper,
+  FilterWrapper, InnerFilterWrapper, LabelWrapper, RangeWrapper, SizesWrapper,
 } from './Filters.style';
 import { ReactComponent as Ball } from '../../assets/svg/ball.svg';
 import { ReactComponent as Cone } from '../../assets/svg/cone.svg';
@@ -15,6 +15,7 @@ import { ReactComponent as BallSmall } from '../../assets/sizes/ball_small.svg';
 import { ReactComponent as BallMedium } from '../../assets/sizes/ball_medium.svg';
 import { ReactComponent as BallLarge } from '../../assets/sizes/ball_large.svg';
 import CustomSelect from '../CustomSelect/CustomSelect';
+import SvgElement from '../SvgElement/SvgElement';
 
 const Filters = () => {
   const { createSliderWithTooltip } = Slider;
@@ -25,21 +26,11 @@ const Filters = () => {
         <h3>Filter by value:</h3>
         <InnerFilterWrapper>
           <LabelWrapper>Form:</LabelWrapper>
-          <FilterElementWrapper>
-            <Ball />
-          </FilterElementWrapper>
-          <FilterElementWrapper>
-            <Bell />
-          </FilterElementWrapper>
-          <FilterElementWrapper>
-            <Cone />
-          </FilterElementWrapper>
-          <FilterElementWrapper>
-            <Snowflake />
-          </FilterElementWrapper>
-          <FilterElementWrapper>
-            <Toy />
-          </FilterElementWrapper>
+          {SvgElement(<Ball />)}
+          {SvgElement(<Bell />)}
+          {SvgElement(<Cone />)}
+          {SvgElement(<Snowflake />)}
+          {SvgElement(<Toy />)}
         </InnerFilterWrapper>
         <InnerFilterWrapper>
           <LabelWrapper>Color:</LabelWrapper>

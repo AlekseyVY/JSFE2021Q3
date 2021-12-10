@@ -33,19 +33,6 @@ export const InnerFilterWrapper = styled.div`
   align-items: center;
 `;
 
-export const FilterElementWrapper = styled.div`
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  fill: #fff;
-
-  &:hover {
-    cursor: pointer;
-    fill: #f74705;
-  }
-`;
-
 export const ColorSelect = styled.div<Props>`
   width: 20px;
   height: 20px;
