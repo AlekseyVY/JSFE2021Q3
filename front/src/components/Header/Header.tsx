@@ -18,7 +18,7 @@ const Header = () => (
           <Link to="/Tree">Christmas tree</Link>
         </LinkWrapper>
       </NavWrapper>
-      <Music />
+      {Music('./assets/music/01.mp3')}
     </ContentWrapper>
   </Container>
 );

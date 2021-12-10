@@ -29,20 +29,6 @@ export const InnerFilterWrapper = styled.div`
   align-items: center;
 `;
 
-export const SizesWrapper = styled.div`
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  fill: #fff;
-
-  &:hover {
-    cursor: pointer;
-    fill: #f74705;
-  }
-`;
-
 export const RangeWrapper = styled.div`
   margin: 10px 0 20px 0;
 `;

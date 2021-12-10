@@ -3,7 +3,7 @@ import 'rc-slider/assets/index.css';
 import {
   ClearButton,
   Container,
-  FilterWrapper, InnerFilterWrapper, LabelWrapper, RangeWrapper, SizesWrapper,
+  FilterWrapper, InnerFilterWrapper, LabelWrapper, RangeWrapper,
 } from './Filters.style';
 import { ReactComponent as Ball } from '../../assets/svg/ball.svg';
 import { ReactComponent as Cone } from '../../assets/svg/cone.svg';
@@ -26,11 +26,11 @@ const Filters = () => {
         <h3>Filter by value:</h3>
         <InnerFilterWrapper>
           <LabelWrapper>Form:</LabelWrapper>
-          {SvgElement(<Ball />)}
-          {SvgElement(<Bell />)}
-          {SvgElement(<Cone />)}
-          {SvgElement(<Snowflake />)}
-          {SvgElement(<Toy />)}
+          {SvgElement(<Ball />, 30)}
+          {SvgElement(<Bell />, 30)}
+          {SvgElement(<Cone />, 30)}
+          {SvgElement(<Snowflake />, 30)}
+          {SvgElement(<Toy />, 30)}
         </InnerFilterWrapper>
         <InnerFilterWrapper>
           <LabelWrapper>Color:</LabelWrapper>
@@ -42,15 +42,9 @@ const Filters = () => {
         </InnerFilterWrapper>
         <InnerFilterWrapper>
           <LabelWrapper>Size:</LabelWrapper>
-          <SizesWrapper>
-            <BallLarge />
-          </SizesWrapper>
-          <SizesWrapper>
-            <BallMedium />
-          </SizesWrapper>
-          <SizesWrapper>
-            <BallSmall />
-          </SizesWrapper>
+          {SvgElement(<BallLarge />, 50)}
+          {SvgElement(<BallMedium />, 50)}
+          {SvgElement(<BallSmall />, 50)}
         </InnerFilterWrapper>
         <InnerFilterWrapper>
           <LabelWrapper>Favorite:</LabelWrapper>
