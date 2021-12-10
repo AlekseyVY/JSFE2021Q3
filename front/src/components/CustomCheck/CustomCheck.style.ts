@@ -21,6 +21,6 @@ export const CheckedWrapper = styled.div`
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 3px;
+  left: 2px;
 `;

@@ -57,13 +57,13 @@ const Filters = () => {
         <div>
           Amount:
           <RangeWrapper>
-            <Range min={0} max={12} />
+            <Range min={0} max={12} defaultValue={[0, 12]} />
           </RangeWrapper>
         </div>
         <div>
           Year:
           <RangeWrapper>
-            <Range min={1940} max={2020} />
+            <Range min={1940} max={2020} defaultValue={[1940, 2020]} />
           </RangeWrapper>
         </div>
       </FilterWrapper>
