@@ -12,6 +12,9 @@ export const Container = styled.section`
 export const ContentWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const NavWrapper = styled.nav`

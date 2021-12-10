@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Music from '../Music/Music';
 import {
   Container, ContentWrapper, LinkWrapper, NavWrapper,
 } from './Header.style';
@@ -17,6 +18,7 @@ const Header = () => (
           <Link to="/Tree">Christmas tree</Link>
         </LinkWrapper>
       </NavWrapper>
+      <Music />
     </ContentWrapper>
   </Container>
 );
