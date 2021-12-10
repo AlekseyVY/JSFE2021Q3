@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { FilterElementWrapper } from './SvgElement.style';
-
-type TActive = boolean;
+import { TActive } from './SvgElement.d';
 
 const SvgElement = (Component: JSX.Element) => {
   const [active, setActive] = useState<TActive>(false);
   return (
-    <FilterElementWrapper fill={active} onClick={() => setActive(!active)}>
+    <FilterElementWrapper Fill={active} onClick={() => setActive(!active)}>
       {Component}
     </FilterElementWrapper>
   );

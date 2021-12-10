@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props {
-  fill: boolean,
+  Fill: boolean,
 }
 
 export const FilterElementWrapper = styled.div<Props>`
@@ -9,7 +9,7 @@ export const FilterElementWrapper = styled.div<Props>`
   height: 30px;
   display: flex;
   align-items: center;
-  fill: ${(props) => (props.fill ? '#f74705' : '#fff')};
+  fill: ${(props) => (props.Fill ? '#0c308a' : '#fff')};
 
   &:hover {
     cursor: pointer;

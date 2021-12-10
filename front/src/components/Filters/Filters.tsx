@@ -2,7 +2,6 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import {
   ClearButton,
-  ColorSelect,
   Container,
   FilterWrapper, InnerFilterWrapper, LabelWrapper, RangeWrapper, SizesWrapper,
 } from './Filters.style';
@@ -16,6 +15,7 @@ import { ReactComponent as BallMedium } from '../../assets/sizes/ball_medium.svg
 import { ReactComponent as BallLarge } from '../../assets/sizes/ball_large.svg';
 import CustomSelect from '../CustomSelect/CustomSelect';
 import SvgElement from '../SvgElement/SvgElement';
+import CustomCheck from '../CustomCheck/CustomCheck';
 
 const Filters = () => {
   const { createSliderWithTooltip } = Slider;
@@ -34,11 +34,11 @@ const Filters = () => {
         </InnerFilterWrapper>
         <InnerFilterWrapper>
           <LabelWrapper>Color:</LabelWrapper>
-          <ColorSelect color="white" />
-          <ColorSelect color="yellow" />
-          <ColorSelect color="red" />
-          <ColorSelect color="blue" />
-          <ColorSelect color="green" />
+          {CustomCheck('white')}
+          {CustomCheck('yellow')}
+          {CustomCheck('red')}
+          {CustomCheck('blue')}
+          {CustomCheck('green')}
         </InnerFilterWrapper>
         <InnerFilterWrapper>
           <LabelWrapper>Size:</LabelWrapper>
@@ -54,7 +54,7 @@ const Filters = () => {
         </InnerFilterWrapper>
         <InnerFilterWrapper>
           <LabelWrapper>Favorite:</LabelWrapper>
-          <ColorSelect color="white" />
+          {CustomCheck('white')}
         </InnerFilterWrapper>
       </FilterWrapper>
 

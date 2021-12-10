@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface Props {
-  color: string;
-}
-
 export const Container = styled.section`
   max-width: 1440px;
   width: 100%;
@@ -31,18 +27,6 @@ export const FilterWrapper = styled.div`
 export const InnerFilterWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
-
-export const ColorSelect = styled.div<Props>`
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  margin: 0 5px;
-  background-color: ${(props) => props.color};
-
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const SizesWrapper = styled.div`
