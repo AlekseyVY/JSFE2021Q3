@@ -44,6 +44,6 @@ export interface IValue {
   category: string,
   subCategory: string,
   name?: string,
-  from?: number,
-  to?: number,
+  fromValue?: number,
+  toValue?: number,
 }

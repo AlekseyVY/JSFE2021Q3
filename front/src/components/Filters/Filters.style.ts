@@ -29,10 +29,6 @@ export const InnerFilterWrapper = styled.div`
   align-items: center;
 `;
 
-export const RangeWrapper = styled.div`
-  margin: 10px 0 20px 0;
-`;
-
 export const ClearButton = styled.div`
   width: 70px;
   height: 30px;

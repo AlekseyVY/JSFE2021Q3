@@ -10,8 +10,17 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     setFilter: (state, action) => {
-      const { category, subCategory, name } = action.payload;
-      if (!name) state[category][subCategory] = !state[category][subCategory];
+      const {
+        category, subCategory, name, fromValue, toValue,
+      } = action.payload;
+      if (!name && !fromValue && !toValue) {
+        state[category][subCategory] = !state[category][subCategory];
+      }
+      if (fromValue && toValue) {
+        state[category][subCategory].from = fromValue;
+        state[category][subCategory].to = toValue;
+        console.log('WORK');
+      }
       if (name) state[category][subCategory][name] = !state[category][subCategory][name];
     },
   },

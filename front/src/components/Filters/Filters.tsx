@@ -1,12 +1,10 @@
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from 'src/hooks/hook';
 import { IFilters } from 'src/types/globals';
 import {
   ClearButton,
   Container,
-  FilterWrapper, InnerFilterWrapper, LabelWrapper, RangeWrapper,
+  FilterWrapper, InnerFilterWrapper, LabelWrapper,
 } from './Filters.style';
 import { ReactComponent as Ball } from '../../assets/svg/ball.svg';
 import { ReactComponent as Cone } from '../../assets/svg/cone.svg';
@@ -19,6 +17,7 @@ import { ReactComponent as BallLarge } from '../../assets/sizes/ball_large.svg';
 import CustomSelect from '../CustomSelect/CustomSelect';
 import SvgElement from '../SvgElement/SvgElement';
 import CustomCheck from '../CustomCheck/CustomCheck';
+import CustomRange from '../CustomRange/CustomRange';
 
 const Filters = () => {
   const [filters, setFilters] = useState<IFilters>();
@@ -27,8 +26,6 @@ const Filters = () => {
     setFilters(value);
   }, [value]);
   console.log(filters);
-  const { createSliderWithTooltip } = Slider;
-  const Range = createSliderWithTooltip(Slider.Range);
   return (
     <Container>
       <FilterWrapper>
@@ -65,15 +62,23 @@ const Filters = () => {
         <h3>Filter by range:</h3>
         <div>
           Amount:
-          <RangeWrapper>
-            <Range min={0} max={12} defaultValue={[0, 12]} />
-          </RangeWrapper>
+          {CustomRange(
+            0,
+            12,
+            filters?.range.amount.from ? filters?.range.amount.from : 0,
+            filters?.range.amount.to ? filters?.range.amount.to : 12,
+            { category: 'range', subCategory: 'amount' },
+          )}
         </div>
         <div>
           Year:
-          <RangeWrapper>
-            <Range min={1940} max={2020} defaultValue={[1940, 2020]} />
-          </RangeWrapper>
+          {CustomRange(
+            1940,
+            2020,
+            filters?.range.year.from ? filters?.range.year.from : 1940,
+            filters?.range.year.to ? filters?.range.year.to : 2020,
+            { category: 'range', subCategory: 'year' },
+          )}
         </div>
       </FilterWrapper>
 
