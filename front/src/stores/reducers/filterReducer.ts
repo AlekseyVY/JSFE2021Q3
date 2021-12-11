@@ -1,14 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { filters } from '../../providers/filters';
+import { IFilters } from '../../types/globals.d';
 import { RootState } from '../store';
 
-const initialState = filters;
+const initialState: IFilters = filters;
 
 export const filterSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setFilter: (state, action) => console.log(state, action),
+    setFilter: (state, action) => {
+      const { category, subCategory, name } = action.payload;
+      if (!name) state[category][subCategory] = !state[category][subCategory];
+      if (name) state[category][subCategory][name] = !state[category][subCategory][name];
+    },
   },
 });
 

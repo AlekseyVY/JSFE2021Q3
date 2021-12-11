@@ -1,16 +1,19 @@
-import { useState } from 'react';
 import playOnClick from 'src/utils/playOnClick';
+import { useAppDispatch } from 'src/hooks/hook';
+import { setFilter } from 'src/stores/reducers/filterReducer';
+import { IValue } from 'src/types/globals';
 import { FilterElementWrapper } from './SvgElement.style';
-import { TActive } from './SvgElement.d';
 
-const SvgElement = (Component: JSX.Element, size: number) => {
-  const [active, setActive] = useState<TActive>(false);
+type IState = boolean;
+
+const SvgElement = (Component: JSX.Element, size: number, value: IValue, state: IState) => {
+  const dispatch = useAppDispatch();
   const clickHandler = () => {
-    playOnClick(active);
-    setActive(!active);
+    playOnClick(state);
+    dispatch(setFilter(value));
   };
   return (
-    <FilterElementWrapper Fill={active} Size={size} onClick={() => clickHandler()}>
+    <FilterElementWrapper Fill={!state} Size={size} onClick={() => clickHandler()}>
       {Component}
     </FilterElementWrapper>
   );

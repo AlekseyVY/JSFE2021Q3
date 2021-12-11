@@ -19,7 +19,7 @@ export const filters = {
       medium: false,
       small: false,
     },
-    favoite: false,
+    favorite: false,
   },
   range: {
     amount: {
