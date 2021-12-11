@@ -42,8 +42,9 @@ export interface IFilters {
 
 export interface IValue {
   category: string,
-  subCategory: string,
+  subCategory?: string,
   name?: string,
   fromValue?: number,
   toValue?: number,
+  type?: string,
 }

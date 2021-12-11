@@ -32,7 +32,7 @@ export const filters = {
     },
   },
   sort: {
-    alphabet: false,
+    alphabet: true,
     alphabetReverse: false,
     amountIncrease: false,
     amountDecrease: false,

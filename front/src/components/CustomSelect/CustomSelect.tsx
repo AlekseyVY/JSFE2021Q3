@@ -1,14 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAppDispatch } from 'src/hooks/hook';
+import { setFilter } from 'src/stores/reducers/filterReducer';
 import {
   Arrow, Container, Item, OptionContainer, Separator,
 } from './CustomSelect.style';
 
-const CustomSelect = () => {
-  const [value, setValue] = useState('Alphabet sort');
+interface IProps {
+  state :string;
+}
+const CustomSelect = ({ state }: IProps) => {
+  const [value, setValue] = useState(state);
   const [isOpen, setIsOpen] = useState(false);
-
-  const clickHandler = (data: string) => {
+  useEffect(() => {
+    setValue(state);
+  }, [state]);
+  const dispatch = useAppDispatch();
+  const clickHandler = (data: string, name: string) => {
     setValue(data);
+    dispatch(setFilter({ category: 'sort', name }));
     setIsOpen(!isOpen);
   };
   return (
@@ -17,19 +26,19 @@ const CustomSelect = () => {
       {isOpen
             && (
             <OptionContainer>
-              <Item onClick={() => clickHandler('Alphabet sort')}>
+              <Item onClick={() => clickHandler('Alphabet sort', 'alphabet')}>
                 Alphabet sort
               </Item>
               <Separator />
-              <Item onClick={() => clickHandler('Alphabet sort (reverse)')}>
+              <Item onClick={() => clickHandler('Alphabet sort (reverse)', 'alphabetReverse')}>
                 Alphabet sort (reverse)
               </Item>
               <Separator />
-              <Item onClick={() => clickHandler('By amount (increase)')}>
+              <Item onClick={() => clickHandler('By amount (increase)', 'amountIncrease')}>
                 By amount (increase)
               </Item>
               <Separator />
-              <Item onClick={() => clickHandler('By amount (decrease)')}>
+              <Item onClick={() => clickHandler('By amount (decrease)', 'amountDecrease')}>
                 By amount (decrease)
               </Item>
             </OptionContainer>

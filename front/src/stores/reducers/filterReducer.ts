@@ -19,13 +19,21 @@ export const filterSlice = createSlice({
       if (fromValue && toValue) {
         state[category][subCategory].from = fromValue;
         state[category][subCategory].to = toValue;
-        console.log('WORK');
       }
-      if (name) state[category][subCategory][name] = !state[category][subCategory][name];
+      if (name && subCategory) {
+        state[category][subCategory][name] = !state[category][subCategory][name];
+      }
+      if (name && !subCategory) {
+        Object.entries(state[category]).forEach((ele) => {
+          state[category][ele[0]] = false;
+        });
+        state[category][name] = true;
+      }
     },
+    clearFilter: () => initialState,
   },
 });
 
-export const { setFilter } = filterSlice.actions;
+export const { setFilter, clearFilter } = filterSlice.actions;
 export const selectValue = (state: RootState) => state;
 export default filterSlice.reducer;

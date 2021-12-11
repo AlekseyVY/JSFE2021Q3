@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useAppSelector } from 'src/hooks/hook';
+import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
 import { IFilters } from 'src/types/globals';
+import { clearFilter } from 'src/stores/reducers/filterReducer';
 import {
   ClearButton,
   Container,
@@ -21,11 +22,32 @@ import CustomRange from '../CustomRange/CustomRange';
 
 const Filters = () => {
   const [filters, setFilters] = useState<IFilters>();
+  const [selected, setSelected] = useState<string>();
   const value = useAppSelector((state) => state.filters);
+  const dispatch = useAppDispatch();
+  const customSelectState = (): string => {
+    if (filters) {
+      const tmp = Object.entries(filters.sort).filter((ele) => {
+        if (ele[1] === true) {
+          return ele[0];
+        }
+        return false;
+      })[0];
+      return tmp[0];
+    }
+    return '';
+  };
+  const stateHelper = (data: string | undefined): string => {
+    if (data === 'alphabet') return 'Alphabet sort';
+    if (data === 'alphabetReverse') return 'Alphabet sort (reverse)';
+    if (data === 'amountIncrease') return 'By amount (increase)';
+    if (data === 'amountDecrease') return 'By amount (increase)';
+    return '';
+  };
   useEffect(() => {
     setFilters(value);
-  }, [value]);
-  console.log(filters);
+    setSelected(customSelectState());
+  }, [value, selected]);
   return (
     <Container>
       <FilterWrapper>
@@ -57,7 +79,6 @@ const Filters = () => {
           {CustomCheck('white', { category: 'value', subCategory: 'favorite' }, !filters?.value.favorite)}
         </InnerFilterWrapper>
       </FilterWrapper>
-
       <FilterWrapper>
         <h3>Filter by range:</h3>
         <div>
@@ -81,13 +102,12 @@ const Filters = () => {
           )}
         </div>
       </FilterWrapper>
-
       <FilterWrapper>
         <h3>Sort:</h3>
         <div>
-          <CustomSelect />
+          <CustomSelect state={stateHelper(selected)} />
         </div>
-        <ClearButton>Clear</ClearButton>
+        <ClearButton onClick={() => dispatch(clearFilter())}>Clear</ClearButton>
       </FilterWrapper>
     </Container>
   );
