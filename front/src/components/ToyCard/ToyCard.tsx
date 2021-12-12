@@ -2,7 +2,7 @@ import { useAppDispatch } from 'src/hooks/hook';
 import { setFavorite } from 'src/stores/reducers/toysReducer';
 import { IProps } from './ToyCard.d';
 import {
-  Back, Container, FavoriteWrapper, Front, Inner,
+  Back, Container, FavoriteWrapper, Front, Inner, SentienceWrapper, WordWrapper,
 } from './ToyCard.style';
 import { ReactComponent as Favorite } from '../../assets/fav.svg';
 
@@ -18,26 +18,36 @@ const ToyCard = ({
         </Front>
         <Back>
           <h3>{name}</h3>
-          <div>
-            Amount:
+          <SentienceWrapper>
+            <WordWrapper>
+              Amount:
+            </WordWrapper>
             {amount}
-          </div>
-          <div>
-            Year:
+          </SentienceWrapper>
+          <SentienceWrapper>
+            <WordWrapper>
+              Year:
+            </WordWrapper>
             {year}
-          </div>
-          <div>
-            Shape:
+          </SentienceWrapper>
+          <SentienceWrapper>
+            <WordWrapper>
+              Shape:
+            </WordWrapper>
             {form}
-          </div>
-          <div>
-            Color:
+          </SentienceWrapper>
+          <SentienceWrapper>
+            <WordWrapper>
+              Color:
+            </WordWrapper>
             {color}
-          </div>
-          <div>
-            Size:
+          </SentienceWrapper>
+          <SentienceWrapper>
+            <WordWrapper>
+              Size:
+            </WordWrapper>
             {size}
-          </div>
+          </SentienceWrapper>
         </Back>
       </Inner>
     </Container>

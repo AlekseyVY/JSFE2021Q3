@@ -241,7 +241,7 @@ const data = [
   },
   {
     num: '25',
-    name: 'Розовый ball with confetti',
+    name: 'Pink ball with confetti',
     amount: '12',
     year: '2010',
     form: 'ball',

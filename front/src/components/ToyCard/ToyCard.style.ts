@@ -55,6 +55,7 @@ export const Back = styled.div`
   color: #fff;
   transform: rotateY(180deg);
   pointer-events: none;
+  font-size: 18px;
 `;
 
 export const FavoriteWrapper = styled.div`
@@ -63,4 +64,16 @@ export const FavoriteWrapper = styled.div`
   left: 5px;
   width: 50px;
   height: 50px;
+`;
+
+export const WordWrapper = styled.span`
+  font-weight: bold;
+`;
+
+export const SentienceWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
 `;
