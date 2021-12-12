@@ -7,7 +7,7 @@ import {
 import { ReactComponent as Favorite } from '../../assets/fav.svg';
 
 const ToyCard = ({
-  num, name, count, year, shape, color, size, favorite,
+  num, name, count, year, form, color, size, favorite,
 }: IProps) => {
   const dispatch = useAppDispatch();
   return (
@@ -28,7 +28,7 @@ const ToyCard = ({
           </div>
           <div>
             Shape:
-            {shape}
+            {form}
           </div>
           <div>
             Color:

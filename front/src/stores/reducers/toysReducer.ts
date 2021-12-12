@@ -13,9 +13,10 @@ export const toySlice = createSlice({
         ele.favorite = !ele.favorite;
       }
     }),
+    setFiltered: (state, action) => action.payload,
   },
 });
 
-export const { setFavorite } = toySlice.actions;
+export const { setFavorite, setFiltered } = toySlice.actions;
 export const selectValue = (state: RootState) => state;
 export default toySlice.reducer;

@@ -1,9 +1,10 @@
 export interface IProps {
+  [key: string]: any
   num: string;
   name: string;
   count: string;
   year: string;
-  shape: string;
+  form: string;
   color: string;
   size: string;
   favorite: boolean;
