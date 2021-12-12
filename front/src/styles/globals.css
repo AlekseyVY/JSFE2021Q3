@@ -10,3 +10,7 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+h3 {
+  margin: 5px 0;
+}

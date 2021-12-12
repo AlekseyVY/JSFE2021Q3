@@ -19,6 +19,7 @@ import CustomSelect from '../CustomSelect/CustomSelect';
 import SvgElement from '../SvgElement/SvgElement';
 import CustomCheck from '../CustomCheck/CustomCheck';
 import CustomRange from '../CustomRange/CustomRange';
+import CustomSearch from '../CustomSearch/CustomSearch';
 
 const Filters = () => {
   const [filters, setFilters] = useState<IFilters>();
@@ -107,6 +108,8 @@ const Filters = () => {
         <div>
           <CustomSelect state={stateHelper(selected)} />
         </div>
+        <h3>Search:</h3>
+        <CustomSearch />
         <ClearButton onClick={() => dispatch(clearFilter())}>Clear</ClearButton>
       </FilterWrapper>
     </Container>

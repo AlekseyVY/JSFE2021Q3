@@ -49,6 +49,9 @@ export const Back = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #0c308a;
