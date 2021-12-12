@@ -2,7 +2,7 @@ export interface IProps {
   [key: string]: any
   num: string;
   name: string;
-  count: string;
+  amount: string;
   year: string;
   form: string;
   color: string;

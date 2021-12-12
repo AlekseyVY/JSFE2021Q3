@@ -14,17 +14,25 @@ const filterEntity = () => {
     (ele) => ele[type] === value,
   );
 
+  const rangeFilter = (array: IProps[], name: string, from: number, to: number) => array.filter(
+    (ele) => (ele[name] >= from && ele[name] <= to),
+  );
+
   let dataArr = data;
   if (filters && dataArr) {
     Object.entries(filters.value).forEach((ele) => {
       const tmp: any = [];
-      console.log(ele);
       Object.entries(ele[1]).forEach((item) => {
         if (item[1] === true && dataArr) {
           tmp.push(...valueFilter(dataArr, item[0], ele[0]));
         }
       });
       if (ele[0] === 'favorite' && ele[1] === true) tmp.push(...valueFilter(dataArr, true, ele[0]));
+      if (tmp.length > 0) dataArr = tmp;
+    });
+    Object.entries(filters.range).forEach((ele) => {
+      const tmp: any = [];
+      tmp.push(...rangeFilter(dataArr, ele[0], ele[1].from, ele[1].to));
       if (tmp.length > 0) dataArr = tmp;
     });
   }

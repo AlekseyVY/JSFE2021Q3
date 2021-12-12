@@ -4,23 +4,19 @@ import Header from './components/Header/Header';
 import Tree from './pages/Tree/Tree';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
-import Toys from './pages/Toys/Toys';
-import filterEntity from './features/filterEntity';
+import ToysHoc from './components/ToysHoc/ToysHoc';
 
-const App = () => {
-  filterEntity();
-  return (
-    <>
-      <Snowfall />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="toys" element={<Toys />} />
-        <Route path="tree" element={<Tree />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
-  );
-};
+const App = () => (
+  <>
+    <Snowfall />
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="toys" element={<ToysHoc />} />
+      <Route path="tree" element={<Tree />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </>
+);
 
 export default App;
