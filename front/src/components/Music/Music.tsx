@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { fromEvent } from 'rxjs';
 import { ReactComponent as On } from '../../assets/sound_on.svg';
 import { ReactComponent as Off } from '../../assets/sound_off.svg';
 import { Container } from './Music.style';
@@ -6,6 +7,9 @@ import { Container } from './Music.style';
 const Music = (url: string) => {
   const [audio] = useState(new Audio(url));
   const [state, setState] = useState(false);
+  fromEvent(audio, 'ended').subscribe(
+    () => setState(false),
+  );
   useEffect(
     () => {
       if (state) {

@@ -9,11 +9,6 @@ const rangeFilter = (array: IProps[], name: string, from: number, to: number) =>
 );
 
 const sortFilter = (array: IProps[], name: string) => {
-  if (name === 'alphabet') {
-    return array.sort(
-      (a, b) => a.name.localeCompare(b.name),
-    );
-  }
   if (name === 'alphabetReverse') {
     return array.sort(
       (a, b) => b.name.localeCompare(a.name),
@@ -29,7 +24,9 @@ const sortFilter = (array: IProps[], name: string) => {
       (a, b) => Number(b.amount) - Number(a.amount),
     );
   }
-  return [];
+  return array.sort(
+    (a, b) => a.name.localeCompare(b.name),
+  );
 };
 
 export { valueFilter, rangeFilter, sortFilter };

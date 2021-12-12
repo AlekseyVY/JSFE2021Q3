@@ -1,3 +1,4 @@
+import { IProps } from 'src/components/ToyCard/ToyCard.d';
 import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
 import { setFiltered } from 'src/stores/reducers/toysReducer';
@@ -12,7 +13,7 @@ const filterEntity = () => {
   let dataArr = data;
   if (filters && dataArr) {
     Object.entries(filters.value).forEach((ele) => {
-      const tmp: any = [];
+      const tmp: IProps[] = [];
       Object.entries(ele[1]).forEach((item) => {
         if (item[1] === true && dataArr) {
           tmp.push(...valueFilter(dataArr, item[0], ele[0]));
@@ -24,12 +25,12 @@ const filterEntity = () => {
       if (tmp.length) dataArr = tmp;
     });
     Object.entries(filters.range).forEach((ele) => {
-      const tmp: any = [];
+      const tmp: IProps[] = [];
       tmp.push(...rangeFilter(dataArr, ele[0], ele[1].from, ele[1].to));
       if (tmp.length) dataArr = tmp;
     });
     Object.entries(filters.sort).forEach((ele) => {
-      const tmp: any = [];
+      const tmp: IProps[] = [];
       if (ele[1]) {
         tmp.push(...sortFilter(dataArr, ele[0]));
       }
