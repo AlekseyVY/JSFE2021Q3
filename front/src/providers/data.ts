@@ -31,7 +31,7 @@ const data = [
   },
   {
     num: '4',
-    name: 'Сосулька красная',
+    name: 'icicle red',
     amount: '2',
     year: '1980',
     form: 'toy',
@@ -41,7 +41,7 @@ const data = [
   },
   {
     num: '5',
-    name: 'red виноград',
+    name: 'red grape',
     amount: '4',
     year: '1980',
     form: 'toy',
@@ -51,7 +51,7 @@ const data = [
   },
   {
     num: '6',
-    name: 'red ball с рисунком',
+    name: 'red ball with picture',
     amount: '6',
     year: '2010',
     form: 'ball',
@@ -61,7 +61,7 @@ const data = [
   },
   {
     num: '7',
-    name: 'Молочно-white ball',
+    name: 'Milk-white ball',
     amount: '12',
     year: '1960',
     form: 'ball',
@@ -81,7 +81,7 @@ const data = [
   },
   {
     num: '9',
-    name: 'bell старинный',
+    name: 'bell vintage',
     amount: '2',
     year: '1950',
     form: 'bell',
@@ -91,7 +91,7 @@ const data = [
   },
   {
     num: '10',
-    name: 'white ball ретро',
+    name: 'white ball vintage',
     amount: '7',
     year: '1960',
     form: 'ball',
@@ -101,7 +101,7 @@ const data = [
   },
   {
     num: '11',
-    name: 'cone еловая белая',
+    name: 'cone tree white',
     amount: '11',
     year: '1960',
     form: 'cone',
@@ -111,7 +111,7 @@ const data = [
   },
   {
     num: '12',
-    name: 'white ball с цветами',
+    name: 'white ball with flowers',
     amount: '5',
     year: '1980',
     form: 'ball',
@@ -121,7 +121,7 @@ const data = [
   },
   {
     num: '13',
-    name: 'ball расписной Река',
+    name: 'ball river picture',
     amount: '3',
     year: '1970',
     form: 'ball',
@@ -131,7 +131,7 @@ const data = [
   },
   {
     num: '14',
-    name: 'ball расписной Деревня',
+    name: 'ball village picture',
     amount: '4',
     year: '1970',
     form: 'ball',
@@ -141,7 +141,7 @@ const data = [
   },
   {
     num: '15',
-    name: 'bell расписной',
+    name: 'bell pictured',
     amount: '3',
     year: '1970',
     form: 'bell',
@@ -151,7 +151,7 @@ const data = [
   },
   {
     num: '16',
-    name: 'cone расписная Пейзаж',
+    name: 'cone nature picture',
     amount: '3',
     year: '1970',
     form: 'cone',
@@ -161,7 +161,7 @@ const data = [
   },
   {
     num: '17',
-    name: 'cone расписная',
+    name: 'cone pictured',
     amount: '7',
     year: '1970',
     form: 'cone',
@@ -171,7 +171,7 @@ const data = [
   },
   {
     num: '18',
-    name: 'yellow ball с бантом',
+    name: 'yellow ball with knot',
     amount: '2',
     year: '2010',
     form: 'ball',
@@ -181,7 +181,7 @@ const data = [
   },
   {
     num: '19',
-    name: 'yellow ball с паетками',
+    name: 'yellow ball with something',
     amount: '12',
     year: '1980',
     form: 'ball',
@@ -191,7 +191,7 @@ const data = [
   },
   {
     num: '20',
-    name: 'red ball с бантом',
+    name: 'red ball with knot',
     amount: '8',
     year: '1950',
     form: 'ball',
@@ -201,7 +201,7 @@ const data = [
   },
   {
     num: '21',
-    name: 'red ball с звёздами',
+    name: 'red ball with stars',
     amount: '4',
     year: '1970',
     form: 'ball',
@@ -211,7 +211,7 @@ const data = [
   },
   {
     num: '22',
-    name: 'cone еловая золотая',
+    name: 'cone golden tree',
     amount: '11',
     year: '1990',
     form: 'cone',
@@ -221,7 +221,7 @@ const data = [
   },
   {
     num: '23',
-    name: 'bell старинный',
+    name: 'bell vintage',
     amount: '9',
     year: '1950',
     form: 'bell',
@@ -231,7 +231,7 @@ const data = [
   },
   {
     num: '24',
-    name: 'star изящная',
+    name: 'star graceful',
     amount: '1',
     year: '1940',
     form: 'star',
@@ -241,7 +241,7 @@ const data = [
   },
   {
     num: '25',
-    name: 'Розовый ball с блёстками',
+    name: 'Розовый ball with confetti',
     amount: '12',
     year: '2010',
     form: 'ball',
@@ -251,7 +251,7 @@ const data = [
   },
   {
     num: '26',
-    name: 'Рубиново-золотой ball',
+    name: 'Ruby-golden ball',
     amount: '8',
     year: '1960',
     form: 'ball',
@@ -261,7 +261,7 @@ const data = [
   },
   {
     num: '27',
-    name: 'red ball с узором',
+    name: 'red ball with paint',
     amount: '4',
     year: '2010',
     form: 'ball',
@@ -271,7 +271,7 @@ const data = [
   },
   {
     num: '28',
-    name: 'Бордовый ball с узором',
+    name: 'Burgundy ball with paint',
     amount: '10',
     year: '2010',
     form: 'ball',
@@ -281,7 +281,7 @@ const data = [
   },
   {
     num: '29',
-    name: 'Старинный ball с цветами',
+    name: 'Retro ball with flowers',
     amount: '5',
     year: '1950',
     form: 'ball',
@@ -291,7 +291,7 @@ const data = [
   },
   {
     num: '30',
-    name: 'Старинный ball с узором',
+    name: 'Retro ball with paint',
     amount: '8',
     year: '1950',
     form: 'ball',
@@ -301,7 +301,7 @@ const data = [
   },
   {
     num: '31',
-    name: 'red ball с блёстками',
+    name: 'red ball with confetti',
     amount: '8',
     year: '2010',
     form: 'ball',
@@ -311,7 +311,7 @@ const data = [
   },
   {
     num: '32',
-    name: 'blue ball Вселенная',
+    name: 'blue ball Galaxy',
     amount: '11',
     year: '1970',
     form: 'ball',
@@ -321,7 +321,7 @@ const data = [
   },
   {
     num: '33',
-    name: 'blue ball со снежинкой',
+    name: 'blue ball with snowflake',
     amount: '6',
     year: '2010',
     form: 'ball',
@@ -331,7 +331,7 @@ const data = [
   },
   {
     num: '34',
-    name: 'green  ball с узором',
+    name: 'green  ball with picture',
     amount: '8',
     year: '2010',
     form: 'ball',
@@ -341,7 +341,7 @@ const data = [
   },
   {
     num: '35',
-    name: 'toy Лис в ballфе',
+    name: 'toy fox in ball',
     amount: '8',
     year: '1950',
     form: 'toy',
@@ -351,7 +351,7 @@ const data = [
   },
   {
     num: '36',
-    name: 'Сиреневый ball Метель',
+    name: 'Purple ball blizzard',
     amount: '1',
     year: '2000',
     form: 'ball',
@@ -361,7 +361,7 @@ const data = [
   },
   {
     num: '37',
-    name: 'green  ball Метель',
+    name: 'green  ball blizzard',
     amount: '6',
     year: '2000',
     form: 'ball',
@@ -371,7 +371,7 @@ const data = [
   },
   {
     num: '38',
-    name: 'Голубой  ball Метель',
+    name: 'Blue  ball blizzard',
     amount: '6',
     year: '2000',
     form: 'ball',
@@ -381,7 +381,7 @@ const data = [
   },
   {
     num: '39',
-    name: 'Красная star',
+    name: 'red star',
     amount: '6',
     year: '1990',
     form: 'star',
@@ -391,7 +391,7 @@ const data = [
   },
   {
     num: '40',
-    name: 'star золотая',
+    name: 'star golden',
     amount: '12',
     year: '2020',
     form: 'star',
@@ -401,7 +401,7 @@ const data = [
   },
   {
     num: '41',
-    name: 'star арктическая',
+    name: 'star arctic',
     amount: '11',
     year: '2020',
     form: 'star',
@@ -421,7 +421,7 @@ const data = [
   },
   {
     num: '43',
-    name: 'star двухцветная',
+    name: 'star two colored',
     amount: '6',
     year: '1960',
     form: 'star',
@@ -431,7 +431,7 @@ const data = [
   },
   {
     num: '44',
-    name: 'toy Ангела',
+    name: 'toy angel',
     amount: '11',
     year: '1940',
     form: 'toy',
@@ -441,7 +441,7 @@ const data = [
   },
   {
     num: '45',
-    name: 'star новогодняя',
+    name: 'star christmas',
     amount: '1',
     year: '1980',
     form: 'star',
@@ -451,7 +451,7 @@ const data = [
   },
   {
     num: '46',
-    name: 'toy Мухомор',
+    name: 'toy amanita',
     amount: '10',
     year: '1950',
     form: 'toy',
@@ -461,7 +461,7 @@ const data = [
   },
   {
     num: '47',
-    name: 'toy Колодец',
+    name: 'toy well',
     amount: '6',
     year: '1950',
     form: 'toy',
@@ -471,7 +471,7 @@ const data = [
   },
   {
     num: '48',
-    name: 'yellow ball с бантом',
+    name: 'yellow ball with tie',
     amount: '6',
     year: '1960',
     form: 'ball',
@@ -481,7 +481,7 @@ const data = [
   },
   {
     num: '49',
-    name: 'star с бирюзой',
+    name: 'star with something',
     amount: '4',
     year: '1980',
     form: 'star',
@@ -501,7 +501,7 @@ const data = [
   },
   {
     num: '51',
-    name: 'cone с изморозью',
+    name: 'cone with blizzard',
     amount: '12',
     year: '1970',
     form: 'cone',
@@ -511,7 +511,7 @@ const data = [
   },
   {
     num: '52',
-    name: 'red ball с надписью',
+    name: 'red ball with writing',
     amount: '12',
     year: '1990',
     form: 'ball',
@@ -521,7 +521,7 @@ const data = [
   },
   {
     num: '53',
-    name: 'star серебристая',
+    name: 'star silver',
     amount: '6',
     year: '2020',
     form: 'star',
@@ -531,7 +531,7 @@ const data = [
   },
   {
     num: '54',
-    name: 'green ball с рисунком',
+    name: 'green ball with picture',
     amount: '6',
     year: '2010',
     form: 'ball',
@@ -541,7 +541,7 @@ const data = [
   },
   {
     num: '55',
-    name: 'Пряничный домик',
+    name: 'ginger house',
     amount: '1',
     year: '1940',
     form: 'toy',
@@ -551,7 +551,7 @@ const data = [
   },
   {
     num: '56',
-    name: 'Пряничный теремок',
+    name: 'ginger castle',
     amount: '1',
     year: '1940',
     form: 'toy',
@@ -561,7 +561,7 @@ const data = [
   },
   {
     num: '57',
-    name: 'Пряничная избушка',
+    name: 'ginger hut',
     amount: '1',
     year: '1940',
     form: 'toy',
@@ -571,7 +571,7 @@ const data = [
   },
   {
     num: '58',
-    name: 'toy белого медведя',
+    name: 'toy white bear',
     amount: '2',
     year: '1980',
     form: 'toy',
@@ -581,7 +581,7 @@ const data = [
   },
   {
     num: '59',
-    name: 'yellow ball с надписью',
+    name: 'yellow ball with writing',
     amount: '10',
     year: '1990',
     form: 'ball',
@@ -591,7 +591,7 @@ const data = [
   },
   {
     num: '60',
-    name: 'toy Голубь',
+    name: 'toy pigeon',
     amount: '12',
     year: '1940',
     form: 'toy',
