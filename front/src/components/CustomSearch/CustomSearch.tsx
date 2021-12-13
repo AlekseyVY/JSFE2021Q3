@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
-import { setSearch } from 'src/stores/reducers/searchReducer';
-import { Container } from './CustomSearch.style';
+import { clearSearch, setSearch } from 'src/stores/reducers/searchReducer';
+import { Container, CrossWrapper, Wrapper } from './CustomSearch.style';
+import { ReactComponent as Cross } from '../../assets/cross.svg';
 
 const CustomSearch = () => {
   const [data, setData] = useState('');
@@ -15,7 +16,12 @@ const CustomSearch = () => {
     setData(e.currentTarget.value);
   };
   return (
-    <Container value={dto} onInput={(e) => changeHandler(e)} type="text" autoFocus />
+    <Wrapper>
+      <Container value={dto} onInput={(e) => changeHandler(e)} autoComplete="off" type="text" autoFocus placeholder="search for toys" />
+      <CrossWrapper>
+        <Cross onClick={() => dispatch(clearSearch())} />
+      </CrossWrapper>
+    </Wrapper>
   );
 };
 
