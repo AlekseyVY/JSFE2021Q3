@@ -16,18 +16,20 @@ export const filterSlice = createSlice({
       if (!name && !fromValue && !toValue) {
         state[category][subCategory] = !state[category][subCategory];
       }
-      if (fromValue && toValue) {
-        state[category][subCategory].from = fromValue;
-        state[category][subCategory].to = toValue;
-      }
-      if (name && subCategory) {
+      if (name && subCategory && !fromValue && !toValue) {
         state[category][subCategory][name] = !state[category][subCategory][name];
       }
-      if (name && !subCategory) {
+      if (name && !subCategory && !fromValue && !toValue) {
         Object.entries(state[category]).forEach((ele) => {
           state[category][ele[0]] = false;
         });
         state[category][name] = true;
+      }
+      if ((fromValue || fromValue === 0) && toValue) {
+        console.log(`Store from: ${fromValue}`);
+        console.log(`Store to: ${toValue}`);
+        state[category][subCategory].from = fromValue;
+        state[category][subCategory].to = toValue;
       }
     },
     clearFilter: () => initialState,

@@ -23,6 +23,7 @@ export interface IFilters {
     favorite: boolean,
   },
   range: {
+    [key: string]: any
     amount: {
       from: number,
       to: number,

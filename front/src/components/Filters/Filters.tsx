@@ -92,9 +92,8 @@ const Filters = () => {
           {CustomRange(
             0,
             12,
-            filters?.range.amount.from ? filters?.range.amount.from : 0,
-            filters?.range.amount.to ? filters?.range.amount.to : 12,
             { category: 'range', subCategory: 'amount' },
+            'amount',
           )}
         </div>
         <div>
@@ -102,9 +101,8 @@ const Filters = () => {
           {CustomRange(
             1940,
             2020,
-            filters?.range.year.from ? filters?.range.year.from : 1940,
-            filters?.range.year.to ? filters?.range.year.to : 2020,
             { category: 'range', subCategory: 'year' },
+            'year',
           )}
         </div>
       </FilterWrapper>
