@@ -10,7 +10,7 @@ import { Container } from './Toys.style';
 
 const Toys = () => {
   const [value, setValue] = useState<IProps[]>();
-  const toys = useAppSelector((state) => state.toys);
+  const toys = useAppSelector((state) => state.filtered);
   const search = useAppSelector((state) => state.search);
   useEffect(() => {
     const calculated = userSearch(toys, search);

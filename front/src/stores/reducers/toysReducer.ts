@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { data } from '../../providers/data';
+import data from '../../providers/data';
 import { RootState } from '../store';
 
 const initialState = data;
@@ -15,10 +15,9 @@ export const toySlice = createSlice({
         }
       });
     },
-    setFiltered: (state, action) => action.payload,
   },
 });
 
-export const { setFavorite, setFiltered } = toySlice.actions;
+export const { setFavorite } = toySlice.actions;
 export const selectValue = (state: RootState) => state;
 export default toySlice.reducer;

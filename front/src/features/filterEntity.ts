@@ -1,16 +1,15 @@
 import { IProps } from 'src/components/ToyCard/ToyCard.d';
 import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
-import { setFiltered } from 'src/stores/reducers/toysReducer';
 import { IFilters } from 'src/types/globals';
 import { rangeFilter, sortFilter, valueFilter } from 'src/utils/filters';
-import data from '../providers/data';
+import { setFiltered } from 'src/stores/reducers/fileredToysReducer';
 
 const filterEntity = () => {
   const [filters, setFilters] = useState<IFilters>();
   const filter = useAppSelector((state) => state.filters);
   const dispatch = useAppDispatch();
-  let dataArr = data;
+  let dataArr = useAppSelector((state) => state.toys);
   if (filters && dataArr) {
     Object.entries(filters.value).forEach((ele) => {
       const tmp: IProps[] = [];

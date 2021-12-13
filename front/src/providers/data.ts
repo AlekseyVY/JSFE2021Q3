@@ -1,4 +1,4 @@
-export const data = [
+let data = [
   {
     num: '1',
     name: 'large ball with paint',
