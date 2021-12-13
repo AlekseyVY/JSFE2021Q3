@@ -12,7 +12,8 @@ const Toys = () => {
   const [value, setValue] = useState<IProps[]>();
   const toys = useAppSelector((state) => state.filtered);
   const search = useAppSelector((state) => state.search);
-  const maxFavorite = toys.reduce((acc, val) => (val.favorite ? acc + 1 : acc), 0);
+  const initialToys = useAppSelector((state) => state.toys);
+  const maxFavorite = initialToys.reduce((acc, val) => (val.favorite ? acc + 1 : acc), 0);
   useEffect(() => {
     const calculated = userSearch(toys, search);
     setValue(calculated);
