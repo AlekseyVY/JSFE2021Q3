@@ -4,6 +4,7 @@ import ToyCard from 'src/components/ToyCard/ToyCard';
 import { IProps } from 'src/components/ToyCard/ToyCard.d';
 import { Fade } from 'react-awesome-reveal';
 import userSearch from 'src/features/userSearch';
+import NotFounded from 'src/components/NotFound/NotFounded';
 import { useAppSelector } from '../../hooks/hook';
 import { Container } from './Toys.style';
 
@@ -19,11 +20,12 @@ const Toys = () => {
     <Container>
       <Filters />
       <Fade triggerOnce cascade direction="up" duration={1000} damping={0}>
-        {value && value.map((ele) => (
-          <div key={String(Math.random() * 1000)}>
-            <ToyCard {...ele} />
-          </div>
-        ))}
+        {value?.length === 0 ? <NotFounded />
+          : value && value.map((ele) => (
+            <div key={String(Math.random() * 1000)}>
+              <ToyCard {...ele} />
+            </div>
+          ))}
       </Fade>
     </Container>
   );

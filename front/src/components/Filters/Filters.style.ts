@@ -5,6 +5,7 @@ export const Container = styled.section`
   width: 100%;
   height: 300px;
   margin: 30px auto;
+  position: relative;
   display: flex;
   justify-content: space-between;
   -webkit-backdrop-filter: blur(3px) saturate(180%);
@@ -13,6 +14,7 @@ export const Container = styled.section`
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   color: #0c308a;
+  z-index: 10;
 `;
 
 export const FilterWrapper = styled.div`
