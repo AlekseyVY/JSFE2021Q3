@@ -1,5 +1,6 @@
 import { useAppDispatch } from 'src/hooks/hook';
 import { setFavorite } from 'src/stores/reducers/toysReducer';
+import createModal from 'src/utils/createModal';
 import { IProps } from './ToyCard.d';
 import {
   Back, Container, FavoriteWrapper, Front, Inner, SentienceWrapper, WordWrapper,
@@ -16,7 +17,7 @@ const ToyCard = ({
     } else if (max === 20 && favorite) {
       dispatch(setFavorite({ num }));
     } else {
-      alert(`Max favorites ${max}`);
+      createModal('Reached maximum favorite\'s capacity of 20.', 'errorModal');
     }
   };
   return (

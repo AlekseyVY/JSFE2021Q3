@@ -14,3 +14,32 @@ a {
 h3 {
   margin: 5px 0;
 }
+
+/*
+  Modal css.
+*/
+.errorModal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  padding: 20px;
+  color: #fff;
+  z-index: 300;
+  backdrop-filter: blur(15px) saturate(180%);
+  background-color: rgba(247, 71, 5, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  animation: fadein 2s linear;
+}
+
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100%   { opacity: 0; }
+}
