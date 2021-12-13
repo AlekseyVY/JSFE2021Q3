@@ -21,11 +21,13 @@ import SvgElement from '../SvgElement/SvgElement';
 import CustomCheck from '../CustomCheck/CustomCheck';
 import CustomRange from '../CustomRange/CustomRange';
 import CustomSearch from '../CustomSearch/CustomSearch';
+import FavoriteCounter from '../FavoriteCounter/FavoriteCounter';
 
 const Filters = () => {
   const [filters, setFilters] = useState<IFilters>();
   const [selected, setSelected] = useState<string>();
   const value = useAppSelector((state) => state.filters);
+  const toys = useAppSelector((state) => state.toys);
   const dispatch = useAppDispatch();
   const customSelectState = (): string => {
     if (filters) {
@@ -83,6 +85,9 @@ const Filters = () => {
         <InnerFilterWrapper>
           <LabelWrapper>Favorite:</LabelWrapper>
           {CustomCheck('white', { category: 'value', subCategory: 'favorite' }, !filters?.value.favorite)}
+        </InnerFilterWrapper>
+        <InnerFilterWrapper>
+          {FavoriteCounter(toys)}
         </InnerFilterWrapper>
       </FilterWrapper>
       <FilterWrapper>

@@ -1,4 +1,4 @@
-const data = [
+export const data = [
   {
     num: '1',
     name: 'large ball with paint',
