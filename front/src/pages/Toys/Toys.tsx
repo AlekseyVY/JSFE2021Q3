@@ -3,6 +3,7 @@ import Filters from 'src/components/Filters/Filters';
 import ToyCard from 'src/components/ToyCard/ToyCard';
 import { IProps } from 'src/components/ToyCard/ToyCard.d';
 import { Fade } from 'react-awesome-reveal';
+import userSearch from 'src/features/userSearch';
 import { useAppSelector } from '../../hooks/hook';
 import { Container } from './Toys.style';
 
@@ -11,9 +12,9 @@ const Toys = () => {
   const toys = useAppSelector((state) => state.toys);
   const search = useAppSelector((state) => state.search);
   useEffect(() => {
-    setValue(toys);
-  }, [toys]);
-  console.log(search);
+    const calculated = userSearch(toys, search);
+    setValue(calculated);
+  }, [toys, search]);
   return (
     <Container>
       <Filters />
