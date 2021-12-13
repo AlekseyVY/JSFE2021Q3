@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
 import { IFilters } from 'src/types/globals';
 import { clearFilter } from 'src/stores/reducers/filterReducer';
+import { clearSearch } from 'src/stores/reducers/searchReducer';
 import {
   ClearButton,
   Container,
@@ -44,6 +45,10 @@ const Filters = () => {
     if (data === 'amountIncrease') return 'By amount (increase)';
     if (data === 'amountDecrease') return 'By amount (increase)';
     return '';
+  };
+  const clearHandler = () => {
+    dispatch(clearFilter());
+    dispatch(clearSearch());
   };
   useEffect(() => {
     setFilters(value);
@@ -110,7 +115,7 @@ const Filters = () => {
         </div>
         <h3>Search:</h3>
         <CustomSearch />
-        <ClearButton onClick={() => dispatch(clearFilter())}>Clear</ClearButton>
+        <ClearButton onClick={() => clearHandler()}>Clear</ClearButton>
       </FilterWrapper>
     </Container>
   );
