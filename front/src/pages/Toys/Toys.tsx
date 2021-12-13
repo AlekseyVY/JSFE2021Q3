@@ -12,6 +12,7 @@ const Toys = () => {
   const [value, setValue] = useState<IProps[]>();
   const toys = useAppSelector((state) => state.filtered);
   const search = useAppSelector((state) => state.search);
+  const maxFavorite = toys.reduce((acc, val) => (val.favorite ? acc + 1 : acc), 0);
   useEffect(() => {
     const calculated = userSearch(toys, search);
     setValue(calculated);
@@ -23,7 +24,7 @@ const Toys = () => {
         {value?.length === 0 ? <NotFounded />
           : value && value.map((ele) => (
             <div key={String(Math.random() * 1000)}>
-              <ToyCard {...ele} />
+              {ToyCard(ele, maxFavorite)}
             </div>
           ))}
       </Fade>

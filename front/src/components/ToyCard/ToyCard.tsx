@@ -8,10 +8,19 @@ import { ReactComponent as Favorite } from '../../assets/fav.svg';
 
 const ToyCard = ({
   num, name, amount, year, form, color, size, favorite,
-}: IProps) => {
+}: IProps, max: number) => {
   const dispatch = useAppDispatch();
+  const clickHandler = () => {
+    if (max < 20) {
+      dispatch(setFavorite({ num }));
+    } else if (max === 20 && favorite) {
+      dispatch(setFavorite({ num }));
+    } else {
+      alert(`Max favorites ${max}`);
+    }
+  };
   return (
-    <Container onClick={() => dispatch(setFavorite({ num }))}>
+    <Container onClick={() => clickHandler()}>
       <Inner>
         <Front id={num} url={`./assets/toys/${num}.webp`}>
           {favorite ? <FavoriteWrapper><Favorite /></FavoriteWrapper> : ''}
