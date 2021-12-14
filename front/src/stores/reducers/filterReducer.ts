@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import storageEntity from 'src/utils/storageEntity';
 import { filters } from '../../providers/filters';
 import { IFilters } from '../../types/globals.d';
 import { RootState } from '../store';
 
-const initialState: IFilters = filters;
+const initialState: IFilters = storageEntity('get', 'filters', filters);
 
 export const filterSlice = createSlice({
   name: 'filters',
@@ -26,13 +27,15 @@ export const filterSlice = createSlice({
         state[category][name] = true;
       }
       if ((fromValue || fromValue === 0) && toValue) {
-        console.log(`Store from: ${fromValue}`);
-        console.log(`Store to: ${toValue}`);
         state[category][subCategory].from = fromValue;
         state[category][subCategory].to = toValue;
       }
+      storageEntity('set', 'filters', state);
     },
-    clearFilter: () => initialState,
+    clearFilter: () => {
+      storageEntity('set', 'filters', filters);
+      return filters;
+    },
   },
 });
 

@@ -3,7 +3,9 @@ import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
 import { IFilters } from 'src/types/globals';
 import { clearFilter } from 'src/stores/reducers/filterReducer';
 import { clearSearch } from 'src/stores/reducers/searchReducer';
+import storageEntity from 'src/utils/storageEntity';
 import {
+  ButtonsWrapper,
   ClearButton,
   Container,
   FilterWrapper, InnerFilterWrapper, LabelWrapper,
@@ -118,7 +120,17 @@ const Filters = () => {
         </div>
         <h3>Search:</h3>
         <CustomSearch />
-        <ClearButton onClick={() => clearHandler()}>Clear</ClearButton>
+        <ButtonsWrapper>
+          <ClearButton onClick={() => clearHandler()}>Clear Filters</ClearButton>
+          <ClearButton onClick={() => {
+            storageEntity('clear');
+            // Cringe
+            window.location.reload();
+          }}
+          >
+            Clear Local Storage
+          </ClearButton>
+        </ButtonsWrapper>
       </FilterWrapper>
     </Container>
   );

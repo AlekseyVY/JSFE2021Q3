@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import storageEntity from 'src/utils/storageEntity';
+import { IProps } from '../../components/ToyCard/ToyCard.d';
 import data from '../../providers/data';
 import { RootState } from '../store';
 
-const initialState = data;
+const initialState: IProps[] = storageEntity('get', 'toys', data);
 
 export const toySlice = createSlice({
   name: 'toys',
@@ -14,6 +16,7 @@ export const toySlice = createSlice({
           ele.favorite = !ele.favorite;
         }
       });
+      storageEntity('set', 'toys', state);
     },
   },
 });

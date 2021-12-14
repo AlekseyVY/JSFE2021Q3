@@ -1,6 +1,6 @@
 const createModal = (text: string, _class: string) => {
   if (!document.querySelector(`.${_class}`)) {
-    const node = document.querySelector('#root');
+    const node = document.querySelector('#error');
     const child = document.createElement('div');
     child.classList.add(_class);
     child.innerHTML = text;
