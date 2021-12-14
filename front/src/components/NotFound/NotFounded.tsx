@@ -1,4 +1,4 @@
-import LottiePlayer from 'src/components/LottiePlayer/LottiePlayer';
+import LottiePlayer from '../../components/LottiePlayer/LottiePlayer';
 import { AnimationWrapper, Container } from './NotFounded.style';
 
 const NotFounded = () => (

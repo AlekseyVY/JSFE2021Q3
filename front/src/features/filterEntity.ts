@@ -1,9 +1,9 @@
-import { IProps } from 'src/components/ToyCard/ToyCard.d';
 import { useState, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
-import { IFilters } from 'src/types/globals';
-import { rangeFilter, sortFilter, valueFilter } from 'src/utils/filters';
-import { setFiltered } from 'src/stores/reducers/fileredToysReducer';
+import { useAppDispatch, useAppSelector } from '../hooks/hook';
+import { rangeFilter, sortFilter, valueFilter } from '../utils/filters';
+import { IFilters } from '../types/globals';
+import { IProps } from '../components/ToyCard/ToyCard.d';
+import { setFiltered } from '../stores/reducers/fileredToysReducer';
 
 const filterEntity = () => {
   const [filters, setFilters] = useState<IFilters>();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
-import { clearSearch, setSearch } from 'src/stores/reducers/searchReducer';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+import { clearSearch, setSearch } from '../../stores/reducers/searchReducer';
 import { Container, CrossWrapper, Wrapper } from './CustomSearch.style';
 import { ReactComponent as Cross } from '../../assets/cross.svg';
 

@@ -4,7 +4,7 @@ import LottiePlayer from '../../components/LottiePlayer/LottiePlayer';
 const Home = () => (
   <Container>
     <AnimationWrapper>
-      <LottiePlayer data="./lotties/home_tree.json" name="christmas" />
+      <LottiePlayer data="./lotties/home_tree.json" name="christmasTree" />
     </AnimationWrapper>
   </Container>
 );

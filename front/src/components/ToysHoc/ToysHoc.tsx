@@ -1,5 +1,5 @@
-import filterEntity from 'src/features/filterEntity';
-import Toys from 'src/pages/Toys/Toys';
+import filterEntity from '../../features/filterEntity';
+import Toys from '../../pages/Toys/Toys';
 
 const ToysHoc = () => {
   filterEntity();

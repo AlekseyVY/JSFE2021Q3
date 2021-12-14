@@ -1,7 +1,7 @@
-import playOnClick from 'src/utils/playOnClick';
-import { useAppDispatch } from 'src/hooks/hook';
-import { IValue } from 'src/types/globals';
-import { setFilter } from 'src/stores/reducers/filterReducer';
+import { useAppDispatch } from '../../hooks/hook';
+import { IValue } from '../../types/globals';
+import { setFilter } from '../../stores/reducers/filterReducer';
+import playOnClick from '../../utils/playOnClick';
 import { CheckedWrapper, ColorSelect } from './CustomCheck.style';
 import { ReactComponent as Checked } from '../../assets/check.svg';
 

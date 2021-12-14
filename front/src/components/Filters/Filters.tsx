@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
-import { IFilters } from 'src/types/globals';
-import { clearFilter } from 'src/stores/reducers/filterReducer';
-import { clearSearch } from 'src/stores/reducers/searchReducer';
-import storageEntity from 'src/utils/storageEntity';
+import { IFilters } from '../../types/globals';
+import { clearFilter } from '../../stores/reducers/filterReducer';
+import storageEntity from '../../utils/storageEntity';
 import {
   ButtonsWrapper,
   ClearButton,
@@ -52,7 +51,6 @@ const Filters = () => {
   };
   const clearHandler = () => {
     dispatch(clearFilter());
-    dispatch(clearSearch());
   };
   useEffect(() => {
     setFilters(value);

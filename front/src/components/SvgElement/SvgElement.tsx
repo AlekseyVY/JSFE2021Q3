@@ -1,7 +1,7 @@
-import playOnClick from 'src/utils/playOnClick';
-import { useAppDispatch } from 'src/hooks/hook';
-import { setFilter } from 'src/stores/reducers/filterReducer';
-import { IValue } from 'src/types/globals';
+import playOnClick from '../../utils/playOnClick';
+import { useAppDispatch } from '../../hooks/hook';
+import { setFilter } from '../../stores/reducers/filterReducer';
+import { IValue } from '../../types/globals';
 import { FilterElementWrapper } from './SvgElement.style';
 
 type IState = boolean;

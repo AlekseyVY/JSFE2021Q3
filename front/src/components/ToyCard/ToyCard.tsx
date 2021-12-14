@@ -1,6 +1,6 @@
-import { useAppDispatch } from 'src/hooks/hook';
-import { setFavorite } from 'src/stores/reducers/toysReducer';
-import createModal from 'src/utils/createModal';
+import { useAppDispatch } from '../../hooks/hook';
+import { setFavorite } from '../../stores/reducers/toysReducer';
+import createModal from '../../utils/createModal';
 import { IProps } from './ToyCard.d';
 import {
   Back, Container, FavoriteWrapper, Front, Inner, SentienceWrapper, WordWrapper,

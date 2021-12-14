@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useAppDispatch } from 'src/hooks/hook';
-import { setFilter } from 'src/stores/reducers/filterReducer';
+import { useAppDispatch } from '../../hooks/hook';
+import { setFilter } from '../../stores/reducers/filterReducer';
 import {
   Arrow, Container, Item, OptionContainer, Separator,
 } from './CustomSelect.style';

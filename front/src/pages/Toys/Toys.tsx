@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import Filters from 'src/components/Filters/Filters';
-import ToyCard from 'src/components/ToyCard/ToyCard';
-import { IProps } from 'src/components/ToyCard/ToyCard.d';
 import { Fade } from 'react-awesome-reveal';
-import userSearch from 'src/features/userSearch';
-import NotFounded from 'src/components/NotFound/NotFounded';
+import Filters from '../../components/Filters/Filters';
+import ToyCard from '../../components/ToyCard/ToyCard';
+import { IProps } from '../../components/ToyCard/ToyCard.d';
+import userSearch from '../../features/userSearch';
+import NotFounded from '../../components/NotFound/NotFounded';
 import { useAppSelector } from '../../hooks/hook';
 import { Container } from './Toys.style';
 

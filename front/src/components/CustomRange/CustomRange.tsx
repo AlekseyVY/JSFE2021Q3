@@ -1,9 +1,9 @@
 import Slider, { createSliderWithTooltip } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from 'src/hooks/hook';
-import { setFilter } from 'src/stores/reducers/filterReducer';
-import { IValue } from 'src/types/globals';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+import { setFilter } from '../../stores/reducers/filterReducer';
+import { IValue } from '../../types/globals';
 import { Container, RangeValue } from './CustomRange.style';
 
 const CustomRange = (
