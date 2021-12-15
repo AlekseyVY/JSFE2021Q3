@@ -33,7 +33,7 @@ export const InnerFilterWrapper = styled.div`
 
 export const ClearButton = styled.div`
   padding: 10px;
-  margin: 10px 40px;
+  margin: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,6 +56,10 @@ export const ClearButton = styled.div`
   }
 `;
 
+export const InnerText = styled.span`
+ margin: 0 3px;
+`;
+
 export const LabelWrapper = styled.span`
   margin: 0 10px 0 0;
 `;
@@ -64,5 +68,5 @@ export const ButtonsWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 `;

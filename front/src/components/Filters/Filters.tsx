@@ -7,7 +7,7 @@ import {
   ButtonsWrapper,
   ClearButton,
   Container,
-  FilterWrapper, InnerFilterWrapper, LabelWrapper,
+  FilterWrapper, InnerFilterWrapper, InnerText, LabelWrapper,
 } from './Filters.style';
 import { ReactComponent as Ball } from '../../assets/svg/ball.svg';
 import { ReactComponent as Cone } from '../../assets/svg/cone.svg';
@@ -119,14 +119,18 @@ const Filters = () => {
         <h3>Search:</h3>
         <CustomSearch />
         <ButtonsWrapper>
-          <ClearButton onClick={() => clearHandler()}>Clear Filters</ClearButton>
+          <ClearButton onClick={() => clearHandler()}>
+            <InnerText>Clear</InnerText>
+            <InnerText>Filters</InnerText>
+          </ClearButton>
           <ClearButton onClick={() => {
             storageEntity('clear');
             // Cringe
             window.location.reload();
           }}
           >
-            Clear Local Storage
+            <InnerText>Clear</InnerText>
+            <InnerText>Storage</InnerText>
           </ClearButton>
         </ButtonsWrapper>
       </FilterWrapper>
