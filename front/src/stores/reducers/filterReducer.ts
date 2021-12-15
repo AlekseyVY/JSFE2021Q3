@@ -33,9 +33,11 @@ export const filterSlice = createSlice({
       storageEntity('set', 'filters', state);
     },
     clearFilter: (state) => {
-      filters.sort = state.sort;
-      storageEntity('set', 'filters', filters);
-      return filters;
+      const copy = JSON.stringify(filters);
+      const calculated = JSON.parse(copy);
+      calculated.sort = state.sort;
+      storageEntity('set', 'filters', calculated);
+      return calculated;
     },
   },
 });
