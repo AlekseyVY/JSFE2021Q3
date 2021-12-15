@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { clearSearch, setSearch } from '../../stores/reducers/searchReducer';
 import { Container, CrossWrapper, Wrapper } from './CustomSearch.style';

@@ -46,7 +46,7 @@ const Filters = () => {
     if (data === 'alphabet') return 'Alphabet sort';
     if (data === 'alphabetReverse') return 'Alphabet sort (reverse)';
     if (data === 'amountIncrease') return 'By amount (increase)';
-    if (data === 'amountDecrease') return 'By amount (increase)';
+    if (data === 'amountDecrease') return 'By amount (decrease)';
     return '';
   };
   const clearHandler = () => {
