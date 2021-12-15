@@ -32,7 +32,8 @@ export const filterSlice = createSlice({
       }
       storageEntity('set', 'filters', state);
     },
-    clearFilter: () => {
+    clearFilter: (state) => {
+      filters.sort = state.sort;
       storageEntity('set', 'filters', filters);
       return filters;
     },

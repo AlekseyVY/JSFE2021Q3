@@ -33,7 +33,7 @@ const Filters = () => {
   const customSelectState = (): string => {
     if (filters) {
       const tmp = Object.entries(filters.sort).filter((ele) => {
-        if (ele[1] === true) {
+        if (ele[1]) {
           return ele[0];
         }
         return false;
