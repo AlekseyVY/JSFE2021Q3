@@ -45,8 +45,8 @@ const Filters = () => {
   const stateHelper = (data: string | undefined): string => {
     if (data === 'alphabet') return 'Alphabet sort';
     if (data === 'alphabetReverse') return 'Alphabet sort (reverse)';
-    if (data === 'amountIncrease') return 'By amount (increase)';
-    if (data === 'amountDecrease') return 'By amount (decrease)';
+    if (data === 'amountIncrease') return 'By year (increase)';
+    if (data === 'amountDecrease') return 'By year (decrease)';
     return '';
   };
   const clearHandler = () => {

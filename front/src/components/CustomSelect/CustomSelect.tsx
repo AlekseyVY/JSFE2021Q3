@@ -34,12 +34,12 @@ const CustomSelect = ({ state }: IProps) => {
                 Alphabet sort (reverse)
               </Item>
               <Separator />
-              <Item onClick={() => clickHandler('By amount (increase)', 'amountIncrease')}>
-                By amount (increase)
+              <Item onClick={() => clickHandler('By year (increase)', 'amountIncrease')}>
+                By year (increase)
               </Item>
               <Separator />
-              <Item onClick={() => clickHandler('By amount (decrease)', 'amountDecrease')}>
-                By amount (decrease)
+              <Item onClick={() => clickHandler('By year (decrease)', 'amountDecrease')}>
+                By year (decrease)
               </Item>
             </OptionContainer>
             )}

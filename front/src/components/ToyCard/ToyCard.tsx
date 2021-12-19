@@ -58,6 +58,12 @@ const ToyCard = ({
             </WordWrapper>
             {size}
           </SentienceWrapper>
+          <SentienceWrapper>
+            <WordWrapper>
+              favorite:
+            </WordWrapper>
+            {favorite ? 'yes' : 'no'}
+          </SentienceWrapper>
         </Back>
       </Inner>
     </Container>

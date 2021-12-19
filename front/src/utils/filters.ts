@@ -16,12 +16,12 @@ const sortFilter = (array: IProps[], name: string) => {
   }
   if (name === 'amountIncrease') {
     return array.sort(
-      (a, b) => Number(a.amount) - Number(b.amount),
+      (a, b) => Number(a.year) - Number(b.year),
     );
   }
   if (name === 'amountDecrease') {
     return array.sort(
-      (a, b) => Number(b.amount) - Number(a.amount),
+      (a, b) => Number(b.year) - Number(a.year),
     );
   }
   return array.sort(

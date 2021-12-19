@@ -41,6 +41,8 @@ export interface IFilters {
   },
 }
 
+type from = string
+
 export interface IValue {
   category: string,
   subCategory?: string,
