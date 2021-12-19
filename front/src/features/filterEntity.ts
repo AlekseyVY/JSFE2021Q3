@@ -26,7 +26,7 @@ const filterEntity = () => {
     Object.entries(filters.range).forEach((ele) => {
       const tmp: IProps[] = [];
       tmp.push(...rangeFilter(dataArr, ele[0], ele[1].from, ele[1].to));
-      if (tmp.length) dataArr = tmp;
+      dataArr = tmp;
     });
     Object.entries(filters.sort).forEach((ele) => {
       const tmp: IProps[] = [];
