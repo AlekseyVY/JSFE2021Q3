@@ -29,8 +29,10 @@ export const NavWrapper = styled.nav`
 
 export const LinkWrapper = styled.div`
 font-size: 22px;
+  transition: 1s ease-in-out;
   &:hover {
     cursor: pointer;
     color: #f74705;
+    transition: 0.3s ease-in-out;
   }
 `;
