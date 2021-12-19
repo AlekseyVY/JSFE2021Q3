@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Music from '../Music/Music';
 import {
   Container, ContentWrapper, LinkWrapper, NavWrapper,
@@ -9,13 +9,55 @@ const Header = () => (
     <ContentWrapper>
       <NavWrapper>
         <LinkWrapper>
-          <Link to="/">Home</Link>
+          <NavLink
+            style={
+              ({ isActive }) => (
+                isActive
+                  ? {
+                    textDecoration: 'none',
+                    color: '#f74705',
+                  }
+                  : {}
+              )
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
         </LinkWrapper>
         <LinkWrapper>
-          <Link to="/Toys">Toys</Link>
+          <NavLink
+            to="/Toys"
+            style={
+              ({ isActive }) => (
+                isActive
+                  ? {
+                    textDecoration: 'none',
+                    color: '#f74705',
+                  }
+                  : {}
+              )
+            }
+          >
+            Toys
+          </NavLink>
         </LinkWrapper>
         <LinkWrapper>
-          <Link to="/Tree">Christmas tree</Link>
+          <NavLink
+            to="/Tree"
+            style={
+              ({ isActive }) => (
+                isActive
+                  ? {
+                    textDecoration: 'none',
+                    color: '#f74705',
+                  }
+                  : {}
+              )
+            }
+          >
+            Christmas tree
+          </NavLink>
         </LinkWrapper>
       </NavWrapper>
       {Music('./assets/music/01.mp3')}
