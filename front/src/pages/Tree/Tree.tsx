@@ -1,11 +1,9 @@
-import LottiePlayer from '../../components/LottiePlayer/LottiePlayer';
-import { AnimationWrapper, Container } from './Tree.style';
+import { Container } from './Tree.style';
+import Options from '../../components/Options/Options';
 
 const Tree = () => (
   <Container>
-    <AnimationWrapper>
-      <LottiePlayer data="./lotties/construction.json" name="constructionTree" />
-    </AnimationWrapper>
+    <Options />
   </Container>
 );
 

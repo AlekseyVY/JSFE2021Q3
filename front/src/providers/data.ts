@@ -7,7 +7,7 @@ let data = [
     form: 'ball',
     color: 'yellow',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '2',
@@ -17,7 +17,7 @@ let data = [
     form: 'ball',
     color: 'green',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '3',
@@ -27,7 +27,7 @@ let data = [
     form: 'ball',
     color: 'red',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '4',
@@ -37,7 +37,7 @@ let data = [
     form: 'toy',
     color: 'red',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '5',
@@ -47,7 +47,7 @@ let data = [
     form: 'toy',
     color: 'red',
     size: 'medium',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '6',
@@ -57,7 +57,7 @@ let data = [
     form: 'ball',
     color: 'red',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '7',
@@ -67,7 +67,7 @@ let data = [
     form: 'ball',
     color: 'white',
     size: 'medium',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '8',
@@ -77,7 +77,7 @@ let data = [
     form: 'ball',
     color: 'red',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '9',
@@ -87,7 +87,7 @@ let data = [
     form: 'bell',
     color: 'white',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '10',
@@ -97,7 +97,7 @@ let data = [
     form: 'ball',
     color: 'white',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '11',
@@ -107,7 +107,7 @@ let data = [
     form: 'cone',
     color: 'white',
     size: 'small',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '12',
@@ -117,7 +117,7 @@ let data = [
     form: 'ball',
     color: 'white',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '13',
@@ -127,7 +127,7 @@ let data = [
     form: 'ball',
     color: 'blue',
     size: 'large',
-    favorite: true,
+    favorite: false,
   },
   {
     num: '14',
