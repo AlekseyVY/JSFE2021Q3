@@ -2,10 +2,6 @@ body {
   font-family: 'Mountains of Christmas', cursive;
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
 a {
   color: inherit;
   text-decoration: inherit;
@@ -15,9 +11,6 @@ h3 {
   margin: 5px 0;
 }
 
-/*
-  Modal css.
-*/
 .errorModal {
   position: fixed;
   display: flex;
@@ -36,7 +29,6 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.125);
   animation: fadein 2s linear;
 }
-
 
 @keyframes fadein {
   0% { opacity: 0; }

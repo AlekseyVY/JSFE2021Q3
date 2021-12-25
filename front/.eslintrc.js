@@ -19,6 +19,7 @@ module.exports = {
     }],
     'no-unused-expressions': 'off',
     'prefer-const': 'off',
+    "react/jsx-curly-brace-presence": 'off',
     'import/no-mutable-exports': 'off',
     'react/destructuring-assignment': 'off',
     'no-use-before-define': 'off',
