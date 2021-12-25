@@ -37,3 +37,16 @@ export const BackgroundStyle = styled.div<IProps>`
   background-position: bottom;
   background-size: cover;
 `;
+
+export const TreeContainer = styled.div`
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -80;
+`;
+
+export const TreeStyle = styled.img`
+  width: 600px;
+  height: 600px;
+`;

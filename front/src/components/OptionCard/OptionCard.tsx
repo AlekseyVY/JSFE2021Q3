@@ -1,11 +1,13 @@
 import { Container, Selected, Wrapper } from './OptionCard.style';
 import { useAppDispatch } from '../../hooks/hook';
-import { setBg } from '../../stores/reducers/optionsReducer';
+import { setBg, setTree } from '../../stores/reducers/optionsReducer';
 
-const OptionCard = ({ url, num, state }: { url: string, num: number, state: boolean }) => {
+const OptionCard = ({
+  url, num, state, bg,
+}: { url: string, num: number, state: boolean, bg: boolean }) => {
   const dispatch = useAppDispatch();
   return (
-    <Wrapper onClick={() => dispatch(setBg(num))}>
+    <Wrapper onClick={bg ? () => dispatch(setBg(num)) : () => dispatch(setTree(num))}>
       <Container url={url} />
       {state && <Selected />}
     </Wrapper>

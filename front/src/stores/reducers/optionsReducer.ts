@@ -3,7 +3,7 @@ import { RootState } from '../store';
 
 const initialState = {
   bg: 1,
-  tree: '',
+  tree: 1,
 };
 
 export const optionsSlice = createSlice({
@@ -14,9 +14,12 @@ export const optionsSlice = createSlice({
     setBg: (state, action) => {
       state.bg = action.payload;
     },
+    setTree: (state, action) => {
+      state.tree = action.payload;
+    },
   },
 });
 
-export const { setOptions, setBg } = optionsSlice.actions;
+export const { setOptions, setBg, setTree } = optionsSlice.actions;
 export const selectValue = (state: RootState) => state;
 export default optionsSlice.reducer;
