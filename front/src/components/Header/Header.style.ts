@@ -36,3 +36,17 @@ font-size: 22px;
     transition: 0.3s ease-in-out;
   }
 `;
+
+export const SnowButton = styled.div`
+  font-size: 22px;
+  transition: 1s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    color: #f74705;
+    transition: 0.3s ease-in-out;
+  }
+`;
+
+export const MenuButtonsWrapper = styled.div`
+  display: flex;
+`;

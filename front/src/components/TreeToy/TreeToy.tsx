@@ -4,7 +4,6 @@ import { IProps } from '../ToyCard/ToyCard.d';
 
 const TreeToy = (ele: IProps) => {
   const [state, setState] = useState<number>(Number(ele.amount));
-  console.log(ele);
   return (
     <Container>
       <Image
