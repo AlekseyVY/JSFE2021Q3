@@ -50,3 +50,21 @@ export const TreeStyle = styled.img`
   width: 600px;
   height: 600px;
 `;
+
+export const ToysContainer = styled.div`
+  width: 200px;
+  height: 500px;
+  position: absolute;
+  padding: 10px;
+  top: 3%;
+  right: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-radius: 10px;
+  backdrop-filter: blur(3px) saturate(180%);
+  background-color: rgba(239,242,247,0.75);
+`;
