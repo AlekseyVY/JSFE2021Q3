@@ -19,5 +19,5 @@ export const Value = styled.div`
   bottom: 0;
   right: 0;
   font-size: 24px;
-  color: green;
+  color: #0c308a;
 `;

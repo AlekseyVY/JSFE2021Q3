@@ -4,6 +4,6 @@ export const Container = styled.div`
   margin: 0 auto;
   max-width: 1440px;
   width: 100%;
-  min-height: 80vh;
+  height: 80vh;
   position: relative;
 `;

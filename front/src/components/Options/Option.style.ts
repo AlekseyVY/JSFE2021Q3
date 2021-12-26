@@ -4,6 +4,11 @@ interface IProps {
   url: string;
 }
 
+interface IToy {
+  x :number;
+  y: number;
+}
+
 export const Container = styled.div`
   width: 50px;
   height: 50px;
@@ -23,6 +28,7 @@ export const OptionsContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 700;
 `;
 
 export const BackgroundStyle = styled.div<IProps>`
@@ -39,11 +45,10 @@ export const BackgroundStyle = styled.div<IProps>`
 `;
 
 export const TreeContainer = styled.div`
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -80;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  position: relative;
 `;
 
 export const TreeStyle = styled.img`
@@ -53,7 +58,7 @@ export const TreeStyle = styled.img`
 
 export const ToysContainer = styled.div`
   width: 200px;
-  height: 500px;
+  height: 410px;
   position: absolute;
   padding: 10px;
   top: 3%;
@@ -67,4 +72,24 @@ export const ToysContainer = styled.div`
   border-radius: 10px;
   backdrop-filter: blur(3px) saturate(180%);
   background-color: rgba(239,242,247,0.75);
+`;
+
+export const DragContainer = styled.map`
+`;
+
+export const DragAreaContainer = styled.area`
+`;
+
+export const TreeToyWrapper = styled.div<IToy>`
+  position: absolute;
+  top: ${(props) => `${props.y}px`};
+  left: ${(props) => `${props.x}px`};
+  width: 50px;
+  height: 50px;
+  z-index: 500;
+`;
+
+export const ToyImg = styled.img`
+  width: 50px;
+  height: 50px;
 `;
