@@ -17,6 +17,7 @@ export const Container = styled.div<IProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 10px;
   &:hover {
     cursor: pointer;
   }
@@ -30,4 +31,5 @@ export const Selected = styled.div`
   height: 100%;
   background-color: #f74705;
   opacity: 0.3;
+  border-radius: 10px;
 `;

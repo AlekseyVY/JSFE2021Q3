@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, LightsButton } from './OptionSelect.style';
+import { ButtonsWrapper, Container, LightsButton } from './OptionSelect.style';
 import OptionCard from '../OptionCard/OptionCard';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import urlGenerator from '../../utils/urlGenerator';
@@ -33,14 +33,14 @@ const OptionSelect = () => {
           />
         </div>
       ))}
-      <div>
-        <LightsButton role={'presentation'} onClick={() => dispatch(setLights())}>Turn on lights</LightsButton>
+      <ButtonsWrapper>
+        <LightsButton onClick={() => dispatch(setColor('yellow'))}>yellow</LightsButton>
         <LightsButton onClick={() => dispatch(setColor('mix'))}>Mix</LightsButton>
         <LightsButton onClick={() => dispatch(setColor('blue'))}>blue</LightsButton>
         <LightsButton onClick={() => dispatch(setColor('red'))}>red</LightsButton>
         <LightsButton onClick={() => dispatch(setColor('green'))}>green</LightsButton>
-        <LightsButton onClick={() => dispatch(setColor('yellow'))}>yellow</LightsButton>
-      </div>
+        <LightsButton role={'presentation'} onClick={() => dispatch(setLights())}>Turn on lights</LightsButton>
+      </ButtonsWrapper>
 
     </Container>
   );

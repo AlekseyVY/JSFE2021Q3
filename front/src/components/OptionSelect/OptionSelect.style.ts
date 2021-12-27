@@ -6,7 +6,7 @@ const Reveal = keyframes`
 `;
 
 export const Container = styled.div`
-  width: 760px;
+  width: 500px;
   height: 500px;
   padding: 10px;
   display: flex;
@@ -21,19 +21,29 @@ export const Container = styled.div`
   animation-duration: 2s;
 `;
 
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-evenly;
+  height: 70px;
+`;
+
 export const LightsButton = styled.div`
-  width: 100px;
-  height: 50px;
-  font-size: 18px;
+  width: 90px;
+  height: 25px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: darkblue;
+  color: #0c308a;
+  border: 1px solid #0c308a;
   border-radius: 10px;
-  border: 1px solid #fff;
+  transition: 0.5s ease-in-out;
   &:hover {
     cursor: pointer;
-    color: crimson;
-    border-color: crimson;
+    color: #f74705;
+    border-color: #f74705;
+    transition: 0.5s ease-in-out;
   }
 `;
