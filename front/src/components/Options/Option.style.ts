@@ -126,9 +126,11 @@ export const SettingsWrapper = styled.div`
   justify-content: space-between;
   padding: 10px;
   position: absolute;
+  margin-top: 50px;
   right: 3%;
-  bottom: 0;
+  bottom: -5%;
   border-radius: 10px;
   backdrop-filter: blur(3px) saturate(180%);
   background-color: rgba(239,242,247,0.75);
+  z-index: 1000;
 `;
