@@ -99,9 +99,14 @@ export const LightsStyle = styled.div<IToy>`
   position: absolute;
   top: ${(props) => `${props.y}px`};
   left: ${(props) => `${props.x}px`};
-  width: 30px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
   background-color: ${(props) => props.color};
+  opacity: 0.7;
+  box-shadow:
+          0 0 7.5px 3.5px #fff,  /* inner white */
+          0 0 12.5px 7.5px #f0f, /* middle magenta */
+          0 0 17.5px 11.25px #0ff; /* outer cyan */
   border-radius: 50%;
   pointer-events: none;
 `;

@@ -27,6 +27,7 @@ const Options = () => {
   const [bg, setBg] = useState('');
   const [tree, setTree] = useState('');
   const [toys, setToys] = useState<IToysCoords[]>([]);
+  const [light, setLight] = useState(false);
   const options = useAppSelector((state) => state.options);
   const store = useAppSelector((state) => state.toys);
 
@@ -39,6 +40,7 @@ const Options = () => {
   useEffect(() => {
     setBg(urlGenerator(options.bg, true));
     setTree(urlGenerator(options.tree, false));
+    setLight(options.lights);
   }, [options]);
   const optionsHandler = () => {
     setIsActive(!isActive);
@@ -58,6 +60,7 @@ const Options = () => {
       setToys(newArr);
     }
   };
+  console.log(light);
   return (
     <>
       <Container>
@@ -72,11 +75,13 @@ const Options = () => {
             </TreeToyWrapper>
           ))}
         </div>
+        {light && (
         <div>
           {lights.map((ele) => (
-            <LightsStyle color={'green'} key={`${ele.x}_${ele.y}`} x={ele.x} y={ele.y} />
+            <LightsStyle color={options.color} key={`${ele.x}_${ele.y}`} x={ele.x} y={ele.y} />
           ))}
         </div>
+        )}
         <DragContainer
           name="imagemap"
         >

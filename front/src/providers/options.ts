@@ -3,6 +3,8 @@ export const options = {
   tree: 1,
   snow: true,
   music: true,
+  lights: false,
+  color: 'blue',
 };
 
 export interface IOptions {
@@ -10,4 +12,6 @@ export interface IOptions {
   tree: number;
   snow: boolean;
   music: boolean;
+  lights: boolean;
+  color: string;
 }

@@ -20,3 +20,20 @@ export const Container = styled.div`
   animation: ${Reveal};
   animation-duration: 2s;
 `;
+
+export const LightsButton = styled.div`
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: darkblue;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  &:hover {
+    cursor: pointer;
+    color: crimson;
+    border-color: crimson;
+  }
+`;
