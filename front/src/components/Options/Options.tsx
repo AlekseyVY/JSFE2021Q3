@@ -3,7 +3,7 @@ import { ReactComponent as Option } from '../../assets/option.svg';
 import {
   BackgroundStyle,
   Container, DragAreaContainer,
-  DragContainer,
+  DragContainer, LightsStyle,
   OptionsContainer, ToyImg,
   ToysContainer,
   TreeContainer, TreeStyle,
@@ -13,6 +13,7 @@ import OptionSelect from '../OptionSelect/OptionSelect';
 import { useAppSelector } from '../../hooks/hook';
 import urlGenerator from '../../utils/urlGenerator';
 import TreeToy from '../TreeToy/TreeToy';
+import { lights } from '../../providers/lights';
 
 interface IToysCoords {
   num: string;
@@ -47,7 +48,6 @@ const Options = () => {
     e.preventDefault();
     const treeArea = treeRef.current?.getBoundingClientRect();
     const data = JSON.parse(e.dataTransfer.getData('text/plain'));
-    console.log(data);
     if (treeArea) {
       const newArr = [...toys.filter((ele) => ele.id !== data.id), {
         num: data.name,
@@ -58,7 +58,6 @@ const Options = () => {
       setToys(newArr);
     }
   };
-  console.log(toys);
   return (
     <>
       <Container>
@@ -71,6 +70,11 @@ const Options = () => {
             <TreeToyWrapper draggable onDragStart={(e) => e.dataTransfer.setData('text/plain', JSON.stringify({ name: ele.num, id: ele.id }))} key={`${ele.num}_${ele.x}_${ele.y}`} x={ele.x} y={ele.y}>
               <ToyImg src={`./assets/toys/${ele.num}.webp`} alt={'tree toy'} />
             </TreeToyWrapper>
+          ))}
+        </div>
+        <div>
+          {lights.map((ele) => (
+            <LightsStyle color={'green'} key={`${ele.x}_${ele.y}`} x={ele.x} y={ele.y} />
           ))}
         </div>
         <DragContainer

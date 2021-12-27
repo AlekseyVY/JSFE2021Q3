@@ -1,7 +1,8 @@
 import { IFilters } from 'src/types/globals';
 import { IProps } from '../components/ToyCard/ToyCard.d';
+import { IOptions } from '../providers/options';
 
-const storageEntity = (type: string, key?: string, data?: IProps[] | IFilters) => {
+const storageEntity = (type: string, key?: string, data?: IProps[] | IFilters | IOptions) => {
   let tmp;
   switch (type) {
     case 'set':

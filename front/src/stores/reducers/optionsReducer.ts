@@ -1,11 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store';
+import storageEntity from '../../utils/storageEntity';
+import { options } from '../../providers/options';
 
-const initialState = {
-  bg: 1,
-  tree: 1,
-  snow: true,
-};
+const initialState = storageEntity('get', 'options', options);
 
 export const optionsSlice = createSlice({
   name: 'options',
@@ -14,19 +12,25 @@ export const optionsSlice = createSlice({
     setOptions: (state, action) => action.payload,
     setBg: (state, action) => {
       state.bg = action.payload;
+      storageEntity('set', 'options', state);
     },
     setTree: (state, action) => {
       state.tree = action.payload;
+      storageEntity('set', 'options', state);
     },
     setSnow: (state) => {
       state.snow = !state.snow;
-      console.log(state.snow);
+      storageEntity('set', 'options', state);
+    },
+    setMusic: (state) => {
+      state.music = !state.music;
+      storageEntity('set', 'options', state);
     },
   },
 });
 
 export const {
-  setOptions, setBg, setTree, setSnow,
+  setOptions, setBg, setTree, setSnow, setMusic,
 } = optionsSlice.actions;
 export const selectValue = (state: RootState) => state;
 export default optionsSlice.reducer;

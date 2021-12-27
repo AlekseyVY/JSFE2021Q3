@@ -7,6 +7,7 @@ interface IProps {
 interface IToy {
   x :number;
   y: number;
+  color?: string;
 }
 
 export const Container = styled.div`
@@ -92,4 +93,15 @@ export const TreeToyWrapper = styled.div<IToy>`
 export const ToyImg = styled.img`
   width: 50px;
   height: 50px;
+`;
+
+export const LightsStyle = styled.div<IToy>`
+  position: absolute;
+  top: ${(props) => `${props.y}px`};
+  left: ${(props) => `${props.x}px`};
+  width: 30px;
+  height: 30px;
+  background-color: ${(props) => props.color};
+  border-radius: 50%;
+  pointer-events: none;
 `;
