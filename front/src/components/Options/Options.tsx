@@ -31,6 +31,7 @@ const Options = () => {
   const options = useAppSelector((state) => state.options);
   const store = useAppSelector((state) => state.toys);
 
+  const colors = ['red', 'green', 'blue', 'yellow'];
   const toysGenerator = () => {
     const data = store.filter((ele) => ele.favorite);
     if (data.length > 0) return data;
@@ -60,7 +61,7 @@ const Options = () => {
       setToys(newArr);
     }
   };
-  console.log(light);
+  console.log(options);
   return (
     <>
       <Container>
@@ -78,7 +79,16 @@ const Options = () => {
         {light && (
         <div>
           {lights.map((ele) => (
-            <LightsStyle color={options.color} key={`${ele.x}_${ele.y}`} x={ele.x} y={ele.y} />
+            <LightsStyle
+              color={
+              options.color === 'mix'
+                ? colors[Math.floor(Math.random() * colors.length)]
+                : options.color
+            }
+              key={`${ele.x}_${ele.y}`}
+              x={ele.x}
+              y={ele.y}
+            />
           ))}
         </div>
         )}

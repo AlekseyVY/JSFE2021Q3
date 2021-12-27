@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface IProps {
   url: string;
@@ -95,6 +95,10 @@ export const ToyImg = styled.img`
   height: 50px;
 `;
 
+const Blink = keyframes`
+  50% { opacity: 0.2; }
+`;
+
 export const LightsStyle = styled.div<IToy>`
   position: absolute;
   top: ${(props) => `${props.y}px`};
@@ -103,6 +107,7 @@ export const LightsStyle = styled.div<IToy>`
   height: 10px;
   background-color: ${(props) => props.color};
   opacity: 0.7;
+  animation: ${Blink} 2s linear infinite;
   box-shadow:
           0 0 7.5px 3.5px #fff,  /* inner white */
           0 0 12.5px 7.5px #f0f, /* middle magenta */

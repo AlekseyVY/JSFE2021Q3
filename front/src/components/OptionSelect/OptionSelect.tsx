@@ -35,6 +35,7 @@ const OptionSelect = () => {
       ))}
       <div>
         <LightsButton role={'presentation'} onClick={() => dispatch(setLights())}>Turn on lights</LightsButton>
+        <LightsButton onClick={() => dispatch(setColor('mix'))}>Mix</LightsButton>
         <LightsButton onClick={() => dispatch(setColor('blue'))}>blue</LightsButton>
         <LightsButton onClick={() => dispatch(setColor('red'))}>red</LightsButton>
         <LightsButton onClick={() => dispatch(setColor('green'))}>green</LightsButton>
