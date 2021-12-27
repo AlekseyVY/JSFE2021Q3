@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ReactComponent as Option } from '../../assets/option.svg';
 import {
   BackgroundStyle,
   Container, DragAreaContainer,
-  DragContainer, LightsStyle,
+  DragContainer, LightsStyle, MainContainer,
   OptionsContainer, ToyImg,
   ToysContainer,
   TreeContainer, TreeStyle,
@@ -80,10 +80,18 @@ const Options = () => {
       }];
       setToys(newArr);
     }
+    amountCb(dragToys, setDragToys)(data.name, false);
+    console.log('DROP');
   };
-  console.log(options);
+
+  const dragEnd = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    // const element = e.target as HTMLDivElement;
+    // amountCb(dragToys, setDragToys)(Number(element.id), true);
+    console.log('END');
+  };
   return (
-    <>
+    <MainContainer onDragEnd={(e) => dragEnd(e)}>
       <Container>
         <Option onClick={() => optionsHandler()} />
       </Container>
@@ -132,12 +140,12 @@ const Options = () => {
       <ToysContainer>
         {dragToys.map((ele) => (
           <div key={ele.num}>
-            {TreeToy(ele, amountCb(dragToys, setDragToys))}
+            {TreeToy(ele)}
           </div>
         ))}
       </ToysContainer>
       <BackgroundStyle url={bg} />
-    </>
+    </MainContainer>
   );
 };
 

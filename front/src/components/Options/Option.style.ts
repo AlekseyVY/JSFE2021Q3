@@ -10,6 +10,12 @@ interface IToy {
   color?: string;
 }
 
+export const MainContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
+
 export const Container = styled.div`
   width: 50px;
   height: 50px;
