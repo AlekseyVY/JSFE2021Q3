@@ -14,6 +14,7 @@ import { useAppSelector } from '../../hooks/hook';
 import urlGenerator from '../../utils/urlGenerator';
 import TreeToy from '../TreeToy/TreeToy';
 import { lights } from '../../providers/lights';
+import { IProps } from '../ToyCard/ToyCard.d';
 
 interface IToysCoords {
   num: string;
@@ -30,12 +31,31 @@ const Options = () => {
   const [light, setLight] = useState(false);
   const options = useAppSelector((state) => state.options);
   const store = useAppSelector((state) => state.toys);
-
   const colors = ['red', 'green', 'blue', 'yellow'];
   const toysGenerator = () => {
     const data = store.filter((ele) => ele.favorite);
     if (data.length > 0) return data;
     return store.slice(0, 20);
+  };
+  const [dragToys, setDragToys] = useState(() => toysGenerator());
+
+  const amountCb = (
+    arr: IProps[],
+    // eslint-disable-next-line no-unused-vars
+    func: (value: any) => void,
+  ) => (id: number, type: boolean) => {
+    const data = arr.map((ele) => {
+      let clone = { ...ele };
+      if (clone.num === String(id)) {
+        if (type) {
+          clone.amount = String(Number(ele.amount) + 1);
+        } else {
+          clone.amount = String(Number(ele.amount) - 1);
+        }
+      }
+      return clone;
+    });
+    func(data);
   };
 
   useEffect(() => {
@@ -110,9 +130,9 @@ const Options = () => {
         <TreeStyle useMap="#imagemap" src={tree} alt={'christmas tree'} />
       </TreeContainer>
       <ToysContainer>
-        {toysGenerator().map((ele) => (
+        {dragToys.map((ele) => (
           <div key={ele.num}>
-            {TreeToy(ele)}
+            {TreeToy(ele, amountCb(dragToys, setDragToys))}
           </div>
         ))}
       </ToysContainer>

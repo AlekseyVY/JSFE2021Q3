@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container, Image, Value } from './TreeToy.style';
 import { IProps } from '../ToyCard/ToyCard.d';
 
-const TreeToy = (ele: IProps) => {
+const TreeToy = (ele: IProps, callBack: any) => {
   const [state, setState] = useState<number>(Number(ele.amount));
   return (
     <Container>
@@ -10,6 +10,7 @@ const TreeToy = (ele: IProps) => {
         draggable={!(state <= 0)}
         onDragStart={(e) => {
           e.dataTransfer.setData('text/plain', JSON.stringify({ name: ele.num, id: String(Math.random() * 10000) }));
+          callBack(ele.num, false);
           setState(state - 1);
         }}
         src={`./assets/toys/${ele.num}.webp`}
