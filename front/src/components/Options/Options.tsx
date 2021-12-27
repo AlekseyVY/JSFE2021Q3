@@ -4,18 +4,21 @@ import {
   BackgroundStyle,
   Container, DragAreaContainer,
   DragContainer, LightsStyle, MainContainer,
-  OptionsContainer, ToyImg,
+  OptionsContainer, SettingsWrapper, ToyImg,
   ToysContainer,
   TreeContainer, TreeStyle,
   TreeToyWrapper,
 } from './Option.style';
 import OptionSelect from '../OptionSelect/OptionSelect';
-import { useAppSelector } from '../../hooks/hook';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import urlGenerator from '../../utils/urlGenerator';
 import TreeToy from '../TreeToy/TreeToy';
 import { lights } from '../../providers/lights';
+import { setTreeToys } from '../../stores/reducers/optionsReducer';
+import { ClearButton, InnerText } from '../Filters/Filters.style';
+import storageEntity from '../../utils/storageEntity';
 
-interface IToysCoords {
+export interface IToysCoords {
   num: string;
   id: string;
   x: number;
@@ -35,6 +38,7 @@ const Options = () => {
     if (data.length > 0) return data;
     return store.slice(0, 20);
   });
+  const dispatch = useAppDispatch();
   const colors = ['red', 'green', 'blue', 'yellow', 'orange'];
   const amountCb = (id: number, type: boolean) => {
     const data = dragToys.map((ele) => {
@@ -55,6 +59,7 @@ const Options = () => {
     setBg(urlGenerator(options.bg, true));
     setTree(urlGenerator(options.tree, false));
     setLight(options.lights);
+    setToys(options.treeToys);
   }, [options]);
   const optionsHandler = () => {
     setIsActive(!isActive);
@@ -71,7 +76,7 @@ const Options = () => {
         x: ((e.pageX - treeArea.left - 25)),
         y: ((e.pageY - treeArea.top - 25)),
       }];
-      setToys(newArr);
+      dispatch(setTreeToys(newArr));
     }
     if (!data.tree) amountCb(data.name, false);
   };
@@ -84,13 +89,24 @@ const Options = () => {
       if (ele.id !== element.id) return ele;
       return false;
     });
-    setToys(calculated);
+    dispatch(setTreeToys(calculated));
   };
   return (
     <MainContainer>
-      <Container>
-        <Option onClick={() => optionsHandler()} />
-      </Container>
+      <SettingsWrapper>
+        <Container>
+          <Option onClick={() => optionsHandler()} />
+        </Container>
+        <ClearButton onClick={() => {
+          storageEntity('clear');
+          // Cringe
+          window.location.reload();
+        }}
+        >
+          <InnerText>Clear</InnerText>
+          <InnerText>Storage</InnerText>
+        </ClearButton>
+      </SettingsWrapper>
       { isActive && <OptionsContainer><OptionSelect /></OptionsContainer> }
       <TreeContainer>
         <div>

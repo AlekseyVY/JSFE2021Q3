@@ -1,10 +1,15 @@
+import { IToysCoords } from '../components/Options/Options';
+import { IProps } from '../components/ToyCard/ToyCard.d';
+
 export const options = {
-  bg: 1,
-  tree: 1,
+  bg: 6,
+  tree: 3,
   snow: true,
   music: true,
-  lights: false,
-  color: 'blue',
+  lights: true,
+  color: 'mix',
+  treeToys: [],
+  dragToys: [],
 };
 
 export interface IOptions {
@@ -14,4 +19,6 @@ export interface IOptions {
   music: boolean;
   lights: boolean;
   color: string;
+  treeToys: IToysCoords[];
+  dragToys: IProps[];
 }

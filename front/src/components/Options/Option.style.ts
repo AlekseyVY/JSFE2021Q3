@@ -19,9 +19,6 @@ export const MainContainer = styled.div`
 export const Container = styled.div`
   width: 50px;
   height: 50px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   transition: 2s ease-in-out;
   &:hover {
     cursor: pointer;
@@ -120,4 +117,18 @@ export const LightsStyle = styled.div<IToy>`
           0 0 17.5px 11.25px #0ff; /* outer cyan */
   border-radius: 50%;
   pointer-events: none;
+`;
+
+export const SettingsWrapper = styled.div`
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: absolute;
+  right: 3%;
+  bottom: 0;
+  border-radius: 10px;
+  backdrop-filter: blur(3px) saturate(180%);
+  background-color: rgba(239,242,247,0.75);
 `;

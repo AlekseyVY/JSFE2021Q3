@@ -34,11 +34,15 @@ export const optionsSlice = createSlice({
       state.color = action.payload;
       storageEntity('set', 'options', state);
     },
+    setTreeToys: (state, action) => {
+      state.treeToys = action.payload;
+      storageEntity('set', 'options', state);
+    },
   },
 });
 
 export const {
-  setOptions, setBg, setTree, setSnow, setMusic, setLights, setColor,
+  setOptions, setBg, setTree, setSnow, setMusic, setLights, setColor, setTreeToys,
 } = optionsSlice.actions;
 export const selectValue = (state: RootState) => state;
 export default optionsSlice.reducer;
