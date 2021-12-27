@@ -5,7 +5,7 @@ export const options = {
   bg: 6,
   tree: 3,
   snow: true,
-  music: true,
+  music: false,
   lights: true,
   color: 'mix',
   treeToys: [],

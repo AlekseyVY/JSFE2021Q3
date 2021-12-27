@@ -22,8 +22,8 @@ export const optionsSlice = createSlice({
       state.snow = !state.snow;
       storageEntity('set', 'options', state);
     },
-    setMusic: (state) => {
-      state.music = !state.music;
+    setMusic: (state, action) => {
+      state.music = action.payload;
       storageEntity('set', 'options', state);
     },
     setLights: (state) => {
