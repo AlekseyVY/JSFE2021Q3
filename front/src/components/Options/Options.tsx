@@ -14,7 +14,6 @@ import { useAppSelector } from '../../hooks/hook';
 import urlGenerator from '../../utils/urlGenerator';
 import TreeToy from '../TreeToy/TreeToy';
 import { lights } from '../../providers/lights';
-import { IProps } from '../ToyCard/ToyCard.d';
 
 interface IToysCoords {
   num: string;
@@ -31,20 +30,14 @@ const Options = () => {
   const [light, setLight] = useState(false);
   const options = useAppSelector((state) => state.options);
   const store = useAppSelector((state) => state.toys);
-  const colors = ['red', 'green', 'blue', 'yellow'];
-  const toysGenerator = () => {
+  const [dragToys, setDragToys] = useState(() => {
     const data = store.filter((ele) => ele.favorite);
     if (data.length > 0) return data;
     return store.slice(0, 20);
-  };
-  const [dragToys, setDragToys] = useState(() => toysGenerator());
-
-  const amountCb = (
-    arr: IProps[],
-    // eslint-disable-next-line no-unused-vars
-    func: (value: any) => void,
-  ) => (id: number, type: boolean) => {
-    const data = arr.map((ele) => {
+  });
+  const colors = ['red', 'green', 'blue', 'yellow', 'orange'];
+  const amountCb = (id: number, type: boolean) => {
+    const data = dragToys.map((ele) => {
       let clone = { ...ele };
       if (clone.num === String(id)) {
         if (type) {
@@ -55,7 +48,7 @@ const Options = () => {
       }
       return clone;
     });
-    func(data);
+    setDragToys(data);
   };
 
   useEffect(() => {
@@ -80,13 +73,13 @@ const Options = () => {
       }];
       setToys(newArr);
     }
-    if (!data.tree) amountCb(dragToys, setDragToys)(data.name, false);
+    if (!data.tree) amountCb(data.name, false);
   };
 
   const dragEnd = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const element = e.target as HTMLDivElement;
-    amountCb(dragToys, setDragToys)(Number(element.className.split(' ')[2]), true);
+    amountCb(Number(element.className.split(' ')[2]), true);
     const calculated = toys.filter((ele) => {
       if (ele.id !== element.id) return ele;
       return false;

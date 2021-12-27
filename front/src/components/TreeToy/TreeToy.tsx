@@ -9,10 +9,10 @@ const TreeToy = (ele: IProps) => (
       onDragStart={(e) => {
         e.dataTransfer.setData('text/plain', JSON.stringify({ name: ele.num, id: String(Math.random() * 10000), tree: false }));
       }}
-      src={`./assets/toys/${ele.num}.webp`}
+      src={!(Number(ele.amount) <= 0) ? `./assets/toys/${ele.num}.webp` : './assets/disable.svg'}
       alt={'toy'}
     />
-    <Value>{ele.amount}</Value>
+    <Value>{Number(ele.amount) <= 0 ? '' : ele.amount}</Value>
   </Container>
 );
 
