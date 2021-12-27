@@ -38,12 +38,11 @@ font-size: 22px;
 `;
 
 export const SnowButton = styled.div`
-  font-size: 22px;
-  transition: 1s ease-in-out;
+  background-image: url("./assets/snow.svg");
+  width: 30px;
+  height: 30px;
   &:hover {
     cursor: pointer;
-    color: #f74705;
-    transition: 0.3s ease-in-out;
   }
 `;
 

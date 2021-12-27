@@ -66,7 +66,7 @@ const Header = () => {
         </NavWrapper>
         <MenuButtonsWrapper>
           {Music('./assets/music/01.mp3')}
-          <SnowButton role={'button'} onClick={() => dispatch(setSnow())}>Snow</SnowButton>
+          <SnowButton role={'button'} onClick={() => dispatch(setSnow())} />
         </MenuButtonsWrapper>
       </ContentWrapper>
     </Container>
