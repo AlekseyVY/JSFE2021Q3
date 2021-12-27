@@ -80,18 +80,21 @@ const Options = () => {
       }];
       setToys(newArr);
     }
-    amountCb(dragToys, setDragToys)(data.name, false);
-    console.log('DROP');
+    if (!data.tree) amountCb(dragToys, setDragToys)(data.name, false);
   };
 
   const dragEnd = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    // const element = e.target as HTMLDivElement;
-    // amountCb(dragToys, setDragToys)(Number(element.id), true);
-    console.log('END');
+    const element = e.target as HTMLDivElement;
+    amountCb(dragToys, setDragToys)(Number(element.className.split(' ')[2]), true);
+    const calculated = toys.filter((ele) => {
+      if (ele.id !== element.id) return ele;
+      return false;
+    });
+    setToys(calculated);
   };
   return (
-    <MainContainer onDragEnd={(e) => dragEnd(e)}>
+    <MainContainer>
       <Container>
         <Option onClick={() => optionsHandler()} />
       </Container>
@@ -99,8 +102,15 @@ const Options = () => {
       <TreeContainer>
         <div>
           {toys.map((ele) => (
-            <TreeToyWrapper draggable onDragStart={(e) => e.dataTransfer.setData('text/plain', JSON.stringify({ name: ele.num, id: ele.id }))} key={`${ele.num}_${ele.x}_${ele.y}`} x={ele.x} y={ele.y}>
-              <ToyImg src={`./assets/toys/${ele.num}.webp`} alt={'tree toy'} />
+            <TreeToyWrapper
+              draggable
+              onDragEnd={(e) => dragEnd(e)}
+              onDragStart={(e) => e.dataTransfer.setData('text/plain', JSON.stringify({ name: ele.num, id: ele.id, tree: true }))}
+              key={`${ele.num}_${ele.x}_${ele.y}`}
+              x={ele.x}
+              y={ele.y}
+            >
+              <ToyImg className={ele.num} id={ele.id} src={`./assets/toys/${ele.num}.webp`} alt={'tree toy'} />
             </TreeToyWrapper>
           ))}
         </div>
